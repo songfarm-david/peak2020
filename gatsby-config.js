@@ -1,8 +1,44 @@
 module.exports = {
   siteMetadata: {
     title: `Peak Websites`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: ``,
+    author: `David Gaskin`,
+    menuLinks: [
+      {
+        name: 'about',
+        link: `/about`
+      },
+      {
+        name: `consulting`,
+        link: `/services/web-consulting`
+      },
+      {
+        name: `services`,
+        link: `/services`
+      },
+      {
+        name: `blog`,
+        link: `/`
+      },
+      {
+        name: `contact`,
+        link: `/contact-us`
+      }
+    ],
+    footerLinks: [
+      {
+        name: `disclaimer`,
+        link: `disclaimer`
+      },
+      {
+        name: `privacy policy`,
+        link: `privacy-policy`
+      },
+      {
+        name: `sitemap`,
+        link: `sitemap`
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

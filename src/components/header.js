@@ -5,7 +5,7 @@ import React from "react"
 import Nav from "./nav"
 
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, menuLinks }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <Nav />
+      <Nav menuLinks={menuLinks} />
     </div>
   </header>
 )
