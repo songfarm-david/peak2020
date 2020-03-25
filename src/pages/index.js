@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Blog" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <h3>Total blog count:</h3>
@@ -16,7 +16,7 @@ const IndexPage = ({data}) => (
       {data.allWordpressPost.edges.map(({ node }) => (
         <div key={node.id} style={{ marginBottom: `1.45rem` }}>
           <h4>{node.title}</h4>
-          <p class="blog-post-date">{node.date}</p>
+          <p className="blog-post-date">{node.date}</p>
           <p>{node.excerpt}</p>
           <a href={node.slug}>Read more</a>
         </div>
