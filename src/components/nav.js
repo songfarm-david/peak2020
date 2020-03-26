@@ -4,10 +4,57 @@ import "./nav.css"
 
 export default ({ menuLinks }) => {
     
-    console.log(menuLinks);
-    
 
-    // const data = useStaticQuery(graphql`
+    // const subMenu = Object.values(menuLinks.subItems)
+    console.log(menuLinks);
+
+    menuLinks.map(link => (
+      console.log(link)
+    ))
+
+    return(
+        <div>
+          <nav>
+            <ul style={{ display: "flex", flex: 1 }}>
+              {menuLinks.map( link => (
+                <li
+                  key={link.name}
+                  style={{
+                    listStyleType: `none`,
+                    padding: `1rem`,
+                  }}
+                >
+                  <Link style={{ color: `white` }} to={link.link}>
+                    {link.name}
+                  </Link>
+                  <ul>
+                    { link.subItems != null ? link.subItems.map( subLink => (
+                        <li
+                          key={subLink.name}
+                          style={{
+                            listStyleType: `none`,
+                            padding: `1rem`,
+                          }}
+                        >
+                        <Link style={{ color: `white` }} to={subLink.subLink}>
+                          {subLink.name}
+                        </Link>  
+                        </li>
+                      )) 
+                      : false 
+                    }
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+    )
+    
+}
+
+
+// const data = useStaticQuery(graphql`
     //     query navigation {
     //         allWordpressPage( filter: { wordpress_id: { 
     //             in: [1718, 2517, 703, 1722]
@@ -34,27 +81,3 @@ export default ({ menuLinks }) => {
     // allWordpressPage.edges.forEach(({ node }) => {
     //     // console.log(node.slug, node.title)
     // })
-    
-    return(
-        <div>
-          <nav>
-            <ul style={{ display: "flex", flex: 1 }}>
-              {menuLinks.map(link => (
-                <li
-                  key={link.name}
-                  style={{
-                    listStyleType: `none`,
-                    padding: `1rem`,
-                  }}
-                >
-                  <Link style={{ color: `white` }} to={link.link}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-    )
-    
-}

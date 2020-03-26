@@ -9,12 +9,26 @@ module.exports = {
         link: `/about`
       },
       {
-        name: `consulting`,
-        link: `/services/web-consulting`
-      },
-      {
         name: `services`,
-        link: `/services`
+        link: `/services`,
+        subItems: [
+          {
+            name: `consulting`,
+            link: `/services/web-consulting`
+          },
+          {
+            name: `web design/development`,
+            link: `/services/website-development-design-services`
+          },
+          {
+            name: `website maintenance`,
+            link: `/services/website-maintenance-service`
+          },
+          {
+            name: `search engine optimization`,
+            link: `/services/seo-services`
+          }
+        ]
       },
       {
         name: `blog`,
@@ -26,6 +40,12 @@ module.exports = {
       }
     ],
     footerLinks: [
+      {
+        name: `Write for us!`,
+        link: `contribute-to-the-blog`
+      }
+    ],
+    legalLinks: [
       {
         name: `disclaimer`,
         link: `disclaimer`
@@ -68,7 +88,8 @@ module.exports = {
       options: {
         baseUrl: `peakwebsites.ca`,
         protocol: `https`,
-        useACF: false
+        useACF: false,
+        verboseOutput: true
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

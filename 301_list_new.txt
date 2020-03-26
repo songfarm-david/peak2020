@@ -28,3 +28,5 @@ https://peakwebsites.ca/services/seo-services/local-seo-packages/
 https://peakwebsites.ca/services/seo-services/seo-faq/
 https://peakwebsites.ca/services/seo-services/seo-packages-services/
 https://peakwebsites.ca/service-search-engine-optimization/
+
+Other routing issues:

@@ -24,8 +24,16 @@ const Layout = ({ children }) => {
           menuLinks {
             name
             link
+            subItems {
+              name
+              link
+            }
           }
           footerLinks {
+            name
+            link
+          }
+          legalLinks {
             name
             link
           }
@@ -45,7 +53,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-      <Footer footerLinks={data.site.siteMetadata.footerLinks} /> 
+      <Footer legalLinks={data.site.siteMetadata.legalLinks} /> 
       </div>
     </>
   )
