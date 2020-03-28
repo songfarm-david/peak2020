@@ -53,7 +53,9 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-      <Footer legalLinks={data.site.siteMetadata.legalLinks} /> 
+      <Footer 
+        footerLinks={data.site.siteMetadata.footerLinks}
+        legalLinks={data.site.siteMetadata.legalLinks} /> 
       </div>
     </>
   )

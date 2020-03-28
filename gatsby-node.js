@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
 
     const pageTemplate = path.resolve('src/templates/page.js')
+    const blogTemplate = path.resolve('src/templates/blog.js')
 
     const result = await graphql(`
         query {
@@ -33,6 +34,18 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
+            allWordpressPost {
+                edges {
+                    node {
+                        wordpress_id
+                        slug
+                        status
+                        title
+                        date
+                        excerpt
+                    }
+                }
+            }
         }
     `)
 
@@ -40,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
         throw new Error(result.errors)
     }
 
-    const { allWordpressPage } = result.data
+    const { allWordpressPage, allWordpressPost } = result.data
 
     allWordpressPage.edges.forEach(({ node }) => {
 
@@ -52,6 +65,24 @@ exports.createPages = async ({ graphql, actions }) => {
                     wp_id: node.wordpress_id,
                     slug: node.slug,
                     title: node.title,
+                    content: node.content
+                }
+            })
+        }
+
+    })
+
+    allWordpressPost.edges.forEach(({ node }) => {
+
+        if (node.status === 'publish') {
+            createPage({
+                path: node.slug,
+                component: blogTemplate,
+                context: {
+                    wp_id: node.wordpress_id,
+                    slug: node.slug,
+                    title: node.title,
+                    date: node.date,
                     content: node.content
                 }
             })
