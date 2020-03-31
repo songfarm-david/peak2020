@@ -1,8 +1,8 @@
 import React from "react"
-import { Link, graphql, withPrefix } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 export default ({ data }) => {
@@ -18,6 +18,10 @@ export default ({ data }) => {
                 <div key={node.title}>
                     <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
                     <p>{node.date}</p>
+                    {
+                        node.featured_media != null ? <Img fluid={node.featured_media.localFile.childImageSharp.fluid} /> : "/"
+                    }
+                    
                     <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                     <Link to={node.slug}>Read more</Link>
                     {showCategories(node)}
@@ -49,18 +53,42 @@ export const queryAllPosts = graphql`
                     categories {
                         name
                     }
+                    featured_media {
+                        localFile {
+                        ...squareImage
+                        }
+                    }
                  }
             }
         }
     }
 `
+
+/**
+ * Query fragment for querying featured images
+ */
+export const squareImage = graphql`
+  fragment squareImage on File {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+/**
+ * Function to check for existence of post categories and output formatting string
+ * @param {Object} node the post object
+ * @returns {Str} html string 
+ */
 function showCategories(node) {
 
     if (node.categories.length) {
         let catsStr = '<span>'
 
         for (let index = 0; index < node.categories.length; index++) {
-            if ( index == node.categories.length-1) {
+            if ( index === node.categories.length-1) {
                 catsStr += node.categories[index].name
                 continue
             }
@@ -70,10 +98,6 @@ function showCategories(node) {
 
     return <p dangerouslySetInnerHTML={{ __html: catsStr}}></p>
     }
-
-}
-
-function formatDate(date) {
 
 }
 

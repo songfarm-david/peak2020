@@ -1,8 +1,8 @@
 import React from "react"
-import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import "./nav.css"
 
-export default ({  }) => {
+export default () => {
     
   const data = useStaticQuery(graphql`
     query navQuery {
@@ -24,7 +24,7 @@ export default ({  }) => {
 
 const { wordpressMenusMenusItems: mainNav } = data
 
-console.log( mainNav )
+// console.log( mainNav )
 
     return(
         <div>
