@@ -89,7 +89,7 @@ module.exports = {
         baseUrl: `peakwebsites.ca`,
         protocol: `https`,
         useACF: false,
-        verboseOutput: true
+        verboseOutput: false
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

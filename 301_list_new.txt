@@ -1,24 +1,16 @@
 301s
 
+Unknown:
+
+
 To Homepage:
-https://peakwebsites.ca/blog/contribute-to-the-blog/
-https://peakwebsites.ca/services/content-creation/
-https://peakwebsites.ca/content-creation-panel/
-https://peakwebsites.ca/web-design-panel/
-https://peakwebsites.ca/seo-panel/
 https://peakwebsites.ca/landing-page/
-https://peakwebsites.ca/services/progressive-web-app-developer/
 https://peakwebsites.ca/services/
 
 To Web Dev:
-https://peakwebsites.ca/services/website-development-design-services/about-wordpress/
-https://peakwebsites.ca/services/website-development-design-services/static-html-websites/
-https://peakwebsites.ca/services/website-development-design-services/what-type-of-website-is-right-for-your-business/
-https://peakwebsites.ca/service-web-development-design/
 https://peakwebsites.ca/services/wordpress-website-development/
 
 To Manage:
-https://peakwebsites.ca/service-website-maintenance/
 https://peakwebsites.ca/services/website-maintenance-services/website-maintenance-plans/ 
 https://peakwebsites.ca/services/website-maintenance-services/wordpress-maintenance-service/
 
@@ -27,6 +19,3 @@ https://peakwebsites.ca/services/seo-services/local-seo-packages-victoria-bc/
 https://peakwebsites.ca/services/seo-services/local-seo-packages/
 https://peakwebsites.ca/services/seo-services/seo-faq/
 https://peakwebsites.ca/services/seo-services/seo-packages-services/
-https://peakwebsites.ca/service-search-engine-optimization/
-
-Other routing issues:

@@ -1,43 +1,56 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 import "./nav.css"
 
-export default ({ menuLinks }) => {
+export default ({  }) => {
     
+  const data = useStaticQuery(graphql`
+    query navQuery {
+      wordpressMenusMenusItems(wordpress_id: {eq: 190}) {
+        name
+        items {
+          title
+          slug
+          wordpress_id
+          child_items {
+            title
+            slug
+            wordpress_id
+          }
+        }
+      }
+    }
+  `)
 
-    // const subMenu = Object.values(menuLinks.subItems)
-    console.log(menuLinks);
+const { wordpressMenusMenusItems: mainNav } = data
 
-    menuLinks.map(link => (
-      console.log(link)
-    ))
+console.log( mainNav )
 
     return(
         <div>
           <nav>
             <ul style={{ display: "flex", flex: 1 }}>
-              {menuLinks.map( link => (
+              {mainNav.items.map( item => (
                 <li
-                  key={link.name}
+                  key={item.title}
                   style={{
                     listStyleType: `none`,
                     padding: `1rem`,
                   }}
                 >
-                  <Link style={{ color: `white` }} to={link.link}>
-                    {link.name}
+                  <Link style={{ color: `white` }} to={item.slug}>
+                    {item.title}
                   </Link>
                   <ul>
-                    { link.subItems != null ? link.subItems.map( subLink => (
-                        <li
-                          key={subLink.name}
+                    { item.child_items != null ? item.child_items.map( childItem => (
+                        <li className="l"
+                          key={childItem.title}
                           style={{
                             listStyleType: `none`,
                             padding: `1rem`,
                           }}
                         >
-                        <Link style={{ color: `white` }} to={subLink.subLink}>
-                          {subLink.name}
+                        <Link style={{ color: `white` }} to={childItem.slug} dangerouslySetInnerHTML={{ __html: childItem.title}}>
                         </Link>  
                         </li>
                       )) 
@@ -50,34 +63,5 @@ export default ({ menuLinks }) => {
           </nav>
         </div>
     )
-    
+
 }
-
-
-// const data = useStaticQuery(graphql`
-    //     query navigation {
-    //         allWordpressPage( filter: { wordpress_id: { 
-    //             in: [1718, 2517, 703, 1722]
-    //         }}) {
-    //             edges {
-    //                 node {
-    //                     wordpress_id
-    //                     title
-    //                     slug
-    //                     link
-    //                     status
-    //                     excerpt
-    //                     content
-    //                 }
-    //             }
-    //         }
-    //     } 
-    // `)
-
-    // console.log(data.allWordpressPage)
-
-    // const {allWordpressPage} = data
-
-    // allWordpressPage.edges.forEach(({ node }) => {
-    //     // console.log(node.slug, node.title)
-    // })
