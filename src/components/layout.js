@@ -13,6 +13,7 @@ import Header from "./header"
 import Footer from "./footer"
 
 import "./layout.css"
+import "../styles/layout.scss"
 
 const Layout = ({ children }) => {
   
@@ -45,14 +46,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
+      <div>
+        <main id="mainContent">{children}</main>
       <Footer 
         footerLinks={data.site.siteMetadata.footerLinks}
         legalLinks={data.site.siteMetadata.legalLinks} /> 

@@ -1,0 +1,53 @@
+@import "./globals.scss";
+
+#siteFooter {
+    padding: $vertical-rhythm 0 0;
+    border-top: 1px solid #333;
+
+    ul {
+        margin: 0;
+        text-align: center;
+    }
+    .copyright {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    > .grid {
+        margin: 0 auto;
+        max-width: $content-width;
+        display: grid;
+        grid-template-columns: auto;
+        .grid-child {
+            padding: 1rem;
+            margin: 0 0.5rem;
+            width: auto;
+            border: 1px solid grey;
+        }
+    }
+
+    /* small legal footer */
+    div#legalLinks {
+        margin-top: $vertical-rhythm;
+        padding: 0.25rem 0;
+        background-color: #ccc;
+        font-size: smaller;
+        ul {
+            display: flex;
+            justify-content: center;
+            .link-item {
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #siteFooter {
+        > .grid {
+            grid-template-columns: auto auto auto;
+        }
+    }
+}
