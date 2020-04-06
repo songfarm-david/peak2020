@@ -17,7 +17,6 @@ export default ({ data }) => {
             <p>Do you need reliable, creative, experienced website <span>management</span> to partner with your business?</p>
             <h1>{page.title}</h1>
             <div dangerouslySetInnerHTML={ {__html: page.content} } ></div>
-            <Image />
         </Layout>
     )
  }

@@ -1,4 +1,7 @@
+@import "./globals.scss";
+
 #mainContent {
-    max-width: 960px;
-    margin: 3rem auto;
+    max-width: $content-width;
+    margin: $vertical-rhythm auto;
+    padding: 0 1rem;
 }
