@@ -12,8 +12,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 
-import "./layout.css"
+// import "./layout.css"
 import "../styles/layout.scss"
+
+// import banner from "../images/air-triangulated.jpg"
+
+// console.log(banner)
 
 const Layout = ({ children, page }) => {
   
@@ -48,15 +52,27 @@ const Layout = ({ children, page }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
+
       <div>
-        {(page) ? <div className="hero-banner">
-          <p>Do you need reliable, creative, experienced website <span>management</span> to partner with your business?</p>
-        </div> : null}
-        <main id="mainContent">{children}</main>
+        {
+        (page) ? 
+          <div className="hero-banner">
+            <p>Do you need reliable, creative, experienced website <span>management</span> to partner with your business?</p>
+          </div> 
+          : null
+        }
+
+        <main id="mainContent">
+          {children}
+        </main>
+
         <Footer 
-        footerLinks={data.site.siteMetadata.footerLinks}
-        legalLinks={data.site.siteMetadata.legalLinks} /> 
+          footerLinks={data.site.siteMetadata.footerLinks}
+          legalLinks={data.site.siteMetadata.legalLinks} 
+        />
+
       </div>
+
     </>
   )
 }

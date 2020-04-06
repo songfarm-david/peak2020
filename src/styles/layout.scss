@@ -1,4 +1,6 @@
 @import "./globals.scss";
+@import "./layout.css";
+
 
 #mainContent {
     max-width: $content-width;
@@ -10,4 +12,5 @@
 .hero-banner {
     height: calc(100vh - 80px);
     border-bottom: 1px solid black;
+    background: url('../images/air-triangulated.jpg') bottom center/cover no-repeat $background-color;
 }
