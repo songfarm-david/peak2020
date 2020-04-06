@@ -1,0 +1,21 @@
+@import '/globals.scss';
+
+#siteHeader {
+    background-color: $header-color;
+
+    > div {
+        margin: auto;
+        max-width: $content-width;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    a {
+        text-decoration: none;
+        color: $color-white;
+    }
+    .siteName {
+        padding: 1rem;
+        margin-bottom: 0;
+    }
+}

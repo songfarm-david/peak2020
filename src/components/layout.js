@@ -15,7 +15,9 @@ import Footer from "./footer"
 import "./layout.css"
 import "../styles/layout.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, page }) => {
+  
+  console.log(page)
   
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -42,13 +44,16 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
       <div>
+        {(page) ? <div className="hero-banner">
+          <p>Do you need reliable, creative, experienced website <span>management</span> to partner with your business?</p>
+        </div> : null}
         <main id="mainContent">{children}</main>
-      <Footer 
+        <Footer 
         footerLinks={data.site.siteMetadata.footerLinks}
         legalLinks={data.site.siteMetadata.legalLinks} /> 
       </div>

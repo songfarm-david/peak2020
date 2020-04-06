@@ -19,7 +19,7 @@ export default ({ data }) => {
                     <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
                     <p>{node.date}</p>
                     {
-                        node.featured_media != null ? <Img fluid={node.featured_media.localFile.childImageSharp.fluid} /> : "/"
+                        node.featured_media != null ? <Img fluid={node.featured_media.localFile.childImageSharp.fluid} /> : null
                     }
                     
                     <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />

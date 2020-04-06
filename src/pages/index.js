@@ -2,20 +2,21 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-export default ({ data }) => {
+import "../styles/globals.scss"
+import "../styles/layout.scss"
+
+export default ({ data, location }) => {
     
-    console.log(data)
+    console.log(data, location)
 
     const { wordpressPage: page } = data
  
     return (
-        <Layout>
+        <Layout page={location  && location.pathname == "/" ? true : false}>
             <SEO title={page.title} description={page.excerpt} />
-            <p>Do you need reliable, creative, experienced website <span>management</span> to partner with your business?</p>
-            <h1>{page.title}</h1>
+            <h1 className="screen-reader-text">{page.title}</h1>
             <div dangerouslySetInnerHTML={ {__html: page.content} } ></div>
         </Layout>
     )
@@ -30,6 +31,13 @@ export default ({ data }) => {
             title
             excerpt
             content
+        }
+        allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
         }
     }
 `

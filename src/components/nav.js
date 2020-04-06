@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import "./nav.css"
+import "../styles/nav.scss"
 
 export default () => {
     
@@ -22,46 +22,39 @@ export default () => {
     }
   `)
 
-const { wordpressMenusMenusItems: mainNav } = data
+  const { wordpressMenusMenusItems: mainNav } = data
 
-// console.log( mainNav )
 
-    return(
-        <div>
-          <nav>
-            <ul style={{ display: "flex", flex: 1 }}>
-              {mainNav.items.map( item => (
-                <li
-                  key={item.title}
-                  style={{
-                    listStyleType: `none`,
-                    padding: `1rem`,
-                  }}
-                >
-                  <Link style={{ color: `white` }} to={item.slug}>
-                    {item.title}
-                  </Link>
-                  <ul>
-                    { item.child_items != null ? item.child_items.map( childItem => (
-                        <li className="l"
-                          key={childItem.title}
-                          style={{
-                            listStyleType: `none`,
-                            padding: `1rem`,
-                          }}
-                        >
-                        <Link style={{ color: `white` }} to={childItem.slug} dangerouslySetInnerHTML={{ __html: childItem.title}}>
-                        </Link>  
-                        </li>
-                      )) 
-                      : false 
-                    }
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-    )
+  return(
+    <div>
+      <nav id="mainNav">
+        <ul>
+          {mainNav.items.map( item => (
+            <li className="navItem" key={item.title}>
 
+              <Link to={item.slug}>{item.title}</Link>
+              
+              { item.child_items != null ? printChildren(item) : false }
+
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  )
+
+}
+
+function printChildren(item) {
+  console.log('it worked', item)
+  
+  return (
+    <ul className="subMenu">
+      {item.child_items.map( childItem => (
+        <li className="navItem" key={childItem.title}>
+          <Link to={childItem.slug} dangerouslySetInnerHTML={{ __html: childItem.title}}></Link>  
+        </li>
+      )) }
+    </ul>
+  )
 }

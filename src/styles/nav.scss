@@ -1,0 +1,68 @@
+@import "./globals.scss";
+
+#mainNav {
+    background: rebeccapurple;
+    position: absolute; 
+    
+    left: 0; right: 0; // when active
+    // left: -100%;
+    ul {
+        margin: 0;
+        text-align: center;
+        background: lightblue;
+        li {
+            list-style-type: none;
+            margin-bottom: 0;
+            a {
+                display: block;
+                padding: 0.5rem 1rem;
+                &:hover {
+                    background: teal;
+                }
+            }
+        }
+        li:last-child {
+            // padding-bottom: 1rem;
+        }
+    }
+    
+
+    a { color: $color-white;}
+    
+    .navItem > a + .subMenu {
+        background-color: rgb(51, 179, 179);
+    }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        position: relative;
+        ul {
+            border: 1px solid white;
+            display: flex;
+            flex: 1;
+            background: inherit;
+            li {
+                position: relative;
+                background: inherit;
+            }
+    
+            .navItem > a:hover + .subMenu {
+                background-color: orange !important;
+                left: 0;    
+                opacity: 1;
+                transition: opacity .5s;
+            }
+    
+            ul.subMenu {
+                position: absolute;
+                display: block;
+                z-index: 10;
+                left: -9999px;    
+                opacity: 0;
+                .navItem {
+                    display: block;
+                    background-color: inherit;
+                }
+            }
+        }
+    }
+}
