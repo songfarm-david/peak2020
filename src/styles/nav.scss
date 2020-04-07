@@ -3,9 +3,9 @@
 #mainNav {
     background: rebeccapurple;
     position: absolute; 
-    
-    left: 0; right: 0; // when active
-    // left: -100%;
+    // display: none;
+    // left: 0; right: 0; // when active
+    left: -9999px;
     ul {
         margin: 0;
         text-align: center;

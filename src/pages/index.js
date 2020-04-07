@@ -9,8 +9,6 @@ import "../styles/layout.scss"
 
 export default ({ data, location }) => {
     
-    console.log(data, location)
-
     const { wordpressPage: page } = data
  
     return (

@@ -10,14 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Banner from "./hero/home-banner"
 import Footer from "./footer"
 
-// import "./layout.css"
 import "../styles/layout.scss"
-
-// import banner from "../images/air-triangulated.jpg"
-
-// console.log(banner)
 
 const Layout = ({ children, page }) => {
   
@@ -54,12 +50,11 @@ const Layout = ({ children, page }) => {
       <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
 
       <div>
-        {
-        (page) ? 
-          <div className="hero-banner">
-            <p>Do you need reliable, creative, experienced website <span>management</span> to partner with your business?</p>
-          </div> 
-          : null
+        
+        { 
+          /* if home page, display hero banner */
+          (page) ? 
+            <Banner /> : null 
         }
 
         <main id="mainContent">
