@@ -5,57 +5,42 @@
     
     height: calc(100vh - 80px);
     background: url('../images/air-triangulated.jpg') bottom center/cover no-repeat $background-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // font-size: 2rem;
 
-    .text-container {
-        margin: 0 auto;
-        max-width: $content-width;
-        position: relative;
-        border: 1px solid block;
-        overflow: hidden;
-        border: 2px solid #333;
+    .hero-text-container {
+        // margin: 0 auto;
+        // max-width: $content-width;
+        // position: relative;
+        // border: 1px solid block;
+        // overflow: hidden;
+        // border: 2px solid #333;
 
         p {
             line-height: $line-height;
         }
 
-        .rotatorContainer {
-            display: inline-block;
+        .word {
+            border: 1px solid black;
+            position: absolute;
             min-width: 170px;
-            position: relative;
-            border: 2px solid #333;
-            overflow: hidden;
-            .word {
-                border: 1px solid black;
-                position: absolute;
-                left: 0;
-                opacity: 1;
-            }
+
+            // float: left;
+            // opacity: 1;
+        }
+
+        .keyword-container {
+            // display: inline-block;
+            // min-width: 170px;
+            // position: relative;
+            // border: 2px solid white;
+            // overflow: hidden;
         }
 
         
     }
 
-    .letter {
-        position: relative;
-        float: left;
-        transform: translateZ(25px);
-        transform-origin: 50% 50% 25px;
-        &.out {
-            transform: rotateX(90deg);
-            transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
-        &.behind {
-            transform: rotateX(-90deg);
-        }
-        &.in {
-            transform: rotateX(0deg);
-            transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-    } 
-
-    //   https://codepen.io/rachsmith/pen/BNKJme
+    
 }

@@ -6,19 +6,19 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import Banner from "./hero/home-banner"
 import Footer from "./footer"
-
 import "../styles/layout.scss"
+
+import Banner from "./hero/homeBanner"
 
 const Layout = ({ children, page }) => {
   
-  console.log(page)
-  
+  let keywords = ['management','development','design','SEO','consulting','webmaster services']
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -47,14 +47,17 @@ const Layout = ({ children, page }) => {
   
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
+      <Header 
+        siteTitle={data.site.siteMetadata.title} 
+        menuLinks={data.site.siteMetadata.menuLinks} 
+        />
 
       <div>
-        
-        { 
+        {
           /* if home page, display hero banner */
-          (page) ? 
-            <Banner /> : null 
+          (page) 
+          ? <Banner keywords={keywords} /> 
+          : null 
         }
 
         <main id="mainContent">
@@ -70,10 +73,6 @@ const Layout = ({ children, page }) => {
 
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
