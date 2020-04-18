@@ -13,22 +13,22 @@ const Banner = (props) => {
     const words = [
         {
             word: "management",
-            color: 'blue',
+            color: '#835ea8',
         }, {
             word: "development",
-            color: 'red',
+            color: '#4ac5de',
         }, {
             word: "design",
-            color: 'orange',
+            color: '#58be8b',
         }, {
             word: "SEO",
-            color: 'purple',
+            color: '#00b4cb',
         }, {
             word: "consulting",
-            color: 'yellow',
+            color: '#49599a',
         }, {
             word: "webmaster services",
-            color: 'green',
+            color: '#00af85',
         }
     ];
 
@@ -48,18 +48,19 @@ const Banner = (props) => {
     return (
         <div className="hero-banner">
             <div className="hero-text-container">
-                <p>Do you need reliable, creative, experienced&nbsp; 
-                    {words.map(({ word, color }, idx) => (
-                        <span key={`word-${idx}`} className="word" style={{ color }}>
-                            <SlottedLetters 
-                                active={idx === activeWord.current}
-                                wasActive={idx === activeWord.last}
-                                word={`${word}`}
-                            />
-                        </span>
-                    ))}
+                <p>Do you need reliable, creative, experienced website&nbsp;
                     <br />
-                    to partner with your business?
+                    <span id="rotatingWord">
+                        {words.map(({ word, color }, idx) => (
+                            <span key={`word-${idx}`} className="word" style={{ color }}>
+                                <SlottedLetters 
+                                    active={idx === activeWord.current}
+                                    wasActive={idx === activeWord.last}
+                                    word={`${word}?`}
+                                />
+                            </span>
+                        ))}
+                    </span>
                 </p>
             </div>
         </div>

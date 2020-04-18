@@ -5,5 +5,8 @@
 #mainContent {
     max-width: $content-width;
     margin: $vertical-rhythm auto;
+    > div {
+        padding: $content-padding;
+    }
     // padding: 0 1rem;
 }

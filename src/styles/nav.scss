@@ -1,11 +1,11 @@
 @import "./globals.scss";
 
 #mainNav {
-    background: rebeccapurple;
+    // background: rebeccapurple;
     position: absolute; 
     // display: none;
     // left: 0; right: 0; // when active
-    left: -9999px;
+    // left: -9999px;
     ul {
         margin: 0;
         text-align: center;
@@ -36,7 +36,7 @@
     @media screen and (min-width: $mobile-breakpoint) {
         position: relative;
         ul {
-            border: 1px solid white;
+            // border: 1px solid white;
             display: flex;
             flex: 1;
             background: inherit;

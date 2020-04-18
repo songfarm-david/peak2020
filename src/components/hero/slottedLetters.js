@@ -7,11 +7,7 @@ export const SlottedLetters = ({word, active, wasActive}) => {
 
     const [letters] = useState(() => {
         if (word.indexOf(" ") === -1) return word.split('');
-        let newWord = word.replace(/ /g, '\u00a0');
-        // let space = word.indexOf(" ");
-        // console.log(word);
-        // word[space] = '&nbsp;';
-        return [...newWord]
+        return word.replace(/ /g, '\u00a0').split('');
     });
     const [firstRun] = useState(() => {
         let firstRun = true;

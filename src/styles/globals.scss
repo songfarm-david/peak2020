@@ -2,11 +2,14 @@ $vertical-rhythm: 2rem;
 $content-width: 50rem;
 $mobile-breakpoint: 769px;
 $line-height: 1.5;
+$content-padding: 0 1rem;
 
 /** colors **/
 $color-white: #fff;
 $header-color: rebeccapurple;
 $background-color: #ccc; // generic background color fallback
+
+$text-shadow: -1px 1px 2px #333;
 
 .screen-reader-text {
     border: 0;
@@ -22,16 +25,11 @@ $background-color: #ccc; // generic background color fallback
     word-wrap: normal !important;
 }
 
-.clear-left {
-    clear: left;
-}
+.clear-left { clear: left; }
 
-.clear-right {
-    clear: right;
-}
+.clear-right { clear: right; }
 
 .alignright {
     float: right;
     padding: 0 0 1rem 1rem;
-    
 }

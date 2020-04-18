@@ -5,10 +5,13 @@ import React from "react"
 import Nav from "./nav"
 import "../styles/header.scss"
 
+import siteLogo from "../images/peak_websites_logo.png";
+
 const Header = ({ siteTitle, menuLinks }) => (
   <header id="siteHeader">
     <div>
       <h1 className="siteName">
+        <img src={siteLogo} className="siteLogo" alt="Peak Websites logo" />
         <Link
           to="/">
           {siteTitle}
