@@ -11,9 +11,9 @@ const Header = ({ siteTitle, menuLinks }) => (
   <header id="siteHeader">
     <div>
       <h1 className="siteName">
-        <img src={siteLogo} className="siteLogo" alt="Peak Websites logo" />
         <Link
           to="/">
+          <img src={siteLogo} className="siteLogo" alt="Peak Websites logo" />
           {siteTitle}
         </Link>
       </h1>

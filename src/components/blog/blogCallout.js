@@ -5,9 +5,10 @@ import "../../styles/blog/blogStyles.scss"
 
 const BlogCallout = () => (
   <article id="blogCallout" className="blog">
-      <h3>Still reading?</h3>
-      <p>Check out our <Link>blog</Link> to see what we're keeping up on</p>
-      <Nav menuLinks={menuLinks} />
+      <div>
+        <h3>Still reading?</h3>
+        <p>Check out our <Link to="/blog">blog</Link> to see what we're keeping up on</p>
+      </div>
   </article>
 )
 

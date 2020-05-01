@@ -1,10 +1,9 @@
 @import '/globals.scss';
 
-// background: url('../images/peak_websites_logo.png') bottom center/cover no-repeat $background-color;
-
 #siteHeader {
 
     position: fixed;
+    top: 0;
     width: 100%;
     
     > div {
@@ -13,18 +12,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: .5rem;
+        padding: .5rem 0;
     }
     a {
         text-decoration: none;
         color: $color-white;
     }
+
     .siteName {
-        // padding: 1rem;
         margin-bottom: 0;
         font-weight: 300;
         text-shadow: $text-shadow;
-        > img.siteLogo {
+        img.siteLogo {
             max-width: 52px;
             display: inline;
             vertical-align: top;
@@ -32,4 +31,5 @@
             margin-right: 6px;
         }
     }
+
 }

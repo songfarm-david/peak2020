@@ -14,6 +14,7 @@ import Footer from "./footer"
 import "../styles/layout.scss"
 
 import Banner from "./hero/homeBanner"
+import BlogCallout from "./blog/blogCallout"
 
 const Layout = ({ children, page }) => {
   
@@ -53,8 +54,7 @@ const Layout = ({ children, page }) => {
         />
 
       <div>
-        {
-          /* if home page, display hero banner */
+        { /* if home page, display hero banner */
           (page) 
           ? <Banner keywords={keywords} /> 
           : null 
@@ -63,6 +63,8 @@ const Layout = ({ children, page }) => {
         <main id="mainContent">
           {children}
         </main>
+
+        <BlogCallout />
 
         <Footer 
           footerLinks={data.site.siteMetadata.footerLinks}
