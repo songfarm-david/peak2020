@@ -9,12 +9,14 @@ import React from "react"
 // import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Footer from "./footer"
-import "../styles/layout.scss"
+import "./layout.scss"
 
-import Banner from "./hero/homeBanner"
+import Header from "./header"
+import HeroSection from "./hero/heroSection"
 import BlogCallout from "./blog/blogCallout"
+import Footer from "./footer"
+
+
 
 const Layout = ({ children, page }) => {
   
@@ -48,21 +50,12 @@ const Layout = ({ children, page }) => {
   
   return (
     <>
-      <Header 
-        siteTitle={data.site.siteMetadata.title} 
-        menuLinks={data.site.siteMetadata.menuLinks} 
-        />
+      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
 
-      <div>
-        { /* if home page, display hero banner */
-          (page) 
-          ? <Banner keywords={keywords} /> 
-          : null 
-        }
+      <div>{  /** if home page, display hero banner */
+        (page) ? <HeroSection keywords={keywords} /> : null  }
 
-        <main id="mainContent">
-          {children}
-        </main>
+        <main id="mainContent">{children}</main>
 
         <BlogCallout />
 

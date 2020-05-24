@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import "../styles/globals.scss"
-import "../styles/layout.scss"
 
 export default ({ data, location }) => {
     

@@ -1,11 +1,10 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-import Nav from "./nav"
-import "../styles/header.scss"
-
 import siteLogo from "../images/peak_websites_logo.png";
+
+import "./header.scss"
+import Nav from "./nav"
 
 const Header = ({ siteTitle, menuLinks }) => (
   <header id="siteHeader">
@@ -21,13 +20,5 @@ const Header = ({ siteTitle, menuLinks }) => (
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

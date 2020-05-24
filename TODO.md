@@ -1,3 +1,8 @@
+# TODO
+
+1. Add a good modern CSS reset 
+
+
 * Make index.js show slug /home
 * Once you have imported WP Menus, check that /sitemap
 * Verify manifest.json / PWA
