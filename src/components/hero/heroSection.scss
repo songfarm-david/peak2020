@@ -1,44 +1,53 @@
 @import "../../styles/globals.scss";
 
-$offset: 350px;
+$offset: 21.875rem;
 
 /** hero banner */
 .hero-banner {
     
     height: calc(100vh + 56px);
-    background: url('../../images/homepage.jpeg') bottom center/cover no-repeat $white;
+    background: url('../../images/homepage_mobile.png') bottom center/cover no-repeat $white;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $white;
 
     .hero-text-container {
+        position: relative;
+        top: -5rem;
         margin: 0 auto;
-        padding: 0 1rem;
         max-width: $content-width;
-        
-        p {
-            // line-height: $line-height;
-            color: #fff;
-            // text-shadow: $text-shadow;
-        }
-        
+        text-align: center;        
         #rotatingWord {
-            min-width: $offset;
-            min-height: 50px;
-            display: inline-block;
+            position: absolute;
+            width: $content-width;
+            transform: translateX(-50%);
+            border: 2px solid blue;
+            overflow: visible;
+            .word {
+                position: absolute;
+                display: block;
+                // left: 50%;
+                // transform: translate(-50%);
+                width: 100%;
+                border: $border;
+                
+            }
         }
 
-        .word {
-            position: absolute;
-            display: inline-block;
-        }
+        
         
     }
 
-    @media screen and (max-width: $mobile-breakpoint) {
-        .word {
-            display: block;
-        }
+    // @media screen and (max-width: $mobile-breakpoint) {
+    //     .word {
+    //         display: block;
+    //     }
+    // }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        // height: calc(100vh + 56px);
+        background: url('../../images/homepage.jpeg') bottom center/cover no-repeat $white;
     }
     
 }

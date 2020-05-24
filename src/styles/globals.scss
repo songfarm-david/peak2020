@@ -2,44 +2,19 @@
 @import "./type.scss";
 
 $vertical-rhythm: 2rem;
-$content-width: 50rem;
+$content-width: 60rem;
 $mobile-breakpoint: 769px;
 
 html {
     font: normal 100% Montserrat, sans-serif;
     a {
         text-decoration: none;
+        color: $strong-blue;
     }
 }
 
-/**
- * Buttons
- */
-.primary-button {
-    background-color: $bright-orange;
-    color: $white;
-    &:hover {
-        background-color: $strong-blue;
-    }
-}
+@import "./buttons.scss";
 
-.secondary-button {
-    outline: $white;
-    color: $white;
-    &:hover {
-        outline: $bright-orange;
-        color: $bright-orange;
-    }
-}
-
-.small-button {
-    background-color: $white;
-    color: $bright-orange;
-    &:hover {
-        background-color: $bright-orange;
-        color: $white;
-    }
-}
 
 /**
  * Helper Classes 

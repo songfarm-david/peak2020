@@ -9,6 +9,7 @@ const RotatingText = ({word, active, wasActive}) => {
         if (word.indexOf(" ") === -1) return word.split('');
         return word.replace(/ /g, '\u00a0').split('');
     });
+
     const [firstRun] = useState(() => {
         let firstRun = true;
         return (val) => {
@@ -16,6 +17,7 @@ const RotatingText = ({word, active, wasActive}) => {
             return firstRun = val
         }
     });
+
     const [classNames] = useState(() => {
         const classes = Array(word.length).fill('').map(() => active ? 'in' : 'out');
         return (active, idx) => {
@@ -24,6 +26,7 @@ const RotatingText = ({word, active, wasActive}) => {
             return classes; 
         }
     });
+    
     const [elRefs] = useState(() => {
         const refArray = Array(letters.length).fill('').map((_, i) => createRef());       
         return (idx) => refArray[idx]

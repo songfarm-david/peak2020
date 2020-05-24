@@ -1,6 +1,8 @@
 
 .letter {
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     float: left;
     transform: translateZ(25px);
     transform-origin: 50% 50% 25px;

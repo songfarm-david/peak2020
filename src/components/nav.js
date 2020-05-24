@@ -32,7 +32,7 @@ export default () => {
           
           <li className="navItem" key={item.title}>
 
-            <Link to={item.slug}>{item.title}</Link>
+            <Link to={item.slug} className="heading-5">{item.title}</Link>
             
             { item.child_items != null ? printChildren(item) : false }
 

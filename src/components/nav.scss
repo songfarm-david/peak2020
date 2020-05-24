@@ -5,7 +5,7 @@
     position: absolute; 
     // display: none;
     // left: 0; right: 0; // when active
-    // left: -9999px;
+    left: -9999px;
     ul {
         padding: 0;
         margin: 0;
@@ -33,7 +33,9 @@
     }
 
     @media screen and (min-width: $mobile-breakpoint) {
+
         position: relative;
+
         ul {
             display: flex;
             justify-content: center;
@@ -43,9 +45,9 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                // a {
-                //     display: block;
-                // }
+                &:not(:first-of-type) {
+                    margin-left: 0.75rem;
+                }
             }
     
             .navItem > a:hover + .subMenu {

@@ -1,0 +1,33 @@
+/**
+ * Buttons
+ */
+.button {
+    border-radius: 3px;
+    border-style: solid;
+}
+.primary-button {
+    background-color: $bright-orange;
+    color: $white;
+    &:hover {
+        background-color: $strong-blue;
+    }
+}
+
+.secondary-button {
+    outline: $white;
+    color: $white;
+    background-color: transparent;
+    &:hover {
+        outline: $bright-orange;
+        color: $bright-orange;
+    }
+}
+
+.small-button {
+    background-color: $white;
+    color: $bright-orange;
+    &:hover {
+        background-color: $bright-orange;
+        color: $white;
+    }
+}
