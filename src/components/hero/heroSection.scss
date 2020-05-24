@@ -10,12 +10,11 @@ $offset: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.6rem;
 
     .hero-text-container {
         margin: 0 auto;
         padding: 0 1rem;
-        // max-width: $content-width;
+        max-width: $content-width;
         
         p {
             // line-height: $line-height;
@@ -32,7 +31,6 @@ $offset: 350px;
         .word {
             position: absolute;
             display: inline-block;
-            text-shadow: -1px 1px 1px #333;
         }
         
     }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import {rotatingText} from "./rotatingText.js"
+import RotatingText from "./rotatingText.js"
 import "./heroSection.scss"
 
 const HeroBanner = (props) => {
@@ -53,7 +53,7 @@ const HeroBanner = (props) => {
                     <span id="rotatingWord">
                         {words.map(({ word, color }, idx) => (
                             <span key={`word-${idx}`} className="word" style={{ color }}>
-                                <rotatingText 
+                                <RotatingText 
                                     active={idx === activeWord.current}
                                     wasActive={idx === activeWord.last}
                                     word={`${word}?`}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import "./rotatingText.scss";
 
-const rotatingText = ({word, active, wasActive}) => {
+const RotatingText = ({word, active, wasActive}) => {
 
     const [letters] = useState(() => {
         if (word.indexOf(" ") === -1) return word.split('');
@@ -60,12 +60,12 @@ const rotatingText = ({word, active, wasActive}) => {
     )
 }
 
-rotatingText.propTypes = {
+RotatingText.propTypes = {
     word: PropTypes.string,
     active: PropTypes.bool,
     wasActive: PropTypes.bool
 };
 
-export default rotatingText
+export default RotatingText
 
 // https://github.com/Js-Brecht/react-rotate-words-animated

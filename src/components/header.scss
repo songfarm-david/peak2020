@@ -5,31 +5,33 @@
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: $background;
     
     > div {
-        margin: auto;
-        // max-width: $content-width;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: .5rem 0;
-    }
-    a {
-        text-decoration: none;
-        // color: $color-white;
     }
 
-    .siteName {
-        margin-bottom: 0;
-        font-weight: 300;
-        // text-shadow: $text-shadow;
-        img.siteLogo {
-            max-width: 52px;
-            display: inline;
-            vertical-align: top;
-            margin: 0 6px;
-            margin-right: 6px;
-        }
+    #siteLogo {
+        width: 100%;
+        height: auto;
     }
+    // a {
+    //     text-decoration: none;
+    //     color: $color-white;
+    // }
+
+    // .siteName {
+    //     margin-bottom: 0;
+    //     font-weight: 300;
+    //     // text-shadow: $text-shadow;
+    //     img.siteLogo {
+    //         max-width: 52px;
+    //         display: inline;
+    //         vertical-align: top;
+    //         margin: 0 6px;
+    //         margin-right: 6px;
+    //     }
+    // }
 
 }

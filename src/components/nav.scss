@@ -1,4 +1,4 @@
-@import "./globals.scss";
+@import "../styles/globals.scss";
 
 #mainNav {
     // background: rebeccapurple;
@@ -7,17 +7,16 @@
     // left: 0; right: 0; // when active
     // left: -9999px;
     ul {
+        padding: 0;
         margin: 0;
-        text-align: center;
-        background: lightblue;
+        list-style-type: none;
         li {
-            list-style-type: none;
             margin-bottom: 0;
             a {
                 display: block;
                 padding: 0.5rem 1rem;
                 &:hover {
-                    background: teal;
+                    // background: teal;
                 }
             }
         }
@@ -30,19 +29,23 @@
     // a { color: $color-white;}
     
     .navItem > a + .subMenu {
-        background-color: rgb(51, 179, 179);
+        // background-color: rgb(51, 179, 179);
     }
 
     @media screen and (min-width: $mobile-breakpoint) {
         position: relative;
         ul {
-            // border: 1px solid white;
             display: flex;
+            justify-content: center;
             flex: 1;
-            background: inherit;
+            height: 100%;
             li {
-                position: relative;
-                background: inherit;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                // a {
+                //     display: block;
+                // }
             }
     
             .navItem > a:hover + .subMenu {

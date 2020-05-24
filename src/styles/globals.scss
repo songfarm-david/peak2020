@@ -1,46 +1,15 @@
-
-
 @import "./colors.scss";
+@import "./type.scss";
 
 $vertical-rhythm: 2rem;
 $content-width: 50rem;
 $mobile-breakpoint: 769px;
 
-/**
- * Typography
- */
-h1,
-.heading-1 {
-    font: bold 80pt/97pt Montserrat, sans-serif, 
-}
-h2,
-.heading-2 {
-    font: bold 50pt/60pt Montserrat, sans-serif, 
-}
-h3,
-.heading-3 {
-    font: bold 25pt/35pt Montserrat, sans-serif, 
-}
-h4,
-.heading-4 {
-    font: bold 20pt/24pt Montserrat, sans-serif, 
-}
-h5,
-.heading-5 {
-    font: bold 16pt/20pt Montserrat, sans-serif, 
-}
-
-.big-text {
-    font: normal 25pt/35pt Montserrat, sans-serif;
-}
-.normal-text {
-    font: normal 20pt/24pt Montserrat, sans-serif;
-}
-.normal-text-italic {
-    font: italic 20pt/24pt Montserrat, sans-serif;
-}
-.small-text {
-    font: italic 16pt/20pt Montserrat, sans-serif;
+html {
+    font: normal 100% Montserrat, sans-serif;
+    a {
+        text-decoration: none;
+    }
 }
 
 /**
@@ -97,3 +66,5 @@ h5,
     float: right;
     padding: 0 0 1rem 1rem;
 }
+
+$border: 1px solid red;

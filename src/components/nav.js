@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-import "../styles/nav.scss"
+import "./nav.scss"
 
 export default () => {
     
@@ -26,23 +26,21 @@ export default () => {
   const { wordpressMenusMenusItems: mainNav } = data
 
   return(
-    <div>
-      <nav id="mainNav">
-        <ul>
-          {mainNav.items.map( item => (
+    <nav id="mainNav">
+      <ul>
+        {mainNav.items.map( item => (
+          
+          <li className="navItem" key={item.title}>
+
+            <Link to={item.slug}>{item.title}</Link>
             
-            <li className="navItem" key={item.title}>
+            { item.child_items != null ? printChildren(item) : false }
 
-              <Link to={item.slug}>{item.title}</Link>
-              
-              { item.child_items != null ? printChildren(item) : false }
+          </li>
 
-            </li>
-
-          ))}
-        </ul>
-      </nav>
-    </div>
+        ))}
+      </ul>
+    </nav>
   )
 
 }
