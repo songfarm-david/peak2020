@@ -48,7 +48,7 @@ const HeroBanner = (props) => {
     return (
         <div className="hero-banner">
             <div className="hero-text-container">
-                <p className="heading-2">Do you need reliable, creative, experienced website <br/>
+                <p>Do you need reliable, creative, experienced website <br/>
                     <span id="rotatingWord">
                         {words.map(({ word, color }, idx) => (
                             <span key={`word-${idx}`} className="word" style={{ color }}>

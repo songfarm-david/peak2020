@@ -13,11 +13,13 @@ $offset: 21.875rem;
     color: $white;
 
     .hero-text-container {
+
         position: relative;
         // top: -4rem;
         margin: 0 auto 5rem;
         max-width: $content-width;
         text-align: center; 
+        @extend .heading-1;
         
         > p {
             margin-bottom: 7rem;

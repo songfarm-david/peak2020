@@ -1,20 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import QuotesCarousel from "./hero/quotesCarousel"
+
 import secondaryLogo from "../images/logo/Logo_white.png";
 import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
-import instagram from "../images/illustrations/png/Social Media Icons/instagram.png"
+// import instagram from "../images/illustrations/png/Social Media Icons/instagram.png"
 import twitter from "../images/illustrations/png/Social Media Icons/twitter.png"
 
 import "./footer.scss"
 
 const Footer = ({ footerLinks }) => (
-  <footer id="siteFooter" className="footer-text">
+  <footer id="siteFooter">
     
     {/* quotes component */}
-    <div className="footer-item" style={{ fontWeight: "300", width: "80%" }}>
-      <p className="big-text">It is up to us to allow the obstacles in our live to be the excuse for our failure... or the reason behind our success</p>
-    </div>
+    <QuotesCarousel />
     
     {/* brand component */}
     <div className="footer-item">

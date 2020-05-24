@@ -5,9 +5,11 @@ $vertical-rhythm: 2rem;
 $content-width: 60rem;
 $mobile-breakpoint: 769px;
 $border-radius: 4px;
+$content-padding: 0 1rem;
 
 html {
-    font: normal 100% Montserrat, sans-serif;
+    font: normal 80% Montserrat, sans-serif;
+    color: $strong-blue;
     a {
         text-decoration: none;
         color: $strong-blue;

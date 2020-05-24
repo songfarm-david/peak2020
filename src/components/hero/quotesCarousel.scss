@@ -1,0 +1,14 @@
+@import "../../styles/globals.scss";
+
+#quoteCarousel {
+
+    .inner-container {
+        max-width: $content-width;
+        margin: 2rem auto 0;  
+        @extend .quotes-text;
+        text-align: center;   
+        border: $border;
+        padding: $content-padding;
+    }
+
+}
