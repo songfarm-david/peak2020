@@ -14,9 +14,10 @@ const ContactForm = () => (
                 <input type="email" required />
             </label>
             <label>How Can We Help?
-                <textarea></textarea>
+                <textarea rows="14"></textarea>
             </label>
-        </form>
+            <button className="button primary-button">Send</button>
+        </form> 
     </article>
 )
 

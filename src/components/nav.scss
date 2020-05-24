@@ -1,11 +1,10 @@
 @import "../styles/globals.scss";
 
 #mainNav {
-    // background: rebeccapurple;
+
     position: absolute; 
-    // display: none;
-    
     left: -9999px;
+    @extend .heading-4;
     ul {
         padding: 0;
         margin: 0;
@@ -24,9 +23,6 @@
             // padding-bottom: 1rem;
         }
     }
-    
-
-    // a { color: $color-white;}
     
     .navItem > a + .subMenu {
         // background-color: rgb(51, 179, 179);
@@ -52,7 +48,7 @@
             }
     
             .navItem > a:hover + .subMenu {
-                background-color: orange !important;
+                background-color: $bright-orange;
                 left: 0;    
                 opacity: 1;
                 transition: opacity .5s;

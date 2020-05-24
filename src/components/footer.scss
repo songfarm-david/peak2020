@@ -2,14 +2,14 @@
 
 #siteFooter {
 
-    // background-image: url('../images/footer.png');
-    // background-position: 100%;
     background: url('../images/footer.png') 100%;
+    background-size: cover;
     color: $white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-end;
+    padding-top: 20rem; /* important */
 
     p { margin: 0; }
 
