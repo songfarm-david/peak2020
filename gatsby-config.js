@@ -41,21 +41,19 @@ module.exports = {
     ],
     footerLinks: [
       {
-        name: `Write for us!`,
+        name: `Contribute to the Blog`,
         link: `contribute-to-the-blog`
-      }
-    ],
-    legalLinks: [
+      },
       {
-        name: `disclaimer`,
+        name: `Disclaimer`,
         link: `disclaimer`
       },
       {
-        name: `privacy policy`,
+        name: `Privacy policy`,
         link: `privacy-policy`
       },
       {
-        name: `sitemap`,
+        name: `Sitemap`,
         link: `sitemap`
       }
     ]
@@ -94,6 +92,17 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`300`,`300i`,`400`,`400i`,`700`]
+          },
+        ],
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

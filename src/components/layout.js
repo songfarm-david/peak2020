@@ -16,11 +16,9 @@ import HeroSection from "./hero/heroSection"
 import BlogCallout from "./blog/blogCallout"
 import Footer from "./footer"
 
-
-
 const Layout = ({ children, page }) => {
   
-  let keywords = ['management','development','design','SEO','consulting','webmaster services']
+  // let keywords = ['management','development','design','SEO','consulting','webmaster services']
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -39,10 +37,6 @@ const Layout = ({ children, page }) => {
             name
             link
           }
-          legalLinks {
-            name
-            link
-          }
         }
       }
     }
@@ -53,16 +47,13 @@ const Layout = ({ children, page }) => {
       <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
 
       <div>{  /** if home page, display hero banner */
-        (page) ? <HeroSection keywords={keywords} /> : null  }
+        (page) ? <HeroSection /> : null  }
 
         <main id="mainContent">{children}</main>
 
         <BlogCallout />
 
-        <Footer 
-          footerLinks={data.site.siteMetadata.footerLinks}
-          legalLinks={data.site.siteMetadata.legalLinks} 
-        />
+        <Footer  footerLinks={data.site.siteMetadata.footerLinks} />
 
       </div>
 

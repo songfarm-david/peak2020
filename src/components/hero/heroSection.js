@@ -61,7 +61,7 @@ const HeroBanner = (props) => {
                         ))}
                     </span>
                 </p>
-                <button className="button secondary-button">Learn More</button>
+                <button className="button large secondary-button">Learn More</button>
             </div>
         </div>
     )

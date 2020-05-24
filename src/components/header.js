@@ -12,7 +12,7 @@ const Header = ({ siteTitle, menuLinks }) => (
   <header id="siteHeader">
     <div>
       <Link to="/">
-        <img id="siteLogo" src={siteLogo} alt="Peak Websites logo" />
+        <img id="siteLogo" src={siteLogo} alt={""} />
         <h1 className="screen-reader-text">{siteTitle}</h1>
       </Link>
       

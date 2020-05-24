@@ -1,6 +1,9 @@
 /**
  * Typography
  */
+html, body {
+    font-family: Montserrat, sans-serif;
+}
 h1,
 .heading-1 {
     font: bold 5rem/6.0625rem Montserrat, sans-serif, 
@@ -35,5 +38,8 @@ h5,
     font: italic 1.25rem/1.5rem Montserrat, sans-serif;
 }
 .small-text {
-    font: italic 1rem/1.25rem Montserrat, sans-serif;
+    font: normal 1rem/1.25rem Montserrat, sans-serif;
+}
+.footer-text {
+    font: normal 0.85rem/1rem Montserrat, sans-serif;
 }

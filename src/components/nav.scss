@@ -4,7 +4,7 @@
     // background: rebeccapurple;
     position: absolute; 
     // display: none;
-    // left: 0; right: 0; // when active
+    
     left: -9999px;
     ul {
         padding: 0;
@@ -35,7 +35,8 @@
     @media screen and (min-width: $mobile-breakpoint) {
 
         position: relative;
-
+        left: 0; right: 0; // when active
+        
         ul {
             display: flex;
             justify-content: center;
