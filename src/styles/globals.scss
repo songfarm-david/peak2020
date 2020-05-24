@@ -4,6 +4,7 @@
 $vertical-rhythm: 2rem;
 $content-width: 60rem;
 $mobile-breakpoint: 769px;
+$border-radius: 4px;
 
 html {
     font: normal 100% Montserrat, sans-serif;
@@ -11,6 +12,13 @@ html {
         text-decoration: none;
         color: $strong-blue;
     }
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: $border-radius;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
