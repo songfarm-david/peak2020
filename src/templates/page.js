@@ -8,16 +8,16 @@
  import Layout from "../components/layout"
 
 export default ({ data }) => {
-    
-   console.log(data)
-   
+       
     const {title, content} = data.wordpressPage
 
     // const page = data.node
     return (
         <Layout>
             <div>
-                <h1 dangerouslySetInnerHTML={{ __html: title }} />
+                <div className="page-banner contact">
+                    <h1 dangerouslySetInnerHTML={{ __html: title }} />
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
             </div>
         </Layout>

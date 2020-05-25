@@ -1,0 +1,28 @@
+@import "../../styles/globals.scss";
+
+.page-banner {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    @extend .heading-1;
+    text-transform: capitalize;
+
+    &.blog {
+        background: url('../../images/blog_header.jpeg') 0%/cover no-repeat;
+    }
+
+    &.portfolio {
+        background: url('../../images/portfolio_header.jpeg') 0%/cover no-repeat;
+    }
+
+    &.about {
+        background: url('../../images/blog_header.jpeg') 0%/cover no-repeat;
+    }
+
+    &.contact {
+        background: url('../../images/contact_header.jpeg') 0%/cover no-repeat;
+    }
+
+}

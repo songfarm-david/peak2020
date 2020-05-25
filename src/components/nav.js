@@ -3,47 +3,72 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import "./nav.scss"
 
-export default () => {
-    
-  const data = useStaticQuery(graphql`
-    query navQuery {
-      wordpressMenusMenusItems(wordpress_id: {eq: 190}) {
+const Nav = () => {
+
+  const mainNav = useStaticQuery(graphql`
+    query {
+      wordpressMenusMenusItems(name: {eq: "Main Navigation"}) {
         name
         items {
           title
           slug
-          wordpress_id
           child_items {
             title
             slug
-            wordpress_id
+            child_items {
+              title
+              slug
+            }
           }
         }
       }
     }
   `)
 
-  const { wordpressMenusMenusItems: mainNav } = data
+  console.log(mainNav);
 
-  return(
+  
+  return (
     <nav id="mainNav">
       <ul>
-        {mainNav.items.map( item => (
+      {/* {mainNav} */}
+        {{mainNav.items.map( item => (
           
           <li className="navItem" key={item.title}>
 
             <Link to={item.slug}>{item.title}</Link>
             
-            { item.child_items != null ? printChildren(item) : false }
+            {/* { item.child_items != null ? printChildren(item) : false } */}
 
           </li>
 
-        ))}
+        ))}}
       </ul>
     </nav>
   )
-
 }
+
+export default Nav
+
+// export const queryMainNav = graphql`
+//   query {
+//     wordpressMenusMenusItems {
+//       name
+//       items {
+//         title
+//         slug
+//         child_items {
+//           title
+//           slug
+//           child_items {
+//             title
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 /** 
  * Checks for subMenu items and prints the corresponding HTML 
