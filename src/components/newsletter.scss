@@ -2,10 +2,7 @@
 
 #newsletter {
 
-    background: url('../images/newsletter.jpeg') center no-repeat;
-    // min-height: 60rem;
-    // height: 100%;
-    background-size: cover;
+    background: url('../images/newsletter.jpeg') center/cover no-repeat;
     color: $white;
     @extend .normal-text;
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "../../styles/blog/blogStyles.scss"
+// import "../../styles/blog/blogStyles.scss"
 
 const BlogCallout = () => (
   <article id="blogCallout" className="blog">

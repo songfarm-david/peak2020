@@ -1,0 +1,56 @@
+@import "../globals.scss";
+
+.blog-index {
+
+    @extend .content-width;
+    padding: 2.5rem;
+
+    .blog-heading {
+        display: flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        > h5 {
+            white-space: nowrap;
+        }
+        .barline {
+            display: block;
+            border-bottom: 2px solid $strong-blue;
+            height: 2px;
+            width: 66%;
+            margin-left: 1rem;
+        }
+    }
+    
+    .blog-inner-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .blog-post {
+
+        width: calc(33% - 2.5rem);
+        box-sizing: border-box;
+        margin: 0 1.25rem;
+        margin-bottom: $vertical-rhythm;
+
+        .featured-image {
+            height: 13.75rem;
+        }
+
+        .post-meta-data {
+            display: flex;
+            justify-content: space-between;
+            .date {
+                display: flex;
+                align-items: center;
+                flex-basis: 50%;
+                .clock-icon {
+                    max-height: 0.85rem;
+                    display: inline-block;
+                    margin-right: 0.5rem;
+                }
+            }
+            
+        }
+    }
+}

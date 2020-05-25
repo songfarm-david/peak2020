@@ -1,11 +1,12 @@
 @import "./colors.scss";
 @import "./type.scss";
 
-$vertical-rhythm: 2rem;
-$content-width: 60rem;
+$vertical-rhythm: 2.5rem;
 $mobile-breakpoint: 769px;
 $border-radius: 4px;
 $content-padding: 0 1rem;
+$content-width: 60rem;
+$content-width-blog: 88rem;
 
 html {
     font: normal 80% Montserrat, sans-serif;
@@ -35,10 +36,20 @@ input, textarea {
 
 @import "./buttons.scss";
 
-
 /**
  * Helper Classes 
 */
+/* layout */
+.content-width {
+  width: $content-width;
+  margin: 0 auto;
+}
+.blog-content-width {
+  width: $content-width-blog;
+  margin: 0 auto;
+}
+
+/* accessibility */
 .screen-reader-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -51,15 +62,6 @@ input, textarea {
     position: absolute;
     width: 1px;
     word-wrap: normal !important;
-}
-
-.clear-left { clear: left; }
-
-.clear-right { clear: right; }
-
-.alignright {
-    float: right;
-    padding: 0 0 1rem 1rem;
 }
 
 /**
