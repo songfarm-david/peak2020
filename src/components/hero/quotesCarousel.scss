@@ -3,11 +3,7 @@
 #quoteCarousel {
     margin-bottom: $vertical-rhythm;
     .inner-container {
-        max-width: $content-width;
-        margin: 0 auto;  
         @extend .quotes-text;
-        text-align: center;   
-        padding: $content-padding;
     }
 
 }

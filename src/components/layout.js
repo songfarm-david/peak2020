@@ -14,6 +14,7 @@ import "./layout.scss"
 import Header from "./header"
 import HeroSection from "./hero/heroSection"
 import BlogCallout from "./blog/blogCallout"
+import Newsletter from "./newsletter"
 import ContactForm from "./contactForm"
 import Footer from "./footer"
 
@@ -54,6 +55,7 @@ const Layout = ({ children, page }) => {
 
         <BlogCallout />
 
+        <Newsletter />
         <ContactForm />
 
         <Footer  footerLinks={data.site.siteMetadata.footerLinks} />

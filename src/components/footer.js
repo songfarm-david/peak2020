@@ -9,6 +9,7 @@ import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
 import twitter from "../images/illustrations/png/Social Media Icons/twitter.png"
 
 import "./footer.scss"
+import Newsletter from "./newsletter";
 
 const Footer = ({ footerLinks }) => (
   <footer id="siteFooter">
@@ -51,12 +52,13 @@ const Footer = ({ footerLinks }) => (
       </ul>
     </div>
 
+    {/* Newsletter */}
     <div className="footer-item">
       <p>Subscribe to the newsletter</p>
-      <div id="footerNewsletter">
+      <div id="footerNewsletter" className="newsletter">
         <input type="email" placeholder="Email Address"/>
-          <button className="small-button footer-text">OK</button>
-        </div>
+        <button className="button small-button footer-text">OK</button>
+      </div>
     </div>
 
     <div className="footer-item">
