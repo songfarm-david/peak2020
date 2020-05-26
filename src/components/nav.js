@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
+import "./nav.scss"
 import arrowDown from "../images/illustrations/svg/Arrows/arrow-down.svg"
 import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
-import "./nav.scss"
 
-const Nav = () => {
+const Nav = ({className}) => {
 
   const query = useStaticQuery(
     graphql`
@@ -33,7 +33,7 @@ const Nav = () => {
   const navItems = query.wordpressMenusMenusItems
   
   return (
-    <nav id="mainNav">
+    <nav id="mainNav" className={className}>
       <ul> 
         {navItems.items.map((item, i) => (
           <li className={(item.child_items) !== null ? 'nav-item has-child-items' : 'nav-item'} key={i}>
@@ -53,11 +53,11 @@ const Nav = () => {
 
 export default Nav
 
-/** 
- * Checks for sub-menu items and prints the corresponding HTML 
+/**
+ * Prints nav item children two levels deep 
+ * @param {Obj} item a navigation item that has sub items
  */
 function printChildren(item) {
-  console.log(item);
   
   return (
     <ul className="sub-menu">
