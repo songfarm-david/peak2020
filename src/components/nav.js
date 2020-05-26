@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-import arrow from "../images/illustrations/svg/Arrows/arrow-down.svg"
+import arrowDown from "../images/illustrations/svg/Arrows/arrow-down.svg"
+import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
 import "./nav.scss"
 
 const Nav = () => {
@@ -18,6 +19,10 @@ const Nav = () => {
             child_items {
               title
               slug
+              child_items {
+                title
+                slug
+              }
             }
           }
         }
@@ -25,18 +30,20 @@ const Nav = () => {
     `
   )
 
-  console.log(query.wordpressMenusMenusItems.items);
-
   const navItems = query.wordpressMenusMenusItems
   
   return (
     <nav id="mainNav">
       <ul> 
         {navItems.items.map((item, i) => (
-          <li className="navItem" key={i}>
+          <li className={(item.child_items) !== null ? 'nav-item has-child-items' : 'nav-item'} key={i}>
             <Link to={item.slug}>{item.title}</Link>
-            
-            {(item.child_items !== null) ? <img className="menuChildArrow" src={arrow} alt={''} /> : null}
+            {(item.child_items === null) ? null :
+            <>
+              <img className="arrow down" src={arrowDown} alt={''} />
+              {printChildren(item)}
+            </>
+            }
           </li>
         ))}
       </ul>
@@ -47,17 +54,31 @@ const Nav = () => {
 export default Nav
 
 /** 
- * Checks for subMenu items and prints the corresponding HTML 
+ * Checks for sub-menu items and prints the corresponding HTML 
  */
 function printChildren(item) {
+  console.log(item);
   
   return (
-    <ul className="subMenu">
-      {item.child_items.map( childItem => (
-        <li className="navItem" key={childItem.title}>
-          <Link to={childItem.slug} dangerouslySetInnerHTML={{ __html: childItem.title}}></Link>  
+    <ul className="sub-menu">
+      {item.child_items.map( (childItem, i) => (
+        <li className="nav-item" key={i}>
+          <Link to={childItem.slug}>{childItem.title}</Link>
+          {(childItem.child_items === null) ? null : 
+          <>
+            
+            <ul className="sub-sub-menu">
+              {childItem.child_items.map( (subItem, i) => (
+                <li className="sub-nav-item" key={i}>
+                <img className="arrow down" src={arrowRight} alt={''} />
+                  <Link to={subItem.slug}>{subItem.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </>
+          }  
         </li>
-      )) }
+      ))}
     </ul>
   )
 

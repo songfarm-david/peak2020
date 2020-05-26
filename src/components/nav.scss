@@ -5,12 +5,44 @@
     position: absolute; 
     left: -9999px;
     @extend .heading-4;
-    ul {
+    left: 0;
+    width: 100%;
+    background: $white;
+    padding: 4.5rem 0;
+    top: 4.5rem;
+
+    .menu-active {
+        left: 0;
+    }
+
+    > ul {
+
         padding: 0;
         margin: 0;
+        width: 100%;
+        max-width: none;
+        text-align: center;
         list-style-type: none;
-        li {
+
+        li.nav-item {
             margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            &.has-child-items > a {
+                margin-left: 1rem;
+            }
+
+            .arrow {
+                max-height: 0.75rem;
+                margin-right: 1.25rem;  
+                display: block;
+                // position: absolute;
+                // left: -50%;
+            }
+
             a {
                 display: block;
                 padding: 0.5rem 1rem;
@@ -19,53 +51,80 @@
                 }
             }
         }
-        li:last-child {
-            // padding-bottom: 1rem;
-        }
-    }
 
-    ul.subMenu > li { margin-left: 0; }
-    
-    .navItem > a + .subMenu {
-        // background-color: rgb(51, 179, 179);
-    }
+        .sub-menu,
+        .sub-sub-menu {
+            // flex: 1 1 100%;
+            width: 100%;
+            display: block;
+            list-style-type: none;
+        }
+
+        .sub-menu {
+            padding: 0 0.5rem;
+            background-color: $white;
+            padding: 0;
+
+            > li {
+                margin-left: 0; 
+                padding: 0.5rem 0;
+                &:first-child{ padding-top: 0;}
+                &:last-child{ padding-bottom: 0;}
+                &:not(:last-child) {
+                    border-bottom: 1px solid $strong-blue;
+                }
+            }
+
+            .sub-sub-menu {
+                // list-style-image: url('../images/illustrations/svg/Arrows/arrow_right.svg');
+                .sub-nav-item {
+                    font-weight: 400;
+                    font-style: italic;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+        }
+        
+    }    
 
     @media screen and (min-width: $mobile-breakpoint) {
 
         position: relative;
         left: 0; right: 0; // when active
+        padding: 0;
+        width: auto;
+        top: 0;
+
         .active {
             top: 100%;
             left: 0;  
         }
-        ul {
+        
+        > ul {
             display: flex;
-            justify-content: center;
             flex: 1;
             height: 100%;
-            li.navItem {
+            text-align: left;
+
+            li.nav-item {
                 display: flex;
                 flex-direction: row;
+                justify-content: flex-start;
                 align-items: center;
                 position: relative;
+                flex-wrap: nowrap;
                 &:not(:first-of-type) {
                     margin-left: 0.75rem;
                 }
-                > .menuChildArrow {
-                    max-height: 0.75rem;
-                    margin-right: 1.5rem;  
-                    display: block;
+                .arrow {
+                    position: relative;
                 }
             }
-    
-            .navItem > a:hover + .subMenu {
-                background-color: $white;
-                left: 0;    
-                opacity: 1;
-                transition: opacity .5s;
-            }
-    
-            ul.subMenu {
+
+            ul.sub-menu {
                 position: absolute;
                 display: block;
                 z-index: 10;
@@ -79,13 +138,28 @@
                 padding: 1rem;
                 height: auto;
                 width: max-content;
-
-                .navItem {
+                .nav-item {
                     display: block;
                     background-color: inherit;
                     margin-left: 0;
                 }
+
+                .sub-sub-menu {
+                    padding-left: 2.5rem;
+                    .sub-nav-item {
+                        justify-content: flex-start;
+                    }
+                }
             }
+    
+            .nav-item > a:hover + .sub-menu {
+                background-color: $white;
+                left: 0;    
+                opacity: 1;
+                transition: opacity .5s;
+            }
+    
+            
         }
     }
 }

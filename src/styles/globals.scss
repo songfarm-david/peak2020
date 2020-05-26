@@ -12,6 +12,9 @@ html {
     font: normal 80% Montserrat, sans-serif;
     background-color: $bluish-white;
     color: $strong-blue;
+    body {
+      margin: 0;
+    }
     a {
         text-decoration: none;
         color: $strong-blue;
