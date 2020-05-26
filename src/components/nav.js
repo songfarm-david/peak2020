@@ -1,18 +1,18 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
+import arrow from "../images/illustrations/svg/Arrows/arrow-down.svg"
 import "./nav.scss"
 
 const Nav = () => {
 
-  const mainNav = useStaticQuery(graphql`
-    query {
-      wordpressMenusMenusItems(name: {eq: "Main Navigation"}) {
-        name
-        items {
-          title
-          slug
-          child_items {
+  const query = useStaticQuery(
+    graphql`
+      query {
+        wordpressMenusMenusItems(wordpress_id: {eq: 190}) {
+          id: wordpress_id
+          name
+          items {
             title
             slug
             child_items {
@@ -22,53 +22,29 @@ const Nav = () => {
           }
         }
       }
-    }
-  `)
+    `
+  )
 
-  console.log(mainNav);
+  console.log(query.wordpressMenusMenusItems.items);
 
+  const navItems = query.wordpressMenusMenusItems
   
   return (
     <nav id="mainNav">
-      <ul>
-      {/* {mainNav} */}
-        {{mainNav.items.map( item => (
-          
-          <li className="navItem" key={item.title}>
-
+      <ul> 
+        {navItems.items.map((item, i) => (
+          <li className="navItem" key={i}>
             <Link to={item.slug}>{item.title}</Link>
             
-            {/* { item.child_items != null ? printChildren(item) : false } */}
-
+            {(item.child_items !== null) ? <img className="menuChildArrow" src={arrow} alt={''} /> : null}
           </li>
-
-        ))}}
+        ))}
       </ul>
     </nav>
   )
 }
 
 export default Nav
-
-// export const queryMainNav = graphql`
-//   query {
-//     wordpressMenusMenusItems {
-//       name
-//       items {
-//         title
-//         slug
-//         child_items {
-//           title
-//           slug
-//           child_items {
-//             title
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
 
 /** 
  * Checks for subMenu items and prints the corresponding HTML 

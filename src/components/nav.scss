@@ -43,13 +43,18 @@
             justify-content: center;
             flex: 1;
             height: 100%;
-            li {
+            li.navItem {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 position: relative;
                 &:not(:first-of-type) {
                     margin-left: 0.75rem;
+                }
+                > .menuChildArrow {
+                    max-height: 0.75rem;
+                    margin-right: 1.5rem;  
+                    display: block;
                 }
             }
     
