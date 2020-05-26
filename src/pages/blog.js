@@ -3,25 +3,32 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import "../styles/blog/blog.scss"
-import "../styles/banners.scss";
+
 import Layout from "../components/layout"
+import PageBanner from "../components/hero/pageBanner"
 import SEO from "../components/seo"
 
 import peakLogoWhite from "../images/logo/Logo_white.svg"
 import tinyClock from "../images/illustrations/svg/clock_icon.svg"
 
-export default ({ data }) => {
+export default ({ data, location }) => {
 
     const { allWordpressPost: posts } = data
  
     return (
-        <Layout>
+        <Layout className="blog" page="blog">
             <SEO title="" description="" />
-            <div className="page-banner blog">
-                <h1>Blog</h1>
-            </div>
 
-            <div className="blog-index">
+            <PageBanner pageTitle="blog" />
+
+            <article className="blog-content-container">
+                <div className="blog-heading">
+                    <h5>Featured Blog Articles</h5>
+                    <span className="barline"></span>
+                </div>
+            </article>
+
+            <section className="blog-content-container">
                 <div className="blog-heading">
                     <h5>Latest Blog Articles</h5>
                     <span className="barline"></span>
@@ -31,10 +38,10 @@ export default ({ data }) => {
                     <div key={node.title} className="blog-post">
                         <Link to={node.slug}>
                             {  
-                                /* test for featured media */
-                                node.featured_media != null ? 
-                                <Img className="featured-image" fluid={node.featured_media.localFile.childImageSharp.fluid} /> 
-                                : <img className="featured-image" src={peakLogoWhite} alt="" />
+                            /* test for featured media */
+                            node.featured_media != null ? 
+                            <Img className="featured-image" fluid={node.featured_media.localFile.childImageSharp.fluid} /> 
+                            : <img className="featured-image" src={peakLogoWhite} alt="" />
                             }
                             <h4 dangerouslySetInnerHTML={{ __html: node.title }} />
                             {truncateExcerpt(node.excerpt)}
@@ -46,13 +53,11 @@ export default ({ data }) => {
                                 <span>{getDate(node.modified, node.date)}</span>
                             </p>
                         </div>
-
-                        
                         {/* {showCategories(node)} */}
                     </div>
                 ))}  
                 </div>
-            </div>
+            </section>
             
         </Layout>
     )

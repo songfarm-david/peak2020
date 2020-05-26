@@ -6,12 +6,15 @@ $mobile-breakpoint: 769px;
 $border-radius: 4px;
 $content-padding: 0 1rem;
 $content-width: 60rem;
-$content-width-blog: 88rem;
+$content-width-blog: 78rem;
 
 html {
     font: normal 80% Montserrat, sans-serif;
     background-color: $bluish-white;
     color: $strong-blue;
+    body {
+      margin: 0;
+    }
     a {
         text-decoration: none;
         color: $strong-blue;

@@ -20,8 +20,6 @@ import Footer from "./footer"
 
 const Layout = ({ children, page }) => {
   
-  // let keywords = ['management','development','design','SEO','consulting','webmaster services']
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -48,12 +46,12 @@ const Layout = ({ children, page }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
 
-      <div>{  /** if home page, display hero banner */
-        (page) ? <HeroSection /> : null  }
+      <div>
+        {(page == "index") ? <HeroSection /> : null}
 
         <main id="mainContent">{children}</main>
 
-        <BlogCallout />
+        {(page == "blog") ? <BlogCallout /> : null}
 
         <Newsletter />
         <ContactForm />
