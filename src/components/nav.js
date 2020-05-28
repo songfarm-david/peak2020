@@ -1,12 +1,14 @@
-import React from "react"
+import React from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import "./nav.scss"
-import arrowDown from "../images/illustrations/svg/Arrows/arrow-down.svg"
-import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
+import SubNav from "./subNav";
 
-const Nav = ({className}) => {
+const Nav = ({menuToggleClass}) => {
 
+  /**
+   * query for the main navigation (by id)
+   */
   const query = useStaticQuery(
     graphql`
       query {
@@ -27,59 +29,58 @@ const Nav = ({className}) => {
           }
         }
       }
-    `
-  )
-
+    `)
   const navItems = query.wordpressMenusMenusItems
-  
+
   return (
-    <nav id="mainNav" className={className}>
+    <nav id="mainNav" className={menuToggleClass}>
       <ul> 
         {navItems.items.map((item, i) => (
-          <li className={(item.child_items) !== null ? 'nav-item has-child-items' : 'nav-item'} key={i}>
-            <Link to={item.slug}>{item.title}</Link>
-            {(item.child_items === null) ? null :
-            <>
-              <img className="arrow down" src={arrowDown} alt={''} />
-              {printChildren(item)}
-            </>
+          <li 
+            key={i} 
+            className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}
+          >
+            <Link to={item.slug}>
+              {item.title}
+            </Link>
+            {
+              ( item.child_items === null ) ? null : <SubNav childItems={item} />
             }
           </li>
         ))}
       </ul>
     </nav>
   )
+
+  /**
+   * Prints nav item children two levels deep 
+   * @param {Obj} item a navigation item that has sub items
+   */
+  // function printSubMenus(item) {
+  //   return (
+  //     <ul className={(isSubMenuOpen) ? "sub-menu sub-menu-open" : "sub-menu"}>
+  //       {item.child_items.map( (childItem, i) => (
+  //         <li className="nav-item" key={i}>
+  //           <Link to={childItem.slug}>{childItem.title}</Link>
+  //           {(childItem.child_items === null) ? null : 
+  //           <>
+  //             <ul className="sub-sub-menu">
+  //               {childItem.child_items.map( (subItem, i) => (
+  //                 <li className="sub-nav-item" key={i}>
+  //                 <img className="arrow right" src={arrowRight} alt={''} />
+  //                   <Link to={subItem.slug}>{subItem.title}</Link>
+  //                 </li>
+  //               ))}
+  //             </ul>
+  //           </>
+  //           }  
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
+
 }
 
 export default Nav
 
-/**
- * Prints nav item children two levels deep 
- * @param {Obj} item a navigation item that has sub items
- */
-function printChildren(item) {
-  
-  return (
-    <ul className="sub-menu">
-      {item.child_items.map( (childItem, i) => (
-        <li className="nav-item" key={i}>
-          <Link to={childItem.slug}>{childItem.title}</Link>
-          {(childItem.child_items === null) ? null : 
-          <>
-            
-            <ul className="sub-sub-menu">
-              {childItem.child_items.map( (subItem, i) => (
-                <li className="sub-nav-item" key={i}>
-                <img className="arrow down" src={arrowRight} alt={''} />
-                  <Link to={subItem.slug}>{subItem.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </>
-          }  
-        </li>
-      ))}
-    </ul>
-  )
-
-}

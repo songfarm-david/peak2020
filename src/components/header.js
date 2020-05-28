@@ -9,8 +9,8 @@ import Nav from "./nav"
 
 const Header = ({ siteTitle, menuLinks }) => {
   
-  const [isMenuOpen, toggleMenu] = useState(true)
-
+  const [isMenuOpen, toggleMenu] = useState(false)
+  
   return (
     <header id="siteHeader">
       <div>
@@ -18,8 +18,11 @@ const Header = ({ siteTitle, menuLinks }) => {
           <img id="siteLogo" src={siteLogo} alt={""} />
           <h1 className="screen-reader-text">{siteTitle}</h1>
         </Link>
-        <Nav menuLinks={menuLinks} className={(!isMenuOpen) ? 'menu-active' : 'menu-not-active'}/>
-        <button id="menuToggleBtn" isOpen={isMenuOpen} onClick={() => toggleMenu(!isMenuOpen)}>X</button>
+        <Nav 
+          menuLinks={menuLinks} 
+          menuToggleClass={( isMenuOpen ) ? 'menu-active' : null }
+        />
+        <button id="menuToggleBtn" onClick={() => toggleMenu( !isMenuOpen )}>X</button>
       </div>
     </header>
   )

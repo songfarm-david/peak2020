@@ -1,3 +1,11 @@
+
+// import decodeHTML from "./functions/functions"
+// const decodeHTML = ({input}) => {
+//   let txt = document.createElement('textarea');
+//   txt.innerHTML = input;
+//   return txt.value;
+// }
+
 module.exports = {
   siteMetadata: {
     title: `Peak Websites`,
