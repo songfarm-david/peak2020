@@ -1,22 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from "gatsby"
+import ReactHtmlParser from 'react-html-parser';
 
 import arrowDown from "../images/illustrations/svg/Arrows/arrow-down.svg"
+import arrowUp from "../images/illustrations/svg/Arrows/arrow-up.svg"
 import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
 
 const SubNav = item => {
     
-    const [isSubMenuOpen, toggleSubMenu] = useState(false)
-    // console.log(item.childItems);
-
     const children = item.childItems
-    console.log(children);
+    const [isSubMenuOpen, toggleSubMenu] = useState(false)
     
     return (
         <>
 
         <img 
-            src={arrowDown} 
+            src={(!isSubMenuOpen) ? arrowDown : arrowUp} 
             className="arrow down" 
             alt={''}
             onClick={() => toggleSubMenu(!isSubMenuOpen)} 
@@ -26,9 +25,9 @@ const SubNav = item => {
             {children.child_items.map(( childItem, i ) => (
             <li 
                 key={i}
-                className="nav-item">
+                className={(childItem.child_items === null) ? "nav-item" : "nav-item has-sub-menu"}>
                 <Link to={childItem.slug}>
-                    {childItem.title}
+                    {ReactHtmlParser(childItem.title)}
                 </Link>
                 {( childItem.child_items === null ) ? null : 
                 <>

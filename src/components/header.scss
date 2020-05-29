@@ -21,6 +21,15 @@
         // max-width: 30%;
     }
 
+    #menuToggleBtn {
+        padding: .5rem;
+        align-self: center;
+        &:hover {
+            cursor: pointer;
+
+        }
+    }
+
     @media screen and (min-width: $mobile-breakpoint) {
         #menuToggleBtn {
             display: none;

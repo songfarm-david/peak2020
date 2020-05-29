@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
+import ReactHtmlParser from 'react-html-parser';
 
 import "./nav.scss"
 import SubNav from "./subNav";
@@ -33,7 +34,7 @@ const Nav = ({menuToggleClass}) => {
   const navItems = query.wordpressMenusMenusItems
 
   return (
-    <nav id="mainNav" className={menuToggleClass}>
+    <nav id="mainNav" role="navigation" className={menuToggleClass}>
       <ul> 
         {navItems.items.map((item, i) => (
           <li 
@@ -41,7 +42,7 @@ const Nav = ({menuToggleClass}) => {
             className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}
           >
             <Link to={item.slug}>
-              {item.title}
+              {ReactHtmlParser(item.title)}
             </Link>
             {
               ( item.child_items === null ) ? null : <SubNav childItems={item} />
