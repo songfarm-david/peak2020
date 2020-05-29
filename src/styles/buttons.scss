@@ -12,12 +12,29 @@
     &.large {
         font-size: 1.25rem;
     }
+    &.left {
+        margin-left: 1rem;
+    }
 }
 .primary-button {
     background-color: $bright-orange;
     color: $white;
+    border-color: $bright-orange;
     &:hover {
         background-color: $strong-blue;
+        border-color: $strong-blue;
+        cursor: pointer;
+    }
+}
+
+.primary-button-inverted {
+    background-color: $white;
+    color: $bright-orange;
+    &:hover {
+        background-color: $bright-orange;
+        color: $white;
+        border-color: $bright-orange;
+        cursor: pointer;
     }
 }
 
@@ -28,6 +45,7 @@
     &:hover {
         outline: $bright-orange;
         color: $bright-orange;
+        cursor: pointer;
     }
 }
 

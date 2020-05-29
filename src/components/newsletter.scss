@@ -6,12 +6,12 @@
     color: $white;
     @extend .normal-text;
 
-    .inner-container {
-        
+    > div {
+
         display: flex;
         flex-wrap: wrap;
-        padding: .5rem;
-
+        @extend .content-padding;
+        
         .sub-heading {
             @extend .heading-3;
         }

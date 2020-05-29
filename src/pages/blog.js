@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
+import {truncateExcerpt, getAuthor, getDate} from "../functions/functions"
 
 import "../styles/blog/blog.scss"
 
@@ -11,9 +12,9 @@ import SEO from "../components/seo"
 import peakLogoWhite from "../images/logo/Logo_white.svg"
 import tinyClock from "../images/illustrations/svg/clock_icon.svg"
 
-export default ({ data, location }) => {
+export default ({ data }) => {
 
-    const { allWordpressPost: posts } = data
+    // const { allWordpressPost: posts } = data
  
     return (
         <Layout className="blog" page="blog">
@@ -53,7 +54,6 @@ export default ({ data, location }) => {
                                 <span>{getDate(node.modified, node.date)}</span>
                             </p>
                         </div>
-                        {/* {showCategories(node)} */}
                     </div>
                 ))}  
                 </div>
@@ -110,65 +110,4 @@ export const squareImage = graphql`
   }
 `
 
-/**
- * Adds an ellipsis to blocks of text of 100 characters
- * @param {String} excerpt a string of content
- */
-function truncateExcerpt(excerpt) {
-    const contentMax = 100
-    if (excerpt.length > contentMax) {
-        return <p dangerouslySetInnerHTML={{ __html: `${excerpt.substring(0, contentMax)}...`}} />
-    } else {
-        return <p dangerouslySetInnerHTML={{ __html: excerpt}} />
-    }
-}
-
-/**
- * Get the last updated date
- * fallback to publishing date
- * @param {String} modDate last modified date
- * @param {String} pubDate publishing date
- */
-function getDate(modDate, pubDate) {
-    // if modDate exists, return that
-    // else return pubDate    
-    if (modDate) return modDate;
-    return pubDate;
-
-}
-
-/**
- * Check if post has the category 'Guest Post'
- * @param {categories} categories the categories for a post
- * @param {author} author the (default) author of the post
- */
-function getAuthor(categories, author) {
-    return (categories.some(category => 
-        category.name === 'Guest Post')) 
-    ? 'Guest Post' :  author
-}
-
-/**
- * Function to check for existence of post categories and output formatting string
- * @param {Object} node the post object
- * @returns {Str} html string 
- */
-function showCategories(node) {
-
-    if (node.categories.length) {
-        let catsStr = '<span>'
-
-        for (let index = 0; index < node.categories.length; index++) {
-            if ( index === node.categories.length-1) {
-                catsStr += node.categories[index].name
-                continue
-            }
-            catsStr += node.categories[index].name + ', '
-        }
-        catsStr += '</span>'
-
-    return <p dangerouslySetInnerHTML={{ __html: catsStr}}></p>
-    }
-
-}
 

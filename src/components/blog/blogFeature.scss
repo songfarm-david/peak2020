@@ -1,0 +1,20 @@
+@import "../../styles/globals.scss";
+
+#blogFeature {
+    
+    background-color: $light-green;
+    color: $white;
+    
+    .blog-heading .barline {
+        border-color: $white;
+    }
+    .blog-post {
+        color: $white;
+        .post-heading,
+        .post-excerpt,
+        .post-meta-data {
+            color: $white;
+        }
+    }
+
+}

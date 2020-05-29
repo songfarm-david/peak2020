@@ -13,10 +13,12 @@ import "./layout.scss"
 
 import Header from "./header"
 import HeroSection from "./hero/heroSection"
-import BlogCallout from "./blog/blogCallout"
+import BlogFeature from "./blog/blogFeature"
+import TestimonialsCarousel from "./testimonials"
 import Newsletter from "./newsletter"
 import ContactForm from "./contactForm"
 import Footer from "./footer"
+// import BlogFeature from "./blog/blogFeature"
 
 const Layout = ({ children, page }) => {
   
@@ -44,19 +46,29 @@ const Layout = ({ children, page }) => {
   
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
+      <Header 
+        siteTitle={data.site.siteMetadata.title} 
+        menuLinks={data.site.siteMetadata.menuLinks} />
 
       <div>
-        {(page == "index") ? <HeroSection /> : null}
 
-        <main id="mainContent">{children}</main>
+        {(page == "index") ? 
+          <HeroSection /> : null }
 
-        {(page == "blog") ? <BlogCallout /> : null}
+        <main id="mainContent">
+          {children}
+        </main>
+
+        <TestimonialsCarousel />
+
+        {(page != "blog") ? 
+          <BlogFeature /> : null }
 
         <Newsletter />
         <ContactForm />
 
-        <Footer  footerLinks={data.site.siteMetadata.footerLinks} />
+        <Footer  
+          footerLinks={data.site.siteMetadata.footerLinks} />
 
       </div>
 

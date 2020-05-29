@@ -1,18 +1,11 @@
 @import "../globals.scss";
 
-.blog {
-    
-    
-   
-
-    
-}
-
-
 .blog-content-container {
 
     @extend .blog-content-width;
-    padding: 2.5rem;
+    // padding: 2.5rem;
+    box-sizing: border-box;
+    padding-bottom: $vertical-rhythm;
 
     .blog-heading {
         display: flex;
@@ -39,12 +32,12 @@
 
         width: calc(33% - 2.5rem);
         box-sizing: border-box;
-        margin: 0 1.25rem;
-        margin-bottom: $vertical-rhythm;
+        margin: 0 1.25rem 2.5rem;
 
-        .featured-image {
-            height: 13.75rem;
-        }
+        .featured-image { height: 13.75rem; }
+
+        // .post-heading,
+        // .post-excerpt {}
 
         .post-meta-data {
             display: flex;
@@ -60,6 +53,13 @@
                 }
             }
             
+        }
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+        .blog-post {
+            width: 100%;
         }
     }
 

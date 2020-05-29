@@ -1,13 +1,30 @@
 @import "./colors.scss";
 @import "./type.scss";
 
-$vertical-rhythm: 2.5rem;
 $mobile-breakpoint: 769px;
+$vertical-rhythm: 4.5rem;
 $border-radius: 4px;
-$content-padding: 0 1rem;
-$content-width: 60rem;
-$content-width-blog: 78rem;
+
 $header-width: 80%;
+$content-width-blog: 78rem;
+
+.blog-content-width {
+  max-width: $content-width-blog;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+$content-width: 60rem;
+$content-padding: 0 1rem;
+
+.content-width {
+  width: $content-width;
+  margin: 0 auto;
+  padding: $content-padding;
+}
+.content-padding {
+  padding: $content-padding;
+}
 
 html {
     font: normal 80% Montserrat, sans-serif;
@@ -22,11 +39,11 @@ html {
     }
 }
 
-.inner-container {
-  max-width: $content-width;
-  margin: 0 auto;  
-  padding: $content-padding;
-}
+// .inner-container {
+//   max-width: $content-width;
+//   margin: 0 auto;  
+//   padding: $content-padding;
+// }
 
 input, textarea {
   display: block;
@@ -43,16 +60,6 @@ input, textarea {
 /**
  * Helper Classes 
 */
-/* layout */
-.content-width {
-  width: $content-width;
-  margin: 0 auto;
-}
-.blog-content-width {
-  width: $content-width-blog;
-  margin: 0 auto;
-}
-
 /* accessibility */
 .screen-reader-text {
     border: 0;
