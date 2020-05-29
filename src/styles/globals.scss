@@ -18,7 +18,7 @@ $content-width: 60rem;
 $content-padding: 0 1rem;
 
 .content-width {
-  width: $content-width;
+  max-width: $content-width;
   margin: 0 auto;
   padding: $content-padding;
 }
@@ -36,6 +36,9 @@ html {
     a {
         text-decoration: none;
         color: $strong-blue;
+    }
+    * {
+      box-sizing: border-box;
     }
 }
 

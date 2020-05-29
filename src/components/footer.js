@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import QuotesCarousel from "./hero/quotesCarousel"
 
-import secondaryLogo from "../images/logo/Logo_white.png";
+import secondaryLogo from "../images/logo/Logo_white.svg";
 import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
 // import instagram from "../images/illustrations/png/Social Media Icons/instagram.png"
 import twitter from "../images/illustrations/png/Social Media Icons/twitter.png"

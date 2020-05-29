@@ -5,20 +5,30 @@
 
  import React from "react"
  import { graphql } from "gatsby"
+ import ReactHtmlParser from 'react-html-parser';
+
  import Layout from "../components/layout"
+ import PageBanner from "../components/hero/pageBanner"
 
-export default ({ data }) => {
+ import "../styles/pages.scss"
+
+export default ({ data, location }) => {
+       console.log(location.pathname);
+
+    const {pagePath} = location.pathname
        
-    const {title, content} = data.wordpressPage
-
-    // const page = data.node
+    const {title, content, excerpt} = data.wordpressPage
+    
     return (
         <Layout>
-            <div>
-                <div className="page-banner contact">
-                    <h1 dangerouslySetInnerHTML={{ __html: title }} />
+            <div className="page-inner">
+                
+                <PageBanner pageTitle={title.toLowerCase()} />
+                {/* <p className="page-excerpt">{ReactHtmlParser(excerpt)}</p> */}
+                <div className={"page-content " + title.toLowerCase()}>
+                    {ReactHtmlParser(content)}
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: content }}></div>
+                
             </div>
         </Layout>
     )

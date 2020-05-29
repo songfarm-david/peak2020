@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+
 import Img from "gatsby-image"
 import {truncateExcerpt, getAuthor, getDate} from "../../functions/functions"
 

@@ -1,0 +1,79 @@
+@import "./globals.scss";
+
+
+#mainContent {
+
+    padding-bottom: $vertical-rhythm;
+
+    .page-inner {
+        margin-bottom: $vertical-rhythm;
+    }
+
+    .page-banner {
+        margin-top: 4.5rem;
+    }
+
+    .page-content {
+        @extend .content-width;
+
+        &.about {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: $vertical-rhythm;
+            figure {
+                margin: 0 auto;
+            }
+            .highlight {
+                @extend .heading-2;
+                flex: 0 0 100%;
+                order: -1;
+                padding: $content-padding;
+            }
+            .bg-underlay {
+                position: relative;
+                flex: 2 1 100%;
+                padding: 1rem 0;
+                // min-width: 30rem;
+                &::after {
+                    content: '';
+                    background: url('../images/logo/Logo_white.svg') center/cover no-repeat;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    z-index: -1;
+                    padding: 8.5rem 0;
+                    margin-top: -8.5rem;
+                }
+                p {
+                    padding: $content-padding;
+                }
+                p:last-child {
+                    display: inline-block;
+                }
+            }
+            
+            @media screen and (min-width: $mobile-breakpoint) {
+
+                
+
+                .bg-underlay {
+                    flex: 1;
+                }
+                figure {
+                    padding: 0;
+                }
+                .highlight { flex-basis: 80%; }
+            }
+        }
+
+        .button {
+            width: auto;
+        }
+
+    }
+}

@@ -3,14 +3,14 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import {truncateExcerpt, getAuthor, getDate} from "../functions/functions"
 
-import "../styles/blog/blog.scss"
-
 import Layout from "../components/layout"
 import PageBanner from "../components/hero/pageBanner"
 import SEO from "../components/seo"
 
 import peakLogoWhite from "../images/logo/Logo_white.svg"
 import tinyClock from "../images/illustrations/svg/clock_icon.svg"
+
+import "../styles/blog/blog.scss"
 
 export default ({ data }) => {
 

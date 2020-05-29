@@ -59,8 +59,9 @@ const Layout = ({ children, page }) => {
           {children}
         </main>
 
-        <TestimonialsCarousel />
-
+        {(page == "index") ? 
+        <TestimonialsCarousel /> : null }
+        
         {(page != "blog") ? 
           <BlogFeature /> : null }
 
