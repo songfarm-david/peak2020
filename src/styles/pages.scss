@@ -14,8 +14,32 @@
     }
 
     .page-content {
-        @extend .content-width;
 
+        @extend .content-width;
+        display: flex;
+        flex-wrap: wrap;
+
+        .highlight {
+            @extend .heading-2;
+            flex: 0 0 100%;
+            order: -1;
+            padding: $content-padding;
+        }
+
+        .hero-image {
+            order: 1;
+        }
+
+        .page-content-para {
+            flex: 2;
+            padding: 1rem 0;
+            p:last-child {
+                display: inline-block;
+            }
+        }
+
+        
+        
         &.about {
             padding: 0;
             display: flex;
@@ -24,12 +48,7 @@
             figure {
                 margin: 0 auto;
             }
-            .highlight {
-                @extend .heading-2;
-                flex: 0 0 100%;
-                order: -1;
-                padding: $content-padding;
-            }
+            
             .bg-underlay {
                 position: relative;
                 flex: 2 1 100%;
@@ -59,8 +78,6 @@
             
             @media screen and (min-width: $mobile-breakpoint) {
 
-                
-
                 .bg-underlay {
                     flex: 1;
                 }
@@ -71,8 +88,10 @@
             }
         }
 
-        .button {
-            width: auto;
+        @media screen and (min-width: $mobile-breakpoint) {
+            // p {
+            //     flex: 2;
+            // }
         }
 
     }

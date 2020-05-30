@@ -3,21 +3,23 @@
  * Mar 2020
  */
 
- import React from "react"
- import { graphql } from "gatsby"
- import ReactHtmlParser from 'react-html-parser';
+import React from "react"
+import { graphql } from "gatsby"
+import ReactHtmlParser from 'react-html-parser';
 
- import Layout from "../components/layout"
- import PageBanner from "../components/hero/pageBanner"
+import Layout from "../components/layout"
+import PageBanner from "../components/hero/pageBanner"
 
- import "../styles/pages.scss"
+import "../styles/globals.scss"
+import "../styles/pages.scss"
 
 export default ({ data, location }) => {
-       console.log(location.pathname);
+    
+    console.log(location.pathname);
 
-    const {pagePath} = location.pathname
+    // const {pagePath} = location.pathname
        
-    const {title, content, excerpt} = data.wordpressPage
+    const { title, content } = data.wordpressPage
     
     return (
         <Layout>
