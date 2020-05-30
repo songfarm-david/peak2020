@@ -40,6 +40,7 @@ const Nav = ({menuToggleClass}) => {
           <li 
             key={i} 
             className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}
+            aria-haspopup={( item.child_items ) !== null ? true : false}
           >
             <Link to={item.slug}>
               {ReactHtmlParser(item.title)}

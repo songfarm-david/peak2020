@@ -21,7 +21,9 @@ const SubNav = item => {
             onClick={() => toggleSubMenu(!isSubMenuOpen)} 
         />
         <ul 
-            className={( isSubMenuOpen ) ? "sub-menu sub-menu-open" : "sub-menu"}>
+            className={( isSubMenuOpen ) ? "sub-menu sub-menu-open" : "sub-menu"}
+            aria-label="submenu"
+            >
             {children.child_items.map(( childItem, i ) => (
             <li 
                 key={i}

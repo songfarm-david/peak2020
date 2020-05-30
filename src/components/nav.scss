@@ -57,6 +57,7 @@
         .arrow {
             max-height: 0.75rem;
             display: block;
+            box-sizing: initial;
             &.down {
                 margin-right: 1.25rem;  
             }
@@ -138,9 +139,9 @@
         }
 
         li.nav-item {
-            .arrow {
-                position: relative;
-            }
+
+            .arrow { position: relative; }
+
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -148,7 +149,8 @@
             position: relative;
             flex-wrap: nowrap; 
 
-            &.has-child-items:hover {
+            &.has-child-items:hover,
+            &.has-child-items:focus-within {
                 cursor: pointer;
                 .sub-menu {
                     left: 0;
