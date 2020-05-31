@@ -25,9 +25,6 @@ h5,
     font: bold 1rem/1.25rem Montserrat, sans-serif; 
 }
 
-@mixin typo-alternate() {
-    @extend .heading-2;
-}
 /**
  * Body text 
  */

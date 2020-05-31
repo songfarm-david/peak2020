@@ -6,8 +6,9 @@ $vertical-rhythm: 4.5rem;
 $top-margin: 2.25rem;
 $border-radius: 4px;
 
-$header-width: 80%;
 $content-width-blog: 78rem;
+
+$header-width: 88%;
 
 .blog-content-width {
   max-width: $content-width-blog;
@@ -15,7 +16,7 @@ $content-width-blog: 78rem;
   padding: 0.5rem;
 }
 
-$content-width: 60rem;
+$content-width: $content-width-blog;
 $content-padding: 0 1rem;
 
 .content-width {
@@ -25,6 +26,9 @@ $content-padding: 0 1rem;
 }
 .content-padding {
   padding: $content-padding;
+}
+.content-padding-section {
+  padding: $top-margin 0 $vertical-rhythm;
 }
 
 html {

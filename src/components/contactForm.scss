@@ -1,36 +1,28 @@
 @import '../styles/globals.scss';
 
 #mainContactForm {
+
     text-align: center;
     background: url('../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
     background-size: contain;
-    padding: 6rem 0;
+    background-position: 88% 43%;
+    @extend .content-padding-section;
 
-    p {
-        @extend .heading-3;
+    > div {
+        @extend .content-padding;
     }
-    form {
-        text-align: left;
-        padding: 1rem;
-        font-size: 1rem;
-        max-width: 30rem;
-        margin: 0 auto;
-        border-radius: $border-radius;
-        background-color: $white;
-        box-shadow: 0px 0px 1px 3px $lighter-blue;
-        label {
-            font-weight: bold;
-        }
-        input, textarea {
-            border: 2px solid $light-blue;
-            background: $lighter-blue;
-            padding: 0.5rem;
-            font-size: inherit;
-            width: 100%;
-        }
-    }
+
+    p.heading { margin-bottom: 0; }
+    p.sub-heading { @extend .normal-text; }
+
+    
+
     @media screen and (min-width: $mobile-breakpoint) {
         background: url('../images/illustrations/svg/trail_contact_desktop.svg') no-repeat;
-        background-size: contain;
+        background-position: 88% 43%;
+
+
+        p.sub-heading { font-weight: bold; }
     }
+
 }

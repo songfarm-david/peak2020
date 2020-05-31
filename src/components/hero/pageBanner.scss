@@ -8,6 +8,7 @@
     color: $white;
     @extend .heading-1;
     text-transform: capitalize;
+    padding: 2.25rem 0;
 
     &.blog {
         background: url('../../images/blog_header.jpeg') 0%/cover no-repeat;

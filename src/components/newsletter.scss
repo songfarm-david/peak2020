@@ -5,6 +5,7 @@
     background: url('../images/newsletter.jpeg') center/cover no-repeat;
     color: $white;
     @extend .normal-text;
+    padding: $top-margin 0 $vertical-rhythm;
 
     > div {
 
@@ -40,6 +41,8 @@
         @media screen and (min-width: $mobile-breakpoint) {
 
             align-items: center;
+            max-width: $content-width;
+            margin: 0 auto;
             // height: auto;
             > div {
                 margin: 0 1rem;

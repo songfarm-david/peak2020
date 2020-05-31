@@ -5,11 +5,18 @@
     background: url('../images/footer.png') 100%;
     background-size: cover;
     color: $white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding-top: 20rem; /* important */
+    padding: $vertical-rhythm 0;
+    background-position-y: 60%;
+    padding-top: 28rem;
+    
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-end;
+        width: $header-width;
+        margin: 0 auto;
+    }
 
     p { margin: 0; }
 

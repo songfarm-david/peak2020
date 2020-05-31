@@ -4,6 +4,27 @@
     margin-bottom: $vertical-rhythm;
     .inner-container {
         @extend .quotes-text;
+        @extend .content-width;
+    }
+
+    .quote {
+        &::before {
+            content: "\201C";
+            display: inline-block;
+        }
+        &::after {
+            content: "\201D";
+            display: inline-block;
+        }
+    }
+    .author {
+        @extend .normal-text;
+        text-align: center;
+        &::before {
+            content: '\2014';
+            display: inline-block;
+            margin-right: 10px;
+        }
     }
 
 }
