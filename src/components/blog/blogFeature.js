@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-
 import Img from "gatsby-image"
 import {truncateExcerpt, getAuthor, getDate} from "../../functions/functions"
 
@@ -9,6 +8,10 @@ import tinyClock from "../../images/illustrations/svg/clock_icon.svg"
 
 import "./blogFeature.scss"
 
+/**
+ * Blog section on home page: features 3 latest blogs
+ * 
+ */
 const BlogFeature = ({ data }) => {
 
     const query = useStaticQuery(
