@@ -1,51 +1,85 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import PageBanner from "../components/hero/pageBanner"
+import FeaturedPost from "../components/blog/featuredPost"
+import AllPosts from "../components/blog/allPosts"
+
 import SEO from "../components/seo"
 
+import "../styles/blog/blog.scss"
+
+/**
+ * This is the component for the blog index page
+ * 
+ */
 export default ({ data }) => {
 
-    const { allWordpressPost: posts } = data
- 
-    console.log(posts)
+    const allPosts = data.allWordpressPost
+    const stickyPost = data.featuredPost.edges
 
+    // console.log(stickyPost);
+    
+    function haveStickyPost(stickyPost) { 
+        return Array.isArray(stickyPost) && stickyPost.length != 0
+    }
+    
     return (
-        <Layout>
+        <Layout className="blog" page="blog">
             <SEO title="" description="" />
-            {data.allWordpressPost.edges.map(({ node }) => (
-                <div key={node.title}>
-                    <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
-                    <p>{node.date}</p>
-                    {
-                        node.featured_media != null ? <Img fluid={node.featured_media.localFile.childImageSharp.fluid} /> : null
-                    }
-                    
-                    <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                    <Link to={node.slug}>Read more</Link>
-                    {showCategories(node)}
-                </div>
-            ))}
+
+            <PageBanner pageTitle="blog" />
+
+            { ( haveStickyPost(stickyPost ) ) ? <FeaturedPost sticky={stickyPost} /> : null }      
+
+            <AllPosts allPosts={allPosts} />   
+            
         </Layout>
     )
  }
 
 /**
- * Exclude 'Portfolio' category from request
+ * Query for both a sticky post (to test in the component), as well as
+ * querying all posts (filtering out sticky posts)
  */
 export const queryAllPosts = graphql`
     query {
-        allWordpressPost(sort: {fields: date, order: DESC}, 
-            filter: {categories: {elemMatch: {name: {ne: "Portfolio"}}}}) {
+        featuredPost: allWordpressPost(filter: {sticky: {eq: true}}, limit: 1) {
+            edges {
+                node {
+                    id
+                    title
+                    slug
+                    excerpt
+                    content
+                    featured_media {
+                        localFile {
+                        ...squareImage
+                        }
+                    }
+                    categories {
+                        name
+                    }
+                    author {
+                        name
+                    }
+                    date(formatString: "MMM Do, YYYY")
+                    modified(formatString: "MMM Do, YYYY")
+                }
+            }
+        }
+        allWordpressPost(limit: 6, sort: {fields: date, order: DESC}, 
+            filter: {categories: {elemMatch: {name: {ne: "Portfolio"}}}, sticky: {eq: false}}) {
             totalCount
             edges {
                 node {
                     wordpress_id
-                    date(formatString: "MMMM Do, YYYY")
                     title
                     slug
                     status
+                    date(formatString: "MMM Do, YYYY")
+                    modified(formatString: "MMM Do, YYYY")
                     path
                     type
                     excerpt
@@ -57,6 +91,9 @@ export const queryAllPosts = graphql`
                         localFile {
                         ...squareImage
                         }
+                    }
+                    author {
+                        name
                     }
                  }
             }
@@ -77,27 +114,4 @@ export const squareImage = graphql`
   }
 `
 
-/**
- * Function to check for existence of post categories and output formatting string
- * @param {Object} node the post object
- * @returns {Str} html string 
- */
-function showCategories(node) {
-
-    if (node.categories.length) {
-        let catsStr = '<span>'
-
-        for (let index = 0; index < node.categories.length; index++) {
-            if ( index === node.categories.length-1) {
-                catsStr += node.categories[index].name
-                continue
-            }
-            catsStr += node.categories[index].name + ', '
-        }
-        catsStr += '</span>'
-
-    return <p dangerouslySetInnerHTML={{ __html: catsStr}}></p>
-    }
-
-}
 

@@ -1,0 +1,58 @@
+@import "../../styles/globals.scss";
+
+$offset: 21.875rem;
+
+/** hero banner */
+.hero-banner {
+    
+    height: calc(100vh + 56px);
+    background: url('../../images/homepage_mobile.png') bottom center/cover no-repeat $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+
+    .hero-text-container {
+
+        position: relative;
+        // top: -4rem;
+        margin: 0 auto 5rem;
+        max-width: $content-width;
+        text-align: center; 
+        @extend .heading-1;
+        
+        > p {
+            margin-bottom: 7rem;
+        }
+        
+        #rotatingWord {
+            position: relative;
+            width: auto;
+
+            .word {
+                position: absolute;
+                display: block;
+                // left: 50%;
+                // transform: translate(-50%);
+                // width: 100%;
+                border: $border;
+                
+            }
+        }
+
+        
+        
+    }
+
+    // @media screen and (max-width: $mobile-breakpoint) {
+    //     .word {
+    //         display: block;
+    //     }
+    // }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        // height: calc(100vh + 56px);
+        background: url('../../images/homepage.jpeg') bottom center/cover no-repeat $white;
+    }
+    
+}

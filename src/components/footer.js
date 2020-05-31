@@ -1,47 +1,75 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "../styles/footer.scss"
+import QuotesCarousel from "./hero/quotesCarousel"
 
-const Footer = ({ footerLinks, legalLinks }) => (
-    <footer id="siteFooter">
-      <div className="grid">
-        <article className="grid-child">
-          <h3>Want the latest trends?</h3>
-          <div><p>Mailing List component here</p></div>
-        </article>
-        <div className="grid-child">
-          <h3>Recent Articles</h3>
-          <div><p>Import recent articles query here</p></div>
-        </div>
-        <div className="grid-child">
-          <h3>Need Advice?</h3>
-          <p>Have something you want to build but not sure how to approach it? <Link to="/about">Speak to a web specialist.</Link>
-          </p>
+import secondaryLogo from "../images/logo/Logo_white.svg";
+import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
+// import instagram from "../images/illustrations/png/Social Media Icons/instagram.png"
+import twitter from "../images/illustrations/png/Social Media Icons/twitter.png"
+
+import "./footer.scss"
+import Newsletter from "./newsletter";
+
+const Footer = ({ footerLinks }) => (
+  <footer id="siteFooter">
+    <div>
+      <QuotesCarousel />
+      
+      {/* brand component */}
+      <div className="footer-item">
+        <img src={secondaryLogo} alt={""} />
+        <p className="copyright">© Peak Websites {new Date().getFullYear()}</p>
+      </div>
+
+      {/* secondary nav */}
+      <nav className="footer-item">
+        <ul>
+          {footerLinks.map(link => (
+            <li key={link.name}>
+              <Link to={link.link}>{link.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* social component */}
+      <div className="footer-item">
+        <ul>
+          <li>
+              <a href="" title="Peak Websites Facebook Page">
+                <span><img src={facebook} alt={""} /></span>
+                <span>Facebook</span>
+              </a>
+          </li>
+          <li>
+            <a href="" title="Peak Websites Twitter">
+              <span><img src={twitter} alt={""} /></span>
+              <span>Twitter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Newsletter */}
+      <div className="footer-item">
+        <p>Subscribe to the newsletter</p>
+        <div id="footerNewsletter" className="newsletter">
+          <input type="email" placeholder="Email Address"/>
+          <button className="button small-button footer-text">OK</button>
         </div>
       </div>
-        <div id="legalLinks">
-          <nav>
-            <ul style={{ display: "flex", flex: 1 }}>
-              {legalLinks.map(link => (
-                <li
-                  className="link-item"
-                  key={link.name}
-                  style={{
-                    listStyleType: `none`,
-                    padding: `1rem`,
-                  }}
-                >
-                  <Link style={{ color: `black` }} to={link.link}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <p className="copyright">© {new Date().getFullYear()}</p>
-        </div>
-    </footer>
+
+      <div className="footer-item">
+        <span>Contact</span>
+        <span><a href="tel:+17785879220">+1 778 587 9220</a></span>
+        <span><a href="mailto:david@peakwebsites.ca">david@peakwebsites.ca</a></span>
+      </div>
+    </div>
+    
+    
+
+  </footer>
 )
 
 export default Footer

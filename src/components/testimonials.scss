@@ -1,0 +1,48 @@
+@import "../styles/globals.scss";
+
+#testimonials {
+    margin-bottom: $vertical-rhythm;
+    > div {
+        @extend .content-width;
+    }
+    .testimonials-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .testimonial {
+        padding: 1rem;
+        flex-basis: 33%;
+        /* card styles */
+        background-color: $white;
+        border-radius: $border-radius;
+        text-align: center;
+        .blurb {
+            @extend .normal-text-italic;
+        }
+        .author {
+            font-weight: bold;
+            margin-bottom: 0;
+            + .link {
+                margin-top: .25rem;
+                @extend .footer-text;
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+
+        > div {
+            width: auto;
+        }
+
+
+        .testimonials-container {
+            flex-wrap: wrap;
+            .testimonial {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+

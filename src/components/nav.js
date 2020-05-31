@@ -1,65 +1,88 @@
-import React from "react"
+import React from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
+import ReactHtmlParser from 'react-html-parser';
 
-import "../styles/nav.scss"
+import "./nav.scss"
+import SubNav from "./subNav";
 
-export default () => {
-    
-  const data = useStaticQuery(graphql`
-    query navQuery {
-      wordpressMenusMenusItems(wordpress_id: {eq: 190}) {
-        name
-        items {
-          title
-          slug
-          wordpress_id
-          child_items {
+const Nav = ({menuToggleClass}) => {
+
+  /**
+   * query for the main navigation (by id)
+   */
+  const query = useStaticQuery(
+    graphql`
+      query {
+        wordpressMenusMenusItems(wordpress_id: {eq: 190}) {
+          id: wordpress_id
+          name
+          items {
             title
             slug
-            wordpress_id
+            child_items {
+              title
+              slug
+              child_items {
+                title
+                slug
+              }
+            }
           }
         }
       }
-    }
-  `)
+    `)
+  const navItems = query.wordpressMenusMenusItems
 
-  const { wordpressMenusMenusItems: mainNav } = data
-
-  return(
-    <div>
-      <nav id="mainNav">
-        <ul>
-          {mainNav.items.map( item => (
-            
-            <li className="navItem" key={item.title}>
-
-              <Link to={item.slug}>{item.title}</Link>
-              
-              { item.child_items != null ? printChildren(item) : false }
-
-            </li>
-
-          ))}
-        </ul>
-      </nav>
-    </div>
-  )
-
-}
-
-/** 
- * Checks for subMenu items and prints the corresponding HTML 
- */
-function printChildren(item) {
-  
   return (
-    <ul className="subMenu">
-      {item.child_items.map( childItem => (
-        <li className="navItem" key={childItem.title}>
-          <Link to={childItem.slug} dangerouslySetInnerHTML={{ __html: childItem.title}}></Link>  
-        </li>
-      )) }
-    </ul>
+    <nav id="mainNav" role="navigation" className={menuToggleClass}>
+      <ul> 
+        {navItems.items.map((item, i) => (
+          <li 
+            key={i} 
+            className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}
+            aria-haspopup={( item.child_items ) !== null ? true : false}
+          >
+            <Link to={item.slug}>
+              {ReactHtmlParser(item.title)}
+            </Link>
+            {
+              ( item.child_items === null ) ? null : <SubNav childItems={item} />
+            }
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 
+  /**
+   * Prints nav item children two levels deep 
+   * @param {Obj} item a navigation item that has sub items
+   */
+  // function printSubMenus(item) {
+  //   return (
+  //     <ul className={(isSubMenuOpen) ? "sub-menu sub-menu-open" : "sub-menu"}>
+  //       {item.child_items.map( (childItem, i) => (
+  //         <li className="nav-item" key={i}>
+  //           <Link to={childItem.slug}>{childItem.title}</Link>
+  //           {(childItem.child_items === null) ? null : 
+  //           <>
+  //             <ul className="sub-sub-menu">
+  //               {childItem.child_items.map( (subItem, i) => (
+  //                 <li className="sub-nav-item" key={i}>
+  //                 <img className="arrow right" src={arrowRight} alt={''} />
+  //                   <Link to={subItem.slug}>{subItem.title}</Link>
+  //                 </li>
+  //               ))}
+  //             </ul>
+  //           </>
+  //           }  
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
+
 }
+
+export default Nav
+

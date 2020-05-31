@@ -1,33 +1,32 @@
+import React, { useState } from 'react'
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+
+import siteLogo from "../images/logo/Logo.svg";
+
+import "./header.scss"
 
 import Nav from "./nav"
-import "../styles/header.scss"
 
-import siteLogo from "../images/peak_websites_logo.png";
-
-const Header = ({ siteTitle, menuLinks }) => (
-  <header id="siteHeader">
-    <div>
-      <h1 className="siteName">
-        <Link
-          to="/">
-          <img src={siteLogo} className="siteLogo" alt="Peak Websites logo" />
-          {siteTitle}
+const Header = ({ siteTitle, menuLinks }) => {
+  
+  const [isMenuOpen, toggleMenu] = useState(false)
+  
+  return (
+    <header id="siteHeader">
+      <div>
+        <Link to="/">
+          <img id="siteLogo" src={siteLogo} alt={""} />
+          <h1 className="screen-reader-text">{siteTitle}</h1>
         </Link>
-      </h1>
-      <Nav menuLinks={menuLinks} />
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+        <Nav 
+          menuLinks={menuLinks} 
+          menuToggleClass={( isMenuOpen ) ? 'menu-active' : null }
+        />
+        <button id="menuToggleBtn" onClick={() => toggleMenu( !isMenuOpen )}>X</button>
+      </div>
+    </header>
+  )
 }
 
 export default Header
+

@@ -1,3 +1,11 @@
+
+// import decodeHTML from "./functions/functions"
+// const decodeHTML = ({input}) => {
+//   let txt = document.createElement('textarea');
+//   txt.innerHTML = input;
+//   return txt.value;
+// }
+
 module.exports = {
   siteMetadata: {
     title: `Peak Websites`,
@@ -41,21 +49,19 @@ module.exports = {
     ],
     footerLinks: [
       {
-        name: `Write for us!`,
+        name: `Contribute to the Blog`,
         link: `contribute-to-the-blog`
-      }
-    ],
-    legalLinks: [
+      },
       {
-        name: `disclaimer`,
+        name: `Disclaimer`,
         link: `disclaimer`
       },
       {
-        name: `privacy policy`,
+        name: `Privacy policy`,
         link: `privacy-policy`
       },
       {
-        name: `sitemap`,
+        name: `Sitemap`,
         link: `sitemap`
       }
     ]
@@ -80,7 +86,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo/Logo.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -94,6 +100,17 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`300`,`300i`,`400`,`400i`,`700`]
+          },
+        ],
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

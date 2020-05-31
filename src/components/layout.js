@@ -9,17 +9,19 @@ import React from "react"
 // import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Footer from "./footer"
-import "../styles/layout.scss"
+import "./layout.scss"
 
-import Banner from "./hero/homeBanner"
-import BlogCallout from "./blog/blogCallout"
+import Header from "./header"
+import HeroSection from "./hero/heroSection"
+import BlogFeature from "./blog/blogFeature"
+import TestimonialsCarousel from "./testimonials"
+import Newsletter from "./newsletter"
+import ContactForm from "./contactForm"
+import Footer from "./footer"
+// import BlogFeature from "./blog/blogFeature"
 
 const Layout = ({ children, page }) => {
   
-  let keywords = ['management','development','design','SEO','consulting','webmaster services']
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -37,10 +39,6 @@ const Layout = ({ children, page }) => {
             name
             link
           }
-          legalLinks {
-            name
-            link
-          }
         }
       }
     }
@@ -50,26 +48,28 @@ const Layout = ({ children, page }) => {
     <>
       <Header 
         siteTitle={data.site.siteMetadata.title} 
-        menuLinks={data.site.siteMetadata.menuLinks} 
-        />
+        menuLinks={data.site.siteMetadata.menuLinks} />
 
       <div>
-        { /* if home page, display hero banner */
-          (page) 
-          ? <Banner keywords={keywords} /> 
-          : null 
-        }
+
+        {(page == "index") ? 
+          <HeroSection /> : null }
 
         <main id="mainContent">
           {children}
         </main>
 
-        <BlogCallout />
+        {(page == "index") ? 
+        <TestimonialsCarousel /> : null }
+        
+        {(page != "blog") ? 
+          <BlogFeature /> : null }
 
-        <Footer 
-          footerLinks={data.site.siteMetadata.footerLinks}
-          legalLinks={data.site.siteMetadata.legalLinks} 
-        />
+        <Newsletter />
+        <ContactForm />
+
+        <Footer  
+          footerLinks={data.site.siteMetadata.footerLinks} />
 
       </div>
 

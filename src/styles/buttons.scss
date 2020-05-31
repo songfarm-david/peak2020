@@ -1,0 +1,60 @@
+/**
+ * Buttons
+ */
+.button {
+    border-radius: $border-radius;
+    border: 2px solid $white;
+    padding: 0.5rem 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    &.large {
+        font-size: 1.25rem;
+    }
+    &.left {
+        margin-left: 1rem;
+    }
+}
+.primary-button {
+    background-color: $bright-orange;
+    color: $white;
+    border-color: $bright-orange;
+    &:hover {
+        background-color: $strong-blue;
+        border-color: $strong-blue;
+        cursor: pointer;
+    }
+}
+
+.primary-button-inverted {
+    background-color: $white;
+    color: $bright-orange;
+    &:hover {
+        background-color: $bright-orange;
+        color: $white;
+        border-color: $bright-orange;
+        cursor: pointer;
+    }
+}
+
+.secondary-button {
+    outline: $white;
+    color: $white;
+    background-color: transparent;
+    &:hover {
+        outline: $bright-orange;
+        color: $bright-orange;
+        cursor: pointer;
+    }
+}
+
+.small-button {
+    background-color: $white;
+    color: $bright-orange;
+    border: 1px solid white;
+    &:hover {
+        background-color: $bright-orange;
+        color: $white;
+    }
+}
