@@ -14,17 +14,12 @@ const QuotesCarousel = () => {
     return (
         <div id="quoteCarousel" className="footer-item">
             <div className="inner-container">
-                <div className="quote-container">
-                    {
-                        quotes.map( qts => (
-                            <>
-                            <p className="quote">{qts.quote}</p>
-                            <p className="author">{qts.author}</p>
-                            </>
-                        ))
-                    }
-                    
-                </div>
+                {quotes.map( (qts, i) => (
+                    <div key={i} className="quote-container">
+                        <p className="quote">{qts.quote}</p>
+                        <p className="author">{qts.author}</p>
+                    </div>
+                ))}
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,13 +9,11 @@ import "../styles/globals.scss"
 
 export default ({ data, location }) => {
     
-    const { wordpressPage: page } = data
- 
+    const {content} = data.wordpressPage
+    
     return (
         <Layout page={location && location.pathname === "/" ? "index" : false}>
-            <SEO title={page.title} description={page.excerpt} />
-            {/* <h1 className="screen-reader-text">{page.title}</h1>
-            <div dangerouslySetInnerHTML={ {__html: page.content} } ></div> */}
+            {ReactHtmlParser(content)}
         </Layout>
     )
  }
