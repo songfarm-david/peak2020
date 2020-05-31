@@ -13,7 +13,9 @@ export default ({ data, location }) => {
     
     return (
         <Layout page={location && location.pathname === "/" ? "index" : false}>
-            {ReactHtmlParser(content)}
+            {<div className="page-content">
+                {ReactHtmlParser(content)}
+            </div>}
         </Layout>
     )
  }
