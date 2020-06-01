@@ -8,6 +8,9 @@ const QuotesCarousel = () => {
         {
             quote: "It is up to us to allow the obstacles in our live to be the excuse for our failure... or the reason behind our success.",
             author: 'Unknown'
+        }, {
+            quote: "Easy choices, hard life. Hard choices, easy life.",
+            author: "Jerzy Gregorek"
         }
     ]
 

@@ -27,7 +27,7 @@ export default ({ data }) => {
     
     return (
         <Layout className="blog" page="blog">
-            <SEO title="" description="" />
+            {/* <SEO title="" description="" /> */}
 
             <PageBanner pageTitle="blog" />
 

@@ -1,6 +1,11 @@
 # TODO
 
 1. Add a good modern CSS reset 
+2. Address SEO concerns
+3. remove .hey-now class from contact page/ remove WPForms
+4. Wire up forms, newsletter
+5. review copy
+6. configure domains and dns
 
 
 * Make index.js show slug /home

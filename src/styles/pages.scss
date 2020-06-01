@@ -7,20 +7,16 @@
     overflow: hidden;
     position: relative;
 
-    .page-inner {
-        margin-bottom: $vertical-rhythm;
-    }
-
-    .page-banner {
-        margin-top: 4.5rem;
-    }
+    .page-inner { margin-bottom: $vertical-rhythm; }
+    .page-banner { margin-top: 4.5rem; }
+    .button { width: auto; }
 
     .page-content {
 
         @extend .content-width;
         display: flex;
         flex-wrap: wrap;
-        padding-top: $top-margin;
+        padding-top: $vertical-rhythm;
         position: relative;
 
         figure,
@@ -81,42 +77,28 @@
 
         &.about {
 
-            padding: 0;
             .highlight { 
                 padding: $content-padding;
             }
             .bg-underlay {
+
                 position: relative;
                 flex: 2 1 100%;
                 padding-bottom: 9rem;
-                margin-top: -13rem;
+                margin-top: -9rem;
                 background: url('../images/logo/Logo_white.svg') center/cover no-repeat;
+
                 .page-content-para {
                     margin-top: 13rem;
                 }
-                // &::after {
-                //     content: '';
-                //     background: url('../images/logo/Logo_white.svg') center/cover no-repeat;
-                //     top: 0;
-                //     left: 0;
-                //     right: 0;
-                //     bottom: 0;
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     z-index: -1;
-                //     padding: 8.5rem 0;
-                //     margin-top: -8.5rem;
-                // }
-                p {
-                    padding: $content-padding;
-                }
-                p:last-child {
-                    display: inline-block;
-                }
+                
+                p { padding: $content-padding; }
+                p:last-child { display: inline-block; }
+
             }
             
             @media screen and (min-width: $mobile-breakpoint) {
+
                 .bg-underlay {
                     flex: 1;
                 }
@@ -128,16 +110,39 @@
             }
         }
 
-        .button {
-            width: auto;
+        &.contact {
+            justify-content: center;
+            text-align: center;
+            .hey-now {
+                display: none;
+            }
+            .highlight {
+                p {
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+            }
+            .page-content-para {
+                flex-basis: 100%;
+                font-weight: bold;
+                @extend .normal-text;
+                max-width: 66%;
+            }
+            form#contactForm {
+                width: $header-width;
+                // input {
+                //     border: $border;
+                // }
+            }
+            @media screen and (max-width: $mobile-breakpoint) {
+                .page-content-para {
+                    flex-basis: 100%;
+                    font-weight: initial;
+                }
+                
+            }
         }
 
-    }
-
-    .blog-content-container {
-        &:first-of-type {
-            padding-bottom: 0;
-        }
     }
 
     @media screen and (min-width: $mobile-breakpoint) {
@@ -172,4 +177,5 @@
             }
         }
     }
+
 }
