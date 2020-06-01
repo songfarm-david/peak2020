@@ -13,7 +13,7 @@ export default ({ data, location }) => {
     
     return (
         <Layout page={location && location.pathname === "/" ? "index" : false}>
-            {<div className="page-content">
+            {<div className="page-content home">
                 {ReactHtmlParser(content)}
             </div>}
         </Layout>

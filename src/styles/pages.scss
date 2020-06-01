@@ -4,6 +4,8 @@
 #mainContent {
 
     padding-bottom: $vertical-rhythm;
+    overflow: hidden;
+    position: relative;
 
     .page-inner {
         margin-bottom: $vertical-rhythm;
@@ -19,6 +21,7 @@
         display: flex;
         flex-wrap: wrap;
         padding-top: $top-margin;
+        position: relative;
 
         figure,
         .highlight {
@@ -38,9 +41,9 @@
             margin: 0 auto;
             padding: 0 1rem;
         }
+
         figure { 
             margin: 0 auto; 
-            
             img {
                 height: auto;
                 max-width: 100%;
@@ -53,6 +56,26 @@
             @extend .normal-text;
             p:last-child {
                 display: inline-block;
+            }
+        }
+
+        &.home {
+            padding-bottom: $vertical-rhythm * 2;
+            transform: translateZ(0);
+            &::after {
+                content: '';
+                display: block;
+                background: url('../images/illustrations/svg/compass.svg') no-repeat;
+                background-position: 105% bottom;
+                background-size: 16rem;
+                padding-bottom: 4.5rem;
+                height: 16rem;
+                width: 16rem;
+                position: fixed;
+                right: -9rem;
+                bottom: -2.5rem;
+                z-index: -111;
+                transform: rotate(10deg);
             }
         }
 
@@ -119,20 +142,33 @@
 
     @media screen and (min-width: $mobile-breakpoint) {
         .page-content {
+            
             .hero-image {
                 order: initial;
             }
+
             .highlight { 
                 p {
                     width: 77%;
                 }
             }
-            .page-content-para,
-            .hero-image {
-                // flex-basis: 100%;
-            }
+
             .page-content-para {
                 flex: 2;
+                p { padding: $content-padding; }
+            }
+
+            
+        }
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        .page-content {
+            &.home {
+                &::after {
+                    content: '';
+                    display: none;
+                }
             }
         }
     }
