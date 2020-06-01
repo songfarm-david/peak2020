@@ -1,28 +1,31 @@
 import React from "react"
-import { graphql } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout"
+import PageBanner from "../components/hero/pageBanner"
+import Form from "../components/form"
 import SEO from "../components/seo"
 
-import "../styles/globals.scss"
-
-export default ({ data, location }) => {
+export default ({ data }) => {
     
     const {content} = data.wordpressPage
-    
+
     return (
-        <Layout page="index">
-            {<div className="page-content home">
+        <Layout className="contact" page="contact">
+            {/* <SEO title="" description="" /> */}
+            <PageBanner pageTitle="contact" />
+            <div className="page-content contact">
                 {ReactHtmlParser(content)}
-            </div>}
+                <Form />
+            </div>
         </Layout>
     )
- }
+
+}
 
 export const homeQuery = graphql`
     query {
-        wordpressPage(wordpress_id: {eq: 1735}) {
+        wordpressPage(wordpress_id: {eq: 1722}) {
             wordpress_id
             slug
             status
@@ -30,13 +33,5 @@ export const homeQuery = graphql`
             excerpt
             content
         }
-        allSitePage {
-            edges {
-              node {
-                path
-              }
-            }
-        }
     }
 `
-

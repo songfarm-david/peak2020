@@ -43,6 +43,27 @@ const Layout = ({ children, page }) => {
       }
     }
   `)
+  console.log(page);
+
+  function pageLayout(page) {
+    if (page == "contact") return
+    if (page == "blog") {
+      return (
+        <>
+        <Newsletter />
+        <ContactForm />
+        </>
+      )
+    } else {
+      return (
+        <>
+        <BlogFeature />
+        <Newsletter />
+        <ContactForm />
+        </>
+      )
+    }
+  }
   
   return (
     <>
@@ -59,14 +80,10 @@ const Layout = ({ children, page }) => {
           {children}
         </main>
 
-        {(page == "index") ? 
-        <TestimonialsCarousel /> : null }
+        {/* {(page == "index") ? 
+        <TestimonialsCarousel /> : null } */}
         
-        {(page != "blog") ? 
-          <BlogFeature /> : null }
-
-        <Newsletter />
-        <ContactForm />
+        {pageLayout(page)}
 
         <Footer  
           footerLinks={data.site.siteMetadata.footerLinks} />

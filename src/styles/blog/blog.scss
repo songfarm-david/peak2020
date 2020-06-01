@@ -1,12 +1,14 @@
 @import "../globals.scss";
 
 .blog-content-container {
-
+    + .blog-content-container {
+        padding-top: 0;
+    }
     @extend .blog-content-width;
     // padding: 2.5rem;
     box-sizing: border-box;
-    padding-bottom: $vertical-rhythm;
-    padding-top: $top-margin;
+    // padding-bottom: $vertical-rhythm;
+    padding: $top-margin 0;
 
     .blog-heading {
         display: flex;

@@ -55,6 +55,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const { allWordpressPage, allWordpressPost } = result.data
 
+    console.log(allWordpressPage);
+    
+
     allWordpressPage.edges.forEach(({ node }) => {
 
         if (node.status === 'publish') {

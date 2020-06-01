@@ -4,10 +4,10 @@
     
     background-color: $light-green;
     color: $white;
-    
-    .blog-heading .barline {
-        border-color: $white;
-    }
+    padding-bottom: 2.5rem;
+
+    .blog-heading .barline { border-color: $white; }
+
     .blog-post {
         color: $white;
         .post-heading,
@@ -17,8 +17,6 @@
         }
     }
 
-    .button {
-        margin-left: 1rem;
-    }
+    .button { margin-left: 1rem; }
 
 }
