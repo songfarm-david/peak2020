@@ -1,5 +1,6 @@
 # TODO
 
+0. In the node build process, be sure to exclude 'contact-us' and 'blog'
 1. Add a good modern CSS reset 
 2. Address SEO concerns
 3. remove .hey-now class from contact page/ remove WPForms
