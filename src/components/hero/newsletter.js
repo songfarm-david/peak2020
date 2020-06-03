@@ -4,9 +4,10 @@ import "./newsletter.scss"
 
 const Newsletter = () => (
     <section id="newsletter">
+        <h2 className="screen-reader-text">Newsletter</h2>
         <div>
             <div className="heading">
-                <h2>Want to know what's happening online?</h2>
+                <p className="heading-2">Want to know what's happening online?</p>
             </div>
             <div className="newsletter">
                 <input type="email" placeholder="Required field"/>

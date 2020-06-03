@@ -1,8 +1,8 @@
-@import '../styles/globals.scss';
+@import '../../styles/globals.scss';
 
 #newsletter {
 
-    background: url('../images/newsletter.jpeg') center/cover no-repeat;
+    background: url('../../images/newsletter.jpeg') center/cover no-repeat;
     color: $white;
     @extend .normal-text;
     padding: $top-margin 0 $vertical-rhythm;
@@ -49,7 +49,7 @@
                 flex: 1;
                 &:first-child { 
                     flex: 0 0 100%; 
-                    h2 {
+                    .heading-2 {
                         width: 66%;
                         margin-bottom: 0;
                     }

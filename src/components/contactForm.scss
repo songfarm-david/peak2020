@@ -18,9 +18,8 @@
     
 
     @media screen and (min-width: $mobile-breakpoint) {
-        background: url('../images/illustrations/svg/trail_contact_desktop.svg') no-repeat;
-        background-position: 88% 43%;
-
+        background: url('../images/illustrations/svg/trail_contact_desktop.svg') center/100% no-repeat;
+        padding-bottom: 9.5rem;
 
         p.sub-heading { font-weight: bold; }
     }

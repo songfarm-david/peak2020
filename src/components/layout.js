@@ -6,19 +6,12 @@
  */
 
 import React from "react"
-// import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.scss"
 
 import Header from "./header"
-import HeroSection from "./hero/heroSection"
-import BlogFeature from "./blog/blogFeature"
-import TestimonialsCarousel from "./testimonials"
-import Newsletter from "./newsletter"
-import ContactForm from "./contactForm"
 import Footer from "./footer"
-// import BlogFeature from "./blog/blogFeature"
 
 const Layout = ({ children, page }) => {
   
@@ -43,27 +36,6 @@ const Layout = ({ children, page }) => {
       }
     }
   `)
-  console.log(page);
-
-  function pageLayout(page) {
-    if (page == "contact") return
-    if (page == "blog") {
-      return (
-        <>
-        <Newsletter />
-        <ContactForm />
-        </>
-      )
-    } else {
-      return (
-        <>
-        <BlogFeature />
-        <Newsletter />
-        <ContactForm />
-        </>
-      )
-    }
-  }
   
   return (
     <>
@@ -71,24 +43,11 @@ const Layout = ({ children, page }) => {
         siteTitle={data.site.siteMetadata.title} 
         menuLinks={data.site.siteMetadata.menuLinks} />
 
-      <div>
-
-        {(page == "index") ? 
-          <HeroSection /> : null }
-
-        <main id="mainContent">
+        <main id="mainContent" role="main">
           {children}
         </main>
 
-        {/* {(page == "index") ? 
-        <TestimonialsCarousel /> : null } */}
-        
-        {pageLayout(page)}
-
-        <Footer  
-          footerLinks={data.site.siteMetadata.footerLinks} />
-
-      </div>
+        <Footer footerLinks={data.site.siteMetadata.footerLinks} />
 
     </>
   )

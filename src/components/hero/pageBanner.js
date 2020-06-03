@@ -7,9 +7,14 @@ import React from "react"
 
 import "./pageBanner.scss"
 
+function removeDash(pageTit) {
+    let p = pageTit.replace(/-/, ' ')
+    return p
+}
+
 const PageBanner = ({pageTitle}) => (
     <div className={"page-banner " + pageTitle}>
-        <h1>{pageTitle}</h1>
+        <h1>{removeDash(pageTitle)}</h1>
     </div>
 )
 

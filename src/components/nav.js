@@ -35,6 +35,7 @@ const Nav = ({menuToggleClass}) => {
 
   return (
     <nav id="mainNav" role="navigation" className={menuToggleClass}>
+      <h2 className="screen-reader-text">Main Navigation</h2>
       <ul> 
         {navItems.items.map((item, i) => (
           <li 

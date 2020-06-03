@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 import PageBanner from "../components/hero/pageBanner"
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
-
-import SEO from "../components/seo"
+import Newsletter from "../components/hero/newsletter"
+import ContactForm from "../components/contactForm"
 
 import "../styles/blog/blog.scss"
 
@@ -18,22 +18,22 @@ export default ({ data }) => {
 
     const allPosts = data.allWordpressPost
     const stickyPost = data.featuredPost.edges
-
-    // console.log(stickyPost);
     
     function haveStickyPost(stickyPost) { 
         return Array.isArray(stickyPost) && stickyPost.length != 0
     }
     
     return (
-        <Layout className="blog" page="blog">
-            {/* <SEO title="" description="" /> */}
+        <Layout>
 
             <PageBanner pageTitle="blog" />
 
             { ( haveStickyPost(stickyPost ) ) ? <FeaturedPost sticky={stickyPost} /> : null }      
 
             <AllPosts allPosts={allPosts} />   
+
+            <Newsletter />
+            <ContactForm />
             
         </Layout>
     )

@@ -9,7 +9,7 @@ import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
 import twitter from "../images/illustrations/png/Social Media Icons/twitter.png"
 
 import "./footer.scss"
-import Newsletter from "./newsletter";
+import Newsletter from "./hero/newsletter";
 
 const Footer = ({ footerLinks }) => (
   <footer id="siteFooter">

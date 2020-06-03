@@ -55,12 +55,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const { allWordpressPage, allWordpressPost } = result.data
 
-    console.log(allWordpressPage);
+    // console.log(allWordpressPage.edges.node.slug);
     
 
     allWordpressPage.edges.forEach(({ node }) => {
 
         if (node.status === 'publish') {
+            console.log(node.title, node.slug);
+            
             createPage({
                 path: node.slug,
                 component: pageTemplate,

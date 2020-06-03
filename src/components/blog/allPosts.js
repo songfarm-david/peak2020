@@ -12,7 +12,7 @@ const AllPosts =({allPosts}) => {
     return (
         <section className="blog-content-container">
             <div className="blog-heading">
-                <h5>Latest Blog Articles</h5>
+                <p className="heading-5">Latest Blog Articles</p>
                 <span className="barline"></span>
             </div>
             <div className="blog-inner-container">

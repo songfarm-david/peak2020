@@ -26,7 +26,7 @@ const FeaturedPost =( stickyPost ) => {
     return (
         <article className="blog-content-container">
             <div className="blog-heading">
-                <h5>Featured Blog Articles</h5>
+                <p className="heading-5">Featured Blog Articles</p>
                 <span className="barline"></span>
             </div>
             <div className="blog-inner-container">

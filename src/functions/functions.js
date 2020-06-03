@@ -37,3 +37,9 @@ export function getAuthor(categories, author) {
         category.name === 'Guest Post')) 
     ? 'Guest Post' :  author
 }
+
+export function formatTitle(pageTitle) {
+    let t = pageTitle.toLowerCase().replace(/\s/g, '-')
+    // look for first occurence of space and replace with a dash '-'
+    return t
+}

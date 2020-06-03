@@ -68,7 +68,7 @@ const BlogFeature = ({ data }) => {
                             <Img className="featured-image" fluid={node.featured_media.localFile.childImageSharp.fluid} /> 
                             : <img className="featured-image" src={peakLogoWhite} alt="" />
                             }
-                            <h4 className="post-heading" dangerouslySetInnerHTML={{ __html: node.title }} />
+                            <p className="post-heading heading-4" dangerouslySetInnerHTML={{ __html: node.title }} />
                             {truncateExcerpt(node.excerpt)}
                         </Link>
                         <div className="post-meta-data">
