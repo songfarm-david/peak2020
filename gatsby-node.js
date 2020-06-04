@@ -15,6 +15,9 @@ exports.createPages = async ({ graphql, actions }) => {
     3. create pages
 */
 
+    // wordpress_id: 2517,
+    // title: 'Web Services'
+
     const { createPage } = actions
 
     const pageTemplate = path.resolve('src/templates/page.js')
@@ -31,6 +34,10 @@ exports.createPages = async ({ graphql, actions }) => {
                     title
                     excerpt
                     content
+                    parent_element {
+                        wordpress_id
+                        title
+                      }
                   }
                 }
               }
@@ -55,9 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const { allWordpressPage, allWordpressPost } = result.data
 
-    // console.log(allWordpressPage.edges.node.slug);
-    
-
     allWordpressPage.edges.forEach(({ node }) => {
 
         if (node.status === 'publish') {
@@ -67,10 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 path: node.slug,
                 component: pageTemplate,
                 context: {
-                    wp_id: node.wordpress_id,
-                    slug: node.slug,
-                    title: node.title,
-                    content: node.content
+                    ...node
                 }
             })
         }
@@ -94,5 +95,26 @@ exports.createPages = async ({ graphql, actions }) => {
         }
 
     })
+
     
+}
+
+// exports.onCreatePage = ({ page }) => {
+//     console.log(page);
+// }
+
+exports.onCreateNode = ({ node, getNode }) => {
+    // console.log(node.internal.type)
+
+    if (node.internal.type === 'SitePage') {
+        console.log(node);
+        // node.path will return '/home'
+        if (node.context && node.context.parent !== null) {
+            // const fileNode = getNode(node.parent)
+            // console.log(`\n`, fileNode.relativePath)
+            console.log(node);
+            
+        }
+    }
+
 }

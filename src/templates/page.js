@@ -81,8 +81,8 @@ export default ({ data, location }) => {
  * Query for all published PAGES
  */
 export const pageQuery = graphql`
-    query( $wp_id: Int! ) {
-        wordpressPage(wordpress_id: {eq: $wp_id}) {
+    query( $wordpress_id: Int! ) {
+        wordpressPage(wordpress_id: {eq: $wordpress_id}) {
             wordpress_id
             slug
             status

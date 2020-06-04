@@ -1,12 +1,27 @@
 # TODO
 
-0. In the node build process, be sure to exclude 'contact-us' and 'blog'
-1. Add a good modern CSS reset 
-2. Address SEO concerns
-3. remove .hey-now class from contact page/ remove WPForms
-4. Wire up forms, newsletter
+- wire up the quote carousel
+- address sitemap page
+- finish 404 page
+- add a little section in the blog 'see an error? get in touch'?
 5. review copy
+3. remove .hey-now class from contact page/ remove WPForms
+4. Review mailing list stuff, Wire up forms, newsletter
+2. Address SEO concerns
+- confirm sitemap 
+1. Add a good modern CSS reset 
+7. do a database backup
+- clean up plugins on backend CMS
+- clean up build processes stuff in gatsby   
+- do a baseline SEO measure pre-launch.
+- confirm redirects
+    - redirect 'local seo victoria' to 'local seo' global page
+- test for broken links
 6. configure domains and dns
+- unpublish unnecessary CMS pages
+- launch site
+- review and update Google my Business efforts
+- create a blogging schedule
 
 
 * Make index.js show slug /home
