@@ -43,3 +43,8 @@ export function formatTitle(pageTitle) {
     // look for first occurence of space and replace with a dash '-'
     return t
 }
+
+export function removeDash(pageTit) {
+    let p = pageTit.replace(/-/g, ' ')
+    return p
+}

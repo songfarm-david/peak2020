@@ -4,27 +4,24 @@
  */
 
 import React from "react"
-import { graphql } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout"
 import PageBanner from "../components/hero/pageBanner"
 
-// import Header from "../components/header"
 import HeroSection from "../components/hero/heroSection"
 import BlogFeature from "../components/blog/blogFeature"
-// import TestimonialsCarousel from "../components/testimonials"
 import Newsletter from "../components/hero/newsletter"
 import ContactForm from "../components/contactForm"
 import Form from "../components/form"
-// import Footer from "../components/footer"
 
 import "../styles/pages.scss"
 
 export default ( props ) => {
-       console.log(props);
        
-    const {title, content, slug} = props.pageContext
+    const {title, content, slug, parent} = props.pageContext
+    let p = parent
+    if (p === null) p = ""
 
     function formatTitle(pageTitle) {
         let t = pageTitle.toLowerCase().replace(/\s/g, '-')
@@ -34,7 +31,7 @@ export default ( props ) => {
 
     function buildPageLayout(page) {
         // use switch statement to test page title and return appropraite elements
-        console.log('buildPageLayout called', page);
+        // console.log('buildPageLayout called', page);
         switch ( page ) {
             case 'contact-us': 
                 return <Form />
@@ -53,7 +50,6 @@ export default ( props ) => {
                     <ContactForm />
                     </>
                 )
-                
         }
         
     }
@@ -61,9 +57,11 @@ export default ( props ) => {
     return (
         <Layout>
             {/* show either hero section or a page banner */
-            (slug === 'home' && <HeroSection />) || <PageBanner pageTitle={formatTitle(title)} />}
+            (slug === 'home' && <HeroSection />) || <PageBanner pageTitle={title.toString()} parent={parent} />}
                       
-            <div className={"page-content " + formatTitle(title)}>
+            <div className={(true === p.includes('/services/')) ? 
+                "page-content web-services " + formatTitle(title) : 
+                "page-content " + formatTitle(title)}>
                 {ReactHtmlParser(content)}
             </div>
 
@@ -72,19 +70,3 @@ export default ( props ) => {
     )
 
 }
-
-/**
- * Query for all published PAGES
- */
-// export const pageQuery = graphql`
-//     query( $wordpress_id: Int! ) {
-//         wordpressPage(wordpress_id: {eq: $wordpress_id}) {
-//             wordpress_id
-//             slug
-//             status
-//             title
-//             excerpt
-//             content
-//         }
-//     }
-// `

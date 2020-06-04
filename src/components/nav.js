@@ -33,7 +33,7 @@ const Nav = ({menuToggleClass}) => {
       `)
     const navItems = query.wordpressMenusMenusItems
 
-    console.log(navItems);
+    // console.log(navItems);
     
 
     return (

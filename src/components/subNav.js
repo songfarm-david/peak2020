@@ -8,12 +8,12 @@ import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
 
 const SubNav = item => {
     
-    console.log('in subNav', item);
+    // console.log('in subNav', item);
     
     const child = item.childItems
     const [isSubMenuOpen, toggleSubMenu] = useState(false)
     
-    console.log('what is children', child);
+    // console.log('what is children', child);
     
     return (
         <>

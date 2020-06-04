@@ -4,18 +4,27 @@
  * pop out the right background and text
  */
 import React from "react"
+import { removeDash, formatTitle } from "../../functions/functions"
+import ReactHtmlParser from 'react-html-parser';
 
 import "./pageBanner.scss"
 
-function removeDash(pageTit) {
-    let p = pageTit.replace(/-/, ' ')
-    return p
-}
+const PageBanner = ({pageTitle, parent}) => {
+    console.log(pageTitle, parent);
 
-const PageBanner = ({pageTitle}) => (
-    <div className={"page-banner " + pageTitle}>
-        <h1>{removeDash(pageTitle)}</h1>
+    if (parent === null) parent = ""
+    
+    const parEl = (parent !== undefined) ? parent : ''
+    // const pTitle = pageTitle.toString()
+    // pTitle = removeDash(pTitle)
+    return (
+    <div className={(true === parEl.includes('/services/')) ? 
+        "page-banner web-services " + formatTitle(pageTitle) : 
+        "page-banner " + formatTitle(pageTitle)
+        }>
+
+        <h1>{ReactHtmlParser(removeDash(pageTitle))}</h1>
     </div>
-)
+)}
 
 export default PageBanner

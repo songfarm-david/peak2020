@@ -20,8 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
                         excerpt
                         content
                         parent_element {
-                            wordpress_id
-                            title
+                            path
                         }
                     }
                 }
@@ -50,6 +49,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
     allWordpressPage.edges.forEach(({ node }) => {
 
+        const parentEl = (node.parent_element !== null) ? node.parent_element.path : null
+
         if (node.status === 'publish') {            
             createPage({
                 path: node.path,
@@ -58,6 +59,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     title: node.title,
                     content: node.content,
                     slug: node.slug,
+                    parent: parentEl
                 }
             })
         }

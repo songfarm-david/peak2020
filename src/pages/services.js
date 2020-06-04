@@ -23,15 +23,15 @@ export default ({ data }) => {
     return (
         <Layout>
 
-            <PageBanner pageTitle="web-services" />
+            <PageBanner pageTitle="web-services" parent={''} />
 
             <div className={"page-content services"}>
 
               {services.edges.map(({ node }, index) => (
                   <article className="service-card" key={index}>
-                      <Img className="service-image" alt={ReactHtmlParser(node.title)} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
+                      <Img className="service-image" alt={node.title} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
                       <h3 className="service-heading">{ReactHtmlParser(node.title)}</h3>
-                      <p className="service-excerpt">{ReactHtmlParser(node.excerpt)}</p>
+                      <div className="service-excerpt">{ReactHtmlParser(node.excerpt)}</div>
                       <Link className="service-link" to={node.path} title={ReactHtmlParser(node.title)}>Learn More</Link>
                   </article>
               ))}
