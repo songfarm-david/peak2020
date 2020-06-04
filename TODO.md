@@ -2,8 +2,10 @@
 
 - wire up the quote carousel
 - address sitemap page
+- address portfolio situation
 - finish 404 page
 - add a little section in the blog 'see an error? get in touch'?
+- create an alias for david@peakwebsites - sayhello@peakwebsites.ca
 5. review copy
 3. remove .hey-now class from contact page/ remove WPForms
 4. Review mailing list stuff, Wire up forms, newsletter

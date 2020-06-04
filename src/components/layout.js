@@ -13,7 +13,9 @@ import "./layout.scss"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children, page }) => {
+const Layout = ({ children, specialClass }) => {
+  
+  console.log('any props', specialClass);
   
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -39,16 +41,11 @@ const Layout = ({ children, page }) => {
   
   return (
     <>
-      <Header 
-        siteTitle={data.site.siteMetadata.title} 
-        menuLinks={data.site.siteMetadata.menuLinks} />
-
-        <main id="mainContent" role="main">
-          {children}
-        </main>
-
-        <Footer footerLinks={data.site.siteMetadata.footerLinks} />
-
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <main id="mainContent" role="main" className={(specialClass) ? specialClass : null}>
+        {children}
+      </main>
+      <Footer />
     </>
   )
 }

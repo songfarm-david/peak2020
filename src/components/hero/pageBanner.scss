@@ -9,9 +9,10 @@
     @extend .heading-1;
     text-transform: capitalize;
     padding: 2.25rem 0;
-
+    background: url('../../images/about_header.jpg') center/cover no-repeat;
+    
     &.about {
-        background: url('../../images/about_header.jpg') 0%/cover no-repeat;
+        background: url('../../images/about_header.jpg') center/cover no-repeat;
     }
     
     &.portfolio {

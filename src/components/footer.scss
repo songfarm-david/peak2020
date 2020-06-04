@@ -82,9 +82,14 @@
                 margin: 0;
                 width: 66%;
                 background: transparent;
-                border-color: $white;
                 font-size: inherit;
-                border-width: 1px;
+                border: 1px solid $white;
+                color: $white;
+                &:focus {
+                    outline-color: $bright-orange;
+                    // outline-width: 1px;
+                    // border-width: unset;
+                }
             }
             button {
                 width: auto;

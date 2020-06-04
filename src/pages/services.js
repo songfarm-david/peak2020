@@ -21,11 +21,11 @@ export default ({ data }) => {
     const services = data.allWordpressPage
     
     return (
-        <Layout>
+        <Layout specialClass="services-home">
 
             <PageBanner pageTitle="web-services" parent={''} />
 
-            <div className={"page-content services"}>
+            <div className={"page-content web-services"}>
 
               {services.edges.map(({ node }, index) => (
                   <article className="service-card" key={index}>

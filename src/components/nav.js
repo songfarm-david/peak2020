@@ -5,11 +5,9 @@ import ReactHtmlParser from 'react-html-parser';
 import "./nav.scss"
 import SubNav from "./subNav";
 
-const Nav = ({menuToggleClass}) => {
+const Nav = ({ menuToggleClass }) => {
 
-    /**
-     * query for the main navigation (by id)
-     */
+    /* query main navigation from CMS */
     const query = useStaticQuery(
       graphql`
         query {
@@ -31,27 +29,20 @@ const Nav = ({menuToggleClass}) => {
           }
         }
       `)
-    const navItems = query.wordpressMenusMenusItems
-
-    // console.log(navItems);
-    
+    const navItems = query.wordpressMenusMenusItems  
 
     return (
       <nav id="mainNav" role="navigation" className={menuToggleClass}>
         <h2 className="screen-reader-text">Main Navigation</h2>
-        <ul> 
-          {navItems.items.map((item, i) => (
+        <ul>{navItems.items.map((item, i) => (
             <li 
               key={i} 
               className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}
-              aria-haspopup={( item.child_items ) !== null ? true : false}
-            >
+              aria-haspopup={( item.child_items ) !== null ? true : false}>
               <Link to={item.slug}>
                 {ReactHtmlParser(item.title)}
               </Link>
-              {
-                ( item.child_items === null ) ? null : <SubNav childItems={item} />
-              }
+              {( item.child_items === null ) ? null : <SubNav childItems={item} />}
             </li>
           ))}
         </ul>
