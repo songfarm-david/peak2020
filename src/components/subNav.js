@@ -8,12 +8,15 @@ import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
 
 const SubNav = item => {
     
-    const children = item.childItems
+    console.log('in subNav', item);
+    
+    const child = item.childItems
     const [isSubMenuOpen, toggleSubMenu] = useState(false)
+    
+    console.log('what is children', child);
     
     return (
         <>
-
         <img 
             src={(!isSubMenuOpen) ? arrowDown : arrowUp} 
             className="arrow down" 
@@ -24,11 +27,11 @@ const SubNav = item => {
             className={( isSubMenuOpen ) ? "sub-menu sub-menu-open" : "sub-menu"}
             aria-label="submenu"
             >
-            {children.child_items.map(( childItem, i ) => (
+            {child.child_items.map(( childItem, i ) => (
             <li 
                 key={i}
                 className={(childItem.child_items === null) ? "nav-item" : "nav-item has-sub-menu"}>
-                <Link to={childItem.slug}>
+                <Link to={`${child.slug}/${childItem.slug}`}>
                     {ReactHtmlParser(childItem.title)}
                 </Link>
                 {( childItem.child_items === null ) ? null : 
@@ -37,7 +40,7 @@ const SubNav = item => {
                         {childItem.child_items.map(( subItem, i ) => (
                         <li className="sub-nav-item" key={i}>
                         <img className="arrow right" src={arrowRight} alt={''} />
-                            <Link to={subItem.slug}>
+                            <Link to={`${child.slug}/${childItem.slug}/${subItem.slug}`}>
                                 {subItem.title}
                             </Link>
                         </li>

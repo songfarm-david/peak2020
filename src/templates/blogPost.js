@@ -8,35 +8,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default ({ data }) => {
+export default ( props ) => {
     
-   console.log(data)
-
-   const { wordpressPost: post } = data
+   const { title, excerpt, date, content } = props.pageContext
 
     return (
         <Layout>
-            <SEO title={post.title} description={post.excerpt} />
+            <SEO title={title} description={excerpt} />
             <div style={{ maxWidth: `80vw`, marginBottom: `1.45rem` }}>
               <div>
-                <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-                <p>{post.date}</p>
+                <h1 dangerouslySetInnerHTML={{ __html: title }} />
+                <p>{date}</p>
               </div>
-              <div dangerouslySetInnerHTML={ { __html: post.content }}></div>
+              <div dangerouslySetInnerHTML={ { __html: content }}></div>
             </div>
         </Layout>
     )
 }
-
-export const queryBlogPost = graphql`
-  query ($wp_id: Int) {
-    wordpressPost(wordpress_id: {eq: $wp_id}) {
-      title
-      date(formatString: "MMMM Do, YYYY")
-      excerpt
-      content
-      slug
-      wordpress_id
-    }
-  }
-`

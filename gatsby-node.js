@@ -1,22 +1,6 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require('path')
 
 exports.createPages = async ({ graphql, actions }) => {
-
-    /*     
-    0. import template     
-    1. make the request
-    2. JS the request to parse from array
-    3. create pages
-*/
-
-    // wordpress_id: 2517,
-    // title: 'Web Services'
 
     const { createPage } = actions
 
@@ -27,18 +11,19 @@ exports.createPages = async ({ graphql, actions }) => {
         query {
             allWordpressPage {
                 edges {
-                  node {
-                    wordpress_id
-                    slug
-                    status
-                    title
-                    excerpt
-                    content
-                    parent_element {
+                    node {
                         wordpress_id
+                        slug
+                        path
+                        status
                         title
-                      }
-                  }
+                        excerpt
+                        content
+                        parent_element {
+                            wordpress_id
+                            title
+                        }
+                    }
                 }
               }
             allWordpressPost {
@@ -46,6 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         wordpress_id
                         slug
+                        path
                         status
                         title
                         date
@@ -64,14 +50,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
     allWordpressPage.edges.forEach(({ node }) => {
 
-        if (node.status === 'publish') {
-            console.log(node.title, node.slug);
-            
+        if (node.status === 'publish') {            
             createPage({
-                path: node.slug,
+                path: node.path,
                 component: pageTemplate,
                 context: {
-                    ...node
+                    title: node.title,
+                    content: node.content,
+                    slug: node.slug,
                 }
             })
         }
@@ -82,11 +68,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
         if (node.status === 'publish') {
             createPage({
-                path: node.slug,
+                path: node.path,
                 component: blogTemplate,
                 context: {
-                    wp_id: node.wordpress_id,
-                    slug: node.slug,
                     title: node.title,
                     date: node.date,
                     content: node.content
@@ -103,18 +87,18 @@ exports.createPages = async ({ graphql, actions }) => {
 //     console.log(page);
 // }
 
-exports.onCreateNode = ({ node, getNode }) => {
-    // console.log(node.internal.type)
+// exports.onCreateNode = ({ node, getNode }) => {
+//     // console.log(node.internal.type)
 
-    if (node.internal.type === 'SitePage') {
-        console.log(node);
-        // node.path will return '/home'
-        if (node.context && node.context.parent !== null) {
-            // const fileNode = getNode(node.parent)
-            // console.log(`\n`, fileNode.relativePath)
-            console.log(node);
+//     if (node.internal.type === 'SitePage') {
+//         console.log(node);
+//         // node.path will return '/home'
+//         if (node.context && node.context.parent !== null) {
+//             // const fileNode = getNode(node.parent)
+//             // console.log(`\n`, fileNode.relativePath)
+//             console.log(node);
             
-        }
-    }
+//         }
+//     }
 
-}
+// }

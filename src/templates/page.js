@@ -21,12 +21,10 @@ import Form from "../components/form"
 
 import "../styles/pages.scss"
 
-export default ({ data, location }) => {
-    // console.log(data, location, location.pathname);
-
-    // const {pagePath} = location.pathname
+export default ( props ) => {
+       console.log(props);
        
-    const {title, content, slug} = data.wordpressPage
+    const {title, content, slug} = props.pageContext
 
     function formatTitle(pageTitle) {
         let t = pageTitle.toLowerCase().replace(/\s/g, '-')
@@ -62,7 +60,6 @@ export default ({ data, location }) => {
     
     return (
         <Layout>
-
             {/* show either hero section or a page banner */
             (slug === 'home' && <HeroSection />) || <PageBanner pageTitle={formatTitle(title)} />}
                       
@@ -70,8 +67,7 @@ export default ({ data, location }) => {
                 {ReactHtmlParser(content)}
             </div>
 
-            {buildPageLayout(slug)}
-                
+            {buildPageLayout(slug)}     
         </Layout>
     )
 
@@ -80,15 +76,15 @@ export default ({ data, location }) => {
 /**
  * Query for all published PAGES
  */
-export const pageQuery = graphql`
-    query( $wordpress_id: Int! ) {
-        wordpressPage(wordpress_id: {eq: $wordpress_id}) {
-            wordpress_id
-            slug
-            status
-            title
-            excerpt
-            content
-        }
-    }
-`
+// export const pageQuery = graphql`
+//     query( $wordpress_id: Int! ) {
+//         wordpressPage(wordpress_id: {eq: $wordpress_id}) {
+//             wordpress_id
+//             slug
+//             status
+//             title
+//             excerpt
+//             content
+//         }
+//     }
+// `

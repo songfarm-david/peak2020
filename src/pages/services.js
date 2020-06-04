@@ -32,7 +32,7 @@ export default ({ data }) => {
                       <Img className="service-image" alt={ReactHtmlParser(node.title)} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
                       <h3 className="service-heading">{ReactHtmlParser(node.title)}</h3>
                       <p className="service-excerpt">{ReactHtmlParser(node.excerpt)}</p>
-                      <Link className="service-link" to={node.slug} title={ReactHtmlParser(node.title)}>Learn More</Link>
+                      <Link className="service-link" to={node.path} title={ReactHtmlParser(node.title)}>Learn More</Link>
                   </article>
               ))}
 
@@ -67,6 +67,7 @@ query MyQuery {
               }
             }
             slug
+            path
           }
         }
       }
