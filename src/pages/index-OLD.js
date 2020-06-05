@@ -10,7 +10,6 @@ import "../styles/pages.scss"
 
 export default ({ data, location }) => {
     
-<<<<<<< HEAD:src/pages/index-OLD.js
     const {content} = data.wordpressPage
     
     return (
@@ -18,22 +17,6 @@ export default ({ data, location }) => {
             {<div className="page-content home">
                 {ReactHtmlParser(content)}
             </div>}
-=======
-    const { wordpressPage: page } = data
-    console.log(data.wordpressPage);
-
-    const {slug, title, excerpt, content} = data.wordpressPage
-    
-    return (
-        <Layout page={slug == 'home' ? "index" : false}>
-            <SEO title={title} description={excerpt} />
-            {/* <h1 className="screen-reader-text">{page.title}</h1>
-            <div dangerouslySetInnerHTML={ {__html: page.content} } ></div> */}
-            <h1 className="screen-reader-text">{title}</h1>
-            <div className={"page-content " + title.toLowerCase()}>
-                {ReactHtmlParser(content)}
-            </div>
->>>>>>> dev-pages:src/pages/index.js
         </Layout>
     )
  }
