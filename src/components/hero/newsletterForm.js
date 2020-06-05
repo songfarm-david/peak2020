@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import axios from 'axios'
 
+import { MC_API_KEY, MC_DATA_NO, MC_AUDIENCE_ID, checkEnvVars } from "../../config/config"
+
 const NewsletterForm = ({ text }) => {
 
     const [userEmail, setState] = useState({'email_address': ''})
-    
-    const credentials = 'anystring:'+ process.env.GATSBY_MC_API_KEY
-    let tURL = 'https://'+ process.env.GATSBY_MC_DATA_NO +'.api.mailchimp.com/3.0'
-    tURL += '/lists/'+ process.env.GATSBY_MC_AUDIENCE_ID +'/members'
 
+    checkEnvVars()
     
+    const credentials = 'anystring:'+ MC_API_KEY
+    let tURL = 'https://'+ MC_DATA_NO +'.api.mailchimp.com/3.0'
+    tURL += '/lists/'+ MC_AUDIENCE_ID +'/members'
 
     const handleChange = e => {
         setState({email_address: e.target.value})        
