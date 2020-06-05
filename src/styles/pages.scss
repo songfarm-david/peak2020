@@ -11,6 +11,16 @@
     .page-banner { margin-top: 4.5rem; }
     .button { width: auto; }
 
+    &.home {
+        .page-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: $content-padding;
+
+            .highlight p { margin-bottom: 0; }
+        }
+    }
+
     &.services-home {
 
         .web-services {
@@ -108,23 +118,25 @@
             }
         }
 
-        &.home {
+        /* home page section */
+        &.peak-websites {
             padding-bottom: $vertical-rhythm * 2;
-            transform: translateZ(0);
+            position: relative;
             &::after {
                 content: '';
                 display: block;
                 background: url('../images/illustrations/svg/compass.svg') no-repeat;
                 background-position: 105% bottom;
-                background-size: 16rem;
-                padding-bottom: 4.5rem;
-                height: 16rem;
-                width: 16rem;
+                background-size: 19rem;
+                padding-bottom: 9rem;
+                height: 100%;
+                width: 100%;
                 position: fixed;
-                right: -9rem;
-                bottom: -2.5rem;
+                right: 0;
+                bottom: 15%;
                 z-index: -111;
-                transform: rotate(10deg);
+                // transform: rotate(10deg);
+                display: none;
             }
         }
 
@@ -180,10 +192,7 @@
             }
         }
 
-        &.web-services {
-            padding: $content-padding;
-
-        }
+        &.web-services {}
 
         &.contact {
             text-align: center;
@@ -224,6 +233,17 @@
     }
 
     @media screen and (min-width: $mobile-breakpoint) {
+
+        &.home {
+            .page-content {
+                .highlight p { margin-bottom: $top-margin; }
+                transform: translateX();
+                &.peak-websites::after {
+                    display: block;
+                }
+            }
+        }
+
         .page-content {
             
             .hero-image { order: initial; }

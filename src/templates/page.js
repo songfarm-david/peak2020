@@ -21,6 +21,7 @@ export default ( props ) => {
        
     const {title, content, slug, parent} = props.pageContext
     let p = parent
+
     if (p === null) p = ""
 
     function formatTitle(pageTitle) {
@@ -30,8 +31,8 @@ export default ( props ) => {
     }
 
     function buildPageLayout(page) {
-        // use switch statement to test page title and return appropraite elements
-        // console.log('buildPageLayout called', page);
+
+        // use switch statement to test page title and return appropriate elements
         switch ( page ) {
             case 'contact-us': 
                 return <Form />
@@ -55,17 +56,19 @@ export default ( props ) => {
     }
     
     return (
-        <Layout>
-            {/* show either hero section or a page banner */
-            (slug === 'home' && <HeroSection />) || <PageBanner pageTitle={title.toString()} parent={parent} />}
+        <Layout specialClass={ (slug === 'home') ? "home" : null }>
+            {(slug === 'home' && <HeroSection />) || 
+                <PageBanner pageTitle={title.toString()} parent={parent} />}
                       
-            <div className={(true === p.includes('/services/')) ? 
-                "page-content web-services " + formatTitle(title) : 
-                "page-content " + formatTitle(title)}>
-                {ReactHtmlParser(content)}
-            </div>
+                <div className={(true === p.includes('/services/')) ? 
+                    "page-content web-services " + formatTitle(title) : 
+                    "page-content " + formatTitle(title)}
+                    >
+                    {ReactHtmlParser(content)}
+                </div>
 
-            {buildPageLayout(slug)}     
+                { buildPageLayout(slug) }     
+                
         </Layout>
     )
 

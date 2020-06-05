@@ -18,7 +18,7 @@ const AllPosts =({allPosts}) => {
             <div className="blog-inner-container">
             {allPosts.edges.map(({ node }) => (
                 <div key={node.title} className="blog-post">
-                    <Link to={node.slug}>
+                    <Link to={node.path}>
                         {  
                             node.featured_media != null ? 
                             <Img className="featured-image" fluid={node.featured_media.localFile.childImageSharp.fluid} /> 

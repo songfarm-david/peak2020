@@ -34,7 +34,7 @@ const Footer = () => {
     `)
   
   const fLinks = footerLinks.allWordpressMenusMenusItems.edges[0].node 
-  console.log(fLinks.items, typeof fLinks);
+  // console.log(fLinks.items, typeof fLinks);
     
   return (
     <footer id="siteFooter">
