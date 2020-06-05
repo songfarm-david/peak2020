@@ -4,6 +4,16 @@ import axios from 'axios'
 const NewsletterForm = ({ text }) => {
 
     const [userEmail, setState] = useState({'email_address': ''})
+    
+    const {
+        MC_DATA_NO,
+        MC_AUDIENCE_ID,
+        MC_API_KEY
+    } = process.env
+
+    const credentials = 'anystring:'+ MC_API_KEY
+    let url = 'https://'+ MC_DATA_NO +'.api.mailchimp.com/3.0'
+    url += '/lists/'+ MC_AUDIENCE_ID +'/members'
 
     const handleChange = e => {
         setState({email_address: e.target.value})        
@@ -12,23 +22,14 @@ const NewsletterForm = ({ text }) => {
     const submitSubscribe = async e => {
         e.preventDefault()
 
-        const {
-            MC_DATA_NO,
-            MC_AUDIENCE_ID,
-            MC_API_KEY
-        } = process.env
-
-        const credentials = 'anystring:'+ MC_API_KEY
-        let url = 'https://'+ MC_DATA_NO +'.api.mailchimp.com/3.0'
-        url += '/lists/'+ MC_AUDIENCE_ID +'/members'
-        
         const payload = {
             'email_address': userEmail.email_address,
             'status': 'subscribed'
         }
 
-        
         try {
+            console.log('what\'s the url?', url);
+            
             const response = await axios.post( url, payload, {
                 headers: {
                     'Authorization': 'Basic ' + Buffer.from(credentials).toString('base64')
