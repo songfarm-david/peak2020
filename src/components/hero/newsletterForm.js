@@ -27,15 +27,20 @@ const NewsletterForm = ({ text }) => {
             'status': 'subscribed'
         }
 
-        const response = await axios.post( url, payload, {
-            headers: {
-                'Authorization': 'Basic ' + Buffer.from(credentials).toString('base64')
-            }
-        })
-
-        // do something with response
-        console.log('r', response)
-        console.log('r data', response.data)
+        
+        try {
+            const response = await axios.post( url, payload, {
+                headers: {
+                    'Authorization': 'Basic ' + Buffer.from(credentials).toString('base64')
+                }
+            })
+            console.log('r', response)
+            console.log('r data', response.data)
+          } catch(err) {
+            console.log(err);
+            
+          }
+        
 
     }
 
