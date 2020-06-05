@@ -6,8 +6,6 @@ import { MC_API_KEY, MC_DATA_NO, MC_AUDIENCE_ID, checkEnvVars } from "../../conf
 const NewsletterForm = ({ text }) => {
 
     const [userEmail, setState] = useState({'email_address': ''})
-
-    checkEnvVars()
     
     const credentials = 'anystring:'+ MC_API_KEY
     let tURL = 'https://'+ MC_DATA_NO +'.api.mailchimp.com/3.0'

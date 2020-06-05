@@ -1,6 +1,6 @@
-export const MC_API_KEY = process.env.GATSBY_MC_API_KEY
-export const MC_DATA_NO = process.env.GATSBY_MC_DATA_NO
-export const MC_AUDIENCE_ID = process.env.GATSBY_MC_AUDIENCE_ID
+export const MC_API_KEY = process.env.GATSBY_MC_API_KEY;
+export const MC_DATA_NO = process.env.GATSBY_MC_DATA_NO;
+export const MC_AUDIENCE_ID = process.env.GATSBY_MC_AUDIENCE_ID;
 
 const envVars = [
     {name: "MC_API_KEY", value: MC_API_KEY},
@@ -14,3 +14,5 @@ export const checkEnvVars = () => {
         throw new Error(`Could not load env vars ${envVarsNotLoaded.join(",")}`);
     }
 }
+
+checkEnvVars()
