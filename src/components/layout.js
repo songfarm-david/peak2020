@@ -14,9 +14,7 @@ import Header from "./header"
 import Footer from "./footer"
 
 const Layout = ({ children, specialClass }) => {
-  
-  console.log('any props', specialClass);
-  
+    
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

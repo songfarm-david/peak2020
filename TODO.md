@@ -1,6 +1,10 @@
 # TODO
 
-- wire up the quote carousel
+# wire up the quote carousel
+- Review mailing list stuff, Wire up forms, newsletter
+    - one component for contact form
+- style blog posts
+
 - address sitemap page
 - address portfolio situation
 - finish 404 page
@@ -8,7 +12,6 @@
 - create an alias for david@peakwebsites - sayhello@peakwebsites.ca
 5. review copy
 3. remove .hey-now class from contact page/ remove WPForms
-4. Review mailing list stuff, Wire up forms, newsletter
 2. Address SEO concerns
 - confirm sitemap 
 1. Add a good modern CSS reset 

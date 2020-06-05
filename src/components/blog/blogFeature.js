@@ -81,7 +81,9 @@ const BlogFeature = ({ data }) => {
                     </div>
                 ))}  
                 </div>
-                <button className="button primary-button">Go to blog</button>
+                <div className="to-blog-link">
+                    <Link to="/blog/" className="button primary-button">Go to blog</Link>
+                </div>
             </div>
         </article>
     )

@@ -10,7 +10,7 @@ import ReactHtmlParser from 'react-html-parser';
 import "./pageBanner.scss"
 
 const PageBanner = ({pageTitle, parent}) => {
-    console.log(pageTitle, parent);
+    // console.log(pageTitle, parent);
 
     if (parent === null) parent = ""
     
