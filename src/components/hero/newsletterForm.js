@@ -5,15 +5,11 @@ const NewsletterForm = ({ text }) => {
 
     const [userEmail, setState] = useState({'email_address': ''})
     
-    const {
-        GATSBY_MC_DATA_NO,
-        GATSBY_MC_AUDIENCE_ID,
-        GATSBY_MC_API_KEY
-    } = process.env
+    const credentials = 'anystring:'+ process.env.GATSBY_MC_API_KEY
+    let tURL = 'https://'+ process.env.GATSBY_MC_DATA_NO +'.api.mailchimp.com/3.0'
+    tURL += '/lists/'+ process.env.GATSBY_MC_AUDIENCE_ID +'/members'
 
-    const credentials = 'anystring:'+ GATSBY_MC_API_KEY
-    let url = 'https://'+ GATSBY_MC_DATA_NO +'.api.mailchimp.com/3.0'
-    url += '/lists/'+ GATSBY_MC_AUDIENCE_ID +'/members'
+    
 
     const handleChange = e => {
         setState({email_address: e.target.value})        
@@ -28,9 +24,9 @@ const NewsletterForm = ({ text }) => {
         }
 
         try {
-            console.log('what\'s the url?', url);
+            console.log('what\'s the url?', tURL);
             
-            const response = await axios.post( url, payload, {
+            const response = await axios.post( tURL, payload, {
                 headers: {
                     'Authorization': 'Basic ' + Buffer.from(credentials).toString('base64')
                 }

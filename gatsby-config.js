@@ -1,10 +1,6 @@
-
-// import decodeHTML from "./functions/functions"
-// const decodeHTML = ({input}) => {
-//   let txt = document.createElement('textarea');
-//   txt.innerHTML = input;
-//   return txt.value;
-// }
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
