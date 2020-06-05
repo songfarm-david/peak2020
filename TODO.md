@@ -25,6 +25,7 @@
 6. configure domains and dns
 - unpublish unnecessary CMS pages
 - launch site
+- test Google Analytics
 - review and update Google my Business efforts
 - create a blogging schedule
 

@@ -10,61 +10,7 @@ module.exports = {
   siteMetadata: {
     title: `Peak Websites`,
     description: ``,
-    author: `David Gaskin`,
-    menuLinks: [
-      {
-        name: 'about',
-        link: `/about`
-      },
-      {
-        name: `services`,
-        link: `/services`,
-        subItems: [
-          {
-            name: `consulting`,
-            link: `/services/web-consulting`
-          },
-          {
-            name: `web design/development`,
-            link: `/services/website-development-design-services`
-          },
-          {
-            name: `website maintenance`,
-            link: `/services/website-maintenance-service`
-          },
-          {
-            name: `search engine optimization`,
-            link: `/services/seo-services`
-          }
-        ]
-      },
-      {
-        name: `blog`,
-        link: `/`
-      },
-      {
-        name: `contact`,
-        link: `/contact-us`
-      }
-    ],
-    footerLinks: [
-      {
-        name: `Contribute to the Blog`,
-        link: `contribute-to-the-blog`
-      },
-      {
-        name: `Disclaimer`,
-        link: `disclaimer`
-      },
-      {
-        name: `Privacy policy`,
-        link: `privacy-policy`
-      },
-      {
-        name: `Sitemap`,
-        link: `sitemap`
-      }
-    ]
+    author: `David Gaskin`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -109,6 +55,12 @@ module.exports = {
             variants: [`300`,`300i`,`400`,`400i`,`700`]
           },
         ],
+      },
+    }, {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_CODE,
+        head: false,
       },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
