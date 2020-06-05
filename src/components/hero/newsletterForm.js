@@ -15,14 +15,14 @@ const NewsletterForm = ({ text }) => {
         e.preventDefault()
 
         const {
-            MAILCHIMP_DATA_NO,
-            MAILCHIMP_LIST_ID,
-            MAILCHIMP_API_KEY
+            MC_DATA_NO,
+            MC_AUDIENCE_ID,
+            MC_API_KEY
         } = process.env
 
-        const credentials = 'anystring:'+ MAILCHIMP_API_KEY
-        let url = 'https://'+ MAILCHIMP_DATA_NO +'.api.mailchimp.com/3.0'
-        url += '/lists/'+ MAILCHIMP_LIST_ID +'/members'
+        const credentials = 'anystring:'+ MC_API_KEY
+        let url = 'https://'+ MC_DATA_NO +'.api.mailchimp.com/3.0'
+        url += '/lists/'+ MC_AUDIENCE_ID +'/members'
         
         const payload = {
             'email_address': userEmail.email_address,
