@@ -6,9 +6,7 @@ const NewsletterForm = ({ text }) => {
     const [userEmail, setState] = useState({'email_address': ''})
 
     const handleChange = e => {
-        setState({email_address: e.target.value})
-        console.log('value is', userEmail.email_address);
-        
+        setState({email_address: e.target.value})        
     }
 
     const submitSubscribe = async e => {
