@@ -2,7 +2,7 @@
 
 #newsletter {
 
-    background: url('../../images/newsletter.jpeg') center/cover no-repeat;
+    background: url('../../images/newsletter.jpeg') center top/cover no-repeat;
     color: $white;
     @extend .normal-text;
     padding: $top-margin 0 $vertical-rhythm;
@@ -28,16 +28,28 @@
                 flex-wrap: wrap;
                 max-width: 30rem;
                 input,
-                button {
+                .button {
                     height: 100%;
                     height: 3rem;
                 }
                 input {
                     margin-right: 1rem;
                     font-size: inherit;
+                    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: #ccc;
+                        opacity: 1; /* Firefox */
+                    }
+                    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                        color: #ccc;
+                    }
+                    &::-ms-input-placeholder { /* Microsoft Edge */
+                        color: #ccc;
+                    }
                 }
-                button {
+                .button {
                     margin: 1rem 0 0 0;
+                    @extend .small-text;
+                    font-weight: bold;
                 }
             }
         }
@@ -62,8 +74,11 @@
                     // height: $top-margin;
                     align-items: center;
                     flex-wrap: nowrap;
-
-                    button {
+                    form {
+                        display: flex;
+                        flex-wrap: nowrap;
+                    }
+                    .button {
                         margin-top: 0;
                     }
                 }

@@ -1,5 +1,6 @@
 import React from "react"
 
+import NewsletterForm from "./newsletterForm"
 import "./newsletter.scss"
 
 const Newsletter = () => (
@@ -10,8 +11,7 @@ const Newsletter = () => (
                 <p className="heading-2">Want to know what's happening online?</p>
             </div>
             <div className="newsletter">
-                <input type="email" placeholder="Required field"/>
-                <button className="button primary-button-inverted">Send</button>
+                <NewsletterForm />
             </div>
             <div className="sub-heading">
                 <p>Get thoughtful, informative web and tech ideas you can put to use.</p>

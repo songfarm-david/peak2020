@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import QuotesCarousel from "./hero/quotesCarousel"
+import NewsletterForm from "./hero/newsletterForm"
 
 import secondaryLogo from "../images/logo/Logo_white.svg";
 import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
@@ -9,7 +10,6 @@ import facebook from "../images/illustrations/png/Social Media Icons/fb.png"
 import twitter from "../images/illustrations/png/Social Media Icons/twitter.png"
 
 import "./footer.scss"
-import Newsletter from "./hero/newsletter";
 
 const Footer = () => {
   
@@ -82,8 +82,9 @@ const Footer = () => {
         <div className="footer-item">
           <p>Subscribe to the newsletter</p>
           <div id="footerNewsletter" className="newsletter">
-            <input type="email" placeholder="Email Address"/>
-            <button className="button small-button footer-text">OK</button>
+            {/* <input type="email" placeholder="Email Address"/>
+            <button className="button small-button footer-text">OK</button> */}
+            <NewsletterForm text="OK" />
           </div>
         </div>
 

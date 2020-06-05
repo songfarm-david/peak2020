@@ -20,18 +20,6 @@ const Layout = ({ children, specialClass }) => {
       site {
         siteMetadata {
           title
-          menuLinks {
-            name
-            link
-            subItems {
-              name
-              link
-            }
-          }
-          footerLinks {
-            name
-            link
-          }
         }
       }
     }
