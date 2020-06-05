@@ -21,7 +21,7 @@ const NewsletterForm = ({ text }) => {
         } = process.env
 
         const credentials = 'anystring:'+ MAILCHIMP_API_KEY
-        const url = 'https://'+ MAILCHIMP_DATA_NO +'.api.mailchimp.com/3.0'
+        let url = 'https://'+ MAILCHIMP_DATA_NO +'.api.mailchimp.com/3.0'
         url += '/lists/'+ MAILCHIMP_LIST_ID +'/members'
         
         const payload = {
