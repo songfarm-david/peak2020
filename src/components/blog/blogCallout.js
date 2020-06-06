@@ -61,7 +61,7 @@ const BlogFeature = ({ data }) => {
                 <div className="blog-inner-container">
                 {featuredPosts.edges.map(({ node }) => (
                     <div key={node.title} className="blog-post">
-                        <Link to={node.slug}>
+                        <Link to={node.path}>
                             {  
                             /* test for featured media */
                             node.featured_media != null ? 
