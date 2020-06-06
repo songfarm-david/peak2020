@@ -10,9 +10,9 @@ import "./pageBanner.scss"
  * @param {String} pageTitle a page title
  * @param {String} parent a parent page
  */
-const PageBanner = ({pageTitle, parent}) => {
+const PageBanner = ({pageTitle, parent = ''}) => {
 
-    // if (parent === null) parent = ""
+    if (parent === null) parent = ""
     const parEl = (parent !== undefined) ? parent : ''
 
     return (

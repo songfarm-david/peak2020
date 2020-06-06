@@ -4,13 +4,13 @@ import "./form.scss"
 
 const Form = () => (
     <form id="contactForm" className="contact-form">
-        <label>Name
+        <label className="form-label">Name
             <input type="input" />
         </label>
-        <label>Email
+        <label className="form-label">Email
             <input type="email" required />
         </label>
-        <label>How Can We Help?
+        <label className="form-label">How Can We Help?
             <textarea rows="14"></textarea>
         </label>
         <button className="button primary-button">Send</button>

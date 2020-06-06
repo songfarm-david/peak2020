@@ -3,11 +3,11 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import ReactHtmlParser from 'react-html-parser';
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/contactForm"
+import ContactForm from "../components/layout/contactForm"
 
 import "../styles/pages.scss"
 
@@ -21,11 +21,9 @@ export default ({ data }) => {
     return (
         <Layout specialClass="services-home">
 
-            <PageBanner 
-              pageTitle="web-services" 
-              parent={''} />
+            <PageBanner pageTitle="web-services" />
 
-            <div className={"page-content web-services"}>
+            <div className="page-content web-services">
               {services.edges.map(({ node }, index) => (
                   <article className="service-card" key={index}>
                       <Img className="service-image" alt={node.title} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />

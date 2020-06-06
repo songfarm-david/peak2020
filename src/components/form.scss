@@ -2,7 +2,6 @@
 
 #contactForm {
 
-    text-align: left;
     padding: $top-margin;
     font-size: 1rem;
     max-width: 50rem;
@@ -21,6 +20,11 @@
         margin-bottom: .5rem;
     }
 
+    .form-label {
+        display: block;
+        text-align: left;
+    }
+
     input, textarea {
         border: 2px solid $light-blue;
         background: $lighter-blue;
@@ -34,7 +38,6 @@
         margin: $top-margin auto;
         padding-left: $vertical-rhythm;
         padding-right: $vertical-rhythm;
-
     }
 
 }

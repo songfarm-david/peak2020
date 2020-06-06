@@ -100,14 +100,6 @@
             padding: 0 1rem;
         }
 
-        figure { 
-            margin: 0 auto; 
-            img {
-                height: auto;
-                max-width: 100%;
-            }
-        }
-
         .page-content-para {
             padding: 1rem 0;
             flex-basis: 100%;
@@ -192,41 +184,41 @@
 
         &.web-services {}
 
-        &.contact {
-            text-align: center;
-            padding-bottom: $top-margin;
+        // &.contact {
+        //     text-align: center;
+        //     padding-bottom: $top-margin;
             
-            .hey-now {
-                display: none;
-            }
-            .highlight {
-                p {
-                    width: 100%;
-                    margin-bottom: 0;
-                }
-            }
-            .page-content-para {
-                flex-basis: 100%;
-                font-weight: bold;
-                @extend .normal-text;
-                max-width: 66%;
-            }
+        //     .hey-now {
+        //         display: none;
+        //     }
+        //     .highlight {
+        //         p {
+        //             width: 100%;
+        //             margin-bottom: 0;
+        //         }
+        //     }
+        //     .page-content-para {
+        //         flex-basis: 100%;
+        //         font-weight: bold;
+        //         @extend .normal-text;
+        //         max-width: 66%;
+        //     }
 
-            + form#contactForm {
-                width: $header-width;
-                margin-top: 0;
-                // padding: $content-padding;
-            }
+        //     + form#contactForm {
+        //         width: $header-width;
+        //         margin-top: 0;
+        //         // padding: $content-padding;
+        //     }
             
-            @media screen and (max-width: $mobile-breakpoint) {
-                .page-content-para {
-                    flex-basis: 100%;
-                    font-weight: initial;
-                }
+        //     @media screen and (max-width: $mobile-breakpoint) {
+        //         .page-content-para {
+        //             flex-basis: 100%;
+        //             font-weight: initial;
+        //         }
                 
-            }
+        //     }
 
-        }
+        // }
 
     }
 

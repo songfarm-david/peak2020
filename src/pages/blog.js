@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/contactForm"
+import ContactForm from "../components/layout/contactForm"
 
 import "../styles/blog/blog.scss"
 

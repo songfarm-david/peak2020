@@ -5,15 +5,13 @@
 
 import React from "react"
 import ReactHtmlParser from 'react-html-parser';
-
-import Layout from "../components/layout"
+import { formatTitle } from "../functions/helperFunctions"
+import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
-
 import HeroSection from "../components/hero/heroSection"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/contactForm"
-import Form from "../components/form"
+import ContactForm from "../components/layout/contactForm"
 
 import "../styles/pages.scss"
 
@@ -24,41 +22,35 @@ export default ( props ) => {
 
     if (p === null) p = ""
 
-    function formatTitle(pageTitle) {
-        let t = pageTitle.toLowerCase().replace(/\s/g, '-')
-        // look for first occurence of space and replace with a dash '-'
-        return t
-    }
+    // function buildPageLayout(page) {
 
-    function buildPageLayout(page) {
-
-        // use switch statement to test page title and return appropriate elements
-        switch ( page ) {
-            case 'contact-us': 
-                return <Form />
-            case 'blog':
-                return (
-                    <>
-                    <Newsletter />
-                    <ContactForm />
-                    </>
-                )
-            default: 
-                return (
-                    <>
-                    <BlogCallout />
-                    <Newsletter />
-                    <ContactForm />
-                    </>
-                )
-        }
+    //     // use switch statement to test page title and return appropriate elements
+    //     switch ( page ) {
+    //         case 'contact-us': 
+    //             return <Form />
+    //         case 'blog':
+    //             return (
+    //                 <>
+    //                 <Newsletter />
+    //                 <ContactForm />
+    //                 </>
+    //             )
+    //         default: 
+    //             return (
+    //                 <>
+    //                 <BlogCallout />
+    //                 <Newsletter />
+    //                 <ContactForm />
+    //                 </>
+    //             )
+    //     }
         
-    }
+    // }
     
     return (
         <Layout specialClass={ (slug === 'home') ? "home" : null }>
-            {(slug === 'home' && <HeroSection />) || 
-                <PageBanner pageTitle={title.toString()} parent={parent} />}
+            
+            {( slug === 'home' && <HeroSection /> ) ||  <PageBanner pageTitle={title.toString()} parent={parent} />}
                       
                 <div className={(true === p.includes('/services/')) ? 
                     "page-content web-services " + formatTitle(title) : 
@@ -67,7 +59,11 @@ export default ( props ) => {
                     {ReactHtmlParser(content)}
                 </div>
 
-                { buildPageLayout(slug) }     
+                <BlogCallout />
+                <Newsletter />
+                <ContactForm />
+
+                {/* { buildPageLayout(slug) }      */}
                 
         </Layout>
     )

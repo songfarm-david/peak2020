@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
-import arrowDown from "../images/illustrations/svg/Arrows/arrow-down.svg"
-import arrowUp from "../images/illustrations/svg/Arrows/arrow-up.svg"
-import arrowRight from "../images/illustrations/svg/Arrows/arrow_right.svg"
+import arrowDown from "../../images/illustrations/svg/Arrows/arrow-down.svg"
+import arrowUp from "../../images/illustrations/svg/Arrows/arrow-up.svg"
+import arrowRight from "../../images/illustrations/svg/Arrows/arrow_right.svg"
 
 const SubNav = item => {
     

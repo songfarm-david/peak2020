@@ -4,16 +4,17 @@
  */
 
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+
+import Layout from "../components/layout/layout"
 
 export default ( props ) => {
     
-   const { title, excerpt, date, content } = props.pageContext
+   const { title, date, content } = props.pageContext
 
     return (
-        <Layout>
-            <SEO title={title} description={excerpt} />
+        <Layout
+          specialClass="blog">
+
             <div style={{ maxWidth: `80vw`, marginBottom: `1.45rem` }}>
               <div>
                 <h1 dangerouslySetInnerHTML={{ __html: title }} />
