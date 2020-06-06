@@ -8,6 +8,7 @@ import peakLogoWhite from "../../images/logo/Logo_white.svg"
 import "./featuredPost.scss"
 
 const FeaturedPost =( stickyPost ) => {
+    console.log(stickyPost);
     
     const {
         title,

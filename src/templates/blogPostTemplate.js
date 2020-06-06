@@ -1,27 +1,38 @@
+import React from "react"
+import ReactHtmlParser from 'react-html-parser';
+import { formatTitle } from "../functions/helperFunctions"
+
+import Layout from "../components/layout/layout"
+import PageBanner from "../components/hero/pageBanner"
+import Newsletter from "../components/hero/newsletter"
+import ContactForm from "../components/layout/contactForm"
+
 /**
  * Blog template
  * Mar 2020
  */
-
-import React from "react"
-
-import Layout from "../components/layout/layout"
-
 export default ( props ) => {
-    
-   const { title, date, content } = props.pageContext
+  console.log('blog template props?', props.pageContext);
 
-    return (
-        <Layout
-          specialClass="blog">
+  const { 
+    title, 
+    content 
+  } = props.pageContext
 
-            <div style={{ maxWidth: `80vw`, marginBottom: `1.45rem` }}>
-              <div>
-                <h1 dangerouslySetInnerHTML={{ __html: title }} />
-                <p>{date}</p>
-              </div>
-              <div dangerouslySetInnerHTML={ { __html: content }}></div>
-            </div>
-        </Layout>
-    )
+  // do some kind of data validation here
+
+  return (
+    <Layout specialClass="blog">
+
+      <PageBanner pageTitle={title} bgImage={''} />
+
+      <div className={"page-content blog-post " + formatTitle(title)}>
+        {ReactHtmlParser(content)}
+      </div>
+
+      <Newsletter />
+      <ContactForm isAddFields={false} />
+
+    </Layout>
+  )
 }

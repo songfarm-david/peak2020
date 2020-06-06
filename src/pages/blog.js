@@ -16,10 +16,16 @@ import "../styles/blog/blog.scss"
  */
 export default ({ data }) => {
 
-    const allPosts = data.allWordpressPost
     const stickyPost = data.featuredPost.edges
+    const allPosts = data.allWordpressPost
     
-    function haveStickyPost( stickyPost ) { 
+    /**
+     * 
+     * @param {Arr} stickyPost a sticky post in an array
+     */
+    function haveStickyPost( stickyPost ) {
+        // console.log('what is sticky post', stickyPost);
+        
         return Array.isArray(stickyPost) && stickyPost.length !== 0
     }
     
@@ -27,8 +33,8 @@ export default ({ data }) => {
         <Layout>
 
             <PageBanner pageTitle="blog" />
-
-            { ( haveStickyPost(stickyPost ) ) ? <FeaturedPost sticky={stickyPost} /> : null }      
+            
+            {( haveStickyPost(stickyPost ) && <FeaturedPost sticky={stickyPost} /> )}      
 
             <AllPosts allPosts={allPosts} />   
 
@@ -51,6 +57,7 @@ export const queryAllPosts = graphql`
                     id
                     title
                     slug
+                    path
                     excerpt
                     content
                     featured_media {

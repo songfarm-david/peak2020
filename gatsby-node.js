@@ -29,12 +29,19 @@ exports.createPages = async ({ graphql, actions }) => {
                 edges {
                     node {
                         wordpress_id
-                        slug
                         path
+                        slug
                         status
                         title
                         date
-                        excerpt
+                        modified
+                        categories {
+                            name
+                            wordpress_id
+                        }
+                        featured_media {
+                            path
+                        }
                     }
                 }
             }
@@ -66,16 +73,14 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     allWordpressPost.edges.forEach(({ node }) => {
-
+        console.log('logging node', node);
+        
         if (node.status === 'publish') {
             createPage({
                 path: node.path,
                 component: blogTemplate,
                 context: {
-                    title: node.title,
-                    date: node.date,
-                    content: node.content,
-                    path: node.path
+                    ...node
                 }
             })
         }

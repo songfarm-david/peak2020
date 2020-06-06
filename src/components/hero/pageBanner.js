@@ -10,11 +10,13 @@ import "./pageBanner.scss"
  * @param {String} pageTitle a page title
  * @param {String} parent a parent page
  */
-const PageBanner = ({pageTitle, parent = ''}) => {
+const PageBanner = ({pageTitle, parent = '', bgImage }) => {
 
     if (parent === null) parent = ""
     const parEl = (parent !== undefined) ? parent : ''
 
+    console.log('is page banner bg image?', bgImage);
+    
     return (
     <div className={(true === parEl.includes('/services/')) ? 
         "page-banner web-services " + formatTitle(pageTitle) : 
