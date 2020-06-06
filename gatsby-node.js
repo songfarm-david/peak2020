@@ -4,8 +4,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const { createPage } = actions
 
-    const pageTemplate = path.resolve('src/templates/page.js')
-    const blogTemplate = path.resolve('src/templates/blogPost.js')
+    const pageTemplate = path.resolve('src/templates/pageTemplate.js')
+    const blogTemplate = path.resolve('src/templates/blogPostTemplate.js')
 
     const result = await graphql(`
         query {
@@ -41,14 +41,13 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
-    if (result.errors) {
-        throw new Error(result.errors)
-    }
+    if (result.errors) throw new Error(result.errors) 
 
     const { allWordpressPage, allWordpressPost } = result.data
 
     allWordpressPage.edges.forEach(({ node }) => {
 
+        /* set a value for a parent element if applicable */
         const parentEl = (node.parent_element !== null) ? node.parent_element.path : null
 
         if (node.status === 'publish') {            
@@ -84,23 +83,3 @@ exports.createPages = async ({ graphql, actions }) => {
 
     
 }
-
-// exports.onCreatePage = ({ page }) => {
-//     console.log(page);
-// }
-
-// exports.onCreateNode = ({ node, getNode }) => {
-//     // console.log(node.internal.type)
-
-//     if (node.internal.type === 'SitePage') {
-//         console.log(node);
-//         // node.path will return '/home'
-//         if (node.context && node.context.parent !== null) {
-//             // const fileNode = getNode(node.parent)
-//             // console.log(`\n`, fileNode.relativePath)
-//             console.log(node);
-            
-//         }
-//     }
-
-// }

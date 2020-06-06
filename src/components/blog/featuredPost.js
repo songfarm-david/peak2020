@@ -3,11 +3,8 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import ReactHtmlParser from 'react-html-parser';
 
-import { getAuthor, getDate } from "../../functions/functions"
-
+import { getAuthor, getDate } from "../../functions/helperFunctions"
 import peakLogoWhite from "../../images/logo/Logo_white.svg"
-import tinyClock from "../../images/illustrations/svg/Clock_icon-blue.svg"
-
 import "./featuredPost.scss"
 
 const FeaturedPost =( stickyPost ) => {

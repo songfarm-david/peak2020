@@ -15,4 +15,4 @@ export const checkEnvVars = () => {
     }
 }
 
-checkEnvVars()
+// checkEnvVars()

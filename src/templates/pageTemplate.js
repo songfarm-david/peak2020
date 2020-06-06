@@ -10,7 +10,7 @@ import Layout from "../components/layout"
 import PageBanner from "../components/hero/pageBanner"
 
 import HeroSection from "../components/hero/heroSection"
-import BlogFeature from "../components/blog/blogFeature"
+import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/hero/newsletter"
 import ContactForm from "../components/contactForm"
 import Form from "../components/form"
@@ -46,7 +46,7 @@ export default ( props ) => {
             default: 
                 return (
                     <>
-                    <BlogFeature />
+                    <BlogCallout />
                     <Newsletter />
                     <ContactForm />
                     </>

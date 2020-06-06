@@ -19,8 +19,8 @@ export default ({ data }) => {
     const allPosts = data.allWordpressPost
     const stickyPost = data.featuredPost.edges
     
-    function haveStickyPost(stickyPost) { 
-        return Array.isArray(stickyPost) && stickyPost.length != 0
+    function haveStickyPost( stickyPost ) { 
+        return Array.isArray(stickyPost) && stickyPost.length !== 0
     }
     
     return (
