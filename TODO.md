@@ -4,12 +4,13 @@
 - Review mailing list stuff, Wire up forms, newsletter
     - one component for contact form
 - style blog posts
-
 - address sitemap page
 - address portfolio situation
 - finish 404 page
 - add a little section in the blog 'see an error? get in touch'?
 - create an alias for david@peakwebsites - sayhello@peakwebsites.ca
+- add some simple css animations like rise up fade in 
+- fix wierd nav transition/transform bug when switching viewport sizes
 5. review copy
 3. remove .hey-now class from contact page/ remove WPForms
 2. Address SEO concerns

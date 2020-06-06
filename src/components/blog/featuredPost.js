@@ -3,19 +3,15 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import ReactHtmlParser from 'react-html-parser';
 
-import { getAuthor, getDate } from "../../functions/functions"
-
+import { getAuthor, getDate } from "../../functions/helperFunctions"
 import peakLogoWhite from "../../images/logo/Logo_white.svg"
-import tinyClock from "../../images/illustrations/svg/Clock_icon-blue.svg"
-
 import "./featuredPost.scss"
 
 const FeaturedPost =( stickyPost ) => {
     
     const {
         title,
-        slug,
-        excerpt,
+        path,
         featured_media,
         categories,
         author,
@@ -31,7 +27,7 @@ const FeaturedPost =( stickyPost ) => {
             </div>
             <div className="blog-inner-container">
                 <div className="featured-post blog-post">
-                    <Link to={slug}>
+                    <Link to={path}>
                         <div className="featured-image">
                             {  
                             featured_media != null ? 
@@ -43,7 +39,6 @@ const FeaturedPost =( stickyPost ) => {
                             <h2 className="heading">{ReactHtmlParser(title)}</h2>
                             <div className="post-meta-data">
                                 <div className="date post-meta">
-                                    {/* <img className="clock-icon" src={tinyClock} alt="last updated date"/> */}
                                     <span>{getDate(modified, date)}</span>
                                 </div>
                                 <span className="author post-meta">{getAuthor(categories, author.name)}</span>

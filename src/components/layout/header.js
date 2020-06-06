@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from "gatsby"
 
-import siteLogo from "../images/logo/Logo.svg";
+import siteLogo from "../../images/logo/Logo.svg";
 
 import "./header.scss"
 
-import Nav from "./nav"
+import Nav from "../nav/nav"
 
 const Header = ({ siteTitle, menuLinks }) => {
   
