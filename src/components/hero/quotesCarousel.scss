@@ -5,9 +5,11 @@
     .inner-container {
         @extend .quotes-text;
         @extend .content-width;
+        width: auto;
     }
 
     .quote {
+        width: auto;
         &::before {
             content: "\201C";
             display: inline-block;
@@ -15,6 +17,7 @@
         &::after {
             content: "\201D";
             display: inline-block;
+            white-space: nowrap;
         }
     }
     .author {

@@ -12,6 +12,7 @@
     .button { width: auto; }
 
     &.home {
+
         .page-content {
             display: flex;
             flex-wrap: wrap;
@@ -139,6 +140,7 @@
         .page-content-para {
             flex: 2;
             padding: 1rem 0;
+            flex-basis: 100%;
             p:last-child {
                 display: inline-block;
             }
@@ -226,6 +228,7 @@
 
         &.home {
             .page-content {
+                width: $content-width;
                 .highlight p { margin-bottom: $top-margin; }
                 transform: translateX(0);
                 &.peak-websites::after {

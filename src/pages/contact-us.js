@@ -16,9 +16,9 @@ export default ({ data }) => {
 
             <PageBanner pageTitle="Contact" />
 
-            <div className="page-content contact-us">
+            {/* <div className="page-content contact-us"> */}
                 <ContactForm heading={h} paragraph={p} isAddFields={true} />
-            </div>
+            {/* </div> */}
 
         </Layout>
     )
