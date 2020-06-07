@@ -17,11 +17,12 @@ import "../styles/pages.scss"
 export default ({ data }) => {
 
     const services = data.allWordpressPage
-    
+    const bgImg = '../../images/services_header.jpeg';
+
     return (
         <Layout specialClass="services-home">
 
-            <PageBanner pageTitle="web-services" />
+            <PageBanner pageTitle="web services" bannerType="page" bgImg={''} />
 
             <div className="page-content web-services">
               {services.edges.map(({ node }, index) => (

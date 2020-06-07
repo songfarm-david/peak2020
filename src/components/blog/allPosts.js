@@ -7,6 +7,11 @@ import ReactHtmlParser from 'react-html-parser';
 import peakLogoWhite from "../../images/logo/Logo_white.svg"
 import tinyClock from "../../images/illustrations/svg/Clock_icon-blue.svg"
 
+/**
+ * Returns an index of all blog posts
+ * 
+ * @param {Obj} param0 Object containing (limit of 6) blog posts
+ */
 const AllPosts =({allPosts}) => {
 
     return (

@@ -33,16 +33,25 @@ const HeroBanner = (props) => {
     ];
 
     useEffect(() => {
-        setTimeout(() => {
-            const last = activeWord.current;
-            const current = last === words.length - 1
-                ? 0
-                : last + 1;
-            setActiveWord({
-                current,
-                last
-            })
-        }, 4000);
+        
+        let isActive = true
+        let timer
+
+        if ( isActive ) {
+            timer = setTimeout(() => {
+                const last = activeWord.current;
+                const current = last === words.length - 1
+                    ? 0
+                    : last + 1;
+                setActiveWord({
+                    current,
+                    last
+                })
+            }, 4000);
+        }
+        /* clean up timer on unmount */
+        return () => clearTimeout(timer) 
+
     }, [activeWord, words]);
 
     return (

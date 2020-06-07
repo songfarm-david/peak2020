@@ -25,7 +25,7 @@
 - remove .hey-now class from contact page/ remove WPForms
 - test Google Analytics
 - launch site
-
+- set up better pagination for blog posts, 'load more' would be a cool experiment
 
 ## nice to have's
 - add some simple css animations like rise up fade in 

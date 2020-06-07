@@ -15,35 +15,35 @@ import "../styles/blog/blog.scss"
  * 
  */
 export default ({ data }) => {
-
-    const stickyPost = data.featuredPost.edges
+    
+    const stickyPost = data.featuredPost
     const allPosts = data.allWordpressPost
     
     /**
+     * Validate presence of value for Sticky Post
      * 
      * @param {Arr} stickyPost a sticky post in an array
      */
-    function haveStickyPost( stickyPost ) {
-        // console.log('what is sticky post', stickyPost);
-        
-        return Array.isArray(stickyPost) && stickyPost.length !== 0
-    }
-    
+    const haveStickyPost = ( stickyPost ) => (typeof stickyPost === undefined) ? false : stickyPost
+
     return (
-        <Layout>
-
-            <PageBanner pageTitle="blog" />
+        <Layout specialClass="blog">
             
-            {( haveStickyPost(stickyPost ) && <FeaturedPost sticky={stickyPost} /> )}      
+            <PageBanner pageTitle="blog" bannerType="page" props={''} />
 
-            <AllPosts allPosts={allPosts} />   
+            { /* check if there is a 'sticky' post in the CMS */
+                ( haveStickyPost( stickyPost ) && <FeaturedPost sticky={stickyPost} /> )
+            }      
+
+            <AllPosts 
+                allPosts={allPosts} />   
 
             <Newsletter />
             <ContactForm />
             
         </Layout>
     )
- }
+}
 
 /**
  * Query for both a sticky post (to test in the component), as well as
@@ -51,30 +51,26 @@ export default ({ data }) => {
  */
 export const queryAllPosts = graphql`
     query {
-        featuredPost: allWordpressPost(filter: {sticky: {eq: true}}, limit: 1) {
-            edges {
-                node {
-                    id
-                    title
-                    slug
-                    path
-                    excerpt
-                    content
-                    featured_media {
-                        localFile {
-                        ...squareImage
-                        }
-                    }
-                    categories {
-                        name
-                    }
-                    author {
-                        name
-                    }
-                    date(formatString: "MMM Do, YYYY")
-                    modified(formatString: "MMM Do, YYYY")
+        featuredPost: wordpressPost(sticky: {eq: true}) {
+            id
+            title
+            slug
+            path
+            excerpt
+            content
+            featured_media {
+                localFile {
+                ...squareImage
                 }
             }
+            categories {
+                name
+            }
+            author {
+                name
+            }
+            date(formatString: "MMM Do, YYYY")
+            modified(formatString: "MMM Do, YYYY")
         }
         allWordpressPost(limit: 6, sort: {fields: date, order: DESC}, 
             filter: {categories: {elemMatch: {name: {ne: "Portfolio"}}}, sticky: {eq: false}}) {
