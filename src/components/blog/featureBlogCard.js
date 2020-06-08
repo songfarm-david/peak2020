@@ -26,13 +26,14 @@ const FeatureBlogCard = ( props ) => {
 
     return (
         <div className={cardStyles.featuredCard}>
-            {
-                (categories) && <span className={cardStyles.categories}>
+            <div className={cardStyles.categoriesContainer}>
+                {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => (
                     <span key={idx} className={cardStyles.category}>
                         {cat.name}{customJoin(categories, idx)}
                     </span>)))}
                 </span>}
+            </div>
             
             <h2 className={cardStyles.heading}>{ReactHtmlParser(title)}</h2>
             <div className={cardStyles.postMetaData}>

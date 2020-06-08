@@ -1,6 +1,5 @@
 import React from "react"
 import ReactHtmlParser from 'react-html-parser';
-import { formatTitle } from "../functions/helperFunctions"
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
@@ -13,17 +12,6 @@ import ContactForm from "../components/layout/contactForm"
 */
 export default ( props ) => {
   console.log('blog template props?', props.pageContext);
-  
-//   const { 
-//     content,
-//     title,
-//     relPath,
-//     date,
-//     modified,
-//     author,
-//     categories,
-//     featured_media
-//   } = props.pageContext
   
   // do some kind of data validation here
   // write function that checks for presence of featured image, have fallback if not

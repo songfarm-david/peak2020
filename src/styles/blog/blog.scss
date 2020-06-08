@@ -1,5 +1,8 @@
 @import "../globals.scss";
 
+/**
+ * These styles could go somewhere else for sure 
+ */
 .blog-content-container {
     + .blog-content-container {
         padding-top: 0;
@@ -67,3 +70,4 @@
     }
 
 }
+
