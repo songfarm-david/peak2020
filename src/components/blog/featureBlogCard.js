@@ -8,9 +8,9 @@ import cardStyles from "./featureBlogCard.module.scss"
  * 
  * @param {*} param0 
  */
-const FeatureBlogCard = ( props ) => {
+const FeatureBlogCard = ( post ) => {
     
-    console.log('props', props.props);
+    console.log('props', post.props);
 
     const {
         title,
@@ -18,14 +18,16 @@ const FeatureBlogCard = ( props ) => {
         date,
         categories,
         author
-    } = props.props
+    } = post.props
+
+    const isSticky = post.props.sticky
     
     const customJoin = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
 
     // const { title, modified, date, categories, author } = stickyPost.sticky
 
     return (
-        <div className={cardStyles.featuredCard}>
+        <div className={( isSticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => (
@@ -35,7 +37,7 @@ const FeatureBlogCard = ( props ) => {
                 </span>}
             </div>
             
-            <h2 className={cardStyles.heading}>{ReactHtmlParser(title)}</h2>
+            <h2 className={( isSticky ) ? `heading-2 ${cardStyles.heading}` : `heading-1 ${cardStyles.heading}`}>{ReactHtmlParser(title)}</h2>
             <div className={cardStyles.postMetaData}>
                 <div className={cardStyles.postMeta}>
                     <span>{getDate(modified, date)}</span>

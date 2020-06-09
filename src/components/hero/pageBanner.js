@@ -15,15 +15,33 @@ import FeatureBlogCard from "../blog/featureBlogCard"
  * @param {String} parent a parent page
  */
 const PageBanner = ({ pageTitle, bannerType = "page", props = {} } ) => {
-    console.log('pageBanner', props, bannerType);
+    
+    console.log( 'pageBanner props', props );
+    // console.log('data', data);
     
     /* check if props is set, otherwise, assigne a null value to categories to avoid error */
     /* way to rewrite this?? */
-    let categories = (!props) ? null : props.categories
+    // let categories = (!props) ? null : props.categories
+
+    // const { categories  } = props.pageContext
+
+    let isFeaturedMedia = false
+    let featuredMedia = null
+
+    if ( props.data && props.data.wordpressPost ) {
+        isFeaturedMedia = true
+        featuredMedia = props.data.wordpressPost.featured_media
+    }
+    // const { featured_media } = props.data.wordpressPost
+
+    console.log(isFeaturedMedia, featuredMedia);
+    
 
     return (
         <div className={(bannerType === 'blog') ? `${banner.pageBanner} ${banner.blogPost}` : `${banner.pageBanner}`}>
-            {/* <Img alt={''} fluid={props.ftrImg.source_url} /> */}
+            {( isFeaturedMedia && 
+            <Img className={banner.blogBanner} alt={featuredMedia.alt_text} fluid={featuredMedia.localFile.childImageSharp.fluid} />)}
+            
 
             {( bannerType === 'page' && 
             <div className={banner.headerContainer}>
@@ -34,7 +52,7 @@ const PageBanner = ({ pageTitle, bannerType = "page", props = {} } ) => {
             {( bannerType === 'blog' && 
             <div className={banner.blogHeaderContainer}>
 
-                <FeatureBlogCard props={props} />
+                <FeatureBlogCard props={props.pageContext} />
 
             </div>)}
 
@@ -49,3 +67,25 @@ PageBanner.propTypes = {
     pageTitle: PropTypes.string,
     bannerType: PropTypes.string.isRequired
 }
+
+export const query = graphql`
+  query($imgPath: String!) {
+    file(relativePath: { eq: $imgPath }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+/*
+Gatsby Docs, gatsby-image fundamentals: https://www.gatsbyjs.org/docs/using-gatsby-image/
+onCreateNode API: https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
+Preprocessing external images: https://www.gatsbyjs.org/docs/preprocessing-external-images/#setup
+
+
+
+
+*/

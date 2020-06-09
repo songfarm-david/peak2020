@@ -13,8 +13,7 @@
 - proof services pages + links + side images
 - Address SEO concerns
 - confirm sitemap 
-- do a database backup
-- clean up plugins on backend CMS
+
 - clean up build processes stuff in gatsby   
 - do a baseline SEO measure pre-launch.
 - confirm redirects
@@ -24,8 +23,11 @@
 - unpublish unnecessary CMS pages, landing-page
 - remove .hey-now class from contact page/ remove WPForms
 - test Google Analytics
-- launch site
+- **LAUNCH SITE**
+- do a database backup
+- clean up plugins on backend CMS
 - set up better pagination for blog posts, 'load more' would be a cool experiment
+- delete all ridiculous tags on my site
 
 ## nice to have's
 - add some simple css animations like rise up fade in 

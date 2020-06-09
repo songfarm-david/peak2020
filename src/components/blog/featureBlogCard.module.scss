@@ -54,7 +54,7 @@
     .heading {
         text-align: center;
         margin: 0;
-        @extend .heading-3;
+        // @extend .heading-3;
     }
 
     .postMetaData {
@@ -85,8 +85,6 @@
         }
     }
 
-    
-
 }
 
     
@@ -98,13 +96,11 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: 66%;
+        width: 100%;
         margin: 0 auto;
 
         .heading {
             flex-basis: 100%;
-            font-size: 3.125rem;
-            line-height: 3.75rem;
         }
 
         .postMetaData {
@@ -118,8 +114,17 @@
 
     }
 
+    .sticky {
+        composes: featuredCard;
+        width: 66%;
+    }
+
     .blog .featuredCard {
         position: absolute;
+    }
+
+    .featured-post .featuredCard {
+        width: 66%;
     }
 
 }

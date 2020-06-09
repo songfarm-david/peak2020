@@ -8,7 +8,7 @@ import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/hero/newsletter"
 import ContactForm from "../components/layout/contactForm"
 
-import "../styles/blog/blog.scss"
+import "../styles/blog/blogIndex.scss"
 
 /**
  * This is the component for the blog index page
@@ -58,6 +58,7 @@ export const queryAllPosts = graphql`
             path
             excerpt
             content
+            sticky
             featured_media {
                 localFile {
                 ...squareImage
