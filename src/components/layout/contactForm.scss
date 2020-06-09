@@ -1,0 +1,63 @@
+@import '../../styles/globals.scss';
+
+#contactFormContainer {
+
+    background: url('../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
+    background-size: contain;
+    background-position: 88% 43%;
+    text-align: center;
+
+    article {
+        @extend .content-padding-section;
+        .contact-form-text {
+            @extend .content-padding;
+            .heading { margin-bottom: 0; }
+            .sub-heading { @extend .normal-text; }
+        } 
+    }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        background: url('../../images/illustrations/svg/trail_contact_desktop.svg') left 70%/88% no-repeat;
+        padding-bottom: 9.5rem;
+        width: 100%;
+        article {
+            max-width: $content-width;
+            margin: 0 auto;
+            .contact-form-text {
+                max-width: 66%;
+                margin: 0 auto;
+                .sub-heading { font-weight: bold; }
+            }
+        }
+    }
+
+}
+
+// #mainContent {
+
+//     &.home,
+//     &.contact-us {
+
+//         .page-content {
+
+            
+
+//         }
+
+//         @media screen and (min-width: $mobile-breakpoint) {
+
+//             .page-content {
+//                 max-width: 100%;
+
+//                 #contactFormContainer {
+                    
+
+//                 }
+
+//             }        
+            
+//         }
+
+//     }
+
+// }

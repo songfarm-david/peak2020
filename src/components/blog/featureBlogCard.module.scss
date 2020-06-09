@@ -1,0 +1,134 @@
+@import "../../styles/globals.scss";
+
+.featuredCard {
+
+    width: 88%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background: $white;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .categoriesContainer {
+        margin-bottom: 1.5rem;
+        display: flex;
+        .categories {
+            @extend .normal-text;
+        }
+        .category {
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+            width: 100%;
+            margin-left: .15rem;
+            font-weight: normal;
+            @extend .normal-text;
+            &:hover {
+                cursor: pointer;
+                &:after {
+                    background-color: transparent;
+                }
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                // top: 100%;
+                height: 2px;
+                width: 97%;
+                border-radius: 1px;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: $strong-blue;
+            }
+        }
+    }
+    
+
+    .heading {
+        text-align: center;
+        margin: 0;
+        // @extend .heading-3;
+    }
+
+    .postMetaData {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @extend .normal-text;
+        position: relative;
+        margin-top: 1rem;
+        text-align: center;
+    
+        .postMeta {
+            flex-basis: 100%;
+            text-align: center;
+            display: inline;
+            line-height: 1.5;
+            padding: $content-padding;
+        }
+
+        .author {
+            consumes: postMeta;
+            padding-left: 0;
+            &:before {
+                content: '\2014';
+                display: inline-block;
+                margin: 0 8px;
+            }
+        }
+    }
+
+}
+
+    
+@media screen and (min-width: $mobile-breakpoint) {
+        
+    .featuredCard {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
+
+        .heading {
+            flex-basis: 100%;
+        }
+
+        .postMetaData {
+            flex-wrap: nowrap;
+            width: 100%;
+            justify-content: center;
+            .post-meta {
+                flex-basis: auto;
+            }
+        }
+
+    }
+
+    .sticky {
+        composes: featuredCard;
+        width: 66%;
+    }
+
+    .blog .featuredCard {
+        position: absolute;
+    }
+
+    .featured-post .featuredCard {
+        width: 66%;
+    }
+
+}
+   
+
+
+

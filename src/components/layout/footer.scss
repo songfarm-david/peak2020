@@ -1,8 +1,8 @@
-@import "../styles/globals.scss";
+@import "../../styles/globals.scss";
 
 #siteFooter {
 
-    background: url('../images/footer.png') 100%;
+    background: url('../../images/footer.png') 100%;
     background-size: cover;
     color: $white;
     padding: $vertical-rhythm 0;
@@ -111,6 +111,10 @@
         &:not(:first-child) {
             height: 6rem;
         }
+    }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        padding-top: 20rem;
     }
     
 }

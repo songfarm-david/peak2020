@@ -1,43 +1,49 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/contactForm"
+import ContactForm from "../components/layout/contactForm"
 
-import "../styles/blog/blog.scss"
+import "../styles/blog/blogIndex.scss"
 
 /**
  * This is the component for the blog index page
  * 
  */
 export default ({ data }) => {
-
+    
+    const stickyPost = data.featuredPost
     const allPosts = data.allWordpressPost
-    const stickyPost = data.featuredPost.edges
     
-    function haveStickyPost(stickyPost) { 
-        return Array.isArray(stickyPost) && stickyPost.length != 0
-    }
-    
+    /**
+     * Validate presence of value for Sticky Post
+     * 
+     * @param {Arr} stickyPost a sticky post in an array
+     */
+    const haveStickyPost = ( stickyPost ) => (typeof stickyPost === undefined) ? false : stickyPost
+
     return (
-        <Layout>
+        <Layout specialClass="blog">
+            
+            <PageBanner pageTitle="blog" bannerType="page" props={''} />
 
-            <PageBanner pageTitle="blog" />
+            { /* check if there is a 'sticky' post in the CMS */
+                ( haveStickyPost( stickyPost ) && <FeaturedPost sticky={stickyPost} /> )
+            }      
 
-            { ( haveStickyPost(stickyPost ) ) ? <FeaturedPost sticky={stickyPost} /> : null }      
-
-            <AllPosts allPosts={allPosts} />   
+            <AllPosts 
+                allPosts={allPosts} />   
 
             <Newsletter />
             <ContactForm />
             
         </Layout>
     )
- }
+}
 
 /**
  * Query for both a sticky post (to test in the component), as well as
@@ -45,29 +51,27 @@ export default ({ data }) => {
  */
 export const queryAllPosts = graphql`
     query {
-        featuredPost: allWordpressPost(filter: {sticky: {eq: true}}, limit: 1) {
-            edges {
-                node {
-                    id
-                    title
-                    slug
-                    excerpt
-                    content
-                    featured_media {
-                        localFile {
-                        ...squareImage
-                        }
-                    }
-                    categories {
-                        name
-                    }
-                    author {
-                        name
-                    }
-                    date(formatString: "MMM Do, YYYY")
-                    modified(formatString: "MMM Do, YYYY")
+        featuredPost: wordpressPost(sticky: {eq: true}) {
+            id
+            title
+            slug
+            path
+            excerpt
+            content
+            sticky
+            featured_media {
+                localFile {
+                ...squareImage
                 }
             }
+            categories {
+                name
+            }
+            author {
+                name
+            }
+            date(formatString: "MMM Do, YYYY")
+            modified(formatString: "MMM Do, YYYY")
         }
         allWordpressPost(limit: 6, sort: {fields: date, order: DESC}, 
             filter: {categories: {elemMatch: {name: {ne: "Portfolio"}}}, sticky: {eq: false}}) {

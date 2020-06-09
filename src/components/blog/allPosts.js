@@ -1,12 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import {truncateExcerpt, getAuthor, getDate} from "../../functions/functions"
+import {truncateExcerpt, getAuthor, getDate} from "../../functions/helperFunctions"
 import ReactHtmlParser from 'react-html-parser';
 
 import peakLogoWhite from "../../images/logo/Logo_white.svg"
 import tinyClock from "../../images/illustrations/svg/Clock_icon-blue.svg"
 
+/**
+ * Returns an index of all blog posts
+ * 
+ * @param {Obj} param0 Object containing (limit of 6) blog posts
+ */
 const AllPosts =({allPosts}) => {
 
     return (

@@ -1,5 +1,8 @@
 @import "../globals.scss";
 
+/**
+ * I think these are the styles for the blog index page 
+ */
 .blog-content-container {
     + .blog-content-container {
         padding-top: 0;
@@ -67,3 +70,4 @@
     }
 
 }
+
