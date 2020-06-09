@@ -87,6 +87,14 @@
 
 }
 
+// .sticky {
+//     composes: featuredCard;
+//     .heading {
+//         // @extend .heading-3;
+//         font: bold 1.5625rem/2.1875rem Montserrat, sans-serif
+//     }
+// }
+
     
 @media screen and (min-width: $mobile-breakpoint) {
         
@@ -117,18 +125,20 @@
     .sticky {
         composes: featuredCard;
         width: 66%;
+        // font: bold 3.125rem/3.75rem Montserrat, sans-serif;
     }
 
-    .blog .featuredCard {
-        position: absolute;
-    }
+    // .blog .featuredCard {
+    //     position: absolute;
+    // }
 
-    .featured-post .featuredCard {
-        width: 66%;
-    }
+    // .featured-post .featuredCard {
+    //     width: 66%;
+    // }
 
 }
    
-
-
+@media screen and (max-width: $mobile-breakpoint) {
+    
+}
 
