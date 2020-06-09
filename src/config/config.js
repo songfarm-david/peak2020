@@ -8,11 +8,13 @@ const envVars = [
     {name: "MC_AUDIENCE_ID", value: MC_AUDIENCE_ID}
 ]
 
-export const checkEnvVars = () => {
-    const envVarsNotLoaded = envVars.filter((envVar) => envVar.value !== undefined);
+const checkEnvVars = () => {
+    const envVarsNotLoaded = envVars.filter(isUndefined);
     if (envVarsNotLoaded.length > 0) {
         throw new Error(`Could not load env vars ${envVarsNotLoaded.join(",")}`);
     }
 }
 
-// checkEnvVars()
+const isUndefined = (envVar) => typeof envVar.value === "undefined";
+
+checkEnvVars()

@@ -1,0 +1,74 @@
+@import "../../styles/globals.scss";
+
+.headerContainer {
+    max-width: 66%;
+}
+
+.blogHeaderContainer {
+    // composes: headerContainer;
+    @extend .content-width;
+    background-color: $white;
+    color: $strong-blue;
+    position: absolute;
+    top: 50%;
+    z-index: 111;
+    width: 100%;
+    height: 100%;
+    // max-width: none;
+    // @media screen and (min-width: $mobile-breakpoint) {
+    //     max-width: $header-width;
+    // }
+}
+
+
+.pageBanner {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    @extend .heading-1;
+    text-transform: capitalize;
+    // padding: 2.25rem 0;
+    text-align: center;
+    margin-top: $vertical-rhythm;
+    /* default bg image */
+    background: url('../../images/about_header.jpg') center/cover no-repeat;
+
+    &.blogPost {
+
+        width: 100%;
+        height: $blogBannerHeight;
+        position: relative;
+        z-index: 10;
+        background-image: none;
+        // padding: $content-padding;
+
+        .blogBanner {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+    
+    &.about {
+        background: url('../../images/about_header.jpg') center/cover no-repeat;
+    }
+    
+    &.portfolio {
+        background: url('../../images/portfolio_header.jpeg') 0%/cover no-repeat;
+    }
+
+    // &.web-services {
+    //     background: url('../../images/services_header.jpeg') center 10%/cover no-repeat;
+    // }
+
+    &.blog {
+        background: url('../../images/blog_header.jpeg') 0%/cover no-repeat;
+    }
+
+    &.contact {
+        background: url('../../images/contact_header.jpeg') 0%/cover no-repeat;
+    }
+
+}

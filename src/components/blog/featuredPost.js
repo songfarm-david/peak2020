@@ -1,23 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import ReactHtmlParser from 'react-html-parser';
 
-import { getAuthor, getDate } from "../../functions/helperFunctions"
 import peakLogoWhite from "../../images/logo/Logo_white.svg"
+
 import "./featuredPost.scss"
 
-const FeaturedPost =( stickyPost ) => {
+import FeatureBlogCard from "./featureBlogCard"
+
+const FeaturedPost = (props) => {
+    console.log('sticky in featuredPost', props);
     
     const {
-        title,
         path,
-        featured_media,
-        categories,
-        author,
-        date,
-        modified
-    } = stickyPost.sticky[0].node
+        featured_media
+    } = props.sticky
     
     return (
         <article className="blog-content-container">
@@ -29,21 +26,11 @@ const FeaturedPost =( stickyPost ) => {
                 <div className="featured-post blog-post">
                     <Link to={path}>
                         <div className="featured-image">
-                            {  
-                            featured_media != null ? 
-                            <Img className="featured-image" fluid={featured_media.localFile.childImageSharp.fluid} /> 
-                            : <img className="featured-image" src={peakLogoWhite} alt="" />
-                            }
+                            {featured_media != null ? 
+                            <Img className="featured-image" fluid={featured_media.localFile.childImageSharp.fluid} /> : 
+                            <img className="featured-image" src={peakLogoWhite} alt="" />}
                         </div>
-                        <div className="featured-card">
-                            <h2 className="heading">{ReactHtmlParser(title)}</h2>
-                            <div className="post-meta-data">
-                                <div className="date post-meta">
-                                    <span>{getDate(modified, date)}</span>
-                                </div>
-                                <span className="author post-meta">{getAuthor(categories, author.name)}</span>
-                            </div>
-                        </div>
+                        <FeatureBlogCard props={props.sticky} />
                     </Link>
                 </div>
             </div>

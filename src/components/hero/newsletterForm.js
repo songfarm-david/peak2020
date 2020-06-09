@@ -51,7 +51,7 @@ const NewsletterForm = ({ text }) => {
             style={{ width: '100%'}}
             onSubmit={submitSubscribe}>
             <input type="hidden" name="form-name" value="newsletter-signup" />
-            <input type="email" placeholder="Email required" onChange={handleChange} value={userEmail.email_address} required />
+            <input type="email" placeholder="Email address" onChange={handleChange} value={userEmail.email_address} required />
             <button type="submit" className="button primary-button-inverted">{(text) ? text : 'Send'}</button>
         </form>
     )
