@@ -1,10 +1,21 @@
 import React from "react"
 
-import AddFields from "./additionalFields"
-import "./form.scss"
+import { onFormSubmit, getRelPath } from "../../functions/helperFunctions"
 
-const Form = ({ isAddFields }) => (
-    <form id="contactForm" className={( isAddFields ) ? "plusAddFields" : null}>
+import AddFields from "./additionalFields"
+import "./mainContactForm.scss"
+
+/**
+ * Main Contact Form
+ * Optional extension via prop value
+ * 
+ * @param {*} param0.isAddFields boolean value 
+ */
+const MainContactForm = ({ isAddFields }) => (
+    <form name="main-contact-form" action={getRelPath()+"?thank_you"} method="post" 
+        className={( isAddFields ) ? "mainContact plusAddFields" : "mainContact"}
+        data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={onFormSubmit}>
+        <input type="hidden" name="form-name" value="main-contact-form" />
         <div className="input-container">
             <label className="form-label" htmlFor="name">Name
                 <input type="input" name="name" />
@@ -21,4 +32,4 @@ const Form = ({ isAddFields }) => (
     </form> 
 )
 
-export default Form
+export default MainContactForm

@@ -48,3 +48,22 @@ export function removeDash(pageTit) {
     let p = pageTit.replace(/-/g, ' ')
     return p
 }
+
+export const getRelPath = () => {
+    const url = typeof window !== 'undefined' ? window.location.pathname : '';
+    console.log('getRelPath', url);
+    return url;
+}
+
+/**
+ * Cancel subscribe event
+ * Used for Netlify forms :: TESTING
+ * 
+ * @param {} e 
+ */
+export const onFormSubmit = async e => {
+    e.preventDefault()
+
+    console.log('preventDefault called', e);
+
+}

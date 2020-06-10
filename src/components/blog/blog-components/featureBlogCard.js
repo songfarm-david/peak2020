@@ -10,8 +10,6 @@ import cardStyles from "./featureBlogCard.module.scss"
  */
 const FeatureBlogCard = ( post ) => {
     
-    console.log('props', post.props);
-
     const {
         title,
         modified,
