@@ -2,7 +2,8 @@ import React, { useState } from "react"
 
 import { getRelPath } from "../../functions/helperFunctions"
 
-const NewsletterForm = ({ text }) => {
+const NewsletterForm = ({ text, location }) => {
+    console.log( 'newsletter form location?', location );
     
     const [userEmail, setState] = useState({'email_address': ''})
 
