@@ -1,6 +1,6 @@
 import React from "react"
 import ReactHtmlParser from 'react-html-parser';
-import { getDate, getAuthor } from "../../functions/helperFunctions"
+import { getDate, getAuthor } from "../../../functions/helperFunctions"
 
 import cardStyles from "./featureBlogCard.module.scss"
 
@@ -37,7 +37,7 @@ const FeatureBlogCard = ( post ) => {
                 </span>}
             </div>
             
-            <h2 className={( isSticky ) ? `heading-2 ${cardStyles.heading}` : `heading-1 ${cardStyles.heading}`}>{ReactHtmlParser(title)}</h2>
+            <h2 className={''}>{ReactHtmlParser(title)}</h2>
             <div className={cardStyles.postMetaData}>
                 <div className={cardStyles.postMeta}>
                     <span>{getDate(modified, date)}</span>

@@ -4,6 +4,7 @@
  * I think these are the styles for the blog index page 
  */
 .blog-content-container {
+    
     + .blog-content-container {
         padding-top: 0;
     }
@@ -13,25 +14,10 @@
     // padding-bottom: $vertical-rhythm;
     padding: $top-margin 0;
 
-    .blog-heading {
-        display: flex;
-        align-items: center;
-        margin-left: 1.5rem;
-        > h5 {
-            white-space: nowrap;
-        }
-        .barline {
-            display: block;
-            border-bottom: 2px solid $strong-blue;
-            height: 2px;
-            width: 66%;
-            margin-left: 1rem;
-        }
-    }
-
     .blog-inner-container {
         display: flex;
         flex-wrap: wrap;
+        border: $border !important;
     }
 
     .blog-post {

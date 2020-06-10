@@ -16,13 +16,15 @@ import "../styles/pages.scss"
  */
 export default ({ data }) => {
 
+    console.log('services page data', data);
+
+    const pageProps = data.wordpressPage
     const services = data.allWordpressPage
-    const bgImg = '../../images/services_header.jpeg';
 
     return (
         <Layout specialClass="services-home">
 
-            <PageBanner pageTitle="web services" bannerType="page" bgImg={''} />
+            <PageBanner bannerType="page" props={pageProps} />
 
             <div className="page-content web-services">
               {services.edges.map(({ node }, index) => (
@@ -49,25 +51,28 @@ export default ({ data }) => {
  * querying all posts (filtering out sticky posts)
  */
 export const queryAllPosts = graphql`
-  query MyQuery {
-    allWordpressPage(filter: {parent_element: {slug: {eq: "services"}}}) {
-      edges {
-        node {
-          title
-          excerpt
-          featured_media {
-            localFile {
-              childImageSharp {
-                fluid(maxHeight: 210) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          slug
-          path
+    query MyQuery {
+        wordpressPage(wordpress_id: {eq: 2517}) {
+            title
         }
-      }
+        allWordpressPage(filter: {parent_element: {slug: {eq: "services"}}}) {
+            edges {
+                node {
+                    title
+                    excerpt
+                    slug
+                    path
+                    featured_media {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxHeight: 210) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }              
+                }
+            }
+        }
     }
-  }
 `

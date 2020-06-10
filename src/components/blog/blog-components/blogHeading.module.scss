@@ -1,0 +1,29 @@
+@value mob-breakpoint from "../../../styles/globals.scss";
+@value strong-blue from "../../../styles/colors.scss";
+@value white from "../../../styles/colors.scss";
+
+$white: white;
+$strong-blue: strong-blue;
+
+.blogHeading {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    > h5 {
+        white-space: nowrap;
+    }
+    .barline {
+        display: block;
+        border-bottom: 2px solid $strong-blue;
+        height: 2px;
+        width: 66%;
+        margin-left: 1rem;
+    }
+    &.callOutClass {
+        .barline { border-color: $white; }
+    }
+}
+
+@media screen and (max-width: mob-breakpoint) {
+    .blogHeading .barline { width: 54%;}
+}

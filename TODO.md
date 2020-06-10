@@ -13,7 +13,7 @@
 - proof services pages + links + side images
 - Address SEO concerns
 - confirm sitemap 
-
+- fix weird "quoting" behavior in footer
 - clean up build processes stuff in gatsby   
 - do a baseline SEO measure pre-launch.
 - confirm redirects

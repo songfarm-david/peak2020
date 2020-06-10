@@ -2,6 +2,8 @@
 @import "./type.scss";
 
 $mobile-breakpoint: 769px;
+@value mob-breakpoint: $mobile-breakpoint;
+
 $vertical-rhythm: 4.5rem;
 $top-margin: 2.25rem;
 $border-radius: 4px;
