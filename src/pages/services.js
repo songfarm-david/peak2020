@@ -16,8 +16,6 @@ import "../styles/pages.scss"
  */
 export default ({ data }) => {
 
-    console.log('services page data', data);
-
     const pageProps = data.wordpressPage
     const services = data.allWordpressPage
 

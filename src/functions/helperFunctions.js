@@ -51,7 +51,6 @@ export function removeDash(pageTit) {
 
 export const getRelPath = () => {
     const url = typeof window !== 'undefined' ? window.location.pathname : '';
-    console.log('getRelPath', url);
     return url;
 }
 

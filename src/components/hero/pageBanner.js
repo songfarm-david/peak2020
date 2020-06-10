@@ -16,6 +16,7 @@ import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
 const PageBanner = ({ bannerType = "page", props } ) => {
     
     let isFeaturedMedia = false
+
     let featuredMedia = null
     let pageTitle = '&nbsp;'
 
@@ -33,10 +34,15 @@ const PageBanner = ({ bannerType = "page", props } ) => {
     return (
         <div className={( bannerType !== 'blog' ) ? `${banner.pageBanner}` : `${banner.pageBanner} ${banner.blogPost}`}>
 
-            {( isFeaturedMedia && 
-            <Img className={banner.blogBanner} fluid={featuredMedia.localFile.childImageSharp.fluid} 
-                alt={(featuredMedia.alt_text) ? featuredMedia.alt_text : ""}  
-                />)}
+            {( isFeaturedMedia && <Img className={banner.blogBanner} 
+                fluid={
+                    (featuredMedia && featuredMedia.localFile) ? featuredMedia.localFile.childImageSharp.fluid : null
+                } 
+                alt={
+                    (featuredMedia && featuredMedia.alt_text) ? featuredMedia.alt_text : ""
+                }  
+                />)
+            }
             
             {( bannerType === 'page' && <div className={banner.headerContainer}>
                 <h1>{ReactHtmlParser( ( pageTitle ) ) || ReactHtmlParser('&nbsp;')}</h1>
