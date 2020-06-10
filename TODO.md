@@ -3,6 +3,7 @@
 # wire up the quote carousel
 # Review mailing list stuff
 - Wire up forms, newsletter
+- Fix textarea text size in main contact form, inputs
 # one component for contact form
 - style blog posts
 - proof services pages + links + side images
