@@ -7,7 +7,7 @@ import peakLogoWhite from "../../images/logo/Logo_white.svg"
 import tinyClock from "../../images/illustrations/svg/clock_icon.svg"
 
 import "./blogCallout.scss"
-import BlogHeading from "./blog-components/blogHeadings"
+import BlogHeading from "./blog-components/blogHeading"
 
 /**
  * Blog section on home page: features 3 latest blogs
@@ -71,6 +71,7 @@ const BlogFeature = ({ data }) => {
                                 <p className="post-heading heading-4" dangerouslySetInnerHTML={{ __html: node.title }} />
                                 {truncateExcerpt(node.excerpt)}
                             </Link>
+                            
                             <div className="post-meta-data">
                                 <p>{getAuthor(node.categories, node.author.name)}</p>
                                 <p className="date">
@@ -78,6 +79,7 @@ const BlogFeature = ({ data }) => {
                                     <span>{getDate(node.modified, node.date)}</span>
                                 </p>
                             </div>
+                            
                         </div>
                     ))}  
                 </div>

@@ -93,7 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 context: {
                     postId: wordpress_id,
                     relPath: path,
-                    imgPath: featured_media.localFile.relativePath,
+                    imgPath: (featured_media !== null) ? featured_media.localFile.relativePath : '',
                     ...nodeNoPath
                 }
             })

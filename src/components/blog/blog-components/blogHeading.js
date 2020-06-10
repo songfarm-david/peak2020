@@ -7,7 +7,7 @@ const BlogHeading = ({ headingText, className }) => {
     let callOutClass = (className) ? className : null
 
     return (
-        <div className={(callOutClass) ? 
+        <div className={( callOutClass ) ? 
             `${blogHeadingStyles.callOutClass} ${blogHeadingStyles.blogHeading}` : 
             `${blogHeadingStyles.blogHeading}`}>
             <h5>{headingText}</h5>

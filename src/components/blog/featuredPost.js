@@ -8,7 +8,7 @@ import "../../styles/blog/blogIndex.scss"
 import "./featuredPost.scss"
 
 import FeatureBlogCard from "./blog-components/featureBlogCard"
-import BlogHeading from "./blog-components/blogHeadings"
+import BlogHeading from "./blog-components/blogHeading"
 
 const FeaturedPost = (props) => {
     console.log('sticky in featuredPost', props);

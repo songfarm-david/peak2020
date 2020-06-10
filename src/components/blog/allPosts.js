@@ -7,7 +7,7 @@ import peakLogoWhite from "../../images/logo/Logo_white.svg"
 import tinyClock from "../../images/illustrations/svg/Clock_icon-blue.svg"
 
 import {truncateExcerpt, getAuthor, getDate} from "../../functions/helperFunctions"
-import BlogHeading from "./blog-components/blogHeadings"
+import BlogHeading from "./blog-components/blogHeading"
 
 /**
  * Returns an index of all blog posts
