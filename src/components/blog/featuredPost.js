@@ -11,7 +11,6 @@ import FeatureBlogCard from "./blog-components/featureBlogCard"
 import BlogHeading from "./blog-components/blogHeading"
 
 const FeaturedPost = (props) => {
-    console.log('sticky in featuredPost', props);
     
     const {
         path,

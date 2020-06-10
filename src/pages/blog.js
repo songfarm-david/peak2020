@@ -18,8 +18,6 @@ import ContactForm from "../components/layout/contactForm"
  */
 export default ({ data }) => {
 
-    console.log(data);
-
     const { 
         wordpressPage: pageProps, 
         featuredPost: stickyPost, 
