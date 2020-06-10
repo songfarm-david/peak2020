@@ -33,7 +33,10 @@ const PageBanner = ({ bannerType = "page", props } ) => {
     return (
         <div className={( bannerType !== 'blog' ) ? `${banner.pageBanner}` : `${banner.pageBanner} ${banner.blogPost}`}>
 
-            {( isFeaturedMedia && <Img className={banner.blogBanner} alt={featuredMedia.alt_text} fluid={featuredMedia.localFile.childImageSharp.fluid} />)}
+            {( isFeaturedMedia && 
+            <Img className={banner.blogBanner} fluid={featuredMedia.localFile.childImageSharp.fluid} 
+                alt={(featuredMedia.alt_text) ? featuredMedia.alt_text : ""}  
+                />)}
             
             {( bannerType === 'page' && <div className={banner.headerContainer}>
                 <h1>{ReactHtmlParser( ( pageTitle ) ) || ReactHtmlParser('&nbsp;')}</h1>
