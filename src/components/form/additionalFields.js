@@ -13,7 +13,7 @@ const AddFields = () => (
                 </label>
             </div>
             <div id="checkbox" className="input-container">
-                <fieldset>
+                <fieldset name="services-wanted">
                     <legend>Services interested in:</legend>
                     <div className="checkbox-container">
                         <div className="checkbox-input-container">
