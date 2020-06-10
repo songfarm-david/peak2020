@@ -2,11 +2,14 @@
  * Theme colors
  */
  $strong-blue: #27688E;
+ @value strong-blue: $strong-blue;
  $grayish-red: #63494B;
  $light-green: #66BA86;
  $bright-orange: #E5AD3E;
  $bluish-white: #F4F7F8;
  $white: #FFFFFF;
+ @value white: $white;
+
  $lighter-blue: #F1F9FF;
  
  /**

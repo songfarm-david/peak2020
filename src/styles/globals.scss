@@ -2,6 +2,8 @@
 @import "./type.scss";
 
 $mobile-breakpoint: 769px;
+@value mob-breakpoint: $mobile-breakpoint;
+
 $vertical-rhythm: 4.5rem;
 $top-margin: 2.25rem;
 $border-radius: 4px;
@@ -12,6 +14,8 @@ $blog-width: 66%;
 $box-shadow: 3px 3px 30px #E5E7E8;
 
 $blogBannerHeight: 26rem;
+
+.blog
 
 .blog-content-width {
   max-width: $content-width-blog;

@@ -1,4 +1,4 @@
-@import "../../styles/globals.scss";
+@import "../../../styles/globals.scss";
 
 .featuredCard {
 
@@ -49,12 +49,10 @@
             }
         }
     }
-    
 
     .heading {
         text-align: center;
         margin: 0;
-        // @extend .heading-3;
     }
 
     .postMetaData {
@@ -87,15 +85,6 @@
 
 }
 
-// .sticky {
-//     composes: featuredCard;
-//     .heading {
-//         // @extend .heading-3;
-//         font: bold 1.5625rem/2.1875rem Montserrat, sans-serif
-//     }
-// }
-
-    
 @media screen and (min-width: $mobile-breakpoint) {
         
     .featuredCard {
@@ -107,9 +96,7 @@
         width: 100%;
         margin: 0 auto;
 
-        .heading {
-            flex-basis: 100%;
-        }
+        .heading { flex-basis: 100%; }
 
         .postMetaData {
             flex-wrap: nowrap;
@@ -125,20 +112,7 @@
     .sticky {
         composes: featuredCard;
         width: 66%;
-        // font: bold 3.125rem/3.75rem Montserrat, sans-serif;
     }
 
-    // .blog .featuredCard {
-    //     position: absolute;
-    // }
-
-    // .featured-post .featuredCard {
-    //     width: 66%;
-    // }
-
-}
-   
-@media screen and (max-width: $mobile-breakpoint) {
-    
 }
 

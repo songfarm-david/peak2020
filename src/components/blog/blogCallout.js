@@ -7,6 +7,7 @@ import peakLogoWhite from "../../images/logo/Logo_white.svg"
 import tinyClock from "../../images/illustrations/svg/clock_icon.svg"
 
 import "./blogCallout.scss"
+import BlogHeading from "./blog-components/blogHeadings"
 
 /**
  * Blog section on home page: features 3 latest blogs
@@ -54,36 +55,37 @@ const BlogFeature = ({ data }) => {
     return (
         <article id="blogFeature">
             <div className="blog-content-container">
-                <div className="blog-heading">
-                    <h5>Latest Blog Articles</h5>
-                    <span className="barline"></span>
-                </div>
+
+                <BlogHeading headingText="Latest Blog Articles" className="blogCallout" />
+
                 <div className="blog-inner-container">
-                {featuredPosts.edges.map(({ node }) => (
-                    <div key={node.title} className="blog-post">
-                        <Link to={node.path}>
-                            {  
-                            /* test for featured media */
-                            node.featured_media != null ? 
-                            <Img className="featured-image" fluid={node.featured_media.localFile.childImageSharp.fluid} /> 
-                            : <img className="featured-image" src={peakLogoWhite} alt="" />
-                            }
-                            <p className="post-heading heading-4" dangerouslySetInnerHTML={{ __html: node.title }} />
-                            {truncateExcerpt(node.excerpt)}
-                        </Link>
-                        <div className="post-meta-data">
-                            <p>{getAuthor(node.categories, node.author.name)}</p>
-                            <p className="date">
-                                <img className="clock-icon" src={tinyClock} alt="last updated date"/>
-                                <span>{getDate(node.modified, node.date)}</span>
-                            </p>
+                    {featuredPosts.edges.map(({ node }) => (
+                        <div key={node.title} className="blog-post">
+                            <Link to={node.path}>
+                                {  
+                                /* test for featured media */
+                                node.featured_media != null ? 
+                                <Img className="featured-image" fluid={node.featured_media.localFile.childImageSharp.fluid} /> 
+                                : <img className="featured-image" src={peakLogoWhite} alt="" />
+                                }
+                                <p className="post-heading heading-4" dangerouslySetInnerHTML={{ __html: node.title }} />
+                                {truncateExcerpt(node.excerpt)}
+                            </Link>
+                            <div className="post-meta-data">
+                                <p>{getAuthor(node.categories, node.author.name)}</p>
+                                <p className="date">
+                                    <img className="clock-icon" src={tinyClock} alt="last updated date"/>
+                                    <span>{getDate(node.modified, node.date)}</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}  
+                    ))}  
                 </div>
+
                 <div className="to-blog-link">
                     <Link to="/blog/" className="button primary-button">Go to blog</Link>
                 </div>
+
             </div>
         </article>
     )

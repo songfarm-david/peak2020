@@ -26,8 +26,7 @@ export default ( props ) => {
     return (
         <Layout specialClass={ (slug === 'home') ? "home" : null }>
             
-            {( slug === 'home' && <HeroSection /> ) ||  
-            <PageBanner pageTitle={title.toString()} bannerType="page" parent={parent} props={''} />}
+            {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" props={props} />}
                       
             <div className={(true === p.includes('/services/')) ? 
                 "page-content web-services " + formatTitle(title) : 

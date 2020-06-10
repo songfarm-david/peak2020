@@ -14,9 +14,11 @@ import "../styles/blog/blogPosts.scss"
 * Mar 2020
 */
 export default ( props ) => {
-  
+    console.log('blogTemplate page props', props);
+    
     return (
         <Layout specialClass="blog">
+            
             <PageBanner bannerType="blog" props={props} />
         
             <div className={"page-content blog-post"}>
@@ -35,6 +37,7 @@ export default ( props ) => {
 export const query = graphql`
     query($postId: Int!) {
         wordpressPost(wordpress_id: {eq: $postId}) {
+            title
             featured_media {
                 alt_text
                 localFile {

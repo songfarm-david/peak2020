@@ -4,9 +4,11 @@ import Img from "gatsby-image"
 
 import peakLogoWhite from "../../images/logo/Logo_white.svg"
 
+import "../../styles/blog/blogIndex.scss"
 import "./featuredPost.scss"
 
-import FeatureBlogCard from "./featureBlogCard"
+import FeatureBlogCard from "./blog-components/featureBlogCard"
+import BlogHeading from "./blog-components/blogHeadings"
 
 const FeaturedPost = (props) => {
     console.log('sticky in featuredPost', props);
@@ -18,10 +20,9 @@ const FeaturedPost = (props) => {
     
     return (
         <article className="blog-content-container">
-            <div className="blog-heading">
-                <p className="heading-5">Featured Blog Articles</p>
-                <span className="barline"></span>
-            </div>
+
+            <BlogHeading headingText="Featured Blog Articles" />
+
             <div className="blog-inner-container">
                 <div className="featured-post blog-post">
                     <Link to={path}>

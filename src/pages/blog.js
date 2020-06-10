@@ -8,16 +8,23 @@ import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/hero/newsletter"
 import ContactForm from "../components/layout/contactForm"
 
-import "../styles/blog/blogIndex.scss"
-
 /**
- * This is the component for the blog index page
+ * Blog Index page
+ * Composes a blog index page with a variable sticky post
  * 
+ * NOTE: status of sticky post is controlled in CMS!!
+ * 
+ * @param {Obj} data.featuredPost status of sticky 
  */
 export default ({ data }) => {
-    
-    const stickyPost = data.featuredPost
-    const allPosts = data.allWordpressPost
+
+    console.log(data);
+
+    const { 
+        wordpressPage: pageProps, 
+        featuredPost: stickyPost, 
+        allWordpressPost: allPosts 
+    } = data
     
     /**
      * Validate presence of value for Sticky Post
@@ -28,21 +35,20 @@ export default ({ data }) => {
 
     return (
         <Layout specialClass="blog">
-            
-            <PageBanner pageTitle="blog" bannerType="page" props={''} />
+        
+            <PageBanner bannerType="page" props={pageProps} />
 
-            { /* check if there is a 'sticky' post in the CMS */
-                ( haveStickyPost( stickyPost ) && <FeaturedPost sticky={stickyPost} /> )
-            }      
+            {( haveStickyPost( stickyPost ) && 
+            <FeaturedPost sticky={stickyPost} /> )}      
 
-            <AllPosts 
-                allPosts={allPosts} />   
+            <AllPosts allPosts={allPosts} />   
 
             <Newsletter />
             <ContactForm />
-            
+           
         </Layout>
     )
+
 }
 
 /**
@@ -51,6 +57,9 @@ export default ({ data }) => {
  */
 export const queryAllPosts = graphql`
     query {
+        wordpressPage(wordpress_id: {eq: 703}) {
+            title
+        }
         featuredPost: wordpressPost(sticky: {eq: true}) {
             id
             title
