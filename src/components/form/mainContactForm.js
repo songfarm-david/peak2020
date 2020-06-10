@@ -26,7 +26,7 @@ const MainContactForm = ({ isAddFields }) => (
         </div>
         {( isAddFields && <AddFields /> ) }
         <label className="form-label">How Can We Help?
-            <textarea rows="14"></textarea>
+            <textarea rows="14" name="comment"></textarea>
         </label>
         <button className="button primary-button">Send</button>
     </form> 
