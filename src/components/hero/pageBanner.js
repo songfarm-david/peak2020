@@ -15,8 +15,6 @@ import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
  */
 const PageBanner = ({ bannerType = "page", props } ) => {
     
-    console.log( 'pageBanner props', props );
-
     let isFeaturedMedia = false
     let featuredMedia = null
     let pageTitle = '&nbsp;'

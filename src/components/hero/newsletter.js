@@ -1,6 +1,6 @@
 import React from "react"
 
-import NewsletterForm from "./newsletterForm"
+import NewsletterForm from "../form/newsletterForm"
 import "./newsletter.scss"
 
 const Newsletter = () => (

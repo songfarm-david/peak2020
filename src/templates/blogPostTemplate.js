@@ -14,7 +14,7 @@ import "../styles/blog/blogPosts.scss"
 * Mar 2020
 */
 export default ( props ) => {
-    console.log('blogTemplate page props', props);
+    // console.log('blogTemplate page props', props);
     
     return (
         <Layout specialClass="blog">

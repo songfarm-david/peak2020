@@ -1,7 +1,7 @@
 import React from "react"
 
 import "./contactForm.scss"
-import Form from "../form/form"
+import MainContactForm from "../form/mainContactForm"
 
 const ContactForm = ({ heading, paragraph, isAddFields }) => (
     <div id="contactFormContainer">
@@ -10,7 +10,7 @@ const ContactForm = ({ heading, paragraph, isAddFields }) => (
             <div className="contact-form-text">
                 <p className="heading heading-2">{( heading ) ? heading : "Elevate Your Business"}</p>
                 <p className="sub-heading">{( paragraph ) ? paragraph : "Let us help lead your business to new heights."}</p>
-                <Form isAddFields={isAddFields} />
+                <MainContactForm isAddFields={isAddFields} />
             </div>
         </article>
     </div>
