@@ -3,8 +3,9 @@
 # wire up the quote carousel
 # Review mailing list stuff
 - Wire up forms, newsletter
-    - Figure out how to handle mainContactForm submissions with Netlify
+    - add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
 - Fix textarea text size in main contact form, inputs
+- fix footer cramping on smalller viewports (flex)
 # one component for contact form
 - style blog posts
 - proof services pages + links + side images
