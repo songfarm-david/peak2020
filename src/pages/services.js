@@ -7,8 +7,8 @@ import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import BlogCallout from "../components/blog/blogCallout"
-import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/form/contactFormCallout"
+import Newsletter from "../components/layout/newsletter"
+import ContactFormCallout from "../components/form/contactFormCallout"
 
 import "../styles/pages.scss"
 
@@ -17,8 +17,9 @@ import "../styles/pages.scss"
  */
 export default ({ data, location }) => {
 
-    const { pathname: path } = location 
-    console.log('services page location', location);
+    const { 
+        pathname: path 
+    } = location 
     
     const { title } = data.wordpressPage
     const services = data.allWordpressPage
@@ -26,11 +27,9 @@ export default ({ data, location }) => {
     return (
         <Layout specialClass="services-home">
 
-            <PageBanner 
-                bannerType="page" 
-                title={{ title }} />
+            <PageBanner bannerType="page" title={title} />
 
-            <PageContent page={title}>
+            <PageContent path={title}>
                 {services.edges.map(({ node }, index) => (
                     <article className="service-card" key={index}>
                         <Img className="service-image" alt={node.title} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
@@ -42,8 +41,8 @@ export default ({ data, location }) => {
             </PageContent>
 
             <BlogCallout />
-            <Newsletter />
-            <ContactForm formPath={path} />
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} />
             
         </Layout>
     )

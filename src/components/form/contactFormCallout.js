@@ -7,7 +7,7 @@ const ContactForm = ({
     heading = "Elevate Your Business", 
     paragraph = "Let us help lead your business to new heights.", 
     isAddFields = false, 
-    formPath = "/" 
+    path = "/" 
 }) => (
     <div id="contactFormContainer">
         <article>
@@ -16,7 +16,7 @@ const ContactForm = ({
                 <p className="heading heading-2">{ heading }</p>
                 <p className="sub-heading">{ paragraph }</p>
                 <MainContactForm 
-                    path={ formPath } 
+                    path={ path } 
                     isAddFields={ isAddFields } />
             </div>
         </article>

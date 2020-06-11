@@ -1,8 +1,8 @@
 import React from "react"
 import { formatTitle } from "../../functions/helperFunctions"
 
-const PageContent = ({ page, children }) => (
-    <div className={"page-content " + formatTitle(page.toLowerCase())}>
+const PageContent = ({ path, children }) => (
+    <div className={"page-content " + formatTitle(path.toLowerCase())}>
         {children}
     </div>
 )

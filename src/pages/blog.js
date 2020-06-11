@@ -5,8 +5,8 @@ import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
-import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/form/contactFormCallout"
+import Newsletter from "../components/layout/newsletter"
+import ContactFormCallout from "../components/form/contactFormCallout"
 
 /**
  * Blog Index page
@@ -16,13 +16,10 @@ import ContactForm from "../components/form/contactFormCallout"
  * 
  * @param {Obj} data.featuredPost status of sticky 
  */
-export default ({ data }) => {
+export default ({ data, location }) => {
 
-    const { 
-        wordpressPage: pageProps, 
-        featuredPost: stickyPost, 
-        allWordpressPost: allPosts 
-    } = data
+    const { featuredPost: stickyPost, allWordpressPost: allPosts } = data,
+    title = data.wordpressPage.title, {pathname: path} = location
     
     /**
      * Validate presence of value for Sticky Post
@@ -34,15 +31,14 @@ export default ({ data }) => {
     return (
         <Layout specialClass="blog">
         
-            <PageBanner bannerType="page" props={pageProps} />
+            <PageBanner bannerType="page" title={title} />
 
-            {( haveStickyPost( stickyPost ) && 
-            <FeaturedPost sticky={stickyPost} /> )}      
+            {( haveStickyPost( stickyPost ) && <FeaturedPost sticky={stickyPost} /> )}      
 
             <AllPosts allPosts={allPosts} />   
 
-            <Newsletter />
-            <ContactForm />
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} />
            
         </Layout>
     )

@@ -8,27 +8,20 @@ import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
 
 /**
  * Page Banner 
- * Appears on all pages (except home page)
+ * Applies on both pages and blog posts
  * 
- * @param {String} pageTitle a page title
- * @param {String} parent a parent page
+ * @param {String} bannerType either a 'page' or a 'blog' banner type
+ * @param {String} title the title for the page banner
  */
-const PageBanner = ({ bannerType = "page", title = {} } ) => {
+const PageBanner = ({ 
+    bannerType = "page", 
+    title = {} 
+}) => {
     console.log('pageBanner title', title, 'bannerType?', bannerType);
     
     let isFeaturedMedia = false
-
     let featuredMedia = null
-
-    let pageTitle = ( title ) ? ReactHtmlParser(title.title) : '&nbsp;'
-
-    // const pageTitle = (title) => ReactHtmlParser(title)
-
-    // if (props.pageContext && props.pageContext.title) {
-    //     pageTitle = props.pageContext.title
-    // } else if (props.title) {
-    //     pageTitle = props.title
-    // }
+    let pageTitle = ( title ) ? ReactHtmlParser(title) : '&nbsp;'
 
     // if ( props.data && props.data.wordpressPost ) {
     //     isFeaturedMedia = true
@@ -36,7 +29,7 @@ const PageBanner = ({ bannerType = "page", title = {} } ) => {
     // }
 
     return (
-        <div className={( bannerType !== 'blog' ) ? `${banner.pageBanner}` : `${banner.pageBanner} ${banner.blogPost}`}>
+        <div className={( bannerType === 'page' ) ? `${banner.pageBanner}` : `${banner.blogPost}`}>
 
             {( isFeaturedMedia && <Img className={banner.blogBanner} 
                 fluid={

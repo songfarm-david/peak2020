@@ -15,17 +15,13 @@ export default ({ data, location }) => {
     return (
         <Layout specialClass="contact-us">
 
-            <PageBanner 
-                bannerType="page" 
-                title={{ title }} />
+            <PageBanner bannerType="page" title={title} />
 
-            <PageContent page={ title }>
-
+            <PageContent page={title}>
                 <ContactForm 
                     heading="Begin the Journey" 
                     paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
                     formPath={path} isAddFields={true} />
-
             </PageContent>
 
         </Layout>
