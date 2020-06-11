@@ -16,16 +16,15 @@ exports.handler = (event, context, callback) => {
         MC_DATA_NO
      } = process.env
 
-    const mChEndPoint = "https://" + MC_DATA_NO + ".api.mailchimp.com/3.0/lists/"
-    mChEndPoint += MC_AUDIENCE_ID + "/members/"
-    const creds = "anystring:" + MC_API_KEY
+    const MC_END_POINT = `https://${MC_DATA_NO}.api.mailchimp.com/3.0/lists/${MC_AUDIENCE_ID}/members/`
+    const creds = `anystring:${MC_API_KEY}`
 
     let requestPayload = {
         'email_address': payload.email_address,
          'status': 'subscribed'
     }
 
-    axios.post(API_Endpoint, requestPayload, {
+    axios.post(MC_END_POINT, requestPayload, {
         headers: { 'Authorization': 'Basic ' + Buffer.from(creds).toString('base64') }
     }).then( res => {
         console.log(`success subscribing email: ${payload.email_address}`)
