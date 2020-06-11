@@ -11,15 +11,11 @@ import "./mainContactForm.scss"
  * 
  * @param {*} param0.isAddFields boolean value 
  */
-const MainContactForm = ({ isAddFields }) => {
-    
-    // const parseRelPath = () => {
-    //     return getRelPath()+"?thank_you"
-    // }
-    
+const MainContactForm = ({ path, isAddFields }) => {
+        
     return (
         <form name={( isAddFields ) ? "main-contact-form-full" : "main-contact-form"} 
-            action={getRelPath()+"?thank_you"} method="post" 
+            action={path +"?thank_you"} method="post" 
             className={( isAddFields ) ? "mainContact plusAddFields" : "mainContact"}
             data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" 

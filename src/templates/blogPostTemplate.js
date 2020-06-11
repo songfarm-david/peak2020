@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/layout/contactForm"
+import ContactForm from "../components/form/contactFormCallout"
 
 import "../styles/blog/blogPosts.scss"
 
@@ -49,6 +49,5 @@ export const query = graphql`
                 }
             }
         }
-    }
-        
+    }       
 `

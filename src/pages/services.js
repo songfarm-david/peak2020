@@ -5,39 +5,45 @@ import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/hero/pageBanner"
+import PageContent from "../components/layout/pageContent"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/layout/contactForm"
+import ContactForm from "../components/form/contactFormCallout"
 
 import "../styles/pages.scss"
 
 /**
  * Services Page
  */
-export default ({ data }) => {
+export default ({ data, location }) => {
 
-    const pageProps = data.wordpressPage
+    const { pathname: path } = location 
+    console.log('services page location', location);
+    
+    const { title } = data.wordpressPage
     const services = data.allWordpressPage
 
     return (
         <Layout specialClass="services-home">
 
-            <PageBanner bannerType="page" props={pageProps} />
+            <PageBanner 
+                bannerType="page" 
+                title={{ title }} />
 
-            <div className="page-content web-services">
-              {services.edges.map(({ node }, index) => (
-                  <article className="service-card" key={index}>
-                      <Img className="service-image" alt={node.title} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
-                      <h3 className="service-heading">{ReactHtmlParser(node.title)}</h3>
-                      <div className="service-excerpt">{ReactHtmlParser(node.excerpt)}</div>
-                      <Link className="service-link" to={node.path} title={ReactHtmlParser(node.title)}>Learn More</Link>
-                  </article>
-              ))}
-            </div>
+            <PageContent page={title}>
+                {services.edges.map(({ node }, index) => (
+                    <article className="service-card" key={index}>
+                        <Img className="service-image" alt={node.title} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
+                        <h3 className="service-heading">{ReactHtmlParser(node.title)}</h3>
+                        <div className="service-excerpt">{ReactHtmlParser(node.excerpt)}</div>
+                        <Link className="service-link" to={node.path} title={ReactHtmlParser(node.title)}>Learn More</Link>
+                    </article>
+                ))}
+            </PageContent>
 
             <BlogCallout />
             <Newsletter />
-            <ContactForm />
+            <ContactForm formPath={path} />
             
         </Layout>
     )

@@ -6,7 +6,7 @@ import PageBanner from "../components/hero/pageBanner"
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/layout/contactForm"
+import ContactForm from "../components/form/contactFormCallout"
 
 /**
  * Blog Index page

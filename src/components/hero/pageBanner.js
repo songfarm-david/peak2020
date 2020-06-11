@@ -13,23 +13,27 @@ import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
  * @param {String} pageTitle a page title
  * @param {String} parent a parent page
  */
-const PageBanner = ({ bannerType = "page", props } ) => {
+const PageBanner = ({ bannerType = "page", title = {} } ) => {
+    console.log('pageBanner title', title, 'bannerType?', bannerType);
     
     let isFeaturedMedia = false
 
     let featuredMedia = null
-    let pageTitle = '&nbsp;'
 
-    if (props.pageContext && props.pageContext.title) {
-        pageTitle = props.pageContext.title
-    } else if (props.title) {
-        pageTitle = props.title
-    }
+    let pageTitle = ( title ) ? ReactHtmlParser(title.title) : '&nbsp;'
 
-    if ( props.data && props.data.wordpressPost ) {
-        isFeaturedMedia = true
-        featuredMedia = props.data.wordpressPost.featured_media
-    }
+    // const pageTitle = (title) => ReactHtmlParser(title)
+
+    // if (props.pageContext && props.pageContext.title) {
+    //     pageTitle = props.pageContext.title
+    // } else if (props.title) {
+    //     pageTitle = props.title
+    // }
+
+    // if ( props.data && props.data.wordpressPost ) {
+    //     isFeaturedMedia = true
+    //     featuredMedia = props.data.wordpressPost.featured_media
+    // }
 
     return (
         <div className={( bannerType !== 'blog' ) ? `${banner.pageBanner}` : `${banner.pageBanner} ${banner.blogPost}`}>
@@ -45,11 +49,11 @@ const PageBanner = ({ bannerType = "page", props } ) => {
             }
             
             {( bannerType === 'page' && <div className={banner.headerContainer}>
-                <h1>{ReactHtmlParser( ( pageTitle ) ) || ReactHtmlParser('&nbsp;')}</h1>
+                <h1>{pageTitle}</h1>
             </div>)}
 
             {( bannerType === 'blog' && <div className={banner.blogHeaderContainer}>
-                <FeatureBlogCard props={props.pageContext} />
+                {/* <FeatureBlogCard props={props.pageContext} /> */}
             </div>)}
 
         </div>
