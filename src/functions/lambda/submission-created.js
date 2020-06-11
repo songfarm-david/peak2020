@@ -21,14 +21,17 @@ exports.handler = (event, context, callback) => {
 
     let requestPayload = {
         'email_address': payload.email_address,
-         'status': 'subscribed'
+        'status': 'subscribed'
     }
+
+    console.log('ABOUT TO POST', 'url is ', MC_END_POINT, 'requestPayload is ',requestPayload, 'and the email? ', payload.email_address);
+    
 
     axios.post(MC_END_POINT, requestPayload, {
         headers: { 'Authorization': 'Basic ' + Buffer.from(creds).toString('base64') }
     }).then( res => {
         console.log(`success subscribing email: ${payload.email_address}`)
         return res
-    }).catch( err => callback( err ))
+    }).catch( err => callback('Callback error:', err ))
 
 }
