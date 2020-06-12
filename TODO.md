@@ -7,6 +7,7 @@
 - Fix textarea text size in main contact form, inputs
 - fix footer cramping on smalller viewports (flex)
 # one component for contact form
+- add build hook for wp updates in Netlify
 - style blog posts
 - proof services pages + links + side images
 - fix rotating text section

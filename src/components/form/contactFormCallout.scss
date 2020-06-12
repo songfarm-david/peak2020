@@ -8,9 +8,9 @@
     text-align: center;
 
     article {
-        @extend .content-padding-section;
+        padding: $section-padding;
         .contact-form-text {
-            @extend .content-padding;
+            padding: $content-padding;
             .heading { margin-bottom: 0; }
             .sub-heading { @extend .normal-text; }
         } 

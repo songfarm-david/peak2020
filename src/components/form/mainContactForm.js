@@ -1,7 +1,5 @@
 import React from "react"
 
-import { getRelPath } from "../../functions/helperFunctions"
-
 import AddFields from "./additionalFields"
 import "./mainContactForm.scss"
 
@@ -18,19 +16,19 @@ const MainContactForm = ({ path, isAddFields }) => {
             action={path +"?thank_you"} method="post" 
             className={( isAddFields ) ? "mainContact plusAddFields" : "mainContact"}
             data-netlify="true" data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" 
+            <input type="hidden" name="form-name" aria-labelledby={isAddFields}
                 value={( isAddFields ) ? "main-contact-form-full" : "main-contact-form"} />
             <div className="input-container">
                 <label className="form-label" htmlFor="name">Name
-                    <input type="input" name="name" />
+                    <input type="input" name="name" aria-label="name" />
                 </label>
                 <label className="form-label" htmlFor="email">Email
-                    <input type="email" name="email" required />
+                    <input type="email" name="email" aria-label="email" required />
                 </label>
             </div>
             {( isAddFields && <AddFields /> ) }
             <label className="form-label">How Can We Help?
-                <textarea rows="14" name="comment"></textarea>
+                <textarea rows="14" name="comment" aria-label="comment"></textarea>
             </label>
             <button className="button primary-button">Send</button>
         </form> 

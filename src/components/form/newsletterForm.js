@@ -3,9 +3,7 @@ import React, { useState } from "react"
 import newsletterFormStyles from "./newsletterForm.module.scss"
 
 const NewsletterForm = ({ path, text, className = {} }) => {
-    
-    console.log(className);
-    
+        
     const [userEmail, setState] = useState({'email_address': ''})
 
     const handleChange = e => {
@@ -19,7 +17,7 @@ const NewsletterForm = ({ path, text, className = {} }) => {
             method="post" 
             action={path +"?thank_you"}>
 
-            <input type="email" name="email_address" placeholder="Email Address" onChange={handleChange} value={userEmail.email_address} required />
+            <input type="email" name="email_address" aria-label="email" placeholder="Email Address" onChange={handleChange} value={userEmail.email_address} required />
 
             <button type="submit" className="button primary-button-inverted">{
                 (text) ? text : 'Send' 

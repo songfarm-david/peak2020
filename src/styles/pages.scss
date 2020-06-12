@@ -2,13 +2,13 @@
 
 #mainContent {
 
-    padding-bottom: $vertical-rhythm;
-    overflow: hidden;
-    position: relative;
+    // padding-bottom: $vertical-rhythm;
+    // overflow: hidden;
+    // position: relative;
 
-    .page-inner { margin-bottom: $vertical-rhythm; }
-    .page-banner { margin-top: 4.5rem; }
-    .button { width: auto; }
+    // .page-inner { margin-bottom: $vertical-rhythm; }
+    // .page-banner { margin-top: 4.5rem; }
+    // .button { width: auto; }
 
     &.home {
 
@@ -30,52 +30,10 @@
             flex-wrap: wrap;
             @extend .normal-text;
 
-            .service-card {
-
-                // display: flex;
-                // justify-content: center;
-                // flex-wrap: wrap;
-                // flex-basis: 100%;
-                // text-align: center;
-                // border-radius: $border-radius;
-                // width: calc(33% - 2.5rem);
-                // box-sizing: border-box;
-                // margin: 0 1.25rem 2.5rem;
-                // box-shadow: $box-shadow;
-                // border-radius: 10px;
-                // padding: $top-margin;
-                // align-content: flex-start;
-
-                // &:hover { cursor: pointer; }
-
-                // .service-image,
-                // .service-heading,
-                // .service-excerpt {
-                //     flex-basis: 100%;
-                // }
-
-                // .service-image {
-                //     height: 13.5rem;
-                //     width: 100%;
-                // }
-
-                // .service-heading { margin-bottom: 0;}
-                // .service-excerpt { @extend .small-text; }
-                // .service-link { 
-                //     text-decoration: underline;
-                //     &:hover {
-                //         text-decoration: none;
-                //     }
-                // }
-
-            }
+        
 
         }
     }
-
-    
-
-    
 
     @media screen and (min-width: $mobile-breakpoint) {
 
@@ -124,75 +82,75 @@
 
 .page-content {
 
-    @extend .content-width;
-    @extend .content-padding-section;
-    @extend .normal-text;
-    position: relative;
+    // @extend .content-width;
+    // @extend .content-padding-section;
+    // @extend .normal-text;
+    // position: relative;
 
-    figure,
-    .highlight {
-        position: relative;
-        z-index: 1;
-    }
+    // figure,
+    // .highlight {
+    //     position: relative;
+    //     z-index: 1;
+    // }
 
-    .highlight {
-        @extend .heading-2;
-        flex: 0 0 100%;
-        order: -1;
-        width: $header-width;
-        margin: 0 auto;
-    }
+    // .highlight {
+    //     @extend .heading-2;
+    //     flex: 0 0 100%;
+    //     order: -1;
+    //     width: $header-width;
+    //     margin: 0 auto;
+    // }
 
-    .hero-image { 
-        order: 1; 
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
+    // .hero-image { 
+    //     order: 1; 
+    //     margin: 0 auto;
+    //     padding: 0 1rem;
+    // }
 
-    .page-content-para {
-        padding: 1rem 0;
-        flex-basis: 100%;
-        margin: 0 auto;
-        @extend .normal-text;
-        p:last-child {
-            display: inline-block;
-        }
-    }
+    // .page-content-para {
+    //     padding: 1rem 0;
+    //     flex-basis: 100%;
+    //     margin: 0 auto;
+    //     @extend .normal-text;
+    //     p:last-child {
+    //         display: inline-block;
+    //     }
+    // }
 
     /* home page section */
-    &.peak-websites {
-        padding-bottom: $vertical-rhythm * 2;
-        position: relative;
-        &::after {
-            content: '';
-            display: block;
-            background: url('../images/illustrations/svg/compass.svg') no-repeat;
-            background-position: 100% bottom;
-            background-size: 19rem;
-            padding-bottom: 9rem;
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            right: -30%;
-            bottom: 1%;
-            z-index: -111;
-            // transform: rotate(10deg);
-            display: none;
-        }
-    }
+    // &.peak-websites {
+    //     padding-bottom: $vertical-rhythm * 2;
+    //     position: relative;
+    //     &::after {
+    //         content: '';
+    //         display: block;
+    //         background: url('../images/illustrations/svg/compass.svg') no-repeat;
+    //         background-position: 100% bottom;
+    //         background-size: 19rem;
+    //         padding-bottom: 9rem;
+    //         height: 100%;
+    //         width: 100%;
+    //         position: fixed;
+    //         right: -30%;
+    //         bottom: 1%;
+    //         z-index: -111;
+    //         // transform: rotate(10deg);
+    //         display: none;
+    //     }
+    // }
 
-    .hero-image {
-        order: 1;
-    }
+    // .hero-image {
+    //     order: 1;
+    // }
 
-    .page-content-para {
-        flex: 2;
-        padding: 1rem 0;
-        flex-basis: 100%;
-        p:last-child {
-            display: inline-block;
-        }
-    }
+    // .page-content-para {
+    //     flex: 2;
+    //     padding: 1rem 0;
+    //     flex-basis: 100%;
+    //     p:last-child {
+    //         display: inline-block;
+    //     }
+    // }
    
     &.about {
 

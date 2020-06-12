@@ -24,7 +24,10 @@ export default ( props ) => {
     } = props.pageContext
 
     const { pathname: path } = props.location 
-    console.log('title from page template', title);
+    // console.log('title from page template', title);
+
+    // console.log('pageTemplate. Parse content?', ReactHtmlParser(content));
+    
     
     return (
         <Layout props={props} specialClass={(slug === 'home') ? "home" : null}>

@@ -6,17 +6,20 @@ $mobile-breakpoint: 769px;
 
 $top-margin: 2.25rem;
 $vertical-rhythm: 4.5rem;
+$section-padding: $top-margin 0 $vertical-rhythm;
 
 $border-radius: 4px;
 $box-shadow: 3px 3px 30px #E5E7E8;
 
 $content-width: 80%;
 $margin-bottom: 0.75rem;
+$content-padding: 0 .75rem;
+
 
 :global {
-    .content-padding-section {
-        padding: $top-margin 0 $vertical-rhythm;
-      }
+    // .content-padding-section {
+    //     padding: $top-margin 0 $vertical-rhythm;
+    //   }
     .cardStyles {
         border-radius: $border-radius;
         box-shadow: $box-shadow;
@@ -39,16 +42,14 @@ $blogBannerHeight: 26rem;
 }
 
 // $content-width: $content-width-blog;
-$content-padding: 0 1rem;
 
 .content-width {
   max-width: $content-width;
   margin: 0 auto;
-  padding: $content-padding;
 }
-.content-padding {
-  padding: $content-padding;
-}
+// .content-padding {
+//   padding: $content-padding;
+// }
 
 
 html {
