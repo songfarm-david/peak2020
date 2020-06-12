@@ -1,0 +1,34 @@
+@import "../../styles/globals.scss";
+
+#quoteCarousel {
+    margin-bottom: $vertical-rhythm;
+    width: 100%;   
+    text-align: center;
+
+    .innerContainer {
+        @extend .quotes-text;
+        .quote {
+            width: auto;
+            margin-bottom: $margin-bottom;
+            &::before {
+                content: "\201C";
+                display: inline-block;
+            }
+            &::after {
+                content: "\201D";
+                display: inline-block;
+                white-space: nowrap;
+            }
+        }
+        .author {
+            @extend .normal-text;
+            text-align: center;
+            &::before {
+                content: '\2014';
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    }
+
+}

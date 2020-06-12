@@ -2,7 +2,9 @@ import React, { useState } from "react"
 
 import newsletterFormStyles from "./newsletterForm.module.scss"
 
-const NewsletterForm = ({ path, text }) => {
+const NewsletterForm = ({ path, text, className = {} }) => {
+    
+    console.log(className);
     
     const [userEmail, setState] = useState({'email_address': ''})
 
@@ -12,14 +14,14 @@ const NewsletterForm = ({ path, text }) => {
 
     return (
         <form id={newsletterFormStyles.mainForm} 
+            className={(className === "footerNewsletter") ? newsletterFormStyles.footerNewsletter : null}
             name="newsletter-signup" 
             method="post" 
             action={path +"?thank_you"}>
 
-            <input className={newsletterFormStyles.input} type="email" name="email_address" placeholder="Email Address" onChange={handleChange} value={userEmail.email_address} required />
+            <input type="email" name="email_address" placeholder="Email Address" onChange={handleChange} value={userEmail.email_address} required />
 
-            <button type="submit" className={`${newsletterFormStyles.input}`+ 
-                " button primary-button-inverted"}>{
+            <button type="submit" className="button primary-button-inverted">{
                 (text) ? text : 'Send' 
             }</button>
 

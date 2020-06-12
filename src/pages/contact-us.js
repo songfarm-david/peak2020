@@ -13,7 +13,7 @@ export default ({ data, location }) => {
     const { pathname: path } = location
 
     return (
-        <Layout specialClass="contact-us">
+        <Layout path={path} specialClass="contact-us">
 
             <PageBanner bannerType="page" title={title} />
 

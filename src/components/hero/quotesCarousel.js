@@ -1,6 +1,7 @@
 import React from "react"
 import {quotes} from "../../quotes/quotes"
-import "./quotesCarousel.scss"
+
+import quotesStyles from "./quotesCarousel.module.scss"
 
 const QuotesCarousel = () => {    
 
@@ -12,12 +13,12 @@ const QuotesCarousel = () => {
     const selectedQuote = randomQuote(quotes)
 
     return (
-        <div id="quoteCarousel" className="footer-item">
-            <div className="inner-container">
-                <div className="quote-container">
-                    <p className="quote">{selectedQuote.quote}</p>
-                    <p className="author">{selectedQuote.author}</p>
-                </div>
+        <div id={quotesStyles.quoteCarousel}>
+            <div className={quotesStyles.innerContainer}>
+                {/* <div className="quote-container"> */}
+                    <p className={quotesStyles.quote}>{selectedQuote.quote}</p>
+                    <p className={quotesStyles.author}>{selectedQuote.author}</p>
+                {/* </div> */}
             </div>
         </div>
     )

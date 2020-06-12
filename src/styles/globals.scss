@@ -1,11 +1,17 @@
 @import "./colors.scss";
 @import "./type.scss";
 
+$mobile-breakpoint: 769px;
+@value mobile-breakpoint: (min-width: 769px);
+
 $top-margin: 2.25rem;
 $vertical-rhythm: 4.5rem;
 
 $border-radius: 4px;
 $box-shadow: 3px 3px 30px #E5E7E8;
+
+$content-width: 80%;
+$margin-bottom: 0.75rem;
 
 :global {
     .content-padding-section {
@@ -18,9 +24,6 @@ $box-shadow: 3px 3px 30px #E5E7E8;
         margin-top: $top-margin;
     }
 }
-
-$mobile-breakpoint: 769px;
-@value mobile-breakpoint: (min-width: 769px);
 
 
 $content-width-blog: 78rem;
@@ -35,7 +38,7 @@ $blogBannerHeight: 26rem;
   padding: 0.5rem;
 }
 
-$content-width: $content-width-blog;
+// $content-width: $content-width-blog;
 $content-padding: 0 1rem;
 
 .content-width {

@@ -27,7 +27,7 @@ export default ( props ) => {
     console.log('title from page template', title);
     
     return (
-        <Layout specialClass={(slug === 'home') ? "home" : null}>
+        <Layout props={props} specialClass={(slug === 'home') ? "home" : null}>
             
             {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" title={ title } />}
 
