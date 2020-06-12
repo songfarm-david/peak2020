@@ -1,11 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import ReactHtmlParser from 'react-html-parser';
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
+import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
+import ServiceCard from "../components/layout/services/serviceCard"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
@@ -17,9 +16,7 @@ import "../styles/pages.scss"
  */
 export default ({ data, location }) => {
 
-    const { 
-        pathname: path 
-    } = location 
+    const { pathname: path } = location 
     
     const { title } = data.wordpressPage
     const services = data.allWordpressPage
@@ -30,13 +27,8 @@ export default ({ data, location }) => {
             <PageBanner bannerType="page" title={title} />
 
             <PageContent path={title}>
-                {services.edges.map(({ node }, index) => (
-                    <article className="service-card" key={index}>
-                        <Img className="service-image" alt={node.title} fluid={node.featured_media.localFile.childImageSharp.fluid} style={{maxHeight: '100%', width: '100%'}} imgStyle={{objectFit: 'contain'}} />
-                        <h3 className="service-heading">{ReactHtmlParser(node.title)}</h3>
-                        <div className="service-excerpt">{ReactHtmlParser(node.excerpt)}</div>
-                        <Link className="service-link" to={node.path} title={ReactHtmlParser(node.title)}>Learn More</Link>
-                    </article>
+                {services.edges.map(( node, index ) => (
+                    <ServiceCard props={{ ...node }} key={ index } />
                 ))}
             </PageContent>
 

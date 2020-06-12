@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 
 import banner from "./pageBanner.module.scss"
 import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
@@ -17,7 +18,6 @@ const PageBanner = ({
     bannerType = "page", 
     title = {} 
 }) => {
-    console.log('pageBanner title', title, 'bannerType?', bannerType);
     
     let isFeaturedMedia = false
     let featuredMedia = null

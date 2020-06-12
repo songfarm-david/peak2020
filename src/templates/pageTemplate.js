@@ -2,7 +2,7 @@ import React from "react"
 import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
+import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import HeroSection from "../components/hero/heroSection"
 import BlogCallout from "../components/blog/blogCallout"

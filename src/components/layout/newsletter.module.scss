@@ -1,0 +1,56 @@
+@import '../../styles/globals.scss';
+
+#newsletter {
+
+    background: url('../../images/newsletter.jpeg') center center/cover no-repeat;
+    color: $white;
+    @extend .normal-text;
+    padding: $top-margin 0 $vertical-rhythm;
+
+    > div {
+
+        display: flex;
+        flex-wrap: wrap;
+        @extend .content-padding;
+        
+        .subHeading {
+            @extend .heading-3;
+        }
+
+        > div {
+            width: 100%;
+            &.heading { 
+                flex: 0 0 100%;
+            }
+            &.newsletterForm {
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                max-width: 30rem;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+
+    #newsletter {
+        background-position: center 57%;
+        > div {
+            align-items: center;
+            max-width: $content-width;
+            margin: 0 auto;
+            > div {
+                margin: 0 1rem;
+                flex: 1;
+                &.heading p {
+                        width: 66%;
+                        margin-bottom: 0;
+                }
+            }
+        }
+    }
+    
+}

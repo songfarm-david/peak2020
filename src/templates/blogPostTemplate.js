@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
+import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"

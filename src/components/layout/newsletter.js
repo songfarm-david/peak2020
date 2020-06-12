@@ -1,19 +1,19 @@
 import React from "react"
 
+import newsletter from "./newsletter.module.scss"
 import NewsletterForm from "../form/newsletterForm"
-import "./newsletter.scss"
 
 const Newsletter = ({ path }) => (
-    <section id="newsletter">
+    <section id={newsletter.newsletter}>
         <h2 className="screen-reader-text">Newsletter</h2>
         <div>
-            <div className="heading">
+            <div className={newsletter.heading}>
                 <p className="heading-2">Want to know what's happening online?</p>
             </div>
-            <div className="newsletter">
+            <div className={newsletter.newsletterForm}>
                 <NewsletterForm path={path} />
             </div>
-            <div className="sub-heading">
+            <div className={newsletter.subHeading}>
                 <p>Get thoughtful, informative web and tech ideas you can put to use.</p>
             </div>
         </div>

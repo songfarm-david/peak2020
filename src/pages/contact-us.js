@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
+import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import ContactForm from "../components/form/contactFormCallout"
 
@@ -17,7 +17,7 @@ export default ({ data, location }) => {
 
             <PageBanner bannerType="page" title={title} />
 
-            <PageContent page={title}>
+            <PageContent path={title}>
                 <ContactForm 
                     heading="Begin the Journey" 
                     paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
