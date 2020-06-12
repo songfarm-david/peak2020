@@ -1,6 +1,5 @@
 @import "./globals.scss";
 
-
 #mainContent {
 
     padding-bottom: $vertical-rhythm;
@@ -33,43 +32,43 @@
 
             .service-card {
 
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                flex-basis: 100%;
-                text-align: center;
-                border-radius: $border-radius;
-                width: calc(33% - 2.5rem);
-                box-sizing: border-box;
-                margin: 0 1.25rem 2.5rem;
-                box-shadow: $box-shadow;
-                border-radius: 10px;
-                padding: $top-margin;
-                align-content: flex-start;
+                // display: flex;
+                // justify-content: center;
+                // flex-wrap: wrap;
+                // flex-basis: 100%;
+                // text-align: center;
+                // border-radius: $border-radius;
+                // width: calc(33% - 2.5rem);
+                // box-sizing: border-box;
+                // margin: 0 1.25rem 2.5rem;
+                // box-shadow: $box-shadow;
+                // border-radius: 10px;
+                // padding: $top-margin;
+                // align-content: flex-start;
 
-                &:hover { cursor: pointer; }
+                // &:hover { cursor: pointer; }
 
-                .service-image,
-                .service-heading,
-                .service-excerpt {
-                    flex-basis: 100%;
-                }
+                // .service-image,
+                // .service-heading,
+                // .service-excerpt {
+                //     flex-basis: 100%;
+                // }
 
-                .service-image {
-                    height: 13.5rem;
-                    width: 100%;
-                }
+                // .service-image {
+                //     height: 13.5rem;
+                //     width: 100%;
+                // }
 
-                .service-heading { margin-bottom: 0;}
-                .service-excerpt { @extend .small-text; }
-                .service-link { 
-                    text-decoration: underline;
-                    &:hover {
-                        text-decoration: none;
-                    }
-                }
+                // .service-heading { margin-bottom: 0;}
+                // .service-excerpt { @extend .small-text; }
+                // .service-link { 
+                //     text-decoration: underline;
+                //     &:hover {
+                //         text-decoration: none;
+                //     }
+                // }
+
             }
-
 
         }
     }

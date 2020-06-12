@@ -2,37 +2,34 @@ import React from "react"
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 
 import banner from "./pageBanner.module.scss"
 import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
 
 /**
  * Page Banner 
- * Appears on all pages (except home page)
+ * Applies on both pages and blog posts
  * 
- * @param {String} pageTitle a page title
- * @param {String} parent a parent page
+ * @param {String} bannerType either a 'page' or a 'blog' banner type
+ * @param {String} title the title for the page banner
  */
-const PageBanner = ({ bannerType = "page", props } ) => {
+const PageBanner = ({ 
+    bannerType = "page", 
+    title = {} 
+}) => {
     
     let isFeaturedMedia = false
-
     let featuredMedia = null
-    let pageTitle = '&nbsp;'
+    let pageTitle = ( title ) ? ReactHtmlParser(title) : '&nbsp;'
 
-    if (props.pageContext && props.pageContext.title) {
-        pageTitle = props.pageContext.title
-    } else if (props.title) {
-        pageTitle = props.title
-    }
-
-    if ( props.data && props.data.wordpressPost ) {
-        isFeaturedMedia = true
-        featuredMedia = props.data.wordpressPost.featured_media
-    }
+    // if ( props.data && props.data.wordpressPost ) {
+    //     isFeaturedMedia = true
+    //     featuredMedia = props.data.wordpressPost.featured_media
+    // }
 
     return (
-        <div className={( bannerType !== 'blog' ) ? `${banner.pageBanner}` : `${banner.pageBanner} ${banner.blogPost}`}>
+        <div className={( bannerType === 'page' ) ? `${banner.pageBanner}` : `${banner.blogPost}`}>
 
             {( isFeaturedMedia && <Img className={banner.blogBanner} 
                 fluid={
@@ -45,11 +42,11 @@ const PageBanner = ({ bannerType = "page", props } ) => {
             }
             
             {( bannerType === 'page' && <div className={banner.headerContainer}>
-                <h1>{ReactHtmlParser( ( pageTitle ) ) || ReactHtmlParser('&nbsp;')}</h1>
+                <h1>{pageTitle}</h1>
             </div>)}
 
             {( bannerType === 'blog' && <div className={banner.blogHeaderContainer}>
-                <FeatureBlogCard props={props.pageContext} />
+                {/* <FeatureBlogCard props={props.pageContext} /> */}
             </div>)}
 
         </div>

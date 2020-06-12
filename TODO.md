@@ -9,6 +9,8 @@
 # one component for contact form
 - style blog posts
 - proof services pages + links + side images
+- fix rotating text section
+- add nice dynamic animating hamburger menu
 - address sitemap page
 - address portfolio situation
 - finish 404 page

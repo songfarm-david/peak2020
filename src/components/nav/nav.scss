@@ -133,6 +133,11 @@
         opacity: 1;
         z-index: 1;
 
+        &.menu-active { 
+            transition: none;
+            top: 0;
+        }
+
         > ul {
             display: flex;
             flex: 1;

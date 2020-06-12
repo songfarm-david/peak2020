@@ -1,26 +1,28 @@
 import React from "react"
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
-import ContactForm from "../components/layout/contactForm"
+import PageBanner from "../components/layout/pageBanner"
+import PageContent from "../components/layout/pageContent"
+import ContactForm from "../components/form/contactFormCallout"
 
 import "../styles/pages.scss"
 
-export default ({ data }) => {
+export default ({ data, location }) => {
 
-    const pageProps = data.wordpressPage
-
-    const h = "Begin the Journey"
-    const p = "Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!"
+    const { title } = data.wordpressPage
+    const { pathname: path } = location
 
     return (
         <Layout specialClass="contact-us">
 
-            <PageBanner bannerType="page" props={pageProps} />
+            <PageBanner bannerType="page" title={title} />
 
-            {/* <div className="page-content contact-us"> */}
-                <ContactForm heading={h} paragraph={p} isAddFields={true} />
-            {/* </div> */}
+            <PageContent path={title}>
+                <ContactForm 
+                    heading="Begin the Journey" 
+                    paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
+                    formPath={path} isAddFields={true} />
+            </PageContent>
 
         </Layout>
     )

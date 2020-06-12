@@ -30,22 +30,6 @@
     height: 20rem;
     /* default bg image */
     background: url('../../images/about_header.jpg') center/cover no-repeat;
-
-    &.blogPost {
-
-        width: 100%;
-        height: $blogBannerHeight;
-        position: relative;
-        z-index: 10;
-        background-image: none;
-        // padding: $content-padding;
-
-        .blogBanner {
-            height: 100%;
-            width: 100%;
-        }
-
-    }
     
     &.about {
         background: url('../../images/about_header.jpg') center/cover no-repeat;
@@ -65,6 +49,22 @@
 
     &.contact {
         background: url('../../images/contact_header.jpeg') 0%/cover no-repeat;
+    }
+
+}
+
+.blogPost {
+    composes: pageBanner;
+    width: 100%;
+    height: $blogBannerHeight;
+    position: relative;
+    z-index: 10;
+    background-image: none;
+    // padding: $content-padding;
+
+    .blogBanner {
+        height: 100%;
+        width: 100%;
     }
 
 }

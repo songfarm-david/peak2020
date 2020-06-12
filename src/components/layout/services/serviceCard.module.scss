@@ -1,0 +1,55 @@
+// todo: set up import of breakpoint vars using value
+@import "../../../styles/globals.scss";
+
+.serviceCard {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    text-align: center;
+    // border-radius: $border-radius;
+    width: calc(33% - 2.5rem);
+    box-sizing: border-box;
+    margin: 0 1.25rem 2.5rem;
+    // composes: box-shadow from "../../../styles/globals.scss";
+    // padding: $top-margin;
+    // composes: top-margin from "../../../styles/globals.scss";
+    align-content: flex-start;
+
+    composes: cardStyles from global; 
+
+    &:hover { cursor: pointer; }
+
+    .serviceImage,
+    .serviceHeading,
+    .serviceExcerpt {
+        flex-basis: 100%;
+    }
+
+    .serviceImage {
+        height: 13.5rem;
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .serviceHeading { margin-bottom: 0; }
+
+    .serviceExcerpt {
+        // @extend .small-text;
+    }
+    
+    .serviceLink {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .serviceCard {
+        flex-basis: 30%;
+    }
+}
