@@ -1,9 +1,4 @@
-@value mob-breakpoint from "../../../styles/globals.scss";
-@value strong-blue from "../../../styles/colors.scss";
-@value white from "../../../styles/colors.scss";
-
-$white: white;
-$strong-blue: strong-blue;
+@import "../../../styles/globals.scss";
 
 .blogHeading {
     display: flex;
@@ -20,6 +15,7 @@ $strong-blue: strong-blue;
         margin-left: 1rem;
     }
     &.callOutClass {
+        > h5 { color: $white; }
         .barline { border-color: $white; }
     }
 }

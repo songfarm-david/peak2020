@@ -8,29 +8,38 @@ import cardStyles from "./featureBlogCard.module.scss"
  * 
  * @param {*} param0 
  */
-const FeatureBlogCard = ( post ) => {
-    
-    const {
-        title,
-        modified,
-        date,
-        categories,
-        author
-    } = post.props
+const FeatureBlogCard = ({ props = {} }) => {
+    // console.log('featureBlogCard props', props);
 
-    const isSticky = post.props.sticky
+        const {
+            title,
+            author,
+            categories,
+            date,
+            modified,
+            sticky
+        } = props.featuredPost || props
     
-    const customJoin = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
+
+    /* second validation of sticky attribute */
+    const isFeatured = ( sticky ) ? true : false
+    
+    /**
+     * Add ',' after all but the last category
+     * @param {*} categories 
+     * @param {*} idx 
+     */
+    const joinCats = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
 
     // const { title, modified, date, categories, author } = stickyPost.sticky
 
     return (
-        <div className={( isSticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
+        <div className={( isFeatured ) ? cardStyles.sticky : cardStyles.featuredCard}>
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => (
                     <span key={idx} className={cardStyles.category}>
-                        {cat.name}{customJoin(categories, idx)}
+                        {cat.name}{joinCats(categories, idx)}
                     </span>)))}
                 </span>}
             </div>

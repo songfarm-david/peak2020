@@ -2,38 +2,44 @@ import React from "react"
 import { formatTitle } from "../../functions/helperFunctions"
 
 import pageContent from "./pageContent.module.scss"
+import ServiceCard from "./services/serviceCard"
 
-const PageContent = ({ path, children }) => {
-    console.log('pageContent', path, children);
-
-    // console.log(children.map((node, idx) => (node.props.children)));
+const PageContent = ( props ) => {
     
-    return (
-    <div className={pageContent.pageContent + " " + formatTitle(path.toLowerCase())}>
+    const { path, children, type } = props || {}
+    
+    const includesStr = (str, textStr) => {
+        if (!str) return
+        let s = str.toString()
+        return s.includes(textStr) ? true : false
+    }
+    
+    return ( 
+        <div className={pageContent.pageContent + " " + formatTitle( path.toLowerCase() )}>
+            {Array.isArray(children) && children.map(( node, idx ) => (
+                ( includesStr(node.props.className, 'heroImage') ) ?  
+                    <div key={idx} className={pageContent.heroImage}>
+                        {node.props.children}
+                    </div> : 
+                ( includesStr(node.props.className, 'heroText') ) ?  
+                    <div key={idx} className={pageContent.heroText}>
+                        {node.props.children}
+                    </div> : 
+                ( includesStr(node.props.className, 'heroBody') ) ? 
+                    <div key={idx} className={pageContent.heroBody}>
+                        {node.props.children}
+                    </div> : null ))}  
+            
+            {(type && type === 'services') &&
+                children.edges.map(( node, index ) => (
+                    <ServiceCard service={ node } key={ index } />
+                ))}
         
-        { Array.isArray(children) && children.map( ( node, idx ) => (
-            ( node.props.className === 'heroImage' ) ?  
-                <div className={pageContent.heroImage}>
-                    {node.props.children}
-                </div> 
-            : 
-            ( node.props.className === 'heroText' ) ?  
-                <p className={pageContent.heroText}>
-                    {node.props.children}
-                </p> 
-            : 
-            ( node.props.className === 'heroBody' ) ? 
-                <p className={pageContent.heroBody}>
-                    {node.props.children}
-                </p>
-            : 
-            <p>
-             {node.props.children}
-            </p> )) 
-
-        || <div>{children}</div>}
-        
-    </div>
-)}
+           {/* this catches all regular content that isn't hero or service content */        
+                (!type) ? children : "" 
+            }
+        </div>
+    )
+}
 
 export default PageContent

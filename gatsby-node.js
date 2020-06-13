@@ -22,9 +22,15 @@ exports.createPages = async ({ graphql, actions }) => {
                         parent_element {
                             path
                         }
+                        featured_media {
+                            alt_text
+                            localFile {
+                                relativePath
+                            }
+                        }
                     }
                 }
-              }
+            }
             allWordpressPost {
                 edges {
                     node {
@@ -61,19 +67,30 @@ exports.createPages = async ({ graphql, actions }) => {
     const { allWordpressPage, allWordpressPost } = result.data
         
     allWordpressPage.edges.forEach(({ node }) => {
-
+        
         /* set a value for a parent element if applicable */
-        const parentEl = ( node.parent_element !== null ) ? node.parent_element.path : null
+        // const parentEl = ( node.parent_element !== null ) ? node.parent_element.path : null
+        const { 
+            wordpress_id, 
+            path, title, 
+            content, slug,
+            parent_element, 
+            featured_media, 
+            ...nodeNoPath } = node
 
         if (node.status === 'publish') {            
             createPage({
                 path: node.path,
                 component: pageTemplate,
                 context: {
-                    title: node.title,
-                    content: node.content,
-                    slug: node.slug,
-                    parent: parentEl
+                    postId: wordpress_id,
+                    title: title,
+                    content: content,
+                    slug: slug,
+                    parent: parent_element,
+                    relPath: path,
+                    imgPath: (featured_media !== null) ? featured_media.localFile.relativePath : '',
+                    ...nodeNoPath
                 }
             })
         }

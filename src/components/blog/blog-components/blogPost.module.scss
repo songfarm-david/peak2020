@@ -1,0 +1,34 @@
+@import "../../../styles/globals.scss"; 
+
+// .page-content.blog-post {
+//     padding-top: ($blogBannerHeight / 2);
+//     margin-top: $vertical-rhythm;
+// }
+
+.blogPost {
+    
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 1.25rem 2.5rem;
+    // height: 13.75rem;
+
+    .featuredImage { height: 13.75rem; }
+
+    &.featuredPost {
+        width: 100%;
+        height: 30rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    .callout {
+        color: $white;
+    }
+
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .blogPost {
+        width: calc(33% - 2.5rem);
+    }
+}

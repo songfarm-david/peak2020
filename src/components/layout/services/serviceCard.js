@@ -6,17 +6,18 @@ import ReactHtmlParser from 'react-html-parser';
 
 import services from "./serviceCard.module.scss"
 
-const ServiceCard = ({ props, index }) => {
+const ServiceCard = (props) => {
+    console.log('serviceCard', props);
     
     const {
         title,
         featured_media,
         excerpt,
         path
-    } = props.node
+    } = props.service.node
     
     return (
-        <article className={services.serviceCard} key={index}>
+        <article className={services.serviceCard}>
             <Img className={services.serviceImage} alt={title} fluid={featured_media.localFile.childImageSharp.fluid} imgStyle={{objectFit: 'contain'}} />
             <h3 className={services.serviceHeading}>{ReactHtmlParser(title)}</h3>
             <div className={services.serviceExcerpt}>{ReactHtmlParser(excerpt)}</div>

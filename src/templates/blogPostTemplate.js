@@ -8,26 +8,17 @@ import PageContent from "../components/layout/pageContent"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
-import "../styles/blog/blogPosts.scss"
-
 /**
 * Blog template
 * Mar 2020
 */
 export default ( props ) => {
-    console.log('props from blogPostTemplate', props);
 
-    const {
-        title, 
-        content
-    } = props.pageContext
-
-    const { pathname: path } = props.location 
-    console.log('blog post template title', title);
+    const { title, content } = props.pageContext || {}
+    const { pathname: path } = props.location || {} 
     
     return (
-        <Layout specialClass="blog">
-            
+        <Layout specialClass="blog">    
             <PageBanner bannerType="blog" title={ title } />
             
             <PageContent path={ title }>
@@ -37,7 +28,6 @@ export default ( props ) => {
             {/* display other blogs most likely to be attractive to user */}
             <Newsletter path={path} />
             <ContactFormCallout path={path} isAddFields={false} />
-      
         </Layout>
     )
     
@@ -58,6 +48,5 @@ export const query = graphql`
                 }
             }
         }
-    }
-        
+    }    
 `

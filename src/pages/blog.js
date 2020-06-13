@@ -18,22 +18,23 @@ import ContactFormCallout from "../components/form/contactFormCallout"
  */
 export default ({ data, location }) => {
 
-    const { featuredPost: stickyPost, allWordpressPost: allPosts } = data,
+    const { allWordpressPost: allPosts, featuredPost } = data,
     title = data.wordpressPage.title, {pathname: path} = location
     
     /**
      * Validate presence of value for Sticky Post
      * 
-     * @param {Arr} stickyPost a sticky post in an array
+     * @param {Arr} featuredPost a sticky post in an array
      */
-    const haveStickyPost = ( stickyPost ) => (typeof stickyPost === undefined) ? false : stickyPost
-
+    const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
+    
     return (
         <Layout specialClass="blog">
         
             <PageBanner bannerType="page" title={title} />
 
-            {( haveStickyPost( stickyPost ) && <FeaturedPost sticky={stickyPost} /> )}      
+            {( haveStickyPost( featuredPost ) && 
+                <FeaturedPost featuredPost={featuredPost} /> )}      
 
             <AllPosts allPosts={allPosts} />   
 
@@ -63,6 +64,7 @@ export const queryAllPosts = graphql`
             content
             sticky
             featured_media {
+                alt_text
                 localFile {
                 ...squareImage
                 }

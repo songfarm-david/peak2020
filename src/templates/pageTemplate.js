@@ -16,19 +16,16 @@ import "../styles/pages.scss"
  * Mar 2020
  */
 export default ( props ) => {
+    console.log('page template props', props);
     
+    const { pathname: path } = props.location
+
     const {
         title, 
         content, 
         slug
     } = props.pageContext
 
-    const { pathname: path } = props.location 
-    // console.log('title from page template', title);
-
-    // console.log('pageTemplate. Parse content?', ReactHtmlParser(content));
-    
-    
     return (
         <Layout props={props} specialClass={(slug === 'home') ? "home" : null}>
             
@@ -38,7 +35,7 @@ export default ( props ) => {
                 {ReactHtmlParser(content)}  
             </PageContent>
 
-            <BlogCallout />
+            <BlogCallout postData={props} />
             <Newsletter path={path} />
             <ContactFormCallout path={path} isAddFields={false} />
                 

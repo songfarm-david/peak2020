@@ -7,9 +7,9 @@ import React from "react"
 export function truncateExcerpt(excerpt) {
     const contentMax = 100
     if (excerpt.length > contentMax) {
-        return <p className="post-excerpt" dangerouslySetInnerHTML={{ __html: `${excerpt.substring(0, contentMax)}...`}} />
+        return excerpt.substring(0, contentMax) + '...'
     } else {
-        return <p className="post-excerpt" dangerouslySetInnerHTML={{ __html: excerpt}} />
+        return excerpt
     }
 }
 
