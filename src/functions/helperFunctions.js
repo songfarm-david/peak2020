@@ -43,25 +43,24 @@ export function formatTitle(pageTitle) {
     return t
 }
 
-export function removeDash(pageTit) {
-    let p = pageTit.replace(/-/g, ' ')
-    return p
-}
+// export function removeDash(pageTit) {
+//     let p = pageTit.replace(/-/g, ' ')
+//     return p
+// }
 
-export const getRelPath = () => {
-    const url = typeof window !== 'undefined' ? window.location.pathname : '';
-    return url;
-}
+// export const getRelPath = () => {
+//     const url = typeof window !== 'undefined' ? window.location.pathname : '';
+//     return url;
+// }
 
 /**
- * Cancel subscribe event
- * Used for Netlify forms :: TESTING
- * 
- * @param {} e 
+ * This function search a string for a particular string of text
+ * Used mostly for finding a class within a strong of content
+ * @param {Str} str the string to test against
+ * @param {Str} textStr the string to test
  */
-export const onFormSubmit = async e => {
-    e.preventDefault()
-
-    console.log('preventDefault called', e);
-
+export const includesStr = (str, textStr) => {
+    if (!str) return
+    let s = str.toString()
+    return s.includes(textStr) ? true : false
 }
