@@ -8,8 +8,10 @@ import cardStyles from "./featureBlogCard.module.scss"
  * 
  * @param {*} param0 
  */
-const FeatureBlogCard = ({ props = {} }) => {
-    // console.log('featureBlogCard props', props);
+const FeatureBlogCard = (props) => {
+    console.log('featureBlogCard props', props);
+
+    const { postData } = props || {}
 
         const {
             title,
@@ -18,11 +20,7 @@ const FeatureBlogCard = ({ props = {} }) => {
             date,
             modified,
             sticky
-        } = props.featuredPost || props
-    
-
-    /* second validation of sticky attribute */
-    const isFeatured = ( sticky ) ? true : false
+        } = postData || postData || {}
     
     /**
      * Add ',' after all but the last category
@@ -31,10 +29,8 @@ const FeatureBlogCard = ({ props = {} }) => {
      */
     const joinCats = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
 
-    // const { title, modified, date, categories, author } = stickyPost.sticky
-
     return (
-        <div className={( isFeatured ) ? cardStyles.sticky : cardStyles.featuredCard}>
+        <div className={( sticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => (
@@ -44,7 +40,7 @@ const FeatureBlogCard = ({ props = {} }) => {
                 </span>}
             </div>
             
-            <h2 className={''}>{ReactHtmlParser(title)}</h2>
+            <h2>{ReactHtmlParser(title)}</h2>
             <div className={cardStyles.postMetaData}>
                 <div className={cardStyles.postMeta}>
                     <span>{getDate(modified, date)}</span>

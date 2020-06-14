@@ -4,16 +4,12 @@ import ReactHtmlParser from 'react-html-parser';
 
 import pageContent from "./pageContent.module.scss"
 import ServiceCard from "./services/serviceCard"
-import FeaturedImage from "../blog/blog-components/featuredImage"
 
 const PageContent = ( props ) => {
-    console.log('pageContent props', props);
     
     const { path, pageData: page, children, type } = props || {}
 
     const { title, content, featured_media } = page || {}
-    console.log('what is content', content);
-    console.log('what is children', children);
 
     return (
         <div className={pageContent.pageContent + " " + formatTitle(path.toLowerCase())}>{ 
