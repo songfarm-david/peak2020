@@ -5,7 +5,7 @@
     border: 1px solid blue;
     overflow: hidden;
     position: relative;
-    max-width: $content-width;
+    width: 100%;
     margin: 0 auto;
     padding: $content-padding;
     padding-bottom: $vertical-rhythm;
@@ -83,4 +83,10 @@
     //     }
     // }
 
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .pageContent {
+        width: $content-width;
+    }
 }
