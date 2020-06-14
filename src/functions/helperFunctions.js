@@ -4,7 +4,7 @@
  * @param {String} excerpt a string of content
  */
 export function truncateExcerpt(excerpt) {
-    const contentMax = 100
+    const contentMax = 75
     if (excerpt.length > contentMax) {
         return excerpt.substring(0, contentMax) + '...'
     } else {
