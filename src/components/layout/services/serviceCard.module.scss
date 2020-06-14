@@ -1,0 +1,53 @@
+@import "../../../styles/globals.scss";
+
+.serviceLink {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    text-align: center;
+    width: calc(33% - 2.5rem);
+    box-sizing: border-box;
+    margin: 0 1.25rem 2.5rem;
+    align-content: flex-start;
+    transition: transform .25s ease-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.serviceCard {
+
+    composes: cardStyles from global; 
+    text-align: center;
+
+    &:hover { cursor: pointer; }
+
+    .serviceImage,
+    .serviceHeading,
+    .serviceExcerpt {
+        flex-basis: 100%;
+    }
+
+    .serviceImage {
+        height: 13.5rem;
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .serviceHeading { margin-bottom: 0; }
+    
+    .falseLink {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .serviceLink {
+        flex-basis: 30%;
+    }
+}

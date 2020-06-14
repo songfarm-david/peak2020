@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 
-import { getRelPath } from "../../functions/helperFunctions"
+import newsletterFormStyles from "./newsletterForm.module.scss"
 
-const NewsletterForm = ({ text, location }) => {
-    console.log( 'newsletter form location?', location );
-    
+const NewsletterForm = ({ path, text, className = {} }) => {
+        
     const [userEmail, setState] = useState({'email_address': ''})
 
     const handleChange = e => {
@@ -12,12 +11,18 @@ const NewsletterForm = ({ text, location }) => {
     }    
 
     return (
-        <form name="newsletter-signup" action={getRelPath()+"?thank_you"} method="post" 
-            data-netlify="true" data-netlify-honeypot="bot-field" 
-            style={{ width: '100%'}}>
-            <input type="hidden" name="form-name" value="newsletter-signup" />
-            <input type="email" name="email_address" placeholder="Email address" onChange={handleChange} value={userEmail.email_address} required />
-            <button type="submit" className="button primary-button-inverted">{(text) ? text : 'Send'}</button>
+        <form id={newsletterFormStyles.mainForm} 
+            className={(className === "footerNewsletter") ? newsletterFormStyles.footerNewsletter : null}
+            name="newsletter-signup" 
+            method="post" 
+            action={path +"?thank_you"}>
+
+            <input type="email" name="email_address" aria-label="email" placeholder="Email Address" onChange={handleChange} value={userEmail.email_address} required />
+
+            <button type="submit" className="button primary-button-inverted">{
+                (text) ? text : 'Send' 
+            }</button>
+
         </form>
     )
 }

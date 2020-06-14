@@ -3,32 +3,38 @@ import { graphql } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
-import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/layout/contactForm"
-
-import "../styles/blog/blogPosts.scss"
+import PageBanner from "../components/layout/pageBanner"
+import PageContent from "../components/layout/pageContent"
+import Newsletter from "../components/layout/newsletter"
+import ContactFormCallout from "../components/form/contactFormCallout"
 
 /**
 * Blog template
 * Mar 2020
 */
 export default ( props ) => {
-    // console.log('blogTemplate page props', props);
+    console.log('blogTemplate props', props);
+
+    const { location, pageContext, data } = props || {}
     
+    const { title, content } = pageContext || {}
+    const { pathname: path } = location || {} 
+    const { featured_media } = data.wordpressPost || {}
+    
+    console.log('blogtemplate wh\'ats featured media?', featured_media);
+    
+
     return (
-        <Layout specialClass="blog">
+        <Layout specialClass="blog">    
+            <PageBanner bannerType="blog" title={title} postData={pageContext} bannerImg={featured_media} />
             
-            <PageBanner bannerType="blog" props={props} />
-        
-            <div className={"page-content blog-post"}>
-                {ReactHtmlParser(props.pageContext.content)}
-            </div>
+            <PageContent path={title} type="blog">
+                {ReactHtmlParser(content)}
+            </PageContent>
         
             {/* display other blogs most likely to be attractive to user */}
-            <Newsletter />
-            <ContactForm isAddFields={false} />
-      
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} isAddFields={false} />
         </Layout>
     )
     
@@ -49,6 +55,5 @@ export const query = graphql`
                 }
             }
         }
-    }
-        
+    }    
 `

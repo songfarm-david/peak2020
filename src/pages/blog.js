@@ -2,11 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
+import PageBanner from "../components/layout/pageBanner"
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
-import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/layout/contactForm"
+import Newsletter from "../components/layout/newsletter"
+import ContactFormCallout from "../components/form/contactFormCallout"
 
 /**
  * Blog Index page
@@ -16,33 +16,30 @@ import ContactForm from "../components/layout/contactForm"
  * 
  * @param {Obj} data.featuredPost status of sticky 
  */
-export default ({ data }) => {
+export default ({ data, location }) => {
 
-    const { 
-        wordpressPage: pageProps, 
-        featuredPost: stickyPost, 
-        allWordpressPost: allPosts 
-    } = data
+    const { allWordpressPost: allPosts, featuredPost } = data,
+    title = data.wordpressPage.title, {pathname: path} = location
     
     /**
      * Validate presence of value for Sticky Post
      * 
-     * @param {Arr} stickyPost a sticky post in an array
+     * @param {Arr} featuredPost a sticky post in an array
      */
-    const haveStickyPost = ( stickyPost ) => (typeof stickyPost === undefined) ? false : stickyPost
-
+    const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
+    
     return (
         <Layout specialClass="blog">
         
-            <PageBanner bannerType="page" props={pageProps} />
+            <PageBanner bannerType="page" title={title} />
 
-            {( haveStickyPost( stickyPost ) && 
-            <FeaturedPost sticky={stickyPost} /> )}      
+            {( haveStickyPost( featuredPost ) && 
+                <FeaturedPost featuredPost={featuredPost} /> )}      
 
             <AllPosts allPosts={allPosts} />   
 
-            <Newsletter />
-            <ContactForm />
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} />
            
         </Layout>
     )
@@ -67,6 +64,7 @@ export const queryAllPosts = graphql`
             content
             sticky
             featured_media {
+                alt_text
                 localFile {
                 ...squareImage
                 }

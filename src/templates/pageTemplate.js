@@ -1,43 +1,38 @@
+import React from "react"
+
+import Layout from "../components/layout/layout"
+import PageBanner from "../components/layout/pageBanner"
+import PageContent from "../components/layout/pageContent"
+import HeroSection from "../components/hero/heroSection"
+import BlogCallout from "../components/blog/blogCallout"
+import Newsletter from "../components/layout/newsletter"
+import ContactFormCallout from "../components/form/contactFormCallout"
+
+import "../styles/pages.scss"
+
 /**
  * Page template
  * Mar 2020
  */
-
-import React from "react"
-import ReactHtmlParser from 'react-html-parser';
-
-import Layout from "../components/layout/layout"
-import PageBanner from "../components/hero/pageBanner"
-import HeroSection from "../components/hero/heroSection"
-import BlogCallout from "../components/blog/blogCallout"
-import Newsletter from "../components/hero/newsletter"
-import ContactForm from "../components/layout/contactForm"
-
-import "../styles/pages.scss"
-import { formatTitle } from "../functions/helperFunctions"
-
 export default ( props ) => {
-       
-    const {title, content, slug, parent} = props.pageContext
-    let p = parent
-
-    if (p === null) p = ""
+    // console.log('page template props', props);
     
-    return (
-        <Layout specialClass={ (slug === 'home') ? "home" : null }>
-            
-            {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" props={props} />}
-                      
-            <div className={(true === p.includes('/services/')) ? 
-                "page-content web-services " + formatTitle(title) : 
-                "page-content " + formatTitle(title)}
-                >
-                {ReactHtmlParser(content)}
-            </div>
+    const { pathname: path } = props.location
 
-            <BlogCallout />
-            <Newsletter />
-            <ContactForm isAddFields={false} />
+    const {
+        title,
+        slug } = props.pageContext
+
+    return (
+        <Layout props={props} specialClass={(slug === 'home') ? "home" : null}>
+            
+            {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" title={ title } />}
+
+            <PageContent path={ title } pageData={props.pageContext} />
+
+            <BlogCallout postData={props} />
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} isAddFields={false} />
                 
         </Layout>
     )
