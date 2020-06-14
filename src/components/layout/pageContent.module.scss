@@ -2,7 +2,6 @@
 
 .pageContent {
 
-    border: 1px solid blue;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -11,19 +10,19 @@
     padding-bottom: $vertical-rhythm;
     @extend .normal-text;  
 
-    figure,
-    .heroText {
-        position: relative;
-        z-index: 1;
-    }
+    // figure,
+    // .heroText {
+    //     position: relative;
+    //     z-index: 1;
+    // }
 
-    .heroText {
-        @extend .heading-2;
-        flex: 0 0 100%;
-        order: -1;
-        width: $header-width;
-        margin: 0 auto;
-    }
+    // .heroText {
+    //     @extend .heading-2;
+    //     flex: 0 0 100%;
+    //     order: -1;
+    //     width: $header-width;
+    //     margin: 0 auto;
+    // }
 
     .heroImage { 
         order: 1; 
@@ -31,15 +30,15 @@
         padding: 0 1rem;
     }
 
-    .heroBody {
-        padding: 1rem 0;
-        flex-basis: 100%;
-        margin: 0 auto;
-        @extend .normal-text;
-        p:last-child {
-            display: inline-block;
-        }
-    }
+    // .heroBody {
+    //     padding: 1rem 0;
+    //     flex-basis: 100%;
+    //     margin: 0 auto;
+    //     @extend .normal-text;
+    //     p:last-child {
+    //         display: inline-block;
+    //     }
+    // }
     
     // &.home {
     //     padding-bottom: $vertical-rhythm * 2;
@@ -83,6 +82,11 @@
     //     }
     // }
 
+}
+
+.blogContent {
+    composes: pageContent;
+    margin-top: 14rem;
 }
 
 @media screen and (min-width: $mobile-breakpoint) {

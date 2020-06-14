@@ -28,7 +28,7 @@ export default ( props ) => {
         <Layout specialClass="blog">    
             <PageBanner bannerType="blog" title={title} postData={pageContext} bannerImg={featured_media} />
             
-            <PageContent path={ title }>
+            <PageContent path={title} type="blog">
                 {ReactHtmlParser(content)}
             </PageContent>
         

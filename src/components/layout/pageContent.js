@@ -8,11 +8,13 @@ import ServiceCard from "./services/serviceCard"
 const PageContent = ( props ) => {
     
     const { path, pageData: page, children, type } = props || {}
+    const { content } = page || {}
 
-    const { title, content, featured_media } = page || {}
+    let title = formatTitle(path.toLowerCase())
 
     return (
-        <div className={pageContent.pageContent + " " + formatTitle(path.toLowerCase())}>{ 
+        <div className={(type === 'blog') ?
+            pageContent.blogContent : pageContent.pageContent + " " + title}>{ 
             /* check for content from a page,
              if not that, check if this is 'service page' content
              otherwise, output the direct children passed into the component */

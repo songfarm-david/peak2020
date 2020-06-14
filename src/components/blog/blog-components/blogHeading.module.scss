@@ -3,7 +3,7 @@
 .blogHeading {
     display: flex;
     align-items: center;
-    margin-left: 1.5rem;
+    margin-left: $top-margin / 2;
     > h5 {
         white-space: nowrap;
     }
@@ -11,7 +11,7 @@
         display: block;
         border-bottom: 2px solid $strong-blue;
         height: 2px;
-        width: 66%;
+        width: 45%;
         margin-left: 1rem;
     }
     &.callOutClass {
@@ -20,6 +20,9 @@
     }
 }
 
-@media screen and (max-width: mob-breakpoint) {
-    .blogHeading .barline { width: 54%;}
+@media screen and (min-width: $mobile-breakpoint) {
+    .blogHeading {
+        margin-left: $top-margin;
+        .barline { width: 65%;}
+    }
 }

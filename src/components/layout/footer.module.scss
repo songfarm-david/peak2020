@@ -2,12 +2,12 @@
 
 #siteFooter {
 
-    background: url('../../images/footer.png') 100%;
+    background-image: url('../../images/footer.png');
     background-size: cover;
     color: $white;
     padding: $vertical-rhythm 0;
-    background-position: bottom right;
-    padding-top: 28rem;
+    background-position: center right;
+    padding-top: 20rem;
     
     .innerContainer {
 

@@ -29,12 +29,12 @@ const PageBanner = (props) => {
 
             {( bannerType === 'page' ) && 
                 <div className={banner.headerContainer}>
-                    <h1>{ReactHtmlParser(title)}</h1>
+                    <h1 className={banner.pageHeader}>{ReactHtmlParser(title)}</h1>
                 </div>}
 
              {( bannerType === 'blog' ) && 
                 <>
-                    <FeaturedImage featuredImage={bannerImg} />
+                    <FeaturedImage featuredImage={bannerImg} isFeature={true} />
                     <div className={banner.blogHeaderContainer}>
                         <FeatureBlogCard postData={postData} />
                     </div>

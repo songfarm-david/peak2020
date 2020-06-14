@@ -7,10 +7,11 @@
 
 .blogPost {
     
-    width: 100%;
+    // width: 100%;
     box-sizing: border-box;
-    margin: 0 1.25rem 2.5rem;
+    padding-bottom: $top-margin;
     // height: 13.75rem;
+    // padding: $content-padding;
 
     .featuredImage { height: 13.75rem; }
 
@@ -30,5 +31,6 @@
 @media screen and (min-width: $mobile-breakpoint) {
     .blogPost {
         width: calc(33% - 2.5rem);
+        margin: 0 1.25rem 2.5rem;
     }
 }

@@ -3,21 +3,16 @@
 #blogFeature {
     
     background-color: $light-green;
-    // color: $white;
-    // border: 2px solid green;
-
-    // .blog-heading .barline { border-color: $white; }
-
-    // .blog-post {
-    //     color: $white;
-    //     .post-heading,
-    //     .post-excerpt,
-    //     .post-meta-data {
-    //         color: $white;
-    //     }
-    // }
+    padding: $content-padding;
 
     .to-blog-link { display: flex;}
     .button { margin-left: 1rem; }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        .button { 
+            margin-left: 0;
+            margin-top: $top-margin;
+        }
+    }
 
 }

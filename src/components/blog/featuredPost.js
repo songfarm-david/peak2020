@@ -1,6 +1,6 @@
 import React from "react"
 
-import "../../styles/blog/blogIndex.scss"
+// import "../../styles/blog/blogIndex.scss"
 
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"

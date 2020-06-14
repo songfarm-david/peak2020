@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import "./blogCallout.scss"
+
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
 

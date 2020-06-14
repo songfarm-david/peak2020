@@ -1,14 +1,69 @@
 @import "./globals.scss";
 
+main {
+
+    figure,
+    .heroText {
+        position: relative;
+        z-index: 1;
+    }
+
+    .heroText {
+        @extend .heading-2;
+        flex: 0 0 100%;
+        order: -1;
+        width: 100%;
+    }
+
+    .heroBody {
+        padding: 1rem 0;
+        flex-basis: 100%;
+        margin: 0 auto;
+        p:last-child {
+            display: inline-block;
+        }
+    }
+
+    .blog-inner-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .blog-content-container {
+        box-sizing: border-box;
+        padding: 0 0 $top-margin;
+        + .blog-content-container {
+            padding-top: 0;
+        }
+        
+    }
+
+    .contact {
+        width: 100%;
+        padding: $top-margin 0 $vertical-rhythm;
+    }
+
+    &.blog {
+        .blog-content-container {
+            padding: $content-padding;
+        }
+    }
+
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    main {
+
+        .heroText { width: $hero-width; }
+        
+        .blog-content-container {
+            width: $content-width;   
+            margin: 0 auto;     
+        }
+    }
+}
+
 #mainContent {
-
-    // padding-bottom: $vertical-rhythm;
-    // overflow: hidden;
-    // position: relative;
-
-    // .page-inner { margin-bottom: $vertical-rhythm; }
-    // .page-banner { margin-top: 4.5rem; }
-    // .button { width: auto; }
 
     &.home {
 

@@ -5,17 +5,14 @@
 }
 
 .blogHeaderContainer {
-    // composes: headerContainer;
-    @extend .content-width;
     background-color: $white;
     color: $strong-blue;
     position: absolute;
     top: 50%;
     z-index: 111;
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
-
 
 .pageBanner {
 
@@ -23,13 +20,17 @@
     justify-content: center;
     align-items: center;
     color: $white;
-    @extend .heading-1;
+    @extend .heading-2;
     text-transform: capitalize;
     text-align: center;
     margin-top: $vertical-rhythm;
     height: 20rem;
     /* default bg image */
     background: url('../../images/about_header.jpg') center/cover no-repeat;
+
+    .pageHeader {
+        font: inherit;
+    }
     
     &.about {
         background: url('../../images/about_header.jpg') center/cover no-repeat;
@@ -39,9 +40,9 @@
         background: url('../../images/portfolio_header.jpeg') 0%/cover no-repeat;
     }
 
-    // &.web-services {
-    //     background: url('../../images/services_header.jpeg') center 10%/cover no-repeat;
-    // }
+    &.web-services {
+        background: url('../../images/services_header.jpeg') center 10%/cover no-repeat;
+    }
 
     &.blog {
         background: url('../../images/blog_header.jpeg') 0%/cover no-repeat;
@@ -60,11 +61,20 @@
     position: relative;
     z-index: 10;
     background-image: none;
-    // padding: $content-padding;
 
     .blogBanner {
         height: 100%;
         width: 100%;
     }
 
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .pageBanner {
+        font: $heading-1;
+    }
+    .blogHeaderContainer {
+        width: $content-width;
+    }
+    
 }
