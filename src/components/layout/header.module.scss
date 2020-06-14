@@ -1,0 +1,39 @@
+@import '../../styles/globals.scss';
+
+#siteHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $background;
+    z-index: 1000;
+    #headerInnerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.25rem $margin-bottom;
+    }
+    #siteLogo {
+        width: 100%;
+        height: auto;
+    }
+    // #menuToggleBtn {
+    //     padding: .5rem;
+    //     align-self: center;
+    //     margin-left: $margin-bottom;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #siteHeader {
+        #headerInnerContainer {
+            width: $content-width;
+            margin: 0.25rem auto;
+        }
+    }
+    // #menuToggleBtn {
+    //     display: none;
+    // }
+}

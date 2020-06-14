@@ -1,0 +1,25 @@
+@import '../../styles/globals.scss';
+
+
+$hamburger-layer-color: $strong-blue;
+
+/* import hamburger styles */
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+
+#menuToggleBtn {
+    padding: .5rem;
+    align-self: center;
+    margin-left: $margin-bottom;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        outline-width: 0px;
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #menuToggleBtn {
+        display: none;
+    }
+}
