@@ -61,12 +61,10 @@
     position: relative;
     z-index: 10;
     background-image: none;
-
     .blogBanner {
         height: 100%;
         width: 100%;
     }
-
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
@@ -76,5 +74,4 @@
     .blogHeaderContainer {
         width: $content-width;
     }
-    
 }

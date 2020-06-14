@@ -2,7 +2,6 @@
 @import "./type.scss";
 
 $mobile-breakpoint: 769px;
-// @value mobile-breakpoint: (min-width: 769px);
 
 $top-margin: 2.25rem;
 $vertical-rhythm: 4.5rem;
@@ -22,9 +21,6 @@ $header-width: $hero-width;
 $blogBannerHeight: 26rem;
 
 :global {
-    // .content-padding-section {
-    //     padding: $top-margin 0 $vertical-rhythm;
-    //   }
     .cardStyles {
         border-radius: $border-radius;
         box-shadow: $box-shadow;
@@ -33,25 +29,10 @@ $blogBannerHeight: 26rem;
     }
 }
 
-
-
-
-// .blog-content-width {
-//   max-width: $content-width-blog;
-//   margin: 0 auto;
-//   padding: 0.5rem;
-// }
-
-// $content-width: $content-width-blog;
-
 .content-width {
-  max-width: $content-width;
-  margin: 0 auto;
-}
-// .content-padding {
-//   padding: $content-padding;
-// }
-
+    max-width: $content-width;
+    margin: 0 auto;
+  }
 
 html {
 
@@ -124,3 +105,14 @@ html {
 /* debug border */
 $border: 1px solid red;
 
+// .blog-content-width {
+//   max-width: $content-width-blog;
+//   margin: 0 auto;
+//   padding: 0.5rem;
+// }
+
+// $content-width: $content-width-blog;
+
+// .content-padding {
+//   padding: $content-padding;
+// }

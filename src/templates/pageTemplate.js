@@ -24,7 +24,7 @@ export default ( props ) => {
         slug } = props.pageContext
 
     return (
-        <Layout props={props} specialClass={(slug === 'home') ? "home" : null}>
+        <Layout props={props} layoutClass={(slug === 'home') ? "home" : null}>
             
             {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" title={ title } />}
 

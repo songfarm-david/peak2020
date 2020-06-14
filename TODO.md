@@ -2,38 +2,39 @@
 
 # wire up the quote carousel
 # Review mailing list stuff
-- Wire up forms, newsletter
-    - add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
-- Fix textarea text size in main contact form, inputs
-- fix footer cramping on smalller viewports (flex)
+# Wire up forms, newsletter
+- proof services pages + links + side images
+# fix footer cramping on smalller viewports (flex)
 # one component for contact form
-- add build hook for wp updates in Netlify
-- style blog posts
-- proof services pages + links + side images
-- fix rotating text section
+# style blog posts
+- finish style header + nav (modules)
 - add nice dynamic animating hamburger menu
+- fix rotating text section
+- Fix textarea text size in main contact form, inputs
 - address sitemap page
-- address portfolio situation
 - finish 404 page
-- fix wierd nav transition/transform bug when switching viewport sizes
-- proof services pages + links + side images
 - Address SEO concerns
 - confirm sitemap 
-- fix weird "quoting" behavior in footer
 - clean up build processes stuff in gatsby   
-- do a baseline SEO measure pre-launch.
 - confirm redirects
 - redirect 'local seo victoria' to 'local seo' global page
 - test for broken links
 - configure domains and dns
-- unpublish unnecessary CMS pages, landing-page
-- remove .hey-now class from contact page/ remove WPForms
+- do a baseline SEO measure pre-launch.
 - test Google Analytics
 - **LAUNCH SITE**
+- unpublish unnecessary CMS pages, landing-page
 - do a database backup
+- remove .hey-now class from contact page/ remove WPForms
 - clean up plugins on backend CMS
+- address portfolio situation
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - delete all ridiculous tags on my site
+- add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
+- add build hook for wp updates in Netlify
+- Add/test a good modern CSS reset 
+- fix wierd nav transition/transform bug when switching viewport sizes
+- fix weird "quoting" behavior in footer
 
 ## nice to have's
 - add some simple css animations like rise up fade in 
@@ -46,5 +47,4 @@
 - look into phone systems
 
 ## testing
-- Add a good modern CSS reset 
 - test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 

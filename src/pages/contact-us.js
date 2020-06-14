@@ -15,7 +15,7 @@ export default ({ data, location }) => {
     const { pathname: path } = location
 
     return (
-        <Layout path={path} specialClass="contact-us">
+        <Layout path={path} layoutClass="contact-us">
 
             <PageBanner bannerType="page" title={title} />
 
@@ -32,8 +32,7 @@ export default ({ data, location }) => {
 }
 
 /**
- * Query for both a sticky post (to test in the component), as well as
- * querying all posts (filtering out sticky posts)
+ * Query contact page
  */
 export const queryPage = graphql`
     query contactPage {

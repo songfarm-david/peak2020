@@ -56,7 +56,7 @@ const HeroBanner = (props) => {
 
     return (
         <div className="hero-banner">
-            <div className="hero-text-container">
+            <div className="hero-text-container heading-1">
                 <p>Do you need reliable, creative, experienced website <br/>
                     {/* <span id="rotatingWord">
                         {words.map(({ word, color }, idx) => (

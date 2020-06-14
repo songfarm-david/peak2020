@@ -2,10 +2,10 @@
 
 main {
 
-    figure,
-    .heroText {
-        position: relative;
-        z-index: 1;
+    .heroImage {
+        padding: 0 $margin-bottom;
+        padding: $margin-bottom;
+        height: 100%;
     }
 
     .heroText {
@@ -13,15 +13,15 @@ main {
         flex: 0 0 100%;
         order: -1;
         width: 100%;
+        margin: 0;
+        background-color: transparent;
     }
 
     .heroBody {
-        padding: 1rem 0;
+        padding: 0 $margin-bottom;
         flex-basis: 100%;
         margin: 0 auto;
-        p:last-child {
-            display: inline-block;
-        }
+        .heroBody { padding: 0; }
     }
 
     .blog-inner-container {
@@ -35,12 +35,62 @@ main {
         + .blog-content-container {
             padding-top: 0;
         }
+    }
+
+    /* move this to contact component, if possible */
+    .contact {
+        width: 100%;
+        padding: 0 0 $vertical-rhythm;
+    }
+
+    .home, .about {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        .heroText { margin: 0; }
+        .heroImage { order: 1; }
+        .heroButton {
+            width: 100%;
+            flex-basis: 100%;
+        }   
         
     }
 
-    .contact {
-        width: 100%;
-        padding: $top-margin 0 $vertical-rhythm;
+    .home {
+        &::after {
+            content: '';
+            display: block;
+            background: url('../images/illustrations/svg/compass.svg') no-repeat;
+            background-position: 100% bottom;
+            background-size: 19rem;
+            padding-bottom: 9rem;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            right: -5%;
+            top: -50%;
+            z-index: -111;
+            // transform: rotate(10deg);
+            display: none;
+        }
+    }
+
+    .about {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 100%;
+            z-index: -11;
+            background-image: url('../images/logo/Logo_white.svg');
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+        } 
     }
 
     &.blog {
@@ -54,195 +104,37 @@ main {
 @media screen and (min-width: $mobile-breakpoint) {
     main {
 
-        .heroText { width: $hero-width; }
+        .heroText { 
+            width: $hero-width;
+            padding-right: 33%;
+        }
         
         .blog-content-container {
             width: $content-width;   
             margin: 0 auto;     
         }
-    }
-}
 
-#mainContent {
-
-    &.home {
-
-        .page-content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: $content-padding;
-
-            .highlight p { margin-bottom: 0; }
-        }
-    }
-
-    &.services-home {
-
-        .web-services {
-            
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            @extend .normal-text;
-
-        
-
-        }
-    }
-
-    @media screen and (min-width: $mobile-breakpoint) {
-
-        &.home {
-            .page-content {
-                width: $content-width;
-                .highlight p { margin-bottom: $top-margin; }
-                transform: translateX(0);
-                &.peak-websites::after {
-                    display: block;
-                }
-            }
-        }
-
-        .page-content {
-            
-            .hero-image { order: initial; }
-            .highlight p {  width: 77%; }
-
-            .page-content-para {
-                flex: 2;
-                p { padding: $content-padding; }
-            }
-
-            &.web-services {
-                .service-card {
-                    flex-basis: 30%;
-                }
-            }
-
-        }
-    }
-
-    @media screen and (max-width: $mobile-breakpoint) {
-        .page-content {
-            &.home {
-                &::after {
-                    content: '';
-                    display: none;
-                }
-            }
-        }
-    }
-
-}
-
-.page-content {
-
-    // @extend .content-width;
-    // @extend .content-padding-section;
-    // @extend .normal-text;
-    // position: relative;
-
-    // figure,
-    // .highlight {
-    //     position: relative;
-    //     z-index: 1;
-    // }
-
-    // .highlight {
-    //     @extend .heading-2;
-    //     flex: 0 0 100%;
-    //     order: -1;
-    //     width: $header-width;
-    //     margin: 0 auto;
-    // }
-
-    // .hero-image { 
-    //     order: 1; 
-    //     margin: 0 auto;
-    //     padding: 0 1rem;
-    // }
-
-    // .page-content-para {
-    //     padding: 1rem 0;
-    //     flex-basis: 100%;
-    //     margin: 0 auto;
-    //     @extend .normal-text;
-    //     p:last-child {
-    //         display: inline-block;
-    //     }
-    // }
-
-    /* home page section */
-    // &.peak-websites {
-    //     padding-bottom: $vertical-rhythm * 2;
-    //     position: relative;
-    //     &::after {
-    //         content: '';
-    //         display: block;
-    //         background: url('../images/illustrations/svg/compass.svg') no-repeat;
-    //         background-position: 100% bottom;
-    //         background-size: 19rem;
-    //         padding-bottom: 9rem;
-    //         height: 100%;
-    //         width: 100%;
-    //         position: fixed;
-    //         right: -30%;
-    //         bottom: 1%;
-    //         z-index: -111;
-    //         // transform: rotate(10deg);
-    //         display: none;
-    //     }
-    // }
-
-    // .hero-image {
-    //     order: 1;
-    // }
-
-    // .page-content-para {
-    //     flex: 2;
-    //     padding: 1rem 0;
-    //     flex-basis: 100%;
-    //     p:last-child {
-    //         display: inline-block;
-    //     }
-    // }
-   
-    &.about {
-
-        display: flex;
-        flex-wrap: wrap;
-
-        .highlight { 
-            padding: $content-padding;
-        }
-        .bg-underlay {
-
+        .home, .about {
             position: relative;
-            flex: 2 1 100%;
-            padding-bottom: 9rem;
-            margin-top: -9rem;
-            background: url('../images/logo/Logo_white.svg') center/cover no-repeat;
-
-            .page-content-para {
-                margin-top: 13rem;
-            }
-            
-            p { padding: $content-padding; }
-            p:last-child { display: inline-block; }
-
+            .heroText { flex-basis: 100%; }
+            .heroImage { order: initial; }
+            .heroBody { flex: 2; }               
         }
-        
-        @media screen and (min-width: $mobile-breakpoint) {
 
-            .bg-underlay {
-                flex: 1;
+        .home {
+            &::after {
+                display: block;
             }
-            figure {
-                padding: 0 $vertical-rhythm;
-                
-            }
+        }
+
+        .about {
+            position: relative;
+                position: relative;
+                &::before {
+                    left: 60%;
+                }
             
         }
+
     }
-
 }

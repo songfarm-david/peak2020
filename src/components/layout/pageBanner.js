@@ -17,7 +17,7 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
 const PageBanner = (props) => {
 
     const { 
-        bannerType, 
+        bannerType = 'page', 
         title, 
         postData,
         bannerImg
