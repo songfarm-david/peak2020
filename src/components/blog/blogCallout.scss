@@ -3,21 +3,21 @@
 #blogFeature {
     
     background-color: $light-green;
-    color: $white;
-    padding-bottom: 2.5rem;
+    // color: $white;
+    // border: 2px solid green;
 
-    .blog-heading .barline { border-color: $white; }
+    // .blog-heading .barline { border-color: $white; }
 
-    .blog-post {
-        color: $white;
-        .post-heading,
-        .post-excerpt,
-        .post-meta-data {
-            color: $white;
-        }
-    }
+    // .blog-post {
+    //     color: $white;
+    //     .post-heading,
+    //     .post-excerpt,
+    //     .post-meta-data {
+    //         color: $white;
+    //     }
+    // }
 
-    .to-blog-link { display: flex;;}
+    .to-blog-link { display: flex;}
     .button { margin-left: 1rem; }
 
 }

@@ -1,39 +1,31 @@
 import React from "react"
 import { formatTitle } from "../../functions/helperFunctions"
+import ReactHtmlParser from 'react-html-parser';
 
 import pageContent from "./pageContent.module.scss"
+import ServiceCard from "./services/serviceCard"
 
-const PageContent = ({ path, children }) => {
-    console.log('pageContent', path, children);
-
-    // console.log(children.map((node, idx) => (node.props.children)));
+const PageContent = ( props ) => {
     
-    return (
-    <div className={pageContent.pageContent + " " + formatTitle(path.toLowerCase())}>
-        
-        { Array.isArray(children) && children.map( ( node, idx ) => (
-            ( node.props.className === 'heroImage' ) ?  
-                <div className={pageContent.heroImage}>
-                    {node.props.children}
-                </div> 
-            : 
-            ( node.props.className === 'heroText' ) ?  
-                <p className={pageContent.heroText}>
-                    {node.props.children}
-                </p> 
-            : 
-            ( node.props.className === 'heroBody' ) ? 
-                <p className={pageContent.heroBody}>
-                    {node.props.children}
-                </p>
-            : 
-            <p>
-             {node.props.children}
-            </p> )) 
+    const { path, pageData: page, children, type } = props || {}
 
-        || <div>{children}</div>}
-        
-    </div>
-)}
+    const { title, content, featured_media } = page || {}
+
+    return (
+        <div className={pageContent.pageContent + " " + formatTitle(path.toLowerCase())}>{ 
+            /* check for content from a page,
+             if not that, check if this is 'service page' content
+             otherwise, output the direct children passed into the component */
+            (content) ? 
+                ReactHtmlParser(content) : 
+            (type === 'services') ? 
+                children.edges.map(( node, index ) => (
+                    <ServiceCard service={ node } key={ index } />
+                )) : 
+            children 
+        }</div>
+    )    
+    
+}
 
 export default PageContent

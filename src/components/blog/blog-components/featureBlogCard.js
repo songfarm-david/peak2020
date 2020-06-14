@@ -8,34 +8,39 @@ import cardStyles from "./featureBlogCard.module.scss"
  * 
  * @param {*} param0 
  */
-const FeatureBlogCard = ( post ) => {
-    
-    const {
-        title,
-        modified,
-        date,
-        categories,
-        author
-    } = post.props
+const FeatureBlogCard = (props) => {
+    console.log('featureBlogCard props', props);
 
-    const isSticky = post.props.sticky
-    
-    const customJoin = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
+    const { postData } = props || {}
 
-    // const { title, modified, date, categories, author } = stickyPost.sticky
+        const {
+            title,
+            author,
+            categories,
+            date,
+            modified,
+            sticky
+        } = postData || postData || {}
+    
+    /**
+     * Add ',' after all but the last category
+     * @param {*} categories 
+     * @param {*} idx 
+     */
+    const joinCats = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
 
     return (
-        <div className={( isSticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
+        <div className={( sticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => (
                     <span key={idx} className={cardStyles.category}>
-                        {cat.name}{customJoin(categories, idx)}
+                        {cat.name}{joinCats(categories, idx)}
                     </span>)))}
                 </span>}
             </div>
             
-            <h2 className={''}>{ReactHtmlParser(title)}</h2>
+            <h2>{ReactHtmlParser(title)}</h2>
             <div className={cardStyles.postMetaData}>
                 <div className={cardStyles.postMeta}>
                     <span>{getDate(modified, date)}</span>

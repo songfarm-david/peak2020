@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
-import ServiceCard from "../components/layout/services/serviceCard"
+// import ServiceCard from "../components/layout/services/serviceCard"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
@@ -26,10 +26,8 @@ export default ({ data, location }) => {
 
             <PageBanner bannerType="page" title={title} />
 
-            <PageContent path={title}>
-                {services.edges.map(( node, index ) => (
-                    <ServiceCard props={{ ...node }} key={ index } />
-                ))}
+            <PageContent path={title} type="services">
+                {services}
             </PageContent>
 
             <BlogCallout />

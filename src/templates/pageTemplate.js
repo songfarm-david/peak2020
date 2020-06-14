@@ -1,5 +1,4 @@
 import React from "react"
-import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
@@ -16,29 +15,22 @@ import "../styles/pages.scss"
  * Mar 2020
  */
 export default ( props ) => {
+    // console.log('page template props', props);
     
+    const { pathname: path } = props.location
+
     const {
-        title, 
-        content, 
-        slug
-    } = props.pageContext
+        title,
+        slug } = props.pageContext
 
-    const { pathname: path } = props.location 
-    // console.log('title from page template', title);
-
-    // console.log('pageTemplate. Parse content?', ReactHtmlParser(content));
-    
-    
     return (
         <Layout props={props} specialClass={(slug === 'home') ? "home" : null}>
             
             {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" title={ title } />}
 
-            <PageContent path={ title }>
-                {ReactHtmlParser(content)}  
-            </PageContent>
+            <PageContent path={ title } pageData={props.pageContext} />
 
-            <BlogCallout />
+            <BlogCallout postData={props} />
             <Newsletter path={path} />
             <ContactFormCallout path={path} isAddFields={false} />
                 

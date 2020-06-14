@@ -1,23 +1,25 @@
-// todo: set up import of breakpoint vars using value
 @import "../../../styles/globals.scss";
 
-.serviceCard {
-
+.serviceLink {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-basis: 100%;
     text-align: center;
-    // border-radius: $border-radius;
     width: calc(33% - 2.5rem);
     box-sizing: border-box;
     margin: 0 1.25rem 2.5rem;
-    // composes: box-shadow from "../../../styles/globals.scss";
-    // padding: $top-margin;
-    // composes: top-margin from "../../../styles/globals.scss";
     align-content: flex-start;
+    transition: transform .25s ease-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.serviceCard {
 
     composes: cardStyles from global; 
+    text-align: center;
 
     &:hover { cursor: pointer; }
 
@@ -34,12 +36,8 @@
     }
 
     .serviceHeading { margin-bottom: 0; }
-
-    .serviceExcerpt {
-        // @extend .small-text;
-    }
     
-    .serviceLink {
+    .falseLink {
         text-decoration: underline;
         &:hover {
             text-decoration: none;
@@ -49,7 +47,7 @@
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
-    .serviceCard {
+    .serviceLink {
         flex-basis: 30%;
     }
 }

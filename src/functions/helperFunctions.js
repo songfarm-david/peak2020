@@ -1,15 +1,14 @@
-import React from "react"
 
 /**
  * Adds an ellipsis to blocks of text of 100 characters
  * @param {String} excerpt a string of content
  */
 export function truncateExcerpt(excerpt) {
-    const contentMax = 100
+    const contentMax = 75
     if (excerpt.length > contentMax) {
-        return <p className="post-excerpt" dangerouslySetInnerHTML={{ __html: `${excerpt.substring(0, contentMax)}...`}} />
+        return excerpt.substring(0, contentMax) + '...'
     } else {
-        return <p className="post-excerpt" dangerouslySetInnerHTML={{ __html: excerpt}} />
+        return excerpt
     }
 }
 
@@ -44,25 +43,24 @@ export function formatTitle(pageTitle) {
     return t
 }
 
-export function removeDash(pageTit) {
-    let p = pageTit.replace(/-/g, ' ')
-    return p
-}
+// export function removeDash(pageTit) {
+//     let p = pageTit.replace(/-/g, ' ')
+//     return p
+// }
 
-export const getRelPath = () => {
-    const url = typeof window !== 'undefined' ? window.location.pathname : '';
-    return url;
-}
+// export const getRelPath = () => {
+//     const url = typeof window !== 'undefined' ? window.location.pathname : '';
+//     return url;
+// }
 
 /**
- * Cancel subscribe event
- * Used for Netlify forms :: TESTING
- * 
- * @param {} e 
+ * This function search a string for a particular string of text
+ * Used mostly for finding a class within a strong of content
+ * @param {Str} str the string to test against
+ * @param {Str} textStr the string to test
  */
-export const onFormSubmit = async e => {
-    e.preventDefault()
-
-    console.log('preventDefault called', e);
-
+export const includesStr = (str, textStr) => {
+    if (!str) return
+    let s = str.toString()
+    return s.includes(textStr) ? true : false
 }
