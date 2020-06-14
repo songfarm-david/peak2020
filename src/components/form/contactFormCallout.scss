@@ -24,7 +24,7 @@
             max-width: $content-width;
             margin: 0 auto;
             .contact-form-text {
-                max-width: 66%;
+                max-width: $content-width;
                 margin: 0 auto;
                 .sub-heading { font-weight: bold; }
             }

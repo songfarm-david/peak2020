@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
-// import ServiceCard from "../components/layout/services/serviceCard"
+
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
@@ -22,7 +22,7 @@ export default ({ data, location }) => {
     const services = data.allWordpressPage
 
     return (
-        <Layout specialClass="services-home">
+        <Layout layoutClass="services-home">
 
             <PageBanner bannerType="page" title={title} />
 

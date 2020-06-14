@@ -29,7 +29,7 @@ export default ({ data, location }) => {
     const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
     
     return (
-        <Layout specialClass="blog">
+        <Layout layoutClass="blog">
         
             <PageBanner bannerType="page" title={title} />
 
