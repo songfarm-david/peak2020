@@ -8,6 +8,7 @@
 # one component for contact form
 # style blog posts
 - finish style header + nav (modules)
+- put hero section images in Img tags
 - add nice dynamic animating hamburger menu
 - fix rotating text section
 - Fix textarea text size in main contact form, inputs
