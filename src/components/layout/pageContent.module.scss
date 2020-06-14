@@ -9,78 +9,14 @@
     padding: $content-padding;
     padding-bottom: $vertical-rhythm;
     @extend .normal-text;  
+    transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
 
-    // figure,
-    // .heroText {
-    //     position: relative;
-    //     z-index: 1;
-    // }
-
-    // .heroText {
-    //     @extend .heading-2;
-    //     flex: 0 0 100%;
-    //     order: -1;
-    //     width: $header-width;
-    //     margin: 0 auto;
-    // }
-
-    .heroImage { 
-        order: 1; 
-        margin: 0 auto;
-        padding: 0 1rem;
+    .pageContentInner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: $content-padding;
     }
-
-    // .heroBody {
-    //     padding: 1rem 0;
-    //     flex-basis: 100%;
-    //     margin: 0 auto;
-    //     @extend .normal-text;
-    //     p:last-child {
-    //         display: inline-block;
-    //     }
-    // }
-    
-    // &.home {
-    //     padding-bottom: $vertical-rhythm * 2;
-    //     position: relative;
-
-    //     .heroText {
-    //         flex: 0 0 100%;
-    //         order: -1;
-    //         width: $header-width;
-    //         margin: 0 auto;
-    //     }
-        
-    //     .heroImage {
-    //         order: 1;
-    //     }
-    
-    //     .heroBody {
-    //         flex: 2;
-    //         padding: 1rem 0;
-    //         flex-basis: 100%;
-    //         p:last-child {
-    //             display: inline-block;
-    //         }
-    //     }
-        
-    //     &::after {
-    //         content: '';
-    //         display: block;
-    //         background: url('../../images/illustrations/svg/compass.svg') no-repeat;
-    //         background-position: 100% bottom;
-    //         background-size: 19rem;
-    //         padding-bottom: 9rem;
-    //         height: 100%;
-    //         width: 100%;
-    //         position: fixed;
-    //         right: -30%;
-    //         bottom: 1%;
-    //         z-index: -111;
-    //         // transform: rotate(10deg);
-    //         display: none;
-    //     }
-    // }
 
 }
 
@@ -92,5 +28,9 @@
 @media screen and (min-width: $mobile-breakpoint) {
     .pageContent {
         width: $content-width;
+        .pageContentInner {
+            width: $content-width;
+            margin: 0 auto;
+        }
     }
 }

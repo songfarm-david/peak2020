@@ -19,12 +19,18 @@ const PageContent = ( props ) => {
              if not that, check if this is 'service page' content
              otherwise, output the direct children passed into the component */
             (content) ? 
-                ReactHtmlParser(content) : 
+                <div className={pageContent.pageContentInner}>
+                    {ReactHtmlParser(content)}
+                </div> : 
             (type === 'services') ? 
                 children.edges.map(( node, index ) => (
                     <ServiceCard service={ node } key={ index } />
-                )) : 
-            children 
+                )) : (
+                    <div className={pageContent.pageContentInner}>
+                        {children}
+                    </div>
+                )
+             
         }</div>
     )    
     

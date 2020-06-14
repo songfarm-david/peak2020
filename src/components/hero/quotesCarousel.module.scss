@@ -1,8 +1,10 @@
 @import "../../styles/globals.scss";
 
 #quoteCarousel {
-    margin-bottom: $vertical-rhythm;
-    width: 100%;   
+
+    margin: $top-margin auto $vertical-rhythm;
+    // margin-bottom: $vertical-rhythm;
+    max-width: 90%;   
     text-align: center;
 
     .innerContainer {
@@ -31,4 +33,10 @@
         }
     }
 
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #quoteCarousel {
+        max-width: $content-width;
+    }
 }
