@@ -16,14 +16,14 @@
         width: 100%;
         height: auto;
     }
-    #menuToggleBtn {
-        padding: .5rem;
-        align-self: center;
-        margin-left: $margin-bottom;
-        &:hover {
-            cursor: pointer;
-        }
-    }
+    // #menuToggleBtn {
+    //     padding: .5rem;
+    //     align-self: center;
+    //     margin-left: $margin-bottom;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
@@ -33,7 +33,7 @@
             margin: 0.25rem auto;
         }
     }
-    #menuToggleBtn {
-        display: none;
-    }
+    // #menuToggleBtn {
+    //     display: none;
+    // }
 }
