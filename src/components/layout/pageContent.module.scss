@@ -27,10 +27,11 @@
 
 @media screen and (min-width: $mobile-breakpoint) {
     .pageContent {
-        width: $content-width;
+        // width: $content-width;
         .pageContentInner {
             width: $content-width;
             margin: 0 auto;
+            justify-content: flex-start;
         }
     }
 }

@@ -25,12 +25,12 @@ export default ( props ) => {
     
 
     return (
-        <Layout specialClass="blog">    
+        <Layout layoutClass="blog">    
             <PageBanner bannerType="blog" title={title} postData={pageContext} bannerImg={featured_media} />
             
-            <PageContent path={title} type="blog">
-                {ReactHtmlParser(content)}
-            </PageContent>
+            <PageContent path={title} type="blog" pageData={pageContext} />
+                {/* {ReactHtmlParser(content)} */}
+            {/* </PageContent> */}
         
             {/* display other blogs most likely to be attractive to user */}
             <Newsletter path={path} />
