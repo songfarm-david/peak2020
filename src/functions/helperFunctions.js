@@ -1,4 +1,3 @@
-import React from "react"
 
 /**
  * Adds an ellipsis to blocks of text of 100 characters

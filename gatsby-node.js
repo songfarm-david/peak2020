@@ -67,29 +67,15 @@ exports.createPages = async ({ graphql, actions }) => {
     const { allWordpressPage, allWordpressPost } = result.data
         
     allWordpressPage.edges.forEach(({ node }) => {
-        
-        /* set a value for a parent element if applicable */
-        // const parentEl = ( node.parent_element !== null ) ? node.parent_element.path : null
-        const { 
-            wordpress_id, 
-            path, title, 
-            content, slug,
-            parent_element, 
-            featured_media, 
-            ...nodeNoPath } = node
+
+        const { wordpress_id, path, ...nodeNoPath } = node
 
         if (node.status === 'publish') {            
             createPage({
-                path: node.path,
+                path: path,
                 component: pageTemplate,
                 context: {
-                    postId: wordpress_id,
-                    title: title,
-                    content: content,
-                    slug: slug,
-                    parent: parent_element,
-                    relPath: path,
-                    imgPath: (featured_media !== null) ? featured_media.localFile.relativePath : '',
+                    pageId: wordpress_id,
                     ...nodeNoPath
                 }
             })
@@ -102,15 +88,13 @@ exports.createPages = async ({ graphql, actions }) => {
         if (node.status === 'publish') {
 
             /* create two variables to separate out 'path' prop from node */
-            const { wordpress_id, path, featured_media, ...nodeNoPath } = node
+            const { wordpress_id, path, ...nodeNoPath } = node
 
             createPage({
-                path: node.path,
+                path: path,
                 component: blogTemplate,
                 context: {
                     postId: wordpress_id,
-                    relPath: path,
-                    imgPath: (featured_media !== null) ? featured_media.localFile.relativePath : '',
                     ...nodeNoPath
                 }
             })
@@ -120,3 +104,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   
 }
+
+// fImg: (featured_media !== null) ? featured_media : '',
+
+// imgPath: (featured_media !== null) ? featured_media : '',
