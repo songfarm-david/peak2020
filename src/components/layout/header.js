@@ -18,8 +18,11 @@ const Header = ({ siteTitle, menuLinks }) => {
           <img id={headerStyles.siteLogo} src={siteLogo} alt={""} />
           <h1 className="screen-reader-text">{siteTitle}</h1>
         </Link>
-        <Nav menuLinks={menuLinks} menuToggleClass={( isMenuOpen ) ? 'menu-active' : null} onClick={() => alert('monkey')} />
-        <Hamburger  />
+        <div onClick={() => toggleMenu( !isMenuOpen )}>
+            <Nav menuLinks={menuLinks} menuToggleClass={( isMenuOpen ) ? 'menu-active' : null} />
+            <Hamburger isActive={isMenuOpen} />
+        </div>
+        
       </div>
     </header>
   )

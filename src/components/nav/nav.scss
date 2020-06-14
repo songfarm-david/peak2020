@@ -12,14 +12,14 @@
     transform: translateY(-100%);
     z-index: -1;
     opacity: 0;
-    transition: opacity .1s ease-out, transform .25s ease-out, left 0s 2.5s ease-out;
+    transition: opacity .25s ease-out, transform .25s ease-out;
 
     &.menu-active {
         left: 0;
         transform: translateY(0);
-        transition: transform .5s ease, opacity .25s .1s ease-in;
+        transition: opacity .25s .1s ease-in, transform .25s ease;
         opacity: 1;
-        top: 3rem;
+        top: $vertical-rhythm;
     }
 
     > ul {
