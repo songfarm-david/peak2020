@@ -7,7 +7,7 @@
 # fix footer cramping on smalller viewports (flex)
 # one component for contact form
 # style blog posts
-- finish style header + nav (modules)
+# finish style header + nav (modules)
 - put hero section images in Img tags
 - add nice dynamic animating hamburger menu
 - fix rotating text section
@@ -36,6 +36,7 @@
 - Add/test a good modern CSS reset 
 - fix wierd nav transition/transform bug when switching viewport sizes
 - fix weird "quoting" behavior in footer
+- write a post for the Dev https://dev.to/new
 
 ## nice to have's
 - add some simple css animations like rise up fade in 

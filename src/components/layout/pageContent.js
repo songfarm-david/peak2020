@@ -1,8 +1,11 @@
 import React from "react"
-import { formatTitle } from "../../functions/helperFunctions"
-import ReactHtmlParser from 'react-html-parser';
+import PropTypes from 'prop-types';
 
-import pageContent from "./pageContent.module.scss"
+import ReactHtmlParser from 'react-html-parser';
+import { formatTitle } from "../../functions/helperFunctions"
+
+import pageContentStyles from "./pageContent.module.scss"
+
 import ServiceCard from "./services/serviceCard"
 
 /**
@@ -13,41 +16,47 @@ import ServiceCard from "./services/serviceCard"
  * @param {Str} props.path a page title used to add as classname to the component 
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
-const PageContent = ( props ) => {
-    console.log('pageContent props', props);
-    
-    /* check for pageData first, which overrides all component conditionals */
-    const { 
-        path, 
-        pageData: page, 
-        children, 
-        type } = props || {}
+const PageContent = ({path, content, type, children}) => {
+    console.log('pageContent props', path, content, type, children);
 
-    // console.log('is page?', page);
+    const pContent = (content) ? (content.wordpressPage || content.allWordpressPage) : {}
 
-    const { content } = page.wordpressPage || page || {}
-    // console.log('what is content', content);
+    // console.log('about.js. content is array?', pContent instanceof Array);
+    // console.log('about.js. content is obj?', pContent instanceof Object);
 
-    let title = formatTitle(path.toLowerCase())
+    // console.log('pContent?', pContent.content);
         
     return (
         <div className={(type === 'blog') ?
-            pageContent.blogContent : pageContent.pageContent + " " + title}>{ 
+            pageContentStyles.blogContent : pageContentStyles.pageContent + " " + formatTitle(path.toLowerCase())}>{ 
+
+            (type === 'services') && pContent.edges.map(( service, idx ) => (
+                <div className={pageContentStyles.pageContentInner} key={idx}>
+                    <ServiceCard service={service} />
+                </div> )) || 
+
+            (type === 'page' && pContent) && <div className={pageContentStyles.pageContentInner}>
+                    {ReactHtmlParser(pContent.content)}
+                </div> ||
+
+            (type === 'contact') && <div className={pageContentStyles.pageContentInner}>
+                    {children}
+                </div>
             /* check for content from a page,
              if not that, check if this is 'service page' content
              otherwise, output the direct children passed into the component */
-            (page) ? 
-                <div className={pageContent.pageContentInner}>
+            /* (page) ? 
+                <div className={pageContentStyles.pageContentInner}>
                     {ReactHtmlParser(content)}
                 </div> : 
             (type === 'services') ? 
                 children.edges.map(( node, index ) => (
                     <ServiceCard service={ node } key={ index } />
                 )) : (
-                    <div className={pageContent.pageContentInner}>
-                        {children}
+                    <div className={pageContentStyles.pageContentInner}>
+                        {content}
                     </div>
-                )
+                ) */
              
         }</div>
     )    
@@ -55,3 +64,8 @@ const PageContent = ( props ) => {
 }
 
 export default PageContent
+
+PageContent.propTypes = {
+    path: PropTypes.string.isRequired,
+    type: PropTypes.string
+}

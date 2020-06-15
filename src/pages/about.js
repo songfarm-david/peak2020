@@ -11,20 +11,19 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 
 export default ({data, location}) => {
 
-    const { title } = data.wordpressPage
-    const { pathname: path } = location
+    // const { title, content } = data.wordpressPage
+    // const { pathname: path } = location
+
+    // console.log('about.js. content is array?', content instanceof Array);
+    // console.log('about.js. content is obj?', content instanceof Object);
 
     return (
-        <Layout path={path} layoutClass="about">
-
-            <PageBanner bannerType="page" title={title} />
-
-            <PageContent path={title} pageData={data} />
-
+        <Layout path={location.pathname} layoutClass="about">
+            <PageBanner bannerType="page" title={"About"} />
+            <PageContent path={location.pathname} type="page" content={data} />
             <BlogCallout />
-            <Newsletter path={path} />
-            <ContactFormCallout path={path} />
-
+            <Newsletter path={location.pathname} />
+            <ContactFormCallout path={location.pathname} />
         </Layout>
     )
 }
@@ -35,7 +34,6 @@ export default ({data, location}) => {
 export const queryPage = graphql`
     query aboutPage {
         wordpressPage(wordpress_id: {eq: 1718}) {
-            title
             content
         }
     }

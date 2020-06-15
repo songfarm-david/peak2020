@@ -14,30 +14,15 @@ import "../styles/pages.scss"
 /**
  * Services Page
  */
-export default ({ data, location }) => {
-
-    const { pathname: path } = location 
-    
-    const { title } = data.wordpressPage
-    const services = data.allWordpressPage
-
-    return (
-        <Layout layoutClass="services-home">
-
-            <PageBanner bannerType="page" title={title} />
-
-            <PageContent path={title} type="services">
-                {services}
-            </PageContent>
-
-            <BlogCallout />
-            <Newsletter path={path} />
-            <ContactFormCallout path={path} />
-            
-        </Layout>
-    )
-
-}
+export default ({ data, location }) => (
+    <Layout path={location.pathname} layoutClass="services-home">
+        <PageBanner bannerType="page" title={"Services"} />
+        <PageContent path={location.pathname} type="services" content={data} />
+        <BlogCallout />
+        <Newsletter path={location.pathname} />
+        <ContactFormCallout path={location.pathname} />  
+    </Layout>
+)
 
 /**
  * Query for both a sticky post (to test in the component), as well as
@@ -45,9 +30,6 @@ export default ({ data, location }) => {
  */
 export const queryAllPosts = graphql`
     query MyQuery {
-        wordpressPage(wordpress_id: {eq: 2517}) {
-            title
-        }
         allWordpressPage(filter: {parent_element: {slug: {eq: "services"}}}) {
             edges {
                 node {
