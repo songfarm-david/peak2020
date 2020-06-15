@@ -8,19 +8,10 @@ import cardStyles from "./featureBlogCard.module.scss"
  * 
  * @param {*} param0 
  */
-const FeatureBlogCard = (props) => {
-    console.log('featureBlogCard props', props);
+const FeatureBlogCard = ({ postData }) => {
+    console.log('featureBlogCard postData', postData);
 
-    const { postData } = props || {}
-
-        const {
-            title,
-            author,
-            categories,
-            date,
-            modified,
-            sticky
-        } = postData || postData || {}
+    const { author, date, modified, categories, sticky } = postData.metaProps || postData
     
     /**
      * Add ',' after all but the last category
@@ -31,6 +22,7 @@ const FeatureBlogCard = (props) => {
 
     return (
         <div className={( sticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
+           
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => (
@@ -40,13 +32,14 @@ const FeatureBlogCard = (props) => {
                 </span>}
             </div>
             
-            <h2>{ReactHtmlParser(title)}</h2>
+            <h2>{ReactHtmlParser(postData.title)}</h2>
             <div className={cardStyles.postMetaData}>
                 <div className={cardStyles.postMeta}>
                     <span>{getDate(modified, date)}</span>
                 </div>
                 <span className={cardStyles.author}>{getAuthor(categories, author.name)}</span>
             </div>
+
         </div>
     )
 

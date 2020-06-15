@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
@@ -14,27 +15,46 @@ import "../styles/pages.scss"
  * Page template
  * Mar 2020
  */
-export default ( props ) => {
-    // console.log('page template props', props);
-    
-    const { pathname: path } = props.location
-
-    const {
-        title,
-        slug } = props.pageContext
+export default ({ data, location, pageContext }) => {
+    console.log('page template data', data, location, pageContext);
 
     return (
-        <Layout props={props} layoutClass={(slug === 'home') ? "home" : null}>
+        <Layout path={location.pathname} layoutClass={data.wordpressPage.title}>
             
-            {(slug === 'home' && <HeroSection />) || <PageBanner bannerType="page" title={ title } />}
+            {(location.pathname === '/' && <HeroSection />) || 
+            <PageBanner bannerType={data.wordpressPage.type} title={data.wordpressPage.title} />}
 
-            <PageContent path={ title } pageData={props.pageContext} />
+            <PageContent type={data.wordpressPage.type} content={data.wordpressPage.content} />
 
-            <BlogCallout postData={props} />
-            <Newsletter path={path} />
-            <ContactFormCallout path={path} isAddFields={false} />
+            <BlogCallout />
+            <Newsletter path={location.pathname} />
+            <ContactFormCallout path={location.pathname} isAddFields={false} />
                 
         </Layout>
     )
 
 }
+
+export const pageQuery = graphql`
+    query($id: String!) {
+        wordpressPage(id: { eq: $id}) {
+            wordpress_id
+            title
+            status
+            path
+            content
+            excerpt
+            type
+            featured_media {
+                alt_text
+                localFile {
+                    childImageSharp {
+                        fluid {
+                        ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+    } 
+`

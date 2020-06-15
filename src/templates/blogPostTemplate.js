@@ -1,6 +1,6 @@
 import React from "react"
+import PropTypes from 'prop-types';
 import { graphql } from "gatsby"
-import ReactHtmlParser from 'react-html-parser';
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
@@ -12,38 +12,51 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 * Blog template
 * Mar 2020
 */
-export default ( props ) => {
-    console.log('blogTemplate props', props);
+export default ({ data, location, pageContext }) => {
+    console.log('blogTemplate data, location, pageContext', data, location, pageContext);
 
-    const { location, pageContext, data } = props || {}
-    
-    const { title, content } = pageContext || {}
-    const { pathname: path } = location || {} 
-    const { featured_media } = data.wordpressPost || {}
-    
-    console.log('blogtemplate wh\'ats featured media?', featured_media);
-    
+    /* create proptypes and stream a var declaration format that is clearer 
+        the difference between page templates and blog templates is that blog posts must inlude a 'featured_media' property to be passed into the PageBanner component
+    */
 
+    const { title, type, featured_media, content, ...metaProps } = data.wordpressPost
+    
     return (
-        <Layout layoutClass="blog">    
-            <PageBanner bannerType="blog" title={title} postData={pageContext} bannerImg={featured_media} />
+        <Layout path={location.pathname} layoutClass={title}> 
+
+            <PageBanner bannerType={type} title={title} bannerImg={featured_media} bannerData={(type === 'post') ? {metaProps, title} : null} />
             
-            <PageContent path={title} type="blog" pageData={pageContext} />
-                {/* {ReactHtmlParser(content)} */}
-            {/* </PageContent> */}
-        
-            {/* display other blogs most likely to be attractive to user */}
-            <Newsletter path={path} />
-            <ContactFormCallout path={path} isAddFields={false} />
+            <PageContent type={type} content={content} />
+
+            <Newsletter path={location.pathname} />
+            <ContactFormCallout path={location.pathname} isAddFields={false} />
+
         </Layout>
     )
     
 }
 
 export const query = graphql`
-    query($postId: Int!) {
-        wordpressPost(wordpress_id: {eq: $postId}) {
+    query($id: String!) {
+        wordpressPost(id: {eq: $id}) {
+            wordpress_id
+            path
+            status
+            type
+            sticky
             title
+            date(formatString: "MMM Do, YYYY")
+            modified(formatString: "MMM Do, YYYY")
+            content
+            author {
+                name
+                wordpress_id
+                path
+            }
+            categories {
+                name
+                wordpress_id
+            }
             featured_media {
                 alt_text
                 localFile {
