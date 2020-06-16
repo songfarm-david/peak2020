@@ -17,10 +17,10 @@ const HeroBanner = () => {
             color: "#6BE8AA",
         }, {
             word: "development",
-            color: "#DEC1FF",
+            color: "#E5AD3E",
         }, {
             word: "design",
-            color: "#E5AD3E",
+            color: "#DEC1FF",
         }, {
             word: "SEO",
             color: "#49C5DE",

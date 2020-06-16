@@ -9,9 +9,10 @@
 # style blog posts
 # finish style header + nav (modules)
 - put hero section images in Img tags
-- add nice dynamic animating hamburger menu
-- fix rotating text section
+# add nice dynamic animating hamburger menu
+# fix rotating text section
 - Fix textarea text size in main contact form, inputs
+- fix category links on site(blog)
 - address sitemap page
 - finish 404 page
 - Address SEO concerns

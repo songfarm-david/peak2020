@@ -13,10 +13,10 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 /**
  * Blog Index page
  */
-export default ({ data, location }) => {
+export default ({ data }) => {
 
     const { wordpressPage, allWordpressPost, featuredPost } = data
-    const { title, type } = wordpressPage
+    const { title, type, path } = wordpressPage
     
     /**
      * Validate presence of value for Sticky Post
@@ -26,18 +26,14 @@ export default ({ data, location }) => {
     const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
     
     return (
-        <Layout path={location.pathname} layoutClass={title}>
+        <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-
-            <PageContent>
+            <PageContent path={path}>
                 {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
-
                 <AllPosts allPosts={allWordpressPost} />   
             </PageContent>
-
-            <Newsletter path={location.pathname} />
-            <ContactFormCallout path={location.pathname} />
-           
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} />
         </Layout>
     )
 
@@ -52,6 +48,7 @@ export const queryAllPosts = graphql`
         wordpressPage(wordpress_id: {eq: 703}) {
             title
             type
+            path
         }
         featuredPost: wordpressPost(sticky: {eq: true}) {
             id

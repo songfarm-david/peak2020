@@ -1,16 +1,30 @@
 @import "./globals.scss";
 
 .blogSectionContainer {
+    width: 100%;
+    box-sizing: border-box;
     .blogInner {
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
+    &.blogSectionCallout {
+        background-color: $light-green;
+        padding: $content-padding;
+        padding-bottom: $vertical-rhythm;
+    }
+    .calloutBtn { }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
     .blogSectionContainer {
-        .blogInner {
-            
+        &.blogSectionCallout {
+            .blogInner {
+                max-width: $content-width;
+                margin: 0 auto;
+            }
         }
+        
     }
 }
 

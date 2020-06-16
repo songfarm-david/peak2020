@@ -51,16 +51,17 @@ const BlogFeature = () => {
     const featuredPosts = query.allWordpressPost
 
     return (
-        <section id="blogCallout" className={blogStyles.blogSectionContainer}>
-            <BlogHeading headingText="Latest Blog Articles" />
+        <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogSectionCallout}`}>
+            <BlogHeading headingText="Latest Blog Articles" className="callout"/>
             <div className={blogStyles.blogInner}>
                 {featuredPosts.edges.map(({ node }, idx) => (
                     <BlogPost key={idx} postData={node} type="callout"/>
                 ))}  
-            </div>
-            <div className={blogStyles.calloutBtn}>
+                <div className={blogStyles.calloutBtn}>
                 <Link to="/blog/" className="button primary-button">Go to blog</Link>
             </div>
+            </div>
+            
         </section>
     )
 

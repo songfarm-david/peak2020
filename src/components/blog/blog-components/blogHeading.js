@@ -3,6 +3,7 @@ import React from "react"
 import blogHeadingStyles from "./blogHeading.module.scss"
 
 const BlogHeading = ({ headingText, className }) => {
+    console.log('BlogHeading class?', className);
     
     let callOutClass = (className) ? className : null
 
