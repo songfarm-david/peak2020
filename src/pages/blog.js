@@ -17,9 +17,13 @@ import ContactFormCallout from "../components/form/contactFormCallout"
  * @param {Obj} data.featuredPost status of sticky 
  */
 export default ({ data, location }) => {
+    console.log('blog.js data, location', data, location);
+    
+    // const { allWordpressPost: allPosts, featuredPost } = data,
+    // title = data.wordpressPage.title, {pathname: path} = location
 
-    const { allWordpressPost: allPosts, featuredPost } = data,
-    title = data.wordpressPage.title, {pathname: path} = location
+    const { wordpressPage, allWordpressPost, featuredPost } = data
+    const { title, type } = wordpressPage
     
     /**
      * Validate presence of value for Sticky Post
@@ -29,17 +33,17 @@ export default ({ data, location }) => {
     const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
     
     return (
-        <Layout layoutClass="blog">
+        <Layout path={location.pathname} layoutClass={title}>
         
-            <PageBanner bannerType="page" title={title} />
+            <PageBanner bannerType={type} title={title} />
 
-            {( haveStickyPost( featuredPost ) && 
-                <FeaturedPost featuredPost={featuredPost} /> )}      
+            {/* check if there's a sticky post  */}
+            {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
 
-            <AllPosts allPosts={allPosts} />   
+            <AllPosts allPosts={allWordpressPost} />   
 
-            <Newsletter path={path} />
-            <ContactFormCallout path={path} />
+            <Newsletter path={location.pathname} />
+            <ContactFormCallout path={location.pathname} />
            
         </Layout>
     )
@@ -54,6 +58,7 @@ export const queryAllPosts = graphql`
     query {
         wordpressPage(wordpress_id: {eq: 703}) {
             title
+            type
         }
         featuredPost: wordpressPost(sticky: {eq: true}) {
             id

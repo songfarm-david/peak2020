@@ -9,22 +9,17 @@ import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
-export default ({data, location}) => {
-
-    const { title } = data.wordpressPage
-    const { pathname: path } = location
+export default ({ data }) => {
+    
+    const { title, type, content, path } = data.wordpressPage
 
     return (
-        <Layout path={path} layoutClass="about">
-
-            <PageBanner bannerType="page" title={title} />
-
-            <PageContent path={title} pageData={data} />
-
+        <Layout path={path} layoutClass={title}>
+            <PageBanner bannerType={type} title={title} />
+            <PageContent type={type} content={content} />
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />
-
         </Layout>
     )
 }
@@ -37,6 +32,8 @@ export const queryPage = graphql`
         wordpressPage(wordpress_id: {eq: 1718}) {
             title
             content
+            type
+            path
         }
     }
 `

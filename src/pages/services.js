@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
+import ServiceCard from "../components/layout/services/serviceCard"
 
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
@@ -14,29 +15,27 @@ import "../styles/pages.scss"
 /**
  * Services Page
  */
-export default ({ data, location }) => {
+export default ({ data }) => {
 
-    const { pathname: path } = location 
+    const { wordpressPage, allWordpressPage: allServices } = data
+    const { title, path, type } = wordpressPage
     
-    const { title } = data.wordpressPage
-    const services = data.allWordpressPage
-
+    console.log('services.js allServices', allServices);
+    
+    
     return (
-        <Layout layoutClass="services-home">
-
-            <PageBanner bannerType="page" title={title} />
-
-            <PageContent path={title} type="services">
-                {services}
+        <Layout path={path} layoutClass={title}>
+            <PageBanner bannerType={type} title={title} />
+            <PageContent path={path} type={type}>
+                {allServices.edges.map((service, idx) => (
+                    <ServiceCard key={idx} service={service.node} />
+                ))}
             </PageContent>
-
             <BlogCallout />
             <Newsletter path={path} />
-            <ContactFormCallout path={path} />
-            
+            <ContactFormCallout path={path} />  
         </Layout>
     )
-
 }
 
 /**
@@ -45,10 +44,12 @@ export default ({ data, location }) => {
  */
 export const queryAllPosts = graphql`
     query MyQuery {
-        wordpressPage(wordpress_id: {eq: 2517}) {
+        wordpressPage (wordpress_id: {eq: 2517}) {
             title
+            type
+            path
         }
-        allWordpressPage(filter: {parent_element: {slug: {eq: "services"}}}) {
+        allWordpressPage(filter: {parent_element: {wordpress_id: {eq: 2517}}}) {
             edges {
                 node {
                     title
