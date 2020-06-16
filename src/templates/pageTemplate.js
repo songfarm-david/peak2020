@@ -18,7 +18,7 @@ import "../styles/pages.scss"
 export default ({ data, location, pageContext }) => {
     console.log('page template data', data, location, pageContext);
 
-    const { title, type, content } = data.wordpressPage
+    const { title, type, content, slug } = data.wordpressPage
 
     return (
         <Layout path={location.pathname} layoutClass={title}>
@@ -26,7 +26,7 @@ export default ({ data, location, pageContext }) => {
             {(location.pathname === '/' && <HeroSection />) || 
             <PageBanner bannerType={type} title={title} />}
 
-            <PageContent type={type} content={content} />
+            <PageContent path={slug} type={type} content={content} />
 
             <BlogCallout />
             <Newsletter path={location.pathname} />
@@ -47,6 +47,7 @@ export const pageQuery = graphql`
             content
             excerpt
             type
+            slug
             featured_media {
                 alt_text
                 localFile {

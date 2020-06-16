@@ -11,8 +11,9 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.path a page title used to add as classname to the component 
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
-const PageContent = ({ type, content, children }) => (
-    <div className={(type === 'post') ? pageContentStyles.blogContent : pageContentStyles.pageContent}>{ 
+const PageContent = ({ path, type, content, children }) => (
+    <div className={(type === 'post') ? pageContentStyles.blogContent : `${pageContentStyles.pageContent} ${path}`}>{ 
+        (path === 'contact-us') ? children :
         <div className={pageContentStyles.pageContentInner}>
             {( children ) ? children : ReactHtmlParser(content)}
         </div>          

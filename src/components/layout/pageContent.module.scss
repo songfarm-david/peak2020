@@ -7,7 +7,7 @@
     width: 100%;
     margin: 0 auto;
     padding: $content-padding;
-    padding-bottom: $vertical-rhythm;
+    padding-bottom: $vertical-rhythm * 2;
     @extend .normal-text;  
     transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
 

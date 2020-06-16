@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
+import PageContent from "../components/layout/pageContent"
+
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/layout/newsletter"
@@ -10,17 +12,8 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 
 /**
  * Blog Index page
- * Composes a blog index page with a variable sticky post
- * 
- * NOTE: status of sticky post is controlled in CMS!!
- * 
- * @param {Obj} data.featuredPost status of sticky 
  */
 export default ({ data, location }) => {
-    console.log('blog.js data, location', data, location);
-    
-    // const { allWordpressPost: allPosts, featuredPost } = data,
-    // title = data.wordpressPage.title, {pathname: path} = location
 
     const { wordpressPage, allWordpressPost, featuredPost } = data
     const { title, type } = wordpressPage
@@ -34,13 +27,13 @@ export default ({ data, location }) => {
     
     return (
         <Layout path={location.pathname} layoutClass={title}>
-        
             <PageBanner bannerType={type} title={title} />
 
-            {/* check if there's a sticky post  */}
-            {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
+            <PageContent>
+                {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
 
-            <AllPosts allPosts={allWordpressPost} />   
+                <AllPosts allPosts={allWordpressPost} />   
+            </PageContent>
 
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} />

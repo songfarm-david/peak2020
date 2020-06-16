@@ -41,10 +41,12 @@
 
                 display: flex;
                 align-items: center;
-                flex-basis: 33%;
+                flex-basis: 50%;
                 text-align: left;
                 margin-bottom: .75rem;
-
+                // &:last-child {
+                //     margin-right: 0;
+                // }
                 input[type="checkbox"] {
                     position: absolute;
                     opacity: 0;

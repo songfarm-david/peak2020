@@ -11,12 +11,12 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 
 export default ({ data }) => {
     
-    const { title, type, content, path } = data.wordpressPage
+    const { title, type, content, path, slug } = data.wordpressPage
 
     return (
         <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-            <PageContent type={type} content={content} />
+            <PageContent path={slug} type={type} content={content} />
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />
@@ -34,6 +34,7 @@ export const queryPage = graphql`
             content
             type
             path
+            slug
         }
     }
 `

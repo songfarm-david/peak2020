@@ -18,30 +18,23 @@ main {
     }
 
     .heroBody {
-        padding: 0 $margin-bottom;
         flex-basis: 100%;
         margin: 0 auto;
         .heroBody { padding: 0; }
     }
 
-    .blog-inner-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    // .blog-inner-container {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    // }
 
-    .blog-content-container {
-        box-sizing: border-box;
-        padding: 0 0 $top-margin;
-        + .blog-content-container {
-            padding-top: 0;
-        }
-    }
-
-    /* move this to contact component, if possible */
-    .contact {
-        width: 100%;
-        padding: 0 0 $vertical-rhythm;
-    }
+    // .blog-content-container {
+    //     box-sizing: border-box;
+    //     padding: 0 0 $top-margin;
+    //     + .blog-content-container {
+    //         padding-top: 0;
+    //     }
+    // }
 
     .home, .about {
         position: relative;
@@ -70,7 +63,6 @@ main {
             right: -5%;
             top: -50%;
             z-index: -111;
-            // transform: rotate(10deg);
             display: none;
         }
     }
@@ -93,12 +85,6 @@ main {
         } 
     }
 
-    &.blog {
-        .blog-content-container {
-            padding: $content-padding;
-        }
-    }
-
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
@@ -107,11 +93,6 @@ main {
         .heroText { 
             width: $hero-width;
             padding-right: 33%;
-        }
-        
-        .blog-content-container {
-            width: $content-width;   
-            margin: 0 auto;     
         }
 
         .home, .about {

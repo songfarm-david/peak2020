@@ -1,0 +1,28 @@
+@import "./globals.scss";
+
+.blogSectionContainer {
+    .blogInner {
+
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .blogSectionContainer {
+        .blogInner {
+            
+        }
+    }
+}
+
+// .blog-inner-container {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+// .blog-content-container {
+//     box-sizing: border-box;
+//     padding: 0 0 $top-margin;
+//     + .blog-content-container {
+//         padding-top: 0;
+//     }
+// }
