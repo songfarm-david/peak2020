@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./contactFormCallout.scss"
+import mainContactFormStyles from "./contactFormCallout.module.scss"
 import MainContactForm from "./mainContactForm"
 
 const ContactForm = ({ 
@@ -9,15 +9,15 @@ const ContactForm = ({
     isAddFields = false, 
     path = "/" 
 }) => (
-    <div id="contactFormContainer">
+    <div id={mainContactFormStyles.contactFormContainer}>
         <article>
             <h2 className="screen-reader-text">Contact Us</h2>
-            <div className="contact-form-text">
-                <p className="heading heading-2">{ heading }</p>
-                <p className="sub-heading">{ paragraph }</p>
-                <MainContactForm 
-                    path={ path } 
-                    isAddFields={ isAddFields } />
+            <div className={mainContactFormStyles.contactFormContainer}>
+                <div className={mainContactFormStyles.introContainer}>
+                    <p className={mainContactFormStyles.heading}>{heading}</p>
+                    <p className={mainContactFormStyles.subHeading}>{ paragraph }</p>
+                </div>
+                <MainContactForm path={path} isAddFields={isAddFields} />
             </div>
         </article>
     </div>

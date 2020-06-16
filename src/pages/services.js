@@ -18,7 +18,7 @@ import "../styles/pages.scss"
 export default ({ data }) => {
 
     const { wordpressPage, allWordpressPage: allServices } = data
-    const { title, path, type } = wordpressPage
+    const { title, path, type, slug } = wordpressPage
     
     console.log('services.js allServices', allServices);
     
@@ -26,7 +26,7 @@ export default ({ data }) => {
     return (
         <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-            <PageContent path={path} type={type}>
+            <PageContent path={slug} type={type}>
                 {allServices.edges.map((service, idx) => (
                     <ServiceCard key={idx} service={service.node} />
                 ))}
@@ -48,6 +48,7 @@ export const queryAllPosts = graphql`
             title
             type
             path
+            slug
         }
         allWordpressPage(filter: {parent_element: {wordpress_id: {eq: 2517}}}) {
             edges {

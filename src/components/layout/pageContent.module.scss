@@ -6,8 +6,8 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: $content-padding;
-    padding-bottom: $vertical-rhythm;
+    padding: $top-margin 0 $vertical-rhythm;
+    // padding-bottom: $vertical-rhythm * 2;
     @extend .normal-text;  
     transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
 
@@ -16,13 +16,17 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: $content-padding;
+
+        a[href] {
+            text-decoration: underline;
+        }
     }
 
 }
 
 .blogContent {
     composes: pageContent;
-    margin-top: 14rem;
+    margin-top: 12rem;
 }
 
 @media screen and (min-width: $mobile-breakpoint) {

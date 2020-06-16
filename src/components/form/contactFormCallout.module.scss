@@ -1,0 +1,37 @@
+@import '../../styles/globals.scss';
+
+#contactFormContainer {
+
+    background: url('../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
+    background-position: top 1rem right 1rem;
+    background-origin: border-box; 
+
+    article {
+        .contactFormContainer {
+            padding: $content-padding;
+            .introContainer { text-align: center; }
+            .heading { 
+                font: $heading-2;
+                margin-bottom: 0; 
+            }
+            .subHeading { @extend .normal-text; }
+        } 
+    }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        background: url('../../images/illustrations/svg/trail_contact_desktop.svg') no-repeat;
+        background-position: top 25% right 25%;
+        article {
+            .contactFormContainer {
+                max-width: $content-width;
+                margin: 0 auto;
+                .introContainer {
+                    max-width: 50rem;
+                    margin: 0 auto;
+                }
+                .subHeading { font-weight: bold; }
+            }
+        }
+    }
+
+}

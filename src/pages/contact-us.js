@@ -11,13 +11,13 @@ import "../styles/pages.scss"
 export default ({ data }) => {
     console.log('contact us page', data);
     
-    const { path, title, type } = data.wordpressPage
+    const { path, title, type, slug } = data.wordpressPage
 
     return (
         <Layout path={path} layoutClass={title}>
             <PageBanner bannerType="page" title={title} />
 
-            <PageContent path={path} type={type}>
+            <PageContent path={slug} type={type}>
                 <ContactForm 
                     heading="Begin the Journey" 
                     paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
@@ -39,6 +39,7 @@ export const queryPage = graphql`
             title
             type
             path
+            slug
         }
     }
 `

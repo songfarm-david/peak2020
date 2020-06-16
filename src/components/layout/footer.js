@@ -11,91 +11,88 @@ import twitter from "../../images/illustrations/png/Social Media Icons/twitter.p
 
 import footerStyles from "./footer.module.scss"
 
-const Footer = ( props ) => {
+const Footer = ({ path }) => {
+  console.log('foooter path', path);
   
   /* get footer links from CMS */
-  const footerLinks = useStaticQuery(
+  const footerQuery = useStaticQuery(
     graphql`
-      query {
-        allWordpressMenusMenusItems(filter: {wordpress_id: {eq: 179}}) {
-          edges {
-            node {
-              name
-              wordpress_id
-              items {
-                title
-                url
-                slug
-              }
+        query {
+            wordpressMenusMenusItems(wordpress_id: {eq: 179}) {
+                id
+                wordpress_id
+                name
+                items {
+                    title
+                    slug
+                    url
+                }
             }
-          }
         }
-      }
     `)
   
-  const fLinks = footerLinks.allWordpressMenusMenusItems.edges[0].node 
+  const footerLinks = footerQuery.wordpressMenusMenusItems 
     
   return (
     <footer id={footerStyles.siteFooter}>
-      <div className={footerStyles.innerContainer}>
+        <div className={footerStyles.innerContainer}>
 
-        <QuotesCarousel />
-        
-        <div className={footerStyles.flexContainer}>
+            <QuotesCarousel />
             
-            {/* brand component */}
-            <div className={footerStyles.footerItem}>
-              <img src={secondaryLogo} alt="Peak Websites logo" />
-              <p className="copyright">© Peak Websites {new Date().getFullYear()}</p>
-            </div>
-    
-            {/* secondary nav */}
-            <nav className={footerStyles.footerItem}>
-              <ul>
-                {fLinks.items.map( (item, idx) => (
-                  <li key={idx}>
-                    {( item.slug ) ? 
-                      <Link to={item.slug}>{item.title}</Link> :
-                      <a href={item.url} title={item.title}>{item.title}</a>}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-    
-            {/* social component */}
-            <div className={footerStyles.footerItem}>
-              <ul>
-                <li>
-                    <a href="" title="Peak Websites Facebook Page">
-                      <span><img src={facebook} alt={""} /></span>
-                      <span>Facebook</span>
+            <div className={footerStyles.flexContainer}>
+                
+                {/* brand component */}
+                <div className={footerStyles.footerItem}>
+                    <img src={secondaryLogo} alt="Peak Websites logo" />
+                    <p className="copyright">© Peak Websites {new Date().getFullYear()}</p>
+                </div>
+        
+                {/* secondary nav */}
+                <nav className={footerStyles.footerItem}>
+                    <ul>
+                        {footerLinks.items.map((link, idx) => (
+                            <li key={idx}>
+                                {( link.slug ) ? <Link to={link.slug}>{link.title}</Link> :
+                                <a href={link.url} title={link.title}>{link.title}</a>}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+        
+                {/* social component */}
+                <div className={footerStyles.footerItem}>
+                <ul>
+                    <li>
+                        <a href="" title="Peak Websites Facebook Page">
+                        <span><img src={facebook} alt={""} /></span>
+                        <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="" title="Peak Websites Twitter">
+                        <span><img src={twitter} alt={""} /></span>
+                        <span>Twitter</span>
                     </a>
-                </li>
-                <li>
-                  <a href="" title="Peak Websites Twitter">
-                    <span><img src={twitter} alt={""} /></span>
-                    <span>Twitter</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-    
-            {/* Newsletter */}
-            <div className={footerStyles.footerItem}>
-              <p>Subscribe to the newsletter</p>
-              <div>
-                <NewsletterForm path={props.path} className="footerNewsletter" text="OK" />
-              </div>
-            </div>
-    
-            <div className={footerStyles.footerItem}>
-              <span>Contact</span>
-              <span><a href="tel:+17785879220">+1 778 587 9220</a></span>
-              <span><a href="mailto:david@peakwebsites.ca">david@peakwebsites.ca</a></span>
-            </div>
+                    </li>
+                </ul>
+                </div>
+        
+                {/* Newsletter */}
+                <div className={footerStyles.footerItem}>
+                    <p>Subscribe to the newsletter</p>
+                    <div>
+                        <NewsletterForm path={path} className="footerNewsletter" text="OK" />
+                    </div>
+                </div>
+        
+                <div className={footerStyles.footerItem}>
+                    <span>Contact</span>
+                    <span><a href="tel:+17785879220">+1 778 587 9220</a></span>
+                    <span><a href="mailto:david@peakwebsites.ca">david@peakwebsites.ca</a></span>
+                </div>
 
-        </div> 
-      </div>
+            </div> 
+        </div>
       
     </footer>
   )

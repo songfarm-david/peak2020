@@ -1,5 +1,5 @@
-@import "./colors.scss";
-@import "./type.scss";
+@import "./globals/colors.scss";
+@import "./globals/type.scss";
 
 $mobile-breakpoint: 769px;
 
@@ -79,7 +79,7 @@ html {
 
 }
 
-@import "./buttons.scss";
+@import "./theme-styles/buttons.scss";
 
 /**
  * Helper Classes 

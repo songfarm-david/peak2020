@@ -44,7 +44,9 @@ const RotatingText = ({word, active, wasActive}) => {
                     elRefs(curLetter).current.classList.toggle(classNames(active, curLetter)[curLetter]);
                 }
                 setTimeout(timeoutHandler(i), timeSpan);
+                clearInterval(timeoutHandler);
             });
+            
         }        
         firstRun(false);
     }, [word, active, wasActive, letters, firstRun, elRefs, classNames]);

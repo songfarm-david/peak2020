@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
+import PageContent from "../components/layout/pageContent"
+
 import FeaturedPost from "../components/blog/featuredPost"
 import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/layout/newsletter"
@@ -10,20 +12,11 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 
 /**
  * Blog Index page
- * Composes a blog index page with a variable sticky post
- * 
- * NOTE: status of sticky post is controlled in CMS!!
- * 
- * @param {Obj} data.featuredPost status of sticky 
  */
-export default ({ data, location }) => {
-    console.log('blog.js data, location', data, location);
-    
-    // const { allWordpressPost: allPosts, featuredPost } = data,
-    // title = data.wordpressPage.title, {pathname: path} = location
+export default ({ data }) => {
 
     const { wordpressPage, allWordpressPost, featuredPost } = data
-    const { title, type } = wordpressPage
+    const { title, type, path } = wordpressPage
     
     /**
      * Validate presence of value for Sticky Post
@@ -33,18 +26,14 @@ export default ({ data, location }) => {
     const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
     
     return (
-        <Layout path={location.pathname} layoutClass={title}>
-        
+        <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-
-            {/* check if there's a sticky post  */}
-            {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
-
-            <AllPosts allPosts={allWordpressPost} />   
-
-            <Newsletter path={location.pathname} />
-            <ContactFormCallout path={location.pathname} />
-           
+            <PageContent path={path}>
+                {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
+                <AllPosts allPosts={allWordpressPost} />   
+            </PageContent>
+            <Newsletter path={path} />
+            <ContactFormCallout path={path} />
         </Layout>
     )
 
@@ -59,6 +48,7 @@ export const queryAllPosts = graphql`
         wordpressPage(wordpress_id: {eq: 703}) {
             title
             type
+            path
         }
         featuredPost: wordpressPost(sticky: {eq: true}) {
             id

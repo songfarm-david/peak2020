@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-import "./blogCallout.scss"
-
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
+
+import blogStyles from "../../styles/posts.module.scss"
 
 /**
  * Blog section on home page: features 3 latest blogs
@@ -51,23 +51,18 @@ const BlogFeature = () => {
     const featuredPosts = query.allWordpressPost
 
     return (
-        <article id="blogFeature">
-            <div className="blog-content-container">
-
-                <BlogHeading headingText="Latest Blog Articles" className="blogCallout" />
-
-                <div className="blog-inner-container">
-                    {featuredPosts.edges.map(({ node }, idx) => (
-                        <BlogPost key={idx} postData={node} type="callout"/>
-                    ))}  
-                </div>
-
-                <div className="to-blog-link">
-                    <Link to="/blog/" className="button primary-button">Go to blog</Link>
-                </div>
-
+        <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogSectionCallout}`}>
+            <BlogHeading headingText="Latest Blog Articles" className="callout"/>
+            <div className={blogStyles.blogInner}>
+                {featuredPosts.edges.map(({ node }, idx) => (
+                    <BlogPost key={idx} postData={node} type="callout"/>
+                ))}  
+                <div className={blogStyles.calloutBtn}>
+                <Link to="/blog/" className="button primary-button">Go to blog</Link>
             </div>
-        </article>
+            </div>
+            
+        </section>
     )
 
 }
