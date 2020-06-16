@@ -8,19 +8,18 @@
  $bright-orange: #E5AD3E;
  $bluish-white: #F4F7F8;
  $white: #FFFFFF;
- @value white: $white;
-
+ $light-blue: #49C5DE;
  $lighter-blue: #F1F9FF;
  
- /**
-  * Secondary / Services colors
-  */
- $light-blue: #49C5DE;
- $web-maintenance: $bright-orange;
- $pale-purple: #DEC1FF;
- $fresh-light-green: #6BE8AA;
- $light-green: #66BA86;
- 
+/**
+ * Secondary / Services colors
+ */
+$digitalMarketing: #6BE8AA;
+$development: #DEC1FF;
+$design: $bright-orange;
+$SEO: #49C5DE;
+$consulting: #66BA86;
+
  /**
   * Aliases 
   */

@@ -30,13 +30,12 @@ $offset: 21.875rem;
         }
         
         #rotatingWord {
-            position: relative;
-            width: auto;
-
+            display: flex;
+            justify-content: center;
             .word {
                 position: absolute;
                 display: block;
-                border: $border;
+                // border: $border;
             }
         }
 

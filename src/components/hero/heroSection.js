@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
 
-// import RotatingText from "./rotatingText.js"
+import RotatingText from "./rotatingText.js"
 import "./heroSection.scss"
+import heroSlideStyles from "../../styles/globals/colors.scss";
 
-const HeroBanner = (props) => {
+const HeroBanner = () => {
     
     const [activeWord, setActiveWord] = useState({
         current: 0,
@@ -12,23 +13,23 @@ const HeroBanner = (props) => {
 
     const words = [
         {
-            word: "management",
-            color: '#835ea8',
+            word: "digital marketing",
+            color: "#6BE8AA",
         }, {
             word: "development",
-            color: '#4ac5de',
+            color: "#DEC1FF",
         }, {
             word: "design",
-            color: '#58be8b',
+            color: "#E5AD3E",
         }, {
             word: "SEO",
-            color: '#00b4cb',
+            color: "#49C5DE",
         }, {
             word: "consulting",
-            color: '#49599a',
+            color: "#66BA86",
         }, {
             word: "webmaster services",
-            color: '#00af85',
+            color: "#27688E",
         }
     ];
 
@@ -58,7 +59,7 @@ const HeroBanner = (props) => {
         <div className="hero-banner">
             <div className="hero-text-container heading-1">
                 <p>Do you need reliable, creative, experienced website <br/>
-                    {/* <span id="rotatingWord">
+                    <span id="rotatingWord">
                         {words.map(({ word, color }, idx) => (
                             <span key={`word-${idx}`} className="word" style={{ color }}>
                                 <RotatingText 
@@ -68,7 +69,7 @@ const HeroBanner = (props) => {
                                 />
                             </span>
                         ))}
-                    </span> */}
+                    </span>
                 </p>
                 <button className="button large secondary-button">Learn More</button>
             </div>

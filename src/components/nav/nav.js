@@ -32,7 +32,7 @@ const Nav = ({ menuToggleClass }) => {
     return (
         <nav role="navigation" id="mainNav" className={menuToggleClass}>
             <h2 className="screen-reader-text">Main Navigation</h2>
-            <ul>{navItems.items.map((item, i) => (
+            <ul onClick={(e) => e.stopPropagation()}>{navItems.items.map((item, i) => (
                 <li key={i} aria-haspopup={( item.child_items ) !== null ? true : false} className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}>
                     <Link to={item.slug}>
                         {ReactHtmlParser(item.title)}
