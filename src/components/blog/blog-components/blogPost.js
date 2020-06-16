@@ -8,35 +8,20 @@ import FeatureBlogCard from "./featureBlogCard"
 import FeaturedImage from "./featuredImage"
 import BlogMeta from "./blogMeta"
 
-const BlogPost = (props) => {
-    console.log('BlogPost props', props);
-    
-    // const { isFeaturedPost, featuredPost, postData, type } = props || {}
+const BlogPost = ({ type, postData, isFeaturedPost }) => {
+    console.log('BlogPost ');
 
-    const { path, title, excerpt, featured_media, type, ...metaProps } = props.postData
+    const { path, title, excerpt, featured_media, ...metaProps } = postData
 
-    // const { 
-    //     path,
-    //     title,
-    //     author,
-    //     featured_media, 
-    //     excerpt, 
-    //     date, 
-    //     modified, 
-    //     categories,
-    //     sticky } = featuredPost || postData.featuredPost || postData || {}
-
-
-         
     return (
-        <div className={( props.isFeaturedPost ) ? `${blogPostStyles.blogPost} ${blogPostStyles.featuredPost}` : blogPostStyles.blogPost}>
+        <div className={( isFeaturedPost ) ? `${blogPostStyles.blogPost} ${blogPostStyles.featuredPost}` : blogPostStyles.blogPost}>
 
             <Link to={path}>
             {
-                ( props.isFeaturedPost ) ? (
+                ( isFeaturedPost ) ? (
                     <div className={blogPostStyles.featuredImageContainer}>
                         <FeaturedImage isFeature={true} featuredImage={featured_media} />
-                        <FeatureBlogCard postData={props.postData} />
+                        <FeatureBlogCard postData={postData} />
                     </div>
                 ) 
                 : 

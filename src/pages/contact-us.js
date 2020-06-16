@@ -8,23 +8,23 @@ import ContactForm from "../components/form/contactFormCallout"
 
 import "../styles/pages.scss"
 
-export default ({ data, location }) => {
+export default ({ data }) => {
     console.log('contact us page', data);
     
-    const { pathname: path } = location
+    const { path, title, type } = data.wordpressPage
 
     return (
-        <Layout path={path} layoutClass="contact-us">
+        <Layout path={path} layoutClass={title}>
+            <PageBanner bannerType="page" title={title} />
 
-            <PageBanner bannerType="page" title={"Contact Us"} />
-
-            <PageContent path={location.pathname} type="contact">
+            <PageContent path={path} type={type}>
                 <ContactForm 
                     heading="Begin the Journey" 
                     paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
-                    formPath={path} isAddFields={true} />
-            </PageContent>
+                    formPath={path} isAddFields={true} 
 
+                    />
+            </PageContent>
         </Layout>
     )
 
@@ -37,6 +37,8 @@ export const queryPage = graphql`
     query contactPage {
         wordpressPage(wordpress_id: {eq: 1722}) {
             title
+            type
+            path
         }
     }
 `

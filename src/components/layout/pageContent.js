@@ -11,16 +11,14 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.path a page title used to add as classname to the component 
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
-const PageContent = ({ type, content }) => {
-    console.log('pageContent type, content', type, content);
+const PageContent = ({ path, type, content, children }) => {
+    console.log('pageContent type, content', type, content, children);
 
     return (
         <div className={(type === 'post') ? pageContentStyles.blogContent : pageContentStyles.pageContent}>{ 
-
-                <div className={pageContentStyles.pageContentInner}>
-                    {ReactHtmlParser(content)}
-                </div>
-             
+            <div className={pageContentStyles.pageContentInner}>
+                {( children ) ? children : ReactHtmlParser(content)}
+            </div>          
         }</div>
     )    
     
@@ -29,6 +27,6 @@ const PageContent = ({ type, content }) => {
 export default PageContent
 
 PageContent.propTypes = {
-    path: PropTypes.string.isRequired,
+    path: PropTypes.string,
     type: PropTypes.string
 }

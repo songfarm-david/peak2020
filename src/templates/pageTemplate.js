@@ -18,13 +18,15 @@ import "../styles/pages.scss"
 export default ({ data, location, pageContext }) => {
     console.log('page template data', data, location, pageContext);
 
+    const { title, type, content } = data.wordpressPage
+
     return (
-        <Layout path={location.pathname} layoutClass={data.wordpressPage.title}>
+        <Layout path={location.pathname} layoutClass={title}>
             
             {(location.pathname === '/' && <HeroSection />) || 
-            <PageBanner bannerType={data.wordpressPage.type} title={data.wordpressPage.title} />}
+            <PageBanner bannerType={type} title={title} />}
 
-            <PageContent type={data.wordpressPage.type} content={data.wordpressPage.content} />
+            <PageContent type={type} content={content} />
 
             <BlogCallout />
             <Newsletter path={location.pathname} />
