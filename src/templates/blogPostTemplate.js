@@ -22,7 +22,7 @@ export default ({ data, location, pageContext }) => {
     const { title, type, featured_media, content, ...metaProps } = data.wordpressPost
     
     return (
-        <Layout path={location.pathname} layoutClass={title}> 
+        <Layout path={location.pathname} layoutClass={"blog-post " + title}> 
 
             <PageBanner bannerType={type} title={title} bannerImg={featured_media} bannerData={(type === 'post') ? {metaProps, title} : null} />
             

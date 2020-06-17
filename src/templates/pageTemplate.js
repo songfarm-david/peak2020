@@ -15,18 +15,27 @@ import "../styles/pages.scss"
  * Page template
  * Mar 2020
  */
-export default ({ data, location, pageContext }) => {
-    console.log('page template data', data, location, pageContext);
+export default ({ data, location }) => {
 
-    const { title, type, content, slug } = data.wordpressPage
-
+    const { 
+        title, 
+        type, 
+        content, 
+        slug, 
+        featured_media, 
+        parent_element } = data.wordpressPage
+    
     return (
-        <Layout path={location.pathname} layoutClass={title}>
+        <Layout path={location.pathname} layoutClass={title}>{
             
-            {(location.pathname === '/' && <HeroSection />) || 
-            <PageBanner bannerType={type} title={title} />}
+            (location.pathname === '/' && <HeroSection />) 
+            || <PageBanner bannerType={type} title={title} />}
 
-            <PageContent path={slug} type={type} content={content} />
+            <PageContent 
+                path={slug} 
+                type={(parent_element) ? parent_element.slug : type} 
+                content={content} 
+                featuredMedia={featured_media} />
 
             <BlogCallout />
             <Newsletter path={location.pathname} />
@@ -34,7 +43,6 @@ export default ({ data, location, pageContext }) => {
                 
         </Layout>
     )
-
 }
 
 export const pageQuery = graphql`
@@ -48,6 +56,10 @@ export const pageQuery = graphql`
             excerpt
             type
             slug
+            parent_element {
+                id
+                slug
+            }
             featured_media {
                 alt_text
                 localFile {

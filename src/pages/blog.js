@@ -16,7 +16,7 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 export default ({ data }) => {
 
     const { wordpressPage, allWordpressPost, featuredPost } = data
-    const { title, type, path } = wordpressPage
+    const { title, type, path, slug } = wordpressPage
     
     /**
      * Validate presence of value for Sticky Post
@@ -28,7 +28,7 @@ export default ({ data }) => {
     return (
         <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-            <PageContent path={path}>
+            <PageContent path={slug}>
                 {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
                 <AllPosts allPosts={allWordpressPost} />   
             </PageContent>
@@ -49,6 +49,7 @@ export const queryAllPosts = graphql`
             title
             type
             path
+            slug
         }
         featuredPost: wordpressPost(sticky: {eq: true}) {
             id

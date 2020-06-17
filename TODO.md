@@ -3,7 +3,8 @@
 # wire up the quote carousel
 # Review mailing list stuff
 # Wire up forms, newsletter
-- proof services pages + links + side images
+- proof services pages + links + 
+# services side images
 # fix footer cramping on smalller viewports (flex)
 # one component for contact form
 # style blog posts
