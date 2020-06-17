@@ -16,15 +16,20 @@ const PageContent = ({ path, type, content, children, featuredMedia = false }) =
     console.log('PageContent path, type, content, children', path, type, content, children);
     
     return (
-    <div className={(type === 'post') ? 
-        pageContentStyles.blogContent : (type === 'services') ? 
-        `${pageContentStyles.servicePage} ${pageContentStyles.pageContent}` : `${pageContentStyles.pageContent} ${path}`}>
+    <div className={
+        (type === 'post') ?  pageContentStyles.blogContent 
+        : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
+        : `${pageContentStyles.pageContent} ${path}`}>
 
-            {(path === 'contact-us') ? children :
-                <div className={(featuredMedia) ? 
-                `${pageContentStyles.hasFeaturedImage} ${pageContentStyles.pageContentInner}` : pageContentStyles.pageContentInner}>
+            {(path === 'contact-us') ? children 
 
-            {(featuredMedia) ? <FeaturedImage featuredImage={featuredMedia} /> : null}
+                : <div className={
+                    (featuredMedia) ? `${pageContentStyles.hasFeaturedImage} ${pageContentStyles.pageContentInner}` 
+                    : pageContentStyles.pageContentInner}>
+
+            {(featuredMedia) ? <FeaturedImage featuredImage={featuredMedia} /> 
+            : false}
+
             {( children ) ? children : ReactHtmlParser(content)}
 
         </div>}
