@@ -2,19 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
-import blogPostStyles from "./blogPost.module.scss"
-
 import FeatureBlogCard from "./featureBlogCard"
 import FeaturedImage from "./featuredImage"
 import BlogMeta from "./blogMeta"
 
-const BlogPost = ({ type, postData, isFeaturedPost }) => {
-    console.log('BlogPost ');
+import blogPostStyles from "./blogPost.module.scss"
+
+const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
+    console.log('BlogPost type, postData, isFeaturedPost', type, postData, isFeaturedPost);
 
     const { path, title, excerpt, featured_media, ...metaProps } = postData
 
     return (
-        <div className={( isFeaturedPost ) ? `${blogPostStyles.blogPost} ${blogPostStyles.featuredPost}` : blogPostStyles.blogPost}>
+        <div className={
+            (isFeaturedPost) ? `${blogPostStyles.blogPost} ${blogPostStyles.featuredPost}` : blogPostStyles.blogPost}>
 
             <Link to={path}>
             {

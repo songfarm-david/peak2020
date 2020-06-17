@@ -49,9 +49,7 @@
         }
 
         &.has-child-items {          
-            > a {
-                margin-left: 1.5rem;
-            }
+            > a { margin-left: 1.5rem; }
         } 
 
         .arrow {
@@ -85,7 +83,8 @@
         border-radius: 1px;
         transition: all .25s ease;
         overflow: hidden;
-        
+        text-align: center;
+
         &.sub-menu-open {
             visibility: visible;
             max-height: 1000px;
@@ -103,6 +102,7 @@
                 }
     
                 .sub-sub-menu {
+                    padding: 0;
                     .sub-nav-item {
                         font-style: italic;
                         display: flex;
@@ -218,7 +218,7 @@
                             margin-bottom: .75rem;
                             box-sizing: border-box;
                             .sub-nav-item {
-                                justify-content: flex-start;
+                                // justify-content: flex-start;
                                 > a {
                                     padding: 0.5rem;
                                 }
