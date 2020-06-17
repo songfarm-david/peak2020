@@ -27,7 +27,7 @@ export default ({ data, location }) => {
         parent_element } = data.wordpressPage
     
     return (
-        <Layout path={location.pathname} layoutClass={title}>{
+        <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>{
             
             (location.pathname === '/' && <HeroSection />) 
             || <PageBanner bannerType={type} title={title} />}
