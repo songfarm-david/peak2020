@@ -8,19 +8,31 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    &.blogSectionCallout {
+    &.blogCallout {
+        /* blogCallout.js */
         background-color: $light-green;
         padding: $content-padding;
         padding-bottom: $vertical-rhythm;
+        .calloutContainer {
+            width: 100%;
+        }
     }
-    .calloutBtn { }
+    &.featuredPost {
+        /* FeaturedPost.js */
+        // border: 2px solid orange;
+    }
+    &.blogIndex {
+        /* allPosts.js */
+        // border: 2px solid grey;
+    }
+    //.calloutBtn { /* button class */ }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
     .blogSectionContainer {
-        &.blogSectionCallout {
-            .blogInner {
-                max-width: $content-width;
+        &.blogCallout {
+            .calloutContainer {
+                width: $content-width;
                 margin: 0 auto;
             }
         }

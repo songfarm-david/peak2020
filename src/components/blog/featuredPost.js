@@ -6,9 +6,11 @@ import BlogPost from "./blog-components/blogPost"
 import blogStyles from "../../styles/posts.module.scss"
 
 const FeaturedPost = ({ postData }) => ( 
-    <article id="featuredPost" className={blogStyles.blogSectionContainer}>
+    <article className={`${blogStyles.blogSectionContainer} ${blogStyles.featuredPost}`}>
         <BlogHeading headingText="Featured Blog Articles" />
-        <BlogPost isFeaturedPost={true} postData={postData} />
+        <div className={blogStyles.blogInner}>
+            <BlogPost isFeaturedPost={true} postData={postData} />
+        </div>
     </article>
 )
 

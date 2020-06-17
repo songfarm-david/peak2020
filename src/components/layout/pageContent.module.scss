@@ -15,22 +15,11 @@
         padding: $content-padding;
         display: flex;
         justify-content: flex-start;
-        // &.hasFeaturedImage {
-        //     display: block;
-        //     > div {
-        //         height: auto;
-        //         max-width: 18rem; 
-        //         float: left;
-        //         width: 100%;
-        //         margin-right: $top-margin;
-        //         margin-bottom: $top-margin;
-        //     }
-        // }
-        
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     &.servicePage {
-        // display: flex;
         .pageContentInner {
             justify-content: center;
         }
@@ -50,17 +39,6 @@
             margin: 0 auto;
             justify-content: flex-start;
             flex-wrap: wrap;
-            // > div {
-            //     order: -1;
-            //     width: 35%;
-            //     // flex-basis: 35%;
-            //     float: left;
-            //     margin-right: $top-margin;
-                
-            // }
-            // > p {
-            //     flex: 1 0 auto;
-            // }
             &.hasFeaturedImage {
                 display: block;
                 > div {
@@ -73,7 +51,5 @@
                 }
             }
         }
-
-        
     }
 }

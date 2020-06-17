@@ -33,7 +33,24 @@ const RotatingText = ({word, active, wasActive}) => {
     });
 
     useEffect(() => {
-        let timer
+        // let timer, interval
+        // if (!firstRun() && (active || wasActive)) {
+        //     const getTimeSpan = (i) => active
+        //         ? 340 + (i * 80)
+        //         : (i * 80);
+        //     letters.forEach((_, i) => {
+        //         const timeSpan = getTimeSpan(i);
+        //         const timeoutHandler = curLetter => () => {
+        //             elRefs(curLetter).current.classList.toggle(classNames()[curLetter]);
+        //             elRefs(curLetter).current.classList.toggle(classNames(active, curLetter)[curLetter]);
+        //         }
+        //         timer = setTimeout(timeoutHandler(i), timeSpan);
+        //         interval = clearInterval(timeoutHandler);
+        //     });
+        //     return () => {clearTimeout(timer), clearInterval(interval)}
+        // }        
+        // firstRun(false);
+        const timers = [];
         if (!firstRun() && (active || wasActive)) {
             const getTimeSpan = (i) => active
                 ? 340 + (i * 80)
@@ -41,15 +58,17 @@ const RotatingText = ({word, active, wasActive}) => {
             letters.forEach((_, i) => {
                 const timeSpan = getTimeSpan(i);
                 const timeoutHandler = curLetter => () => {
+                    if (!elRefs(curLetter).current) return;
                     elRefs(curLetter).current.classList.toggle(classNames()[curLetter]);
                     elRefs(curLetter).current.classList.toggle(classNames(active, curLetter)[curLetter]);
                 }
-                timer = setTimeout(timeoutHandler(i), timeSpan);
-                clearInterval(timeoutHandler);
+                timers.push(setTimeout(timeoutHandler(i), timeSpan));
             });
         }        
         firstRun(false);
-        return () => clearTimeout(timer)
+        return () => { 
+            timers.forEach((timer) => clearTimeout(timer));
+        }
     }, [word, active, wasActive, letters, firstRun, elRefs, classNames]);
     
     return (

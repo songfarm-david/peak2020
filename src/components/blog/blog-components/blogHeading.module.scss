@@ -22,8 +22,9 @@
 
 @media screen and (min-width: $mobile-breakpoint) {
     .blogHeading {
-        max-width: $content-width;
-        margin: 0 auto;
+        // max-width: $content-width;
+        // margin: 0 auto;
+        // border: 2px solid black;
         .barline { width: 65%;}
     }
 }

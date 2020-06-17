@@ -16,7 +16,8 @@ import "../styles/pages.scss"
  * Mar 2020
  */
 export default ({ data, location }) => {
-
+    console.log('pageTemplate.js data, location', data, location);
+    
     const { 
         title, 
         type, 

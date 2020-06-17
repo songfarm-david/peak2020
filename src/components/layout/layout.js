@@ -30,7 +30,9 @@ const Layout = ({ layoutClass, children, path }) => {
     return ( 
         <>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <main role="main" className={replaceClass(layoutClass)}>{children}</main>
+            <main role="main" className={replaceClass(layoutClass)}>
+                {children}
+            </main>
             <Footer path={path} />
         </> 
     )

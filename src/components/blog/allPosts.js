@@ -9,7 +9,7 @@ import blogStyles from "../../styles/posts.module.scss"
  * @param {Obj} param0 Object containing (limit of 6) blog posts
  */
 const AllPosts =({allPosts}) => (
-    <section id="allPosts" className={blogStyles.blogSectionContainer}>
+    <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogIndex}`}>
         <BlogHeading headingText="Latest Blog Articles" />
         <div className={blogStyles.blogInner}>
             {allPosts.edges.map(({ node }, idx) => (

@@ -13,13 +13,13 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
 const PageContent = ({ path, type, content, children, featuredMedia = false }) => {
-    console.log('PageContent path, type, content, children', path, type, content, children);
+    console.log('PageContent path, type, children, featuredMedia', path, type, children, featuredMedia);
     
     return (
     <div className={
         (type === 'post') ?  pageContentStyles.blogContent 
         : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
-        : `${pageContentStyles.pageContent} ${path}`}>
+            : `${pageContentStyles.pageContent} ${path}`}>
 
             {(path === 'contact-us') ? children 
 

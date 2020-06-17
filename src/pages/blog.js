@@ -14,7 +14,8 @@ import ContactFormCallout from "../components/form/contactFormCallout"
  * Blog Index page
  */
 export default ({ data }) => {
-
+    console.log('blog.js data', data);
+    
     const { wordpressPage, allWordpressPost, featuredPost } = data
     const { title, type, path, slug } = wordpressPage
     
@@ -28,10 +29,12 @@ export default ({ data }) => {
     return (
         <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-            <PageContent path={slug}>
-                {( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
+
+            <PageContent path={slug} type={type}>{
+                ( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
                 <AllPosts allPosts={allWordpressPost} />   
             </PageContent>
+
             <Newsletter path={path} />
             <ContactFormCallout path={path} />
         </Layout>

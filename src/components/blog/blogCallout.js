@@ -10,7 +10,7 @@ import blogStyles from "../../styles/posts.module.scss"
  * Blog section on home page: features 3 latest blogs
  * 
  */
-const BlogFeature = () => {
+const BlogCallout = () => {
     
     const query = useStaticQuery(
         graphql`
@@ -51,15 +51,19 @@ const BlogFeature = () => {
     const featuredPosts = query.allWordpressPost
 
     return (
-        <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogSectionCallout}`}>
-            <BlogHeading headingText="Latest Blog Articles" className="callout"/>
-            <div className={blogStyles.blogInner}>
-                {featuredPosts.edges.map(({ node }, idx) => (
-                    <BlogPost key={idx} postData={node} type="callout"/>
-                ))}  
-                <div className={blogStyles.calloutBtn}>
-                <Link to="/blog/" className="button primary-button">Go to blog</Link>
-            </div>
+        <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogCallout}`}>
+            <div className={blogStyles.calloutContainer}>
+                <BlogHeading headingText="Latest Blog Articles" className="callout"/>
+                <div className={blogStyles.blogInner}>
+                
+                    {featuredPosts.edges.map(({ node }, idx) => (
+                    <BlogPost key={idx} postData={node} type="callout"/> ))}  
+    
+                    <div className={blogStyles.calloutBtn}>
+                        <Link to="/blog/" className="button primary-button">Go to blog</Link>
+                    </div>
+                    
+                </div>
             </div>
             
         </section>
@@ -67,4 +71,4 @@ const BlogFeature = () => {
 
 }
 
-export default BlogFeature
+export default BlogCallout
