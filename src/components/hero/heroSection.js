@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "gatsby"
 
 import RotatingText from "./rotatingText.js"
 import "./heroSection.scss"
-import heroSlideStyles from "../../styles/globals/colors.scss";
 
 const HeroBanner = () => {
     
@@ -71,7 +71,7 @@ const HeroBanner = () => {
                         ))}
                     </span>
                 </p>
-                <button className="button large secondary-button">Learn More</button>
+                <Link to="/services/" title="Learn more" className="button secondary-button">Learn More</Link>
             </div>
         </div>
     )

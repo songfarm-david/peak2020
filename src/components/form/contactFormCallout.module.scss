@@ -3,7 +3,7 @@
 #contactFormContainer {
 
     background: url('../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
-    background-position: top 1rem right 1rem;
+    background-position: top 1rem left 0;
     background-origin: border-box; 
 
     article {
@@ -20,7 +20,7 @@
 
     @media screen and (min-width: $mobile-breakpoint) {
         background: url('../../images/illustrations/svg/trail_contact_desktop.svg') no-repeat;
-        background-position: top 25% right 25%;
+        background-position: top 25% left 0;
         article {
             .contactFormContainer {
                 max-width: $content-width;

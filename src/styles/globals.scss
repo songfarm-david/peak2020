@@ -48,8 +48,7 @@ html {
         color: $strong-blue;
     }
 
-    main.blog-post,
-    main.service-page {
+    main.blog-post {
         a[href] {
             text-decoration: underline;
         }

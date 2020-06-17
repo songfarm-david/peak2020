@@ -2,8 +2,11 @@
 
 .blogPost {
     padding-bottom: $top-margin;
-    // border: 1px solid black;
-    // .featuredImage { height: 13.75rem; }
+    
+    a[href] {
+        text-decoration: none !important;
+    }
+
     .featuredImageContainer { 
         position: relative; 
         width: 100%;
