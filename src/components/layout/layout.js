@@ -20,6 +20,8 @@ const Layout = ({ layoutClass, children, path }) => {
     `)
   
     const replaceClass = (cls) => {
+        console.log('replaceClass cls', cls);
+        
         if (cls.includes('blog-post')) {
             cls = cls.replace('blog-post', "")
             return 'blog-post ' + formatTitle(cls)

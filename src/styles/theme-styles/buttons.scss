@@ -10,6 +10,10 @@
     display: block;
     margin: 0 auto;
     display: inline-block;
+    position: relative;
+    z-index: 1001;
+    font-size: 1rem;
+    line-height: 1;
     &.large {
         font-size: 1.25rem;
     }
@@ -21,7 +25,8 @@
     background-color: $bright-orange;
     color: $white;
     border-color: $bright-orange;
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $strong-blue;
         border-color: $strong-blue;
         cursor: pointer;
@@ -31,7 +36,8 @@
 .primary-button-inverted {
     background-color: $white;
     color: $bright-orange;
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $bright-orange;
         color: $white;
         border-color: $bright-orange;
@@ -40,11 +46,10 @@
 }
 
 .secondary-button {
-    outline: $white;
     color: $white;
     background-color: transparent;
     &:hover {
-        outline: $bright-orange;
+        border-color: $bright-orange;
         color: $bright-orange;
         cursor: pointer;
     }

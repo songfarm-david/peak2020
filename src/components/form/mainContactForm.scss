@@ -34,9 +34,11 @@
     }
 
     button {
-        margin: $top-margin auto;
+        margin: $vertical-rhythm auto $top-margin;
         padding-left: $vertical-rhythm;
         padding-right: $vertical-rhythm;
+        display: block;
+        font-weight: bold;
     }
 
     .form-label {

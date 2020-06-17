@@ -3,7 +3,7 @@
 # wire up the quote carousel
 # Review mailing list stuff
 # Wire up forms, newsletter
-- proof services pages + links + 
+# proof services pages + links + 
 # services side images
 # fix footer cramping on smalller viewports (flex)
 # one component for contact form
@@ -12,7 +12,6 @@
 # add nice dynamic animating hamburger menu
 # fix rotating text section
 # Fix textarea text size in main contact form, inputs
-- fix category links on site(blog)
 - address sitemap page - confirm sitemap
 - finish 404 page
 - Address SEO concerns
@@ -22,8 +21,11 @@
 - test for broken links
 - configure domains and dns
 - do a baseline SEO measure pre-launch.
-- test Google Analytics
 - **LAUNCH SITE**
+- test Google Analytics
+- finish or revise digital marketing services page
+- fix category links on site(blog)
+- add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - put hero section images in Img tags
 - unpublish unnecessary CMS pages, landing-page
 - do a database backup
@@ -33,9 +35,9 @@
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - delete all ridiculous tags on my site
 - add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
-- add build hook for wp updates in Netlify
+# add build hook for wp updates in Netlify
 - Add/test a good modern CSS reset 
-- fix wierd nav transition/transform bug when switching viewport sizes
+# fix wierd nav transition/transform bug when switching viewport sizes
 - fix weird "quoting" behavior in footer
 - write a post for the Dev https://dev.to/new
 

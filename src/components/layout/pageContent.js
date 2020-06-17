@@ -16,7 +16,7 @@ const PageContent = ({ path, type, content, children, featuredMedia = false }) =
     console.log('PageContent path, type, children, featuredMedia', path, type, children, featuredMedia);
     
     return (
-    <div className={
+    <div id="pageContent" className={
         (type === 'post') ?  pageContentStyles.blogContent 
         : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
             : `${pageContentStyles.pageContent} ${path}`}>
