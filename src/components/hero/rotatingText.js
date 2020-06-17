@@ -33,6 +33,7 @@ const RotatingText = ({word, active, wasActive}) => {
     });
 
     useEffect(() => {
+        let timer
         if (!firstRun() && (active || wasActive)) {
             const getTimeSpan = (i) => active
                 ? 340 + (i * 80)
@@ -43,12 +44,12 @@ const RotatingText = ({word, active, wasActive}) => {
                     elRefs(curLetter).current.classList.toggle(classNames()[curLetter]);
                     elRefs(curLetter).current.classList.toggle(classNames(active, curLetter)[curLetter]);
                 }
-                setTimeout(timeoutHandler(i), timeSpan);
+                timer = setTimeout(timeoutHandler(i), timeSpan);
                 clearInterval(timeoutHandler);
             });
-            
         }        
         firstRun(false);
+        return () => clearTimeout(timer)
     }, [word, active, wasActive, letters, firstRun, elRefs, classNames]);
     
     return (
