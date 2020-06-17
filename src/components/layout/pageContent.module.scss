@@ -6,19 +6,33 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: $top-margin 0 $vertical-rhythm;
-    // padding-bottom: $vertical-rhythm * 2;
+    padding: .75rem 0 $vertical-rhythm;
     @extend .normal-text;  
     transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
 
     .pageContentInner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: block;
         padding: $content-padding;
+        display: flex;
+        justify-content: flex-start;
+        // &.hasFeaturedImage {
+        //     display: block;
+        //     > div {
+        //         height: auto;
+        //         max-width: 18rem; 
+        //         float: left;
+        //         width: 100%;
+        //         margin-right: $top-margin;
+        //         margin-bottom: $top-margin;
+        //     }
+        // }
+        
+    }
 
-        a[href] {
-            text-decoration: underline;
+    &.servicePage {
+        // display: flex;
+        .pageContentInner {
+            justify-content: center;
         }
     }
 
@@ -31,11 +45,35 @@
 
 @media screen and (min-width: $mobile-breakpoint) {
     .pageContent {
-        // width: $content-width;
         .pageContentInner {
             width: $content-width;
             margin: 0 auto;
             justify-content: flex-start;
+            flex-wrap: wrap;
+            // > div {
+            //     order: -1;
+            //     width: 35%;
+            //     // flex-basis: 35%;
+            //     float: left;
+            //     margin-right: $top-margin;
+                
+            // }
+            // > p {
+            //     flex: 1 0 auto;
+            // }
+            &.hasFeaturedImage {
+                display: block;
+                > div {
+                    height: auto;
+                    max-width: 18rem; 
+                    float: left;
+                    width: 100%;
+                    margin-right: $top-margin;
+                    margin-bottom: $top-margin;
+                }
+            }
         }
+
+        
     }
 }

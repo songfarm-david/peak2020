@@ -12,7 +12,6 @@ import twitter from "../../images/illustrations/png/Social Media Icons/twitter.p
 import footerStyles from "./footer.module.scss"
 
 const Footer = ({ path }) => {
-  console.log('foooter path', path);
   
   /* get footer links from CMS */
   const footerQuery = useStaticQuery(
@@ -61,20 +60,20 @@ const Footer = ({ path }) => {
         
                 {/* social component */}
                 <div className={footerStyles.footerItem}>
-                <ul>
-                    <li>
-                        <a href="" title="Peak Websites Facebook Page">
-                        <span><img src={facebook} alt={""} /></span>
-                        <span>Facebook</span>
+                    <ul>
+                        <li>
+                            <a href="" title="Peak Websites Facebook Page">
+                            <span><img src={facebook} alt={""} /></span>
+                            <span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                        <a href="" title="Peak Websites Twitter">
+                            <span><img src={twitter} alt={""} /></span>
+                            <span>Twitter</span>
                         </a>
-                    </li>
-                    <li>
-                    <a href="" title="Peak Websites Twitter">
-                        <span><img src={twitter} alt={""} /></span>
-                        <span>Twitter</span>
-                    </a>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
                 </div>
         
                 {/* Newsletter */}
@@ -90,10 +89,9 @@ const Footer = ({ path }) => {
                     <span><a href="tel:+17785879220">+1 778 587 9220</a></span>
                     <span><a href="mailto:david@peakwebsites.ca">david@peakwebsites.ca</a></span>
                 </div>
+            </div>
 
-            </div> 
-        </div>
-      
+        </div>  
     </footer>
   )
 }

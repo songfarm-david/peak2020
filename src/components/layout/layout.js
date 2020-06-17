@@ -18,11 +18,13 @@ const Layout = ({ layoutClass, children, path }) => {
         }
     `)
   
-    return ( <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main id="mainContent" role="main" className={(layoutClass) ? formatTitle(layoutClass) : null}>{children}</main>
-        <Footer path={path} />
-    </> )
+    return ( 
+        <>
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <main role="main" className={(layoutClass) ? formatTitle(layoutClass) : null}>{children}</main>
+            <Footer path={path} />
+        </> 
+    )
 }
 
 export default Layout

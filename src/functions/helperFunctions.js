@@ -1,3 +1,14 @@
+import ReactHtmlParser from 'react-html-parser';
+
+/**
+ * Formats a page title for front-facing 
+ * @param {Str} pageTitle a post or page title
+ */
+export function formatTitle(pageTitle) {
+    // look for first occurence of space and replace with a dash '-'
+    let formattedTitle = pageTitle.toLowerCase().trim().replace(/\s/g, '-')
+    return ReactHtmlParser(formattedTitle)
+}
 
 /**
  * Adds an ellipsis to blocks of text of 100 characters
@@ -37,30 +48,14 @@ export function getAuthor(categories, author) {
     ? 'Guest Post' :  author
 }
 
-export function formatTitle(pageTitle) {
-    let t = pageTitle.toLowerCase().replace(/\s/g, '-')
-    // look for first occurence of space and replace with a dash '-'
-    return t
-}
-
-// export function removeDash(pageTit) {
-//     let p = pageTit.replace(/-/g, ' ')
-//     return p
-// }
-
-// export const getRelPath = () => {
-//     const url = typeof window !== 'undefined' ? window.location.pathname : '';
-//     return url;
-// }
-
 /**
  * This function search a string for a particular string of text
  * Used mostly for finding a class within a strong of content
  * @param {Str} str the string to test against
  * @param {Str} textStr the string to test
  */
-export const includesStr = (str, textStr) => {
-    if (!str) return
-    let s = str.toString()
-    return s.includes(textStr) ? true : false
-}
+// export const includesStr = (str, textStr) => {
+//     if (!str) return
+//     let s = str.toString()
+//     return s.includes(textStr) ? true : false
+// }

@@ -8,15 +8,13 @@
 # one component for contact form
 # style blog posts
 # finish style header + nav (modules)
-- put hero section images in Img tags
 # add nice dynamic animating hamburger menu
 # fix rotating text section
-- Fix textarea text size in main contact form, inputs
+# Fix textarea text size in main contact form, inputs
 - fix category links on site(blog)
-- address sitemap page
+- address sitemap page - confirm sitemap
 - finish 404 page
 - Address SEO concerns
-- confirm sitemap 
 - clean up build processes stuff in gatsby   
 - confirm redirects
 - redirect 'local seo victoria' to 'local seo' global page
@@ -25,6 +23,7 @@
 - do a baseline SEO measure pre-launch.
 - test Google Analytics
 - **LAUNCH SITE**
+- put hero section images in Img tags
 - unpublish unnecessary CMS pages, landing-page
 - do a database backup
 - remove .hey-now class from contact page/ remove WPForms

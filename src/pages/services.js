@@ -26,7 +26,7 @@ export default ({ data }) => {
     return (
         <Layout path={path} layoutClass={title}>
             <PageBanner bannerType={type} title={title} />
-            <PageContent path={slug} type={type}>
+            <PageContent path={slug} type={slug}>
                 {allServices.edges.map((service, idx) => (
                     <ServiceCard key={idx} service={service.node} />
                 ))}

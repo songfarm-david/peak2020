@@ -23,30 +23,15 @@ main {
         .heroBody { padding: 0; }
     }
 
-    // .blog-inner-container {
-    //     display: flex;
-    //     flex-wrap: wrap;
-    // }
-
-    // .blog-content-container {
-    //     box-sizing: border-box;
-    //     padding: 0 0 $top-margin;
-    //     + .blog-content-container {
-    //         padding-top: 0;
-    //     }
-    // }
-
     .home, .about {
         position: relative;
         width: 100%;
-        padding: 0;
         .heroText { margin: 0; }
         .heroImage { order: 1; }
         .heroButton {
             width: 100%;
             flex-basis: 100%;
         }   
-        
     }
 
     .home {
@@ -116,6 +101,6 @@ main {
                 }
             
         }
-
+        
     }
 }
