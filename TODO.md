@@ -12,18 +12,18 @@
 # add nice dynamic animating hamburger menu
 # fix rotating text section
 # Fix textarea text size in main contact form, inputs
-- address sitemap page - confirm sitemap
-- finish 404 page
-- Address SEO concerns
+# finish 404 page
 - clean up build processes stuff in gatsby   
 - confirm redirects
 - redirect 'local seo victoria' to 'local seo' global page
 - test for broken links
 - configure domains and dns
+- Address SEO concerns
 - do a baseline SEO measure pre-launch.
 - **LAUNCH SITE**
 - test Google Analytics
 - finish or revise digital marketing services page
+- address sitemap page - confirm sitemap
 - fix category links on site(blog)
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - put hero section images in Img tags
@@ -42,7 +42,7 @@
 - write a post for the Dev https://dev.to/new
 
 ## nice to have's
-- add some simple css animations like rise up fade in 
+# add some simple css animations like rise up fade in 
 - create an alias for david@peakwebsites - sayhello@peakwebsites.ca
 - Verify manifest.json / PWA + image
 - add a little section in the blog 'see an error? get in touch'?
