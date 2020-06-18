@@ -17,20 +17,37 @@
         justify-content: flex-start;
         justify-content: center;
         flex-wrap: wrap;
+        &.hasFeaturedImage {
+            p {
+                flex-basis: 100%;
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    &.blogContent {
+        margin-top: 13.5rem;
+        .pageContentInner {
+            display: block;
+        }
     }
 
     &.servicePage {
         .pageContentInner {
             justify-content: center;
         }
+        .pageContentInner.hasFeaturedImage {
+            justify-content: flex-start;
+        }
     }
 
 }
 
-.blogContent {
-    composes: pageContent;
-    margin-top: 12rem;
-}
+// .blogContent {
+//     composes: pageContent;
+// }
 
 @media screen and (min-width: $mobile-breakpoint) {
     .pageContent {
@@ -41,14 +58,6 @@
             flex-wrap: wrap;
             &.hasFeaturedImage {
                 display: block;
-                > div {
-                    height: auto;
-                    max-width: 18rem; 
-                    float: left;
-                    width: 100%;
-                    margin-right: $top-margin;
-                    margin-bottom: $top-margin;
-                }
             }
         }
     }

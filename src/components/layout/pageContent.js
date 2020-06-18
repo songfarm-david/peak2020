@@ -1,9 +1,11 @@
 import React from "react"
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
-import pageContentStyles from "./pageContent.module.scss"
 
 import FeaturedImage from "../blog/blog-components/featuredImage"
+
+import pageContentStyles from "./pageContent.module.scss"
+
 /**
  * Parses props to determine what kind of content is being passed in
  * Options include:
@@ -17,7 +19,7 @@ const PageContent = ({ path, type, content, children, featuredMedia = false }) =
     
     return (
     <div id="pageContent" className={
-        (type === 'post') ?  pageContentStyles.blogContent 
+        (type === 'post') ?  `${pageContentStyles.blogContent} ${pageContentStyles.pageContent}` 
         : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
             : `${pageContentStyles.pageContent} ${path}`}>
 
@@ -27,7 +29,7 @@ const PageContent = ({ path, type, content, children, featuredMedia = false }) =
                     (featuredMedia) ? `${pageContentStyles.hasFeaturedImage} ${pageContentStyles.pageContentInner}` 
                     : pageContentStyles.pageContentInner}>
 
-            {(featuredMedia) ? <FeaturedImage featuredImage={featuredMedia} /> 
+            {(featuredMedia) ? <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
             : false}
 
             {( children ) ? children : ReactHtmlParser(content)}

@@ -1,9 +1,31 @@
-
+@import "../../../styles/globals.scss";
 
 .featuredImage {
     height: 13.75rem;
-}
-.featuredFull {
-    height: 30rem;
     width: 100%;
+    &.pageFeature {
+        order: 1;
+        height: 100%;
+        max-width: 30rem;
+    }
+    &.featuredFull {
+        height: 30rem;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .featuredImage {
+        &.pageFeature {
+            height: auto;
+            max-width: 20rem;
+            float: left;
+            width: 100%;
+            margin: 0 $top-margin $top-margin 0;
+        }
+        &.featuredFull {
+            height: 30rem;
+            width: 100%;
+        }
+    }
 }
