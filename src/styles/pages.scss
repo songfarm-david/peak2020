@@ -33,8 +33,7 @@ main {
         .heroText { margin: 0; }
         .heroImage { order: 1; }
         .heroButton {
-            // width: 100%;
-            // flex-basis: 100%;
+            > a { color: inherit}
         }   
     }
 
