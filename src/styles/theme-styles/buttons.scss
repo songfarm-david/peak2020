@@ -4,14 +4,14 @@
 .button {
     border-radius: $border-radius;
     border: 2px solid $white;
-    padding: 0.5rem 2rem;
+    padding: $margin-bottom $top-margin;
     text-transform: uppercase;
     font-weight: bold;
     display: block;
     margin: 0 auto;
     display: inline-block;
     position: relative;
-    z-index: 1001;
+    z-index: 101;
     font-size: 1rem;
     line-height: 1;
     &.large {

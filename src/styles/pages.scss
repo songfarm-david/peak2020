@@ -3,8 +3,8 @@
 main {
 
     .heroImage {
-        padding: 0 $margin-bottom;
-        padding: $margin-bottom;
+        padding: 0 $top-margin;
+        margin: $top-margin 0 ;
         height: 100%;
     }
 
@@ -23,14 +23,18 @@ main {
         .heroBody { padding: 0; }
     }
 
+    // .heroButton {
+    //     border: $border;
+    // }
+
     .home, .about {
         position: relative;
         width: 100%;
         .heroText { margin: 0; }
         .heroImage { order: 1; }
         .heroButton {
-            width: 100%;
-            flex-basis: 100%;
+            // width: 100%;
+            // flex-basis: 100%;
         }   
     }
 
@@ -39,7 +43,7 @@ main {
             content: '';
             display: block;
             background: url('../images/illustrations/svg/compass.svg') no-repeat;
-            background-position: 100% bottom;
+            background-position: 101% bottom;
             background-size: 19rem;
             padding-bottom: 9rem;
             height: 100%;
