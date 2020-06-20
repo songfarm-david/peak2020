@@ -18,14 +18,19 @@
 - redirect 'local seo victoria' to 'local seo' global page
 - test for broken links
 - configure domains and dns
+- narrow contact form on mobile views, make sure bg image is other trail image
+- hide footer on 404 page
 - Address SEO concerns
 - do a baseline SEO measure pre-launch.
 - **LAUNCH SITE**
 - test Google Analytics
+- add a confirmation popup when contact form
 - finish or revise digital marketing services page
 - address sitemap page - confirm sitemap
 - fix category links on site(blog)
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
+- consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ 
+- add fog effect to 404 page too!
 - put hero section images in Img tags
 - unpublish unnecessary CMS pages, landing-page
 - do a database backup

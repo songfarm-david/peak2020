@@ -4,9 +4,14 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Peak Websites`,
-    description: ``,
-    author: `David Gaskin`
+    title: "Peak Websites",
+    description: "Providing reliable, custom solutions in web marketing and consultations, web design & development, SEO, web maintenance and more.",
+    author: "David Gaskin",
+    image: "src/images/about.png",
+    titleTemplate: "%s · Peak Websites",
+    url: "https://peakwebsites.ca",
+    twitterUsername: "@peakwebsite",
+    facebookUrl: "https://www.facebook.com/peakwebsiteservices/"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
