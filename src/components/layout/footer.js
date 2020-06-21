@@ -91,11 +91,11 @@ const Footer = ({ path }) => {
                     </div>
                 </div>
         
-                <div className={footerStyles.footerItem}>
+                {/* <div className={footerStyles.footerItem}>
                     <span>Contact</span>
                     <span><a href="tel:+17785879220">+1 778 587 9220</a></span>
                     <span><a href="mailto:david@peakwebsites.ca">david@peakwebsites.ca</a></span>
-                </div>
+                </div> */}
             </div>
 
         </div>  
