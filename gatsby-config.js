@@ -11,6 +11,7 @@ module.exports = {
     titleTemplate: "%s · Peak Websites",
     url: "https://peakwebsites.ca",
     twitterUsername: "@peakwebsite",
+    twitterLink: "https://twitter.com/peakwebsite",
     facebookUrl: "https://www.facebook.com/peakwebsiteservices/"
   },
   plugins: [

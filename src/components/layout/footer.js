@@ -17,6 +17,12 @@ const Footer = ({ path }) => {
   const footerQuery = useStaticQuery(
     graphql`
         query {
+            site {
+                siteMetadata {
+                    twitterLink
+                    facebookUrl
+                }
+            }
             wordpressMenusMenusItems(wordpress_id: {eq: 179}) {
                 id
                 wordpress_id
@@ -31,6 +37,7 @@ const Footer = ({ path }) => {
     `)
   
   const footerLinks = footerQuery.wordpressMenusMenusItems 
+  const { twitterLink, facebookUrl } = footerQuery.site.siteMetadata
     
   return (
     <footer id={footerStyles.siteFooter}>
@@ -62,14 +69,14 @@ const Footer = ({ path }) => {
                 <div className={footerStyles.footerItem}>
                     <ul>
                         <li>
-                            <a href="" title="Peak Websites Facebook Page">
-                            <span><img src={facebook} alt={""} /></span>
+                            <a href={facebookUrl} title="Peak Websites Facebook Page">
+                            <span><img src={facebook} alt={"Peak Websites Facebook Page"} /></span>
                             <span>Facebook</span>
                             </a>
                         </li>
                         <li>
-                        <a href="" title="Peak Websites Twitter">
-                            <span><img src={twitter} alt={""} /></span>
+                        <a href={twitterLink} title="Peak Websites Twitter">
+                            <span><img src={twitter} alt={"Peak Websites Twitter Page"} /></span>
                             <span>Twitter</span>
                         </a>
                         </li>
