@@ -9,7 +9,7 @@
     padding: .75rem 0 $vertical-rhythm;
     @extend .normal-text;  
     transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
-
+    margin-bottom: $vertical-rhythm;
     .pageContentInner {
         display: block;
         padding: $content-padding;

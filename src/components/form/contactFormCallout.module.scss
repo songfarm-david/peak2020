@@ -3,12 +3,12 @@
 #contactFormContainer {
 
     background: url('../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
-    background-position: top 1rem left 0;
+    background-position: bottom left 0;
     background-origin: border-box; 
 
     article {
         .contactFormContainer {
-            padding: $content-padding;
+            padding: $top-margin;
             .introContainer { text-align: center; }
             .heading { 
                 font: $heading-2;

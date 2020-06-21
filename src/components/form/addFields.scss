@@ -36,17 +36,12 @@
         .checkbox-container {
             display: flex;
             flex-wrap: wrap;
-
             .checkbox-input-container {
-
                 display: flex;
                 align-items: center;
                 flex-basis: 50%;
                 text-align: left;
                 margin-bottom: .75rem;
-                // &:last-child {
-                //     margin-right: 0;
-                // }
                 input[type="checkbox"] {
                     position: absolute;
                     opacity: 0;
@@ -60,21 +55,19 @@
                             border: 2px solid $strong-blue;
                             border-radius: $border-radius;
                             display: inline-block;
-                            width: 16px;
-                            height: 16px;
+                            width: 1.5rem;
+                            height: 1.5rem;
                             margin-right: 0.75rem;
-                            // margin-top: 0.5em;
-                            // vertical-align: -2px;
                           }
                     }
                     &:checked {
                         +span:before {
-                            background-image: url('../../images/illustrations/svg/ice\ axe.svg');
+                            background-image: url('../../images/illustrations/svg/x.svg');
                             background-repeat: no-repeat;
                             background-position: center;
                             /* The size of the checkmark icon, you may/may not need this */
-                            background-size: 25px;
-                            border-radius: 4px;
+                            background-size: auto;
+                            // border-radius: 4px;
                             background-color: $lighter-blue;
                             color: white;
                         }
