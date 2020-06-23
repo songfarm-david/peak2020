@@ -5,7 +5,7 @@ import Header from "./header"
 import Footer from "./footer"
 
 const Layout = ({ layoutClass, children, path }) => {
-    console.log('Layout component', layoutClass, children, path);
+    // console.log('Layout component', layoutClass, children, path);
     
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
@@ -20,7 +20,7 @@ const Layout = ({ layoutClass, children, path }) => {
     `)
   
     const replaceClass = (cls) => {
-        console.log('replaceClass cls', cls);
+        // console.log('replaceClass cls', cls);
         
         if (cls.includes('blog-post')) {
             cls = cls.replace('blog-post', "")

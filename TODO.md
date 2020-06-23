@@ -29,8 +29,10 @@
 - address sitemap page - confirm sitemap
 - fix category links on site(blog)
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
+- optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 - consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ 
 - add fog effect to 404 page too!
+- add search functionality: https://www.gatsbyjs.org/docs/adding-search/
 - put hero section images in Img tags
 - unpublish unnecessary CMS pages, landing-page
 - do a database backup

@@ -1,13 +1,10 @@
-// require("dotenv").config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// })
 
 module.exports = {
   siteMetadata: {
     title: "Peak Websites",
     description: "Providing reliable, custom solutions in web marketing and consultations, web design & development, SEO, web maintenance and more.",
     author: "David Gaskin",
-    image: "src/images/about.png",
+    image: "src/images/logo/Logo_squared.png",
     titleTemplate: "%s · Peak Websites",
     url: "https://peakwebsites.ca",
     twitterUsername: "@peakwebsite",
@@ -28,13 +25,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/logo/Logo.png`, // This path is relative to the root of the site.
+        name: "Peak Websites",
+        short_name: "Peak Websites",
+        start_url: "/",
+        background_color: "#27688E",
+        theme_color: "#27688E",
+        display: "minimal-ui",
+        icon: "src/images/logo/Logo_squared.png",
       },
     },
     {

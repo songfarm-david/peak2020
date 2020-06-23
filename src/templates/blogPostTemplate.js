@@ -1,7 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Helmet from "react-helmet"
+import S from 'string'
 
 import Layout from "../components/layout/layout"
+import SEO from "../components/seo"
+
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import Newsletter from "../components/layout/newsletter"
@@ -12,16 +16,31 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 * Mar 2020
 */
 export default ({ data, location, pageContext }) => {
-    console.log('blogTemplate data, location, pageContext', data, location, pageContext);
+    // console.log('blogTemplate data, location, pageContext', data, location, pageContext);
 
     /* create proptypes and stream a var declaration format that is clearer 
         the difference between page templates and blog templates is that blog posts must inlude a 'featured_media' property to be passed into the PageBanner component
     */
 
-    const { title, type, featured_media, content, ...metaProps } = data.wordpressPost
+    const { 
+        title, 
+        type, 
+        featured_media, 
+        excerpt, 
+        content, 
+        ...metaProps 
+    } = data.wordpressPost
     
     return (
         <Layout path={location.pathname} layoutClass={"blog-post " + title}> 
+            <SEO 
+                title={title} 
+                description={excerpt} 
+                image={featured_media}
+                path={location.href}
+            />
+
+            <Helmet title={S(title).decodeHTMLEntities().s} />
 
             <PageBanner bannerType={type} title={title} bannerImg={featured_media} bannerData={(type === 'post') ? {metaProps, title} : null} />
             
@@ -44,6 +63,7 @@ export const query = graphql`
             type
             sticky
             title
+            excerpt
             date(formatString: "MMM Do, YYYY")
             modified(formatString: "MMM Do, YYYY")
             content
@@ -59,11 +79,16 @@ export const query = graphql`
             featured_media {
                 alt_text
                 localFile {
+                    url
                     childImageSharp {
                         fluid {
                         ...GatsbyImageSharpFluid
                         }
                     }
+                }
+                media_details {
+                    height
+                    width
                 }
             }
         }
