@@ -15,10 +15,10 @@ const Header = ({ siteTitle }) => {
                     <img id={headerStyles.siteLogo} src={siteLogo} alt={""} />
                     <h1 className="screen-reader-text">{siteTitle}</h1>
                 </Link>
-                <div onClick={() => toggleMenu( !isMenuOpen )}>
+                <button onClick={() => toggleMenu( !isMenuOpen )}>
                     <Nav menuToggleClass={( isMenuOpen ) ? 'menu-active' : null} />
                     <Hamburger isActive={ isMenuOpen } />
-                </div>  
+                </button>  
             </div>
         </header>
     )
