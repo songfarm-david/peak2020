@@ -14,7 +14,7 @@ import ContactFormCallout from "../components/form/contactFormCallout"
  * Blog Index page
  */
 export default ({ data }) => {
-    console.log('blog.js data', data);
+    // console.log('blog.js data', data);
     
     const { wordpressPage, allWordpressPost, featuredPost } = data
     const { title, type, path, slug } = wordpressPage

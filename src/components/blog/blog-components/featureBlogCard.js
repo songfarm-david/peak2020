@@ -9,7 +9,7 @@ import cardStyles from "./featureBlogCard.module.scss"
  * @param {*} param0 
  */
 const FeatureBlogCard = ({ postData }) => {
-    console.log('featureBlogCard postData', postData);
+    // console.log('featureBlogCard postData', postData);
 
     const { author, date, modified, categories, sticky } = postData.metaProps || postData
     

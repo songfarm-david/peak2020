@@ -1,9 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Helmet from "react-helmet"
+import S from 'string'
 
 import Layout from "../components/layout/layout"
+import SEO from "../components/seo"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
+
 import HeroSection from "../components/hero/heroSection"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
@@ -16,21 +20,34 @@ import "../styles/pages.scss"
  * Mar 2020
  */
 export default ({ data, location }) => {
-    console.log('pageTemplate.js data, location', data, location);
+    // console.log('pageTemplate location', location);
     
     const { 
         title, 
-        type, 
+        type,
+        excerpt, 
         content, 
         slug, 
         featured_media, 
-        parent_element } = data.wordpressPage
+        parent_element 
+    } = data.wordpressPage
+
+    console.log('pageTemplate title', title);
     
     return (
-        <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>{
-            
-            (location.pathname === '/' && <HeroSection />) 
-            || <PageBanner bannerType={type} title={title} />}
+        <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>
+
+            <SEO 
+                title={title} 
+                description={excerpt} 
+                image={featured_media}
+                path={location.href}
+            />
+
+            <Helmet title={S(title).decodeHTMLEntities().s} />
+
+            {(location.pathname === '/' && <HeroSection />) 
+                || <PageBanner bannerType={type} title={title} />}
 
             <PageContent 
                 path={slug} 
@@ -64,11 +81,16 @@ export const pageQuery = graphql`
             featured_media {
                 alt_text
                 localFile {
+                    url
                     childImageSharp {
                         fluid {
                         ...GatsbyImageSharpFluid
                         }
                     }
+                }
+                media_details {
+                    height
+                    width
                 }
             }
         }

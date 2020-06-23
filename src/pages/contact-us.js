@@ -9,7 +9,7 @@ import ContactForm from "../components/form/contactFormCallout"
 import "../styles/pages.scss"
 
 export default ({ data }) => {
-    console.log('contact us page', data);
+    // console.log('contact us page', data);
     
     const { path, title, type, slug } = data.wordpressPage
 

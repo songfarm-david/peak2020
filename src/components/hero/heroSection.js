@@ -71,7 +71,7 @@ const HeroBanner = () => {
                         ))}
                     </span>
                 </p>
-                <Link to="/services/" title="Learn more" className="button secondary-button">Learn More</Link>
+                <Link to="/services/" title="View Services" className="button secondary-button">View Services</Link>
             </div>
         </div>
     )

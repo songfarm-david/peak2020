@@ -20,7 +20,7 @@ export default ({ data }) => {
     const { wordpressPage, allWordpressPage: allServices } = data
     const { title, path, type, slug } = wordpressPage
     
-    console.log('services.js allServices', allServices);
+    // console.log('services.js allServices', allServices);
     
     
     return (
