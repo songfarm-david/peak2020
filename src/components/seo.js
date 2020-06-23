@@ -104,7 +104,7 @@ function SEO({ title, description, image, meta, lang, path }) {
             ]
             .concat(meta)
             .concat(
-                metaImage ? [
+                metaImage && metaImage.localFile ? [
                     {
                         property: "og:image",
                         content: metaImage.localFile.url
