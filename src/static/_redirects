@@ -1,0 +1,8 @@
+/pizza                                     https://cms.peakwebsites.ca/wp-admin 200
+
+/service-search-engine-optimization/       /services/seo-services/ 301
+/services/search-engine-optimization/      /services/seo-services/ 301
+/services/seo-services/local-seo-packages/ /services/seo-services/local-seo 302
+/content-creation/                         /services/ 302    
+
+/5-ways-improve-google-ranking-2017/       /blog/5-ways-improve-google-ranking-2017/
