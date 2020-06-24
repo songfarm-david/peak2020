@@ -4,7 +4,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
@@ -13,9 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 /* helper package for transforming strangs! https://www.npmjs.com/package/string */
 import S from 'string'
 
-
 function SEO({ title, description, image, meta, lang, path }) {
-    console.log('SEO component title, description, image, meta, path', title, description, image, meta, lang, path );
     
     const { site } = useStaticQuery(graphql`
         query {
@@ -35,8 +32,6 @@ function SEO({ title, description, image, meta, lang, path }) {
         }
     `)
 
-    // return null
-    console.log('SEO title converted', S(title).decodeHTMLEntities().s);
     
     
     const pageTitle = S(title).decodeHTMLEntities().s || site.siteMetadata.title
@@ -45,7 +40,6 @@ function SEO({ title, description, image, meta, lang, path }) {
     const pUrl = path || site.siteMetadata.url
     const canonical = path || false
         
-    console.log('seo.js canonical now', canonical);
         
     return ( 
         <Helmet 
