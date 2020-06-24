@@ -9,17 +9,31 @@ import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
-export default ({ data }) => {
+import SEO from "../components/seo"
+import Helmet from "react-helmet"
+import S from 'string'
+
+export default ({ data, location }) => {
     
-    const { title, type, content, path, slug } = data.wordpressPage
+    const { title, type, content, excerpt, path, slug } = data.wordpressPage
 
     return (
         <Layout path={path} layoutClass={title}>
+
+            <SEO 
+                title={title} 
+                description={excerpt} 
+                path={location.href} />
+
+            <Helmet title={S(title).decodeHTMLEntities().s} />
+
             <PageBanner bannerType={type} title={title} />
             <PageContent path={slug} type={type} content={content} />
+            
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />
+            
         </Layout>
     )
 }
@@ -35,6 +49,7 @@ export const queryPage = graphql`
             type
             path
             slug
+            excerpt
         }
     }
 `

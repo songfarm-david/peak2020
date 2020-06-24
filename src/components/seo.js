@@ -71,7 +71,7 @@ function SEO({ title, description, image, meta, lang, path }) {
                 },
                 {
                     property: "og:title",
-                    content: pageTitle,
+                    content: pageTitle + " · Peak Websites",
                 },
                 {
                     property: "og:description",
@@ -86,8 +86,8 @@ function SEO({ title, description, image, meta, lang, path }) {
                     content: pUrl
                 },
                 {
-                name: `twitter:card`,
-                content: `summary`,
+                    name: `twitter:card`,
+                    content: `summary`,
                 },
                 {
                     name: "twitter:creator",
@@ -95,7 +95,7 @@ function SEO({ title, description, image, meta, lang, path }) {
                 },
                 {
                     name: "twitter:title",
-                    content: pageTitle,
+                    content: pageTitle + " · Peak Websites",
                 },
                 {
                     name: "twitter:description",
@@ -120,12 +120,24 @@ function SEO({ title, description, image, meta, lang, path }) {
                     {
                         name: "twitter:card",
                         content: "summary_large_image",
-                    },
+                    }
                 ] : [
                     {
-                    name: "twitter:card",
-                    content: "summary",
+                        property: "og:image",
+                        content: site.siteMetadata.image
                     },
+                    {
+                        property: "og:image:width",
+                        content: 253,
+                    },
+                    {
+                        property: "og:image:height",
+                        content: 235,
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    }
                 ]
             )}
             defer={false}
