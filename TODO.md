@@ -36,6 +36,7 @@
 - add social buttons  
 - fix blog width
 - fix broken links 
+- consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
 - address portfolio situation
 - add a confirmation popup when contact form
 - finish or revise digital marketing services page
@@ -43,7 +44,7 @@
 - fix weird "quoting" behavior in footer
 - hide footer on 404 page?
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
-- consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ 
+
 - add fog effect to 404 page too!
 - add search functionality: https://www.gatsbyjs.org/docs/adding-search/
 - set up database backups in a logical (scheduled db backups?)  
