@@ -27,10 +27,11 @@
 - remove .hey-now class from contact page/ remove WPForms
 - clean up plugins on backend CMS
 - address portfolio situation/testimonials
-
+- fix blog width
+- fix broken links 
 - add a confirmation popup when contact form
 - finish or revise digital marketing services page
-- address sitemap page - confirm sitemap
+# address sitemap page - confirm sitemap: https://www.gatsbyjs.org/docs/creating-a-sitemap/
 - fix category links on site(blog)
 - hide footer on 404 page?
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
