@@ -54,7 +54,7 @@ html {
         }
     }
 
-    img[src="*.svg"] {
+    img[src*=".svg"] {
         max-height: 100%;
         max-width: 1rem;
     }
