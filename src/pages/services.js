@@ -12,28 +12,40 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 
 import "../styles/pages.scss"
 
+import SEO from "../components/seo"
+import Helmet from "react-helmet"
+import S from 'string'
+
 /**
  * Services Page
  */
-export default ({ data }) => {
+export default ({ data, location }) => {
 
     const { wordpressPage, allWordpressPage: allServices } = data
-    const { title, path, type, slug } = wordpressPage
-    
-    // console.log('services.js allServices', allServices);
-    
+    const { title, path, type, excerpt, slug } = wordpressPage
     
     return (
         <Layout path={path} layoutClass={title}>
+
+            <SEO 
+                title={title} 
+                description={excerpt} 
+                path={location.href} />
+
+            <Helmet title={S(title).decodeHTMLEntities().s} />
+
             <PageBanner bannerType={type} title={title} />
+            
             <PageContent path={slug} type={slug}>
                 {allServices.edges.map((service, idx) => (
                     <ServiceCard key={idx} service={service.node} />
                 ))}
             </PageContent>
+
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />  
+
         </Layout>
     )
 }
@@ -49,6 +61,7 @@ export const queryAllPosts = graphql`
             type
             path
             slug
+            excerpt
         }
         allWordpressPage(filter: {parent_element: {wordpress_id: {eq: 2517}}}) {
             edges {

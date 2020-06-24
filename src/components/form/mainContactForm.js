@@ -16,8 +16,7 @@ const MainContactForm = ({ path, isAddFields }) => {
             action={path +"?thank_you"} method="post" 
             className={( isAddFields ) ? "mainContact plusAddFields" : "mainContact"}
             data-netlify="true" data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" aria-labelledby={isAddFields}
-                value={( isAddFields ) ? "main-contact-form-full" : "main-contact-form"} />
+            <input type="hidden" name="form-name" value={( isAddFields ) ? "main-contact-form-full" : "main-contact-form"} aria-label="hidden" />
             <div className="input-container">
                 <label className="form-label" htmlFor="name">Name
                     <input type="input" name="name" aria-label="name" />

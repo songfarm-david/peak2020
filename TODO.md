@@ -13,21 +13,21 @@
 # fix rotating text section
 # Fix textarea text size in main contact form, inputs
 # finish 404 page
-- clean up build processes stuff in gatsby   
-- confirm redirects
-- redirect 'local seo victoria' to 'local seo' global page
-- test for broken links
-- configure domains and dns
-- narrow contact form on mobile views, make sure bg image is other trail image
-- hide footer on 404 page
+# clean up build processes stuff in gatsby   
+# confirm redirects
+# redirect 'local seo victoria' to 'local seo' global page
+# configure domains and dns
+# narrow contact form on mobile views, make sure bg image is other trail image
 - Address SEO concerns
 - do a baseline SEO measure pre-launch.
+- test for broken links
 - **LAUNCH SITE**
-- test Google Analytics
+# test Google Analytics
 - add a confirmation popup when contact form
 - finish or revise digital marketing services page
 - address sitemap page - confirm sitemap
 - fix category links on site(blog)
+- hide footer on 404 page?
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 - consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ 
