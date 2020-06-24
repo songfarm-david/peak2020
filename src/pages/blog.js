@@ -10,14 +10,18 @@ import AllPosts from "../components/blog/allPosts"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
+import SEO from "../components/seo"
+import Helmet from "react-helmet"
+import S from 'string'
+
 /**
  * Blog Index page
  */
-export default ({ data }) => {
+export default ({ data, location }) => {
     // console.log('blog.js data', data);
     
     const { wordpressPage, allWordpressPost, featuredPost } = data
-    const { title, type, path, slug } = wordpressPage
+    const { title, type, path, slug, excerpt } = wordpressPage
     
     /**
      * Validate presence of value for Sticky Post
@@ -28,6 +32,14 @@ export default ({ data }) => {
     
     return (
         <Layout path={path} layoutClass={title}>
+
+            <SEO 
+                title={title} 
+                description={excerpt} 
+                path={location.href} />
+
+            <Helmet title={S(title).decodeHTMLEntities().s} />
+
             <PageBanner bannerType={type} title={title} />
 
             <PageContent path={slug} type={type}>{
@@ -53,6 +65,7 @@ export const queryAllPosts = graphql`
             type
             path
             slug
+            excerpt
         }
         featuredPost: wordpressPost(sticky: {eq: true}) {
             id
