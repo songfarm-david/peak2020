@@ -33,6 +33,7 @@
 - optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 - put hero section images in Img tags
 - put testimonials
+- do ros marketing page, post on alignable
 - add social buttons  
 - fix blog width
 - fix broken links 

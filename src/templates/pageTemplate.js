@@ -9,6 +9,7 @@ import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 
 import HeroSection from "../components/hero/heroSection"
+import Testimonials from "../components/hero/testimonials"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
@@ -54,6 +55,8 @@ export default ({ data, location }) => {
                 type={(parent_element) ? parent_element.slug : type} 
                 content={content} 
                 featuredMedia={featured_media} />
+
+            {(location.pathname === '/' && <Testimonials />)}
 
             <BlogCallout />
             <Newsletter path={location.pathname} />
