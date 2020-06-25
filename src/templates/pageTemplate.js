@@ -33,7 +33,7 @@ export default ({ data, location }) => {
         parent_element 
     } = data.wordpressPage
 
-    console.log('pageTemplate title', title);
+    // console.log('pageTemplate title', title);
     
     return (
         <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>
