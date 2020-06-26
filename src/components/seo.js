@@ -134,8 +134,9 @@ function SEO({ title, description, image, meta, lang, path }) {
                     }
                 ]
             )}
-            defer={false}
-        />
+            defer={false}>
+                <base href={site.siteMetadata.siteUrl} />
+            </Helmet>
     )
 }
 
