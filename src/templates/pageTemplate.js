@@ -21,7 +21,6 @@ import "../styles/pages.scss"
  * Mar 2020
  */
 export default ({ data, location }) => {
-    // console.log('pageTemplate location', location);
     
     const { 
         title, 
@@ -33,8 +32,6 @@ export default ({ data, location }) => {
         parent_element 
     } = data.wordpressPage
 
-    console.log('pageTemplate title', title);
-    
     return (
         <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>
 

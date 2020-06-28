@@ -23,5 +23,11 @@ export let testimonials = [
         author: "Karla Pichler",
         cite: "http://karlapichler.com/",
         visible: true
+    }, {
+        headline: "Dave has been great to work with!",
+        body: "He is detail oriented and worked quickly to complete our website, adding many creative ideas that made our site look more visually appealing for potential visitors. I would definitely (and have already) recommended Dave to others and have heard positive feedback from the referrals.",
+        author: "Steve Gaskin",
+        cite: "https://www.lighthousewealthvictoria.com/",
+        visible: true
     }
 ]
