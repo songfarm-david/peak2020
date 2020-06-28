@@ -12,9 +12,9 @@ const Testimonials = () => {
     
     return (
 
-        <section>
-            <h2>Testimonials</h2>
+        <section id="testimonials">
             <div className="slideContainer">
+                <h2>Testimonials</h2>
                 <ul>{testimonials.map((t, idx) => (
                     <li className="slide" key={idx} index={idx} tabIndex="0" >
                         <blockquote>
