@@ -1,0 +1,60 @@
+@import "../../styles/globals.scss";
+
+.slideContainer {
+    
+    border: $border;
+    width: $content-width;
+    position: relative;
+
+    .ul {
+        padding: 0;
+        > li {
+            list-style: none;
+        }
+    }
+
+    .slide {
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        border: 2px solid greenyellow;
+        text-align: center;
+        // margin: 0 1rem;
+        .heading {
+            margin-top: $top-margin;
+        }
+    }
+
+    .heading, .body, .cite + a {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .body {
+        @extend .normal-text-italic;
+    }
+
+    .cite {
+        font-weight: bold;
+        @extend .normal-text;
+        + a {
+            text-decoration: underline;
+        }
+    }
+
+    .buttons {
+        border: 3px solid black;
+        position: absolute;
+        z-index: 101;
+        top: 50%;
+        > img {
+            width: 1rem;
+            height: 100%;
+        }
+        &.buttonLeft {
+            left: 0;
+        }
+        &.buttonRight {
+            right: 0;
+        }
+    }
+}
