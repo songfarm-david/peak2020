@@ -24,7 +24,7 @@
 # Address SEO concerns
 # do a baseline SEO measure pre-launch.
 # test for broken links
-# **LAUNCH SITE**
+ **LAUNCH SITE**
 # test Google Analytics
 # do a database backup
 # remove .hey-now class from contact page/ remove WPForms
@@ -33,6 +33,8 @@
 - optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 - put hero section images in Img tags
 - put testimonials
+- create a page on accessibility (ARIA)
+- finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
 - add social buttons  
 - fix blog width

@@ -29,7 +29,8 @@
 @media screen and (min-width: $mobile-breakpoint) {
     #siteHeader {
         #headerInnerContainer {
-            width: $content-width;
+            width: $content-width-blog;
+            
             margin: 0.25rem auto;
         }
     }
