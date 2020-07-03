@@ -1,0 +1,97 @@
+@import "../../styles/globals.scss";
+
+#testimonials {
+    box-sizing: border-box;
+    padding: 2.25rem 0.75rem;
+
+    fieldset { border: none; }
+    
+    .slideContainer {
+
+        border: $border;
+        width: 100%;
+        position: relative;
+        margin: $top-margin 0 $vertical-rhythm;
+    
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            > li {
+                list-style: none;
+                flex-basis: 80%;
+                blockquote {
+                    margin: 0;
+                }
+            }
+        }
+    
+        .slide {
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+            // border: 2px solid greenyellow;
+            max-width: 23rem;
+            text-align: center;
+            padding: $top-margin;
+            margin: $top-margin 1rem;
+            min-height: 23rem;
+        }
+    
+        .heading, .body, .cite + a {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .heading { margin-top: 1rem;}
+    
+        .body {
+            @extend .normal-text-italic;
+        }
+    
+        .cite {
+            font-weight: bold;
+            @extend .normal-text;
+            + a {
+                text-decoration: underline;
+            }
+        }
+    
+        .buttons {
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            z-index: 101;
+            top: 50%;
+            padding: 1rem;
+            &:hover,
+            &:focus {
+                cursor: pointer;
+            }
+            > img {
+                width: $top-margin;
+                height: 100%;
+            }
+            &.buttonLeft {
+                left: 0;
+            }
+            &.buttonRight {
+                right: 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #testimonials {
+
+        .slideContainer {
+            width: $content-width;
+            margin: 0 auto;
+            padding: 0 $top-margin; 
+        }
+
+    }
+}
