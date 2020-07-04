@@ -35,7 +35,7 @@ function SEO({ title, description, image, meta, lang, path }) {
     const pageTitle = S(title).decodeHTMLEntities().s || site.siteMetadata.title
     const metaDescription = S(description).stripTags().decodeHTMLEntities.s || site.siteMetadata.description
     const metaImage = image || site.siteMetadata.image
-    const pUrl = path || site.siteMetadata.url
+    const pUrl = path || site.siteMetadata.siteUrl
     const canonical = path || false
          
     return ( 
@@ -132,7 +132,7 @@ function SEO({ title, description, image, meta, lang, path }) {
                 ]
             )}
             defer={false}>
-                {/* <base href={site.siteMetadata.siteUrl} /> */}
+                <base href={site.siteMetadata.siteUrl} />
             </Helmet>
     )
 }

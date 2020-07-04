@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import S from 'string'
 
 import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 
@@ -32,15 +32,18 @@ export default ({ data, location }) => {
         parent_element 
     } = data.wordpressPage
 
+    // console.log('in page template, what is location.pathname', location.pathn);
+    
+
     return (
         <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>
 
-            <SEO 
+            {/* <SEO 
                 title={title} 
                 description={excerpt} 
                 image={featured_media}
                 path={location.href}
-            />
+            /> */}
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 

@@ -31,8 +31,8 @@
 # clean up plugins on backend CMS
 # address sitemap page - confirm sitemap: https://www.gatsbyjs.org/docs/creating-a-sitemap/
 - optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
-- put hero section images in Img tags
-- put testimonials
+# put hero section images in Img tags
+# put testimonials
 - create a page on accessibility (ARIA)
 - finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
