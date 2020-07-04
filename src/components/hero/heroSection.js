@@ -1,10 +1,42 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 import RotatingText from "./rotatingText.js"
 import "./heroSection.scss"
+import { getActiveClass } from "../../functions/helperFunctions"
+
+import heroImageMobile from "../../images/homepage_mobile.png"
+import heroImageDesktop from "../../images/homepage.jpeg"
 
 const HeroBanner = () => {
+
+    let activeImage = (getActiveClass() === 'mobile') ? heroImageMobile : heroImageDesktop
+
+    console.log('what is activeImage', activeImage);
+
+    const data = useStaticQuery(graphql`
+        query {
+            heroImageMobile: file(relativePath: { eq: "homepage_mobile.png" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            heroImageDesktop: file(relativePath: { eq: "homepage.jpeg" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
+
+    console.log('what is data', data);
+    
     
     const [activeWord, setActiveWord] = useState({
         current: 0,
@@ -57,6 +89,7 @@ const HeroBanner = () => {
 
     return (
         <div className="hero-banner">
+            <Img id="heroBannerImage" className={(getActiveClass() === 'mobile') ? "hero-image hero-image-mobile" : "hero-image hero-image-desktop"} fluid={(getActiveClass() === 'mobile') ? data.heroImageMobile.childImageSharp.fluid : data.heroImageDesktop.childImageSharp.fluid} />
             <div className="hero-text-container heading-1">
                 <p>Do you need reliable, creative, experienced website <br/>
                     <span id="rotatingWord">

@@ -49,6 +49,17 @@ export function getAuthor(categories, author) {
 }
 
 /**
+ * 
+ */
+export const getActiveClass = () => {        
+    if (typeof window !== 'object') return false
+    const breakpoint = 769
+    let activeClass /* taken from globals.scss mobile breakpoint */
+    activeClass = ( breakpoint > window.innerWidth ) ? "mobile" : "desktop"
+    return activeClass
+}
+
+/**
  * This function search a string for a particular string of text
  * Used mostly for finding a class within a strong of content
  * @param {Str} str the string to test against
