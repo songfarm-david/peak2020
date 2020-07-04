@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { getActiveClass } from "../../functions/helperFunctions"
-
+// aria considerations: https://www.w3.org/TR/wai-aria-practices/#carousel
+// https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html
 import arrowRight from "../../images/illustrations/svg/Arrows/arrow_right.svg"
 import arrowLeft from "../../images/illustrations/svg/Arrows/arrow_left.svg"
 
@@ -74,7 +75,7 @@ const Testimonials = () => {
             case 'mobile':
                 html = (
                     allTestimonials.data.map(( testimonial, idx ) => (
-                        <li key={idx} 
+                        <li key={idx} role="slide"
                             className={(idx === allTestimonials.activeSlide) ? "slide" : "slide hidden"}
                             tabIndex={(idx === allTestimonials.activeSlide) ? "0" : "-1"} 
                             aria-hidden={(idx === allTestimonials.activeSlide) ? false : true}>
@@ -116,33 +117,37 @@ const Testimonials = () => {
                 break;
         }
 
-        console.log('at the end. what is html', html);
+        // console.log('at the end. what is html', html);
         return html
 
     }
     
     return ( 
 
-        <section id="testimonials"role="complementary">
+        <section id="testimonials" 
+            role="region" 
+            aria-label="Testimonials">
             <div className={"slideContainer slider-" + viewportClass} >
                 <h2>Testimonials</h2>
-                <ul id="testimonials-slider" aria-live="off" role="slider">
-                    {<ListHTML mode={viewportClass} testimonials={allTestimonials} />}
+                <ul id="testimonials-slider" aria-live="off" aria-live="polite">
+                    {<ListHTML role="group" aria-roledescription="slide" mode={viewportClass} testimonials={allTestimonials} />}
                 </ul>
                 <fieldset aria-label="testimonials controls" aria-controls="testimonials-slider">
                     <button 
                         className="buttons buttonLeft" 
                         aria-label="previous testimonial" 
+                        aria-controls="testimonials"
                         onClick={cycleBack} 
                         onKeyPress={cycleBack}>
-                        <img src={arrowLeft} />
+                        <img src={arrowLeft} alt={"Arrow left - previous testimonial"} />
                     </button>
                     <button 
                         className="buttons buttonRight" 
                         aria-label="next testimonial"
+                        aria-controls="testimonials"
                         onClick={cycleForward} 
                         onKeyPress={cycleForward}>
-                        <img src={arrowRight} />
+                        <img src={arrowRight} alt={"Arrow right - next testimonial"} />
                     </button>
                 </fieldset>
             </div>

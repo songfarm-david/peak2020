@@ -14,8 +14,6 @@ const HeroBanner = () => {
 
     let activeImage = (getActiveClass() === 'mobile') ? heroImageMobile : heroImageDesktop
 
-    console.log('what is activeImage', activeImage);
-
     const data = useStaticQuery(graphql`
         query {
             heroImageMobile: file(relativePath: { eq: "homepage_mobile.png" }) {
@@ -35,9 +33,6 @@ const HeroBanner = () => {
         }
     `)
 
-    console.log('what is data', data);
-    
-    
     const [activeWord, setActiveWord] = useState({
         current: 0,
         last: undefined

@@ -58,7 +58,7 @@ const Footer = ({ path }) => {
                     <ul>
                         {footerLinks.items.map((link, idx) => (
                             <li key={idx}>
-                                {( link.slug ) ? <Link to={link.slug}>{link.title}</Link> :
+                                {( link.slug ) ? <Link to={"/"+link.slug}>{link.title}</Link> :
                                 <a href={link.url} title={link.title}>{link.title}</a>}
                             </li>
                         ))}
