@@ -29,20 +29,22 @@ const Nav = ({ menuToggleClass }) => {
             }
         `)
     const navItems = mainNavQuery.wordpressMenusMenusItems  
-
+    
     return (
         <nav role="navigation" id="mainNav" className={menuToggleClass} onClick={(e) => e.stopPropagation()}>
             <h2 className="screen-reader-text">Main Navigation</h2>
-            <ul>{navItems.items.map((item, i) => (
+            <ul>{navItems.items.map((item, i) => {
+                console.log('what is item.slug', item.slug)
+                return (
                 <li 
                     key={i} 
                     aria-haspopup={( item.child_items ) !== null ? true : false} 
                     className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}>
-                    <Link to={item.slug}>
+                    <Link to={"/"+item.slug}>
                         {ReactHtmlParser(item.title)}
                     </Link>
                     {( item.child_items === null ) ? null : <SubNav childItems={item} />}
-                </li>))}
+                </li>)})}
             </ul>
         </nav>
     )
