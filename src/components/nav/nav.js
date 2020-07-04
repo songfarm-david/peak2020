@@ -29,8 +29,6 @@ const Nav = ({ menuToggleClass }) => {
             }
         `)
     const navItems = mainNavQuery.wordpressMenusMenusItems  
-
-    console.log('in main nav, what is navItems', navItems);
     
     return (
         <nav role="navigation" id="mainNav" className={menuToggleClass} onClick={(e) => e.stopPropagation()}>
