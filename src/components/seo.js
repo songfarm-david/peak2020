@@ -41,7 +41,7 @@ function SEO({ title, description, image, meta, lang, path }) {
     return ( 
         <Helmet 
             encodeSpecialCharacters={true}
-            htmlAttributes={{ lang }}
+            htmlAttributes={{lang}}
             defaultTitle={site.siteMetadata.title}
             title={pageTitle}
             titleTemplate={site.siteMetadata.titleTemplate}
@@ -133,7 +133,7 @@ function SEO({ title, description, image, meta, lang, path }) {
             )}
             defer={false}>
                 <base href={site.siteMetadata.siteUrl} />
-            </Helmet>
+        </Helmet>
     )
 }
 
@@ -145,7 +145,6 @@ SEO.defaultProps = {
 SEO.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
-    lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
     image: PropTypes.object
 }

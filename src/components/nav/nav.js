@@ -34,7 +34,6 @@ const Nav = ({ menuToggleClass }) => {
         <nav role="navigation" id="mainNav" className={menuToggleClass} onClick={(e) => e.stopPropagation()}>
             <h2 className="screen-reader-text">Main Navigation</h2>
             <ul>{navItems.items.map((item, i) => {
-                console.log('what is item.slug', item.slug)
                 return (
                 <li 
                     key={i} 
