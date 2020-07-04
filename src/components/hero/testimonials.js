@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from "react"
+import { getActiveClass } from "../../functions/helperFunctions"
 
 import arrowRight from "../../images/illustrations/svg/Arrows/arrow_right.svg"
 import arrowLeft from "../../images/illustrations/svg/Arrows/arrow_left.svg"
 
 import * as importData from "../../quotes/testimonials.js"
-
 import "./testimonials.scss"
 
 const Testimonials = () => {
-
-    const breakpoint = 769
-
-    /**
-     * 
-     */
-    const getActiveClass = () => {        
-        if (typeof window !== 'object') return false
-        let activeClass /* taken from globals.scss mobile breakpoint */
-        activeClass = ( breakpoint > window.innerWidth ) ? "mobile" : "desktop"
-        return activeClass
-    }
 
     /**
      * Splits up an array into chunks by a given chuck 'size' value 

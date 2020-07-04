@@ -24,10 +24,10 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
             max-height: 45rem;
-            height: 38rem;
+            min-height: 40rem;
             position: relative;
             z-index: 1;
             > li {
