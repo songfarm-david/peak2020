@@ -6,7 +6,7 @@ module.exports = {
     author: "David Gaskin",
     image: "src/images/logo/Logo_squared.png",
     titleTemplate: "%s · Peak Websites",
-    siteUrl: "https://peakwebsites.ca",
+    siteUrl: "/",
     twitterUsername: "@peakwebsite",
     twitterLink: "https://twitter.com/peakwebsite",
     facebookUrl: "https://www.facebook.com/peakwebsiteservices/"
