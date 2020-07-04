@@ -23,10 +23,6 @@ main {
         .heroBody { padding: 0; }
     }
 
-    // .heroButton {
-    //     border: $border;
-    // }
-
     .home, .about {
         position: relative;
         width: 100%;
@@ -49,7 +45,7 @@ main {
             width: 100%;
             position: fixed;
             right: -5%;
-            top: -50%;
+            bottom: 0;
             z-index: -111;
             display: none;
         }
@@ -112,6 +108,10 @@ main {
                 margin-top: 0;
             }
         }
+    }
+
+    &.home #pageContent {
+        margin-bottom: 0;
     }
 
 }

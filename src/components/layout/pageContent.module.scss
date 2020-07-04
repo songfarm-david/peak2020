@@ -59,6 +59,14 @@
             &.hasFeaturedImage {
                 display: block;
             }
+
+            
         }
+
+        /* for blog posts on desktop */
+        &.blogContent {
+            width: $content-width-blog;
+        }
+
     }
 }
