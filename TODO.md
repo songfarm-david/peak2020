@@ -24,7 +24,7 @@
 # Address SEO concerns
 # do a baseline SEO measure pre-launch.
 # test for broken links
-# **LAUNCH SITE**
+ **LAUNCH SITE**
 # test Google Analytics
 # do a database backup
 # remove .hey-now class from contact page/ remove WPForms
@@ -33,6 +33,8 @@
 - optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 - put hero section images in Img tags
 - put testimonials
+- create a page on accessibility (ARIA)
+- finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
 - add social buttons  
 - fix blog width
@@ -45,7 +47,6 @@
 - fix weird "quoting" behavior in footer
 - hide footer on 404 page?
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
-
 - add fog effect to 404 page too!
 - add search functionality: https://www.gatsbyjs.org/docs/adding-search/
 - set up database backups in a logical (scheduled db backups?)  

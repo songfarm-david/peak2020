@@ -14,8 +14,8 @@ $content-width: 75%;
 $margin-bottom: 0.75rem;
 $content-padding: $top-margin .75rem;
 
-$content-width-blog: 78rem;
-$hero-width: 66%;
+$content-width-blog: 72%;
+$hero-width: 66%; 
 $header-width: $hero-width;
 
 $blogBannerHeight: 26rem;
@@ -109,21 +109,10 @@ html {
     width: 1px;
     word-wrap: normal !important;
 }
+.hidden {display:none;}
 
 /**
  * Helper & Misc styles
  */
 /* debug border */
 $border: 1px solid red;
-
-// .blog-content-width {
-//   max-width: $content-width-blog;
-//   margin: 0 auto;
-//   padding: 0.5rem;
-// }
-
-// $content-width: $content-width-blog;
-
-// .content-padding {
-//   padding: $content-padding;
-// }
