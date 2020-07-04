@@ -19,14 +19,14 @@ const HeroBanner = () => {
             heroImageMobile: file(relativePath: { eq: "homepage_mobile.png" }) {
                 childImageSharp {
                     fluid {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             heroImageDesktop: file(relativePath: { eq: "homepage.jpeg" }) {
                 childImageSharp {
                     fluid {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }

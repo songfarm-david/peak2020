@@ -74,7 +74,7 @@ export const queryAllPosts = graphql`
                         localFile {
                             childImageSharp {
                                 fluid(maxHeight: 210) {
-                                    ...GatsbyImageSharpFluid
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }

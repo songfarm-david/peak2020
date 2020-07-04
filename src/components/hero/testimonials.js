@@ -68,7 +68,7 @@ const Testimonials = () => {
      */
     const ListHTML = ({mode, testimonials}) => {
         
-        console.log('inside ListHTML', mode, testimonials );  
+        // console.log('inside ListHTML', mode, testimonials );  
         let html = ``
         switch (mode) {
         

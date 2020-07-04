@@ -37,8 +37,8 @@
 - finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
 - add social buttons  
-- fix blog width
-- fix broken links 
+# fix blog width
+# fix broken links 
 - consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
 - address portfolio situation
 - add a confirmation popup when contact form
