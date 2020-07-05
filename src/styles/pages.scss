@@ -34,23 +34,8 @@ main {
     }
 
     #pageContent.home {
-        // overflow: auto;
-        // &::after {
-        //     content: '';
-        //     display: block;
-        //     background: url('../images/illustrations/svg/compass.svg') no-repeat;
-        //     background-position: 101% bottom;
-        //     background-size: 25rem;
-        //     padding-bottom: 9rem;
-        //     height: 100%;
-        //     width: 100%;
-        //     position: absolute;
-        //     right: -5%;
-        //     bottom: 0;
-        //     // margin-bottom: -5rem;
-        //     z-index: -111;
-        //     display: none;
-        // }
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     #pageContent.about {
@@ -112,9 +97,9 @@ main {
         }
     }
 
-    &.home #pageContent {
-        margin-bottom: 0;
-    }
+    // &.home #pageContent {
+    //     margin-bottom: 0;
+    // }
 
 }
 

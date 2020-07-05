@@ -81,7 +81,7 @@ const Testimonials = () => {
                                 <span className="body">{testimonial.body}</span>
                                 <footer>
                                     <cite className="cite">{testimonial.author}</cite>
-                                    <a href={testimonial.cite}>{(testimonial.business) ? testimonial.business : testimonial.cite}</a>
+                                    <a href={testimonial.cite} target="_blank">{(testimonial.business) ? testimonial.business : testimonial.cite}</a>
                                 </footer>
                             </blockquote>
                         </li>
@@ -101,7 +101,7 @@ const Testimonials = () => {
                                     <span className="body">{t.body}</span>
                                     <footer>
                                         <cite className="cite">{t.author}</cite>
-                                        <a href={t.cite}>{(t.business) ? t.business : t.cite}</a>
+                                        <a href={t.cite} target="_blank">{(t.business) ? t.business : t.cite}</a>
                                     </footer>
                                 </blockquote>
                             </li>   

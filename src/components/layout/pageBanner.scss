@@ -12,6 +12,8 @@
     z-index: 111;
     width: 90%;
     height: 100%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .pageBanner {
@@ -66,13 +68,24 @@
 
 }
 
-
+.blogPost {
+    width: 100%;
+    height: $blogBannerHeight;
+    position: relative;
+    z-index: 10;
+    background-image: none;
+    .blogBanner {
+        height: 100%;
+        width: 100%;    
+    }
+}
 
 @media screen and (min-width: $mobile-breakpoint) {
     .pageBanner {
         font: $heading-1;
     }
     .blogHeaderContainer {
-        width: $content-width;
+        width: $content-width-blog;
+        
     }
 }
