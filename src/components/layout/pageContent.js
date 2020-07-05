@@ -21,7 +21,8 @@ const PageContent = ({ path, type, content, children, featuredMedia = false }) =
     <div id="pageContent" className={
         (type === 'post') ?  `${pageContentStyles.blogContent} ${pageContentStyles.pageContent}` 
         : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
-            : `${pageContentStyles.pageContent} ${path}`}>
+            : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}`
+                : `${pageContentStyles.pageContent} ${path}`}>
 
             {(path === 'contact-us') ? children 
 

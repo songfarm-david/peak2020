@@ -33,6 +33,7 @@
 # optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 # put hero section images in Img tags
 # put testimonials
+- add swipe to testimonials
 - set up database backups in a logical (scheduled db backups?)  
 - finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
