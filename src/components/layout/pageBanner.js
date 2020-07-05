@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ReactHtmlParser from 'react-html-parser';
 
-import banner from "./pageBanner.module.scss"
+import "./pageBanner.scss"
 
 import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
 import FeaturedImage from "../blog/blog-components/featuredImage"
@@ -15,12 +15,41 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
  * @param {String} bannerType either a 'page' or a 'blog' banner type
  * @param {String} title the title for the page banner
  */
-const PageBanner = ({ bannerType, title, bannerImg, bannerData }) => {
-    // console.log('pageBanner bannerType, title, bannerImg, bannerData', bannerType, title, bannerImg, bannerData);
+const PageBanner = ({ bannerType, title, slug, bannerImg, bannerData }) => {
+    console.log('pageBanner bannerType, title, slug, bannerImg, bannerData', bannerType, title, slug, bannerImg, bannerData );
     
     return ( 
-        <div className={( bannerType === 'page' ) ? 
-            `${banner.pageBanner}` : `${banner.blogPost}`}>
+        <div className={( bannerType === 'page' ) ? `pageBanner ${slug}` : `blogPost ${slug}`}>
+
+            {( bannerType === 'page' ) && 
+                <div className={"headerContainer"}>
+                    <h1 className={"pageHeader"}>{ReactHtmlParser(title)}</h1>
+                </div>}
+
+             {( bannerType === 'post' ) && 
+                <>
+                    <FeaturedImage featuredImage={bannerImg} isFeature={true} />
+                    <div className={"blogHeaderContainer"}>
+                        <FeatureBlogCard postData={(bannerData) ? bannerData : null} />
+                    </div>
+                </>}
+        </div>
+        
+    )
+
+}
+
+export default PageBanner
+
+PageBanner.propTypes = {
+    bannerType: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    bannerImg: PropTypes.object,
+    bannerData: PropTypes.object
+}
+
+/* <div className={( bannerType === 'page' ) ? 
+            `${banner.pageBanner} ${slug}` : `${banner.blogPost} ${slug}` }>
 
             {( bannerType === 'page' ) && 
                 <div className={banner.headerContainer}>
@@ -34,17 +63,4 @@ const PageBanner = ({ bannerType, title, bannerImg, bannerData }) => {
                         <FeatureBlogCard postData={(bannerData) ? bannerData : null} />
                     </div>
                 </>}
-
-        </div>
-    )
-
-}
-
-export default PageBanner
-
-PageBanner.propTypes = {
-    bannerType: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    bannerImg: PropTypes.object,
-    bannerData: PropTypes.object
-}
+        </div> */

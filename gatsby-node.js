@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions }) =>  {
     allWordpressPage.edges.forEach(({ node }) => {
         if (node.status === 'publish') {            
             createPage({
-                path: node.path,
+                path: "/"+node.path,
                 component: pageTemplate,
                 context: {
                     id: node.id
