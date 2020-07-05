@@ -5,7 +5,7 @@ import { getActiveClass } from "../../functions/helperFunctions"
 import arrowRight from "../../images/illustrations/svg/Arrows/arrow_right.svg"
 import arrowLeft from "../../images/illustrations/svg/Arrows/arrow_left.svg"
 
-import * as importData from "../../quotes/testimonials.js"
+import * as importData from "../../data/testimonials.js"
 import "./testimonials.scss"
 
 const Testimonials = () => {
@@ -67,11 +67,8 @@ const Testimonials = () => {
      * 
      */
     const ListHTML = ({mode, testimonials}) => {
-        
-        console.log('inside ListHTML', mode, testimonials );  
         let html = ``
         switch (mode) {
-        
             case 'mobile':
                 html = (
                     allTestimonials.data.map(( testimonial, idx ) => (
@@ -84,7 +81,7 @@ const Testimonials = () => {
                                 <span className="body">{testimonial.body}</span>
                                 <footer>
                                     <cite className="cite">{testimonial.author}</cite>
-                                    <a href={testimonial.cite}>{testimonial.cite}</a>
+                                    <a href={testimonial.cite}>{(testimonial.business) ? testimonial.business : testimonial.cite}</a>
                                 </footer>
                             </blockquote>
                         </li>
@@ -104,26 +101,21 @@ const Testimonials = () => {
                                     <span className="body">{t.body}</span>
                                     <footer>
                                         <cite className="cite">{t.author}</cite>
-                                        <a href={t.cite}>{t.cite}</a>
+                                        <a href={t.cite}>{(t.business) ? t.business : t.cite}</a>
                                     </footer>
                                 </blockquote>
                             </li>   
                         ))
                     ))
                 )
-                
                 break;
             default:
                 break;
         }
-
-        // console.log('at the end. what is html', html);
         return html
-
     }
     
     return ( 
-
         <section id="testimonials" 
             role="region" 
             aria-label="Testimonials">
@@ -152,7 +144,6 @@ const Testimonials = () => {
                 </fieldset>
             </div>
         </section>
-            
     )
 
 }

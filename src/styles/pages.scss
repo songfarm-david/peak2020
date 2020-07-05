@@ -1,7 +1,7 @@
 @import "./globals.scss";
 
 main {
-
+    overflow: hidden;
     .heroImage {
         padding: 0 $top-margin;
         margin: $top-margin 0 ;
@@ -33,25 +33,27 @@ main {
         }   
     }
 
-    .home {
-        &::after {
-            content: '';
-            display: block;
-            background: url('../images/illustrations/svg/compass.svg') no-repeat;
-            background-position: 101% bottom;
-            background-size: 19rem;
-            padding-bottom: 9rem;
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            right: -5%;
-            bottom: 0;
-            z-index: -111;
-            display: none;
-        }
+    #pageContent.home {
+        // overflow: auto;
+        // &::after {
+        //     content: '';
+        //     display: block;
+        //     background: url('../images/illustrations/svg/compass.svg') no-repeat;
+        //     background-position: 101% bottom;
+        //     background-size: 25rem;
+        //     padding-bottom: 9rem;
+        //     height: 100%;
+        //     width: 100%;
+        //     position: absolute;
+        //     right: -5%;
+        //     bottom: 0;
+        //     // margin-bottom: -5rem;
+        //     z-index: -111;
+        //     display: none;
+        // }
     }
 
-    .about {
+    #pageContent.about {
         position: relative;
         &::before {
             content: '';
@@ -131,13 +133,13 @@ main {
             .heroBody { flex: 2; }               
         }
 
-        .home {
+        #pageContent.home {
             &::after {
                 display: block;
             }
         }
 
-        .about {
+        #pageContent.about {
             position: relative;
                 position: relative;
                 &::before {

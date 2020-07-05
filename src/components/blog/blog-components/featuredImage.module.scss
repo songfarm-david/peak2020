@@ -6,7 +6,8 @@
     &.pageFeature {
         order: 1;
         height: 100%;
-        max-width: 30rem;
+        max-width: 20rem;
+        margin-top: $top-margin;
     }
     &.featuredFull {
         height: 30rem;
