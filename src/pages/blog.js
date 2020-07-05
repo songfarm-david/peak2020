@@ -40,7 +40,7 @@ export default ({ data, location }) => {
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
-            <PageBanner bannerType={type} title={title} />
+            <PageBanner bannerType={type} title={title} slug={slug} />
 
             <PageContent path={slug} type={type}>{
                 ( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      

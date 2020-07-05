@@ -12,8 +12,6 @@ import heroImageDesktop from "../../images/homepage.jpeg"
 
 const HeroBanner = () => {
 
-    let activeImage = (getActiveClass() === 'mobile') ? heroImageMobile : heroImageDesktop
-
     const data = useStaticQuery(graphql`
         query {
             heroImageMobile: file(relativePath: { eq: "homepage_mobile.png" }) {

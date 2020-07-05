@@ -34,7 +34,7 @@ export default ({ data, location }) => {
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
-            <PageBanner bannerType={type} title={title} />
+            <PageBanner bannerType={type} title={title} slug={slug} />
             
             <PageContent path={slug} type={slug}>
                 {allServices.edges.map((service, idx) => (

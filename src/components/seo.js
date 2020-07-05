@@ -23,7 +23,6 @@ function SEO({ title, description, image, meta, lang, path }) {
                     description
                     author
                     image
-                    siteUrl
                     facebookUrl
                     twitterLink
                     twitterUsername

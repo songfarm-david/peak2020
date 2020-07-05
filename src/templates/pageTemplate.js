@@ -21,6 +21,7 @@ import "../styles/pages.scss"
  * Mar 2020
  */
 export default ({ data, location }) => {
+    console.log('what is a page template', data, location );
     
     const { 
         title, 
@@ -49,7 +50,7 @@ export default ({ data, location }) => {
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
             {(location.pathname === '/' && <HeroSection />) 
-                || <PageBanner bannerType={type} title={title} />}
+                || <PageBanner bannerType={type} title={title} slug={slug} />}
 
             <PageContent 
                 path={slug} 

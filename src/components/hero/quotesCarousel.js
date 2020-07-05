@@ -1,5 +1,5 @@
 import React from "react"
-import {quotes} from "../../quotes/quotes"
+import {quotes} from "../../data/quotes"
 
 import quotesStyles from "./quotesCarousel.module.scss"
 

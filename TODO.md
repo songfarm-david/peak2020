@@ -30,26 +30,27 @@
 # remove .hey-now class from contact page/ remove WPForms
 # clean up plugins on backend CMS
 # address sitemap page - confirm sitemap: https://www.gatsbyjs.org/docs/creating-a-sitemap/
-- optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
+# optimize images, view Lighthouse SEO 'performance' audit. Size images more appropriately.
 # put hero section images in Img tags
 # put testimonials
-- create a page on accessibility (ARIA)
+- set up database backups in a logical (scheduled db backups?)  
 - finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
+- optimize 404 page image
+- add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - add social buttons  
 # fix blog width
-# fix broken links 
+- fix broken links 
 - consider rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
 - address portfolio situation
 - add a confirmation popup when contact form
-- finish or revise digital marketing services page
+# finish or revise digital marketing services page
 - fix category links on site(blog feature card) - category pages?
 - fix weird "quoting" behavior in footer
 - hide footer on 404 page?
-- add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - add fog effect to 404 page too!
+- create a page on accessibility (ARIA)
 - add search functionality: https://www.gatsbyjs.org/docs/adding-search/
-- set up database backups in a logical (scheduled db backups?)  
 # unpublish unnecessary CMS pages, landing-page
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - delete all ridiculous tags on my site

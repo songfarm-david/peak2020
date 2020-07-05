@@ -27,7 +27,7 @@ export default ({ data, location }) => {
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
-            <PageBanner bannerType="page" title={title} />
+            <PageBanner bannerType="page" title={title} slug={slug} />
 
             <PageContent path={slug} type={type}>
 
