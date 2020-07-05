@@ -48,9 +48,9 @@
 @media screen and (min-width: $mobile-breakpoint) {
 
     .pageContent {
-        width: $content-width-blog;
+        width: $content-width;
         .pageContentInner {
-            width: $content-width;
+            width: 100%;
             margin: 0 auto;
             justify-content: flex-start;
             flex-wrap: wrap;
@@ -61,10 +61,14 @@
 
         /* for blog posts on desktop */
         &.blogContent {
-            width: $content-width-blog;
+            width: $content-width;
             .pageContentInner {
                 width: 100%;
             }
+        }
+
+        &.servicePage {
+
         }
 
         &.contactUs {

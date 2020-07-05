@@ -25,7 +25,7 @@ main {
 
     .home, .about {
         position: relative;
-        width: 100%;
+        // width: 100%;
         .heroText { margin: 0; }
         .heroImage { order: 1; }
         .heroButton {
@@ -97,10 +97,6 @@ main {
         }
     }
 
-    // &.home #pageContent {
-    //     margin-bottom: 0;
-    // }
-
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
@@ -113,6 +109,7 @@ main {
 
         .home, .about {
             position: relative;
+            // width: auto;
             .heroText { flex-basis: 100%; }
             .heroImage { order: initial; }
             .heroBody { flex: 2; }               
