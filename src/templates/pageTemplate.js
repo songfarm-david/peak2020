@@ -49,7 +49,7 @@ export default ({ data, location }) => {
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
             {(location.pathname === '/' && <HeroSection />) 
-                || <PageBanner bannerType={type} title={title} />}
+                || <PageBanner bannerType={type} title={title} slug={slug} />}
 
             <PageContent 
                 path={slug} 
