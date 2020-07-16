@@ -25,6 +25,9 @@ exports.createPages = async ({ graphql, actions }) =>  {
                         id
                         status
                         path
+                        categories {
+                            slug
+                        }
                     }
                 }
             }
