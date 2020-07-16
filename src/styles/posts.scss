@@ -1,0 +1,67 @@
+@import "./globals.scss";
+
+main.blog-post {
+
+    .blog-byline {
+        @extend .heading-3; 
+    }
+
+    p > a,
+    .wp-block-quote cite a,
+    .wp-block-pullquote a {
+        text-decoration: underline;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .wp-block-quote,
+    .wp-block-pullquote {
+        border-left: 2px solid $light-green;
+        padding-left: $top-margin;
+        margin: $vertical-rhythm 0 $vertical-rhythm $top-margin;
+        p {
+            @extend .big-body-text 
+        }
+        cite {
+            
+            &::before {
+                content: '\2014';
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+
+        blockquote {
+            margin: 0;
+        }
+    }
+
+    .wp-block-image,
+    .wp-block-embed {
+        figcaption {
+            @extend .small-text;
+            text-align: center;
+            a { 
+                text-decoration: underline;
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    figure.wp-block-embed { 
+        text-align: center; 
+        iframe { width: auto; max-width: 640px }
+    }
+
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    figure.wp-block-embed { 
+        iframe { width: 100% }
+    }
+}
