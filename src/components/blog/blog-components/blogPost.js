@@ -9,7 +9,7 @@ import BlogMeta from "./blogMeta"
 import blogPostStyles from "./blogPost.module.scss"
 
 const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
-    // console.log('BlogPost type, postData, isFeaturedPost', type, postData, isFeaturedPost);
+    console.log('BlogPost type, postData, isFeaturedPost', type, postData, isFeaturedPost);
 
     const { path, title, excerpt, featured_media, ...metaProps } = postData
 

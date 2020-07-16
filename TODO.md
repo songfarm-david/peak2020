@@ -69,3 +69,4 @@
 - create a blogging schedule
 - and page scrolling line for blog posts like [this one](https://www.ppchero.com/how-should-you-formulate-your-ppc-strategy/)
 - look into phone systems
+- figure out why my links in google docs don't have a fun card attached to them

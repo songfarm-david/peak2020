@@ -16,7 +16,7 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 * Mar 2020
 */
 export default ({ data, location, pageContext }) => {
-    // console.log('blogTemplate data, location, pageContext', data, location, pageContext);
+    console.log('blogTemplate data, location, pageContext', data, location, pageContext);
 
     /* create proptypes and stream a var declaration format that is clearer 
         the difference between page templates and blog templates is that blog posts must inlude a 'featured_media' property to be passed into the PageBanner component
@@ -33,11 +33,8 @@ export default ({ data, location, pageContext }) => {
     
     return (
         <Layout path={location.pathname} layoutClass={"blog-post " + title}> 
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                image={featured_media}
-                path={location.href}
+            
+            <SEO title={title} description={excerpt} image={featured_media} path={location.href}
             />
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
@@ -75,6 +72,7 @@ export const query = graphql`
             categories {
                 name
                 wordpress_id
+                path
             }
             featured_media {
                 alt_text

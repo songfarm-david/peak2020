@@ -15,7 +15,7 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
  * @param {String} bannerType either a 'page' or a 'blog' banner type
  * @param {String} title the title for the page banner
  */
-const PageBanner = ({ bannerType, title, slug, bannerImg, bannerData }) => {
+const PageBanner = ({ bannerType = "page", title, slug, bannerImg, bannerData = {} }) => {
     // console.log('pageBanner bannerType, title, slug, bannerImg, bannerData', bannerType, title, slug, bannerImg, bannerData );
     
     return ( 
@@ -42,7 +42,7 @@ const PageBanner = ({ bannerType, title, slug, bannerImg, bannerData }) => {
 export default PageBanner
 
 PageBanner.propTypes = {
-    bannerType: PropTypes.string.isRequired,
+    bannerType: PropTypes.string,
     title: PropTypes.string.isRequired,
     bannerImg: PropTypes.object,
     bannerData: PropTypes.object

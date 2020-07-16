@@ -22,6 +22,9 @@
         display: flex;
         flex-basis: 100%;
         justify-content: center;
+        position: relative;
+        z-index: 111;
+        &:hover { background: red; }
         .categories {
             @extend .normal-text;
         }

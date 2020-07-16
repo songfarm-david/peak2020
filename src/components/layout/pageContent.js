@@ -14,17 +14,17 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.path a page title used to add as classname to the component 
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
-const PageContent = ({ path, type, content, children, featuredMedia = false }) => {
+const PageContent = ({ path = "", type, content, children, featuredMedia = false }) => {
     console.log('PageContent path, type, children, featuredMedia', path, type, children, featuredMedia);
     
     return (
     <div id="pageContent" className={
         (type === 'post') ?  `${pageContentStyles.blogContent} ${pageContentStyles.pageContent}` 
         : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
-            : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}`
+            : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}` : (path === 'category') ? `${pageContentStyles.category} ${pageContentStyles.pageContent}`
                 : `${pageContentStyles.pageContent} ${path}`}>
 
-            {(path === 'contact-us') ? children 
+            {( children ) ? children 
 
                 : <div className={
                     (featuredMedia) ? `${pageContentStyles.hasFeaturedImage} ${pageContentStyles.pageContentInner}` 

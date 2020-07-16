@@ -83,6 +83,7 @@ export const queryAllPosts = graphql`
             }
             categories {
                 name
+                path
             }
             author {
                 name
