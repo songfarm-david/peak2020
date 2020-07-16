@@ -7,6 +7,7 @@ import FeaturedImage from "./featuredImage"
 import BlogMeta from "./blogMeta"
 
 import blogPostStyles from "./blogPost.module.scss"
+import "./../../../styles/posts.scss"
 
 const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
     // console.log('BlogPost type, postData, isFeaturedPost', type, postData, isFeaturedPost);
