@@ -32,6 +32,7 @@ export default ({ data, pageContext }) => {
 
             <Newsletter path={pageContext.url} />
             <ContactFormCallout path={pageContext.url} isAddFields={false} />
+            
         </Layout>
     )
 
