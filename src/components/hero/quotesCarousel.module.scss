@@ -12,15 +12,15 @@
         .quote {
             width: auto;
             margin-bottom: $margin-bottom;
-            &::before {
-                content: "\201C";
-                display: inline-block;
-            }
-            &::after {
-                content: "\201D";
-                display: inline-block;
-                white-space: nowrap;
-            }
+            // &::before {
+            //     content: "\201C";
+            //     display: inline-block;
+            // }
+            // &::after {
+            //     content: "\201D";
+            //     display: inline-block;
+            //     white-space: nowrap;
+            // }
         }
         .author {
             @extend .normal-text;

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 import { getDate, getAuthor } from "../../../functions/helperFunctions"
 
@@ -25,10 +26,11 @@ const FeatureBlogCard = ({ postData }) => {
            
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
-                    Posted in {(categories.map( ( cat, idx ) => (
+                    Posted in {(categories.map( ( cat, idx ) => {
+                        return (
                     <span key={idx} className={cardStyles.category}>
-                        {cat.name}{joinCats(categories, idx)}
-                    </span>)))}
+                        <Link to={cat.path} className={cardStyles.categoryLink}>{cat.name}{joinCats(categories, idx)}</Link>
+                    </span>)}))}
                 </span>}
             </div>
             

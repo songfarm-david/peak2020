@@ -34,6 +34,7 @@
 # put hero section images in Img tags
 # put testimonials
 - add swipe to testimonials
+- confirm new blog posts trigger mailchimp mailing list bro?
 - set up database backups in a logical (scheduled db backups?)  
 - finish page about ocntent and creating content as a service
 - do ros marketing page, post on alignable
@@ -68,3 +69,4 @@
 - create a blogging schedule
 - and page scrolling line for blog posts like [this one](https://www.ppchero.com/how-should-you-formulate-your-ppc-strategy/)
 - look into phone systems
+- figure out why my links in google docs don't have a fun card attached to them

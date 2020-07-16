@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions }) =>  {
 
     const pageTemplate = path.resolve('src/templates/pageTemplate.js')
     const blogTemplate = path.resolve('src/templates/blogPostTemplate.js')
+    const categoryTemplate = path.resolve('src/templates/categoryTemp.js')
 
     const result = await graphql(`
         query {
@@ -27,12 +28,23 @@ exports.createPages = async ({ graphql, actions }) =>  {
                     }
                 }
             }
+            allWordpressCategory {
+                edges {
+                    node {
+                        id
+                        path
+                        slug
+                        name
+                        description
+                    }
+                }
+            }
         }
     `)
 
     if (result.errors) throw new Error(result.errors) 
 
-    const { allWordpressPage, allWordpressPost } = result.data
+    const { allWordpressPage, allWordpressPost, allWordpressCategory } = result.data
         
     allWordpressPage.edges.forEach(({ node }) => {
         if (node.status === 'publish') {            
@@ -56,6 +68,21 @@ exports.createPages = async ({ graphql, actions }) =>  {
                 }
             })
         }
+    })
+
+    allWordpressCategory.edges.forEach(({ node }) => {
+        if (node.slug === 'portfolio') return
+        createPage({
+            path: node.path,
+            component: categoryTemplate,
+            context: {
+                id: node.id,
+                slug: node.slug,
+                name: node.name,
+                description: node.description,
+                url: node.path
+            }
+        })
     })
   
 }

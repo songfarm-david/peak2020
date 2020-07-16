@@ -38,6 +38,9 @@ export const quotes = [
     }, {
         quote: "The experienced mountain climber is not intimidated by the mountain, he is inspired by it.",
         author: "William Arthur Ward"
+    }, {
+        quote: "It's not how you start, it's how you finish.",
+        author: "Unknown"
     }
 
 ]

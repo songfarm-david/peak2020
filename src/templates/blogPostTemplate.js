@@ -33,11 +33,8 @@ export default ({ data, location, pageContext }) => {
     
     return (
         <Layout path={location.pathname} layoutClass={"blog-post " + title}> 
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                image={featured_media}
-                path={location.href}
+            
+            <SEO title={title} description={excerpt} image={featured_media} path={location.href}
             />
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
@@ -75,6 +72,7 @@ export const query = graphql`
             categories {
                 name
                 wordpress_id
+                path
             }
             featured_media {
                 alt_text

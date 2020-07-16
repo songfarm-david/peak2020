@@ -97,6 +97,12 @@ main {
         }
     }
 
+    &.blog {
+        #pageContent.blog {
+            padding-left: $margin-bottom;
+            padding-right: $margin-bottom;
+        }
+    }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {

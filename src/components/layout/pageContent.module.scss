@@ -1,7 +1,6 @@
 @import "../../styles/globals.scss";
 
 .pageContent {
-
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -43,6 +42,14 @@
         }
     }
 
+    &.category {
+        @extend .normal-text-italic;
+        padding: $content-padding;
+        a:hover {
+            text-decoration: underline;
+        }
+    }   
+
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
@@ -67,12 +74,16 @@
             }
         }
 
-        &.servicePage {
+        // &.servicePage {
 
-        }
+        // }
 
         &.contactUs {
             width: 100%;
+        }
+
+        &.category {
+            width: $hero-width;
         }
 
     }

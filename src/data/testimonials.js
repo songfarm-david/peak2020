@@ -20,13 +20,29 @@ export let testimonials = [
         cite: "https://www.samiranoorali.com/",
         visible: true,
         business: null
-    }, {
-        headline: "Awesome service",
-        body: "Awesome service! Speak in layman's terms!! Extensive knowledge and experience!!",
-        author: "Michael Lipcsei",
-        cite: "https://www.alignable.com/victoria-bc/longevity-publshers",
+    },  {
+        headline: "With Dave at Peak Websites, you're in good hands!",
+        body: "Dave is a reliable source of knowledge and experience if you're looking to grow your footprint online or want to turn your website into a resource that works for your business.",
+        author: "Gordon Paterson",
+        cite: "https://cadencecreativestudio.com/",
         visible: true,
-        business: "Alignable"
+        business: "Cadence Creative Studio"
+    }, 
+    // {
+    //     headline: "I appreciate your informative articles.",
+    //     body: "",
+    //     author: "Suzanne E",
+    //     cite: "https://www.google.ca/search?q=peak+websites+reviews&oq=peak+websites+reviews&aqs=chrome..69i57j69i60l3.2437j0j7&sourceid=chrome&ie=UTF-8#lrd=0x548f0d5fc97ca0cf:0xe2e36cceda92621c,1,,,",
+    //     visible: false,
+    //     business: "Google Reviews"
+    // }, 
+    {
+        headline: "Awesome service 👌",
+        body: "Speaks in layman's terms! Extensive knowledge and experience!",
+        author: "Anne-Marie C",
+        cite: "https://www.google.ca/search?q=peak+websites+reviews&oq=peak+websites+reviews&aqs=chrome..69i57j69i60l3.2437j0j7&sourceid=chrome&ie=UTF-8#lrd=0x548f0d5fc97ca0cf:0xe2e36cceda92621c,1,,,",
+        visible: true,
+        business: "Google Reviews"
     }, {
         headline: "Dave has been great to work with!",
         body: "He is detail oriented and worked quickly to complete our website, adding many creative ideas that made our site look more visually appealing for potential visitors. I would definitely (and have already) recommended Dave to others and have heard positive feedback from the referrals.",
