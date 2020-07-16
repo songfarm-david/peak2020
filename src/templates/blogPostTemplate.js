@@ -16,7 +16,7 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 * Mar 2020
 */
 export default ({ data, location, pageContext }) => {
-    console.log('blogTemplate data, location, pageContext', data, location, pageContext);
+    // console.log('blogTemplate data, location, pageContext', data, location, pageContext);
 
     /* create proptypes and stream a var declaration format that is clearer 
         the difference between page templates and blog templates is that blog posts must inlude a 'featured_media' property to be passed into the PageBanner component

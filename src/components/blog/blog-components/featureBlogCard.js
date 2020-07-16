@@ -27,7 +27,6 @@ const FeatureBlogCard = ({ postData }) => {
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>
                     Posted in {(categories.map( ( cat, idx ) => {
-                        console.log(cat)
                         return (
                     <span key={idx} className={cardStyles.category}>
                         <Link to={cat.path} className={cardStyles.categoryLink}>{cat.name}{joinCats(categories, idx)}</Link>

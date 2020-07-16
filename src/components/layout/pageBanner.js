@@ -19,7 +19,7 @@ const PageBanner = ({ bannerType = "page", title, slug, bannerImg, bannerData = 
     // console.log('pageBanner bannerType, title, slug, bannerImg, bannerData', bannerType, title, slug, bannerImg, bannerData );
     
     return ( 
-        <div className={( bannerType === 'page' ) ? `pageBanner ${slug}` : `blogPost ${slug}`}>
+        <header className={( bannerType === 'page' ) ? `pageBanner ${slug}` : `blogPost ${slug}`} data-title={slug}>
 
             {( bannerType === 'page' ) && 
                 <div className={"headerContainer"}>
@@ -33,7 +33,7 @@ const PageBanner = ({ bannerType = "page", title, slug, bannerImg, bannerData = 
                         <FeatureBlogCard postData={(bannerData) ? bannerData : null} />
                     </div>
                 </>}
-        </div>
+        </header>
         
     )
 

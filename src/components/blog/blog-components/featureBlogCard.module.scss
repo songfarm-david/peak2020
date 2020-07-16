@@ -3,7 +3,7 @@
 .featuredCard {
 
     // width: $content-width;
-    width: 100%;
+    width: 90%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -24,7 +24,7 @@
         justify-content: center;
         position: relative;
         z-index: 111;
-        &:hover { background: red; }
+        // &:hover { background: red; }
         .categories {
             @extend .normal-text;
         }
