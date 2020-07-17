@@ -41,6 +41,7 @@
 # finish or revise digital marketing services page
 # fix category links on site(blog feature card) - category pages?
 # fix weird "quoting" behavior in footer- add social buttons to blog posts  
+- add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - add newsletter, contact form to 404 page, style it
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - add rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
@@ -50,7 +51,6 @@
 - address portfolio situation
 - add fog effect to 404, home page!
 - add a little section in the blog 'see an error? get in touch'?
-- add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - create a page on accessibility (ARIA)
 - finish page about ocntent and creating content as a service
 - add search functionality: https://www.gatsbyjs.org/docs/adding-search/
