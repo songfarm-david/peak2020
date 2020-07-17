@@ -4,10 +4,10 @@ import newsletterFormStyles from "./newsletterForm.module.scss"
 
 const NewsletterForm = ({ path, text, className = {} }) => {
         
-    const [userEmail, setState] = useState({'email_address': ''})
+    const [userEmail, setUserEmail] = useState({'email_address': ''})
 
     const handleChange = e => {
-        setState({email_address: e.target.value})        
+        setUserEmail({email_address: e.target.value})        
     }    
 
     return (
