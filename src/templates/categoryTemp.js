@@ -12,14 +12,14 @@ import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
 export default ({ data, pageContext }) => {
-    console.log(data, pageContext);
+    // console.log(data, pageContext);
     const { allWordpressPost } = data 
 
     const filteredPosts = allWordpressPost.edges.filter(({node}) => {
         return node.categories.some(({ slug }) => slug === pageContext.slug)
     })
 
-    console.log(filteredPosts);
+    // console.log(filteredPosts);
 
     return (
         <Layout path={pageContext.url} layoutClass={"category"}>
