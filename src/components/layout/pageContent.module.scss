@@ -74,9 +74,16 @@
             }
         }
 
-        // &.servicePage {
-
-        // }
+        &.servicePage {
+            display: flex;
+            flex-wrap: wrap;
+            // .pageContentInner {
+            //     justify-content: center;
+            // }
+            // .pageContentInner.hasFeaturedImage {
+            //     justify-content: flex-start;
+            // }
+        }
 
         &.contactUs {
             width: 100%;
