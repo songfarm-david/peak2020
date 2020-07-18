@@ -23,6 +23,7 @@ exports.createPages = async ({ graphql, actions }) =>  {
                 edges {
                     node {
                         id
+                        wordpress_id
                         status
                         path
                         categories {
@@ -67,12 +68,14 @@ exports.createPages = async ({ graphql, actions }) =>  {
                 path: node.path,
                 component: blogTemplate,
                 context: {
-                    id: node.id
+                    id: node.id,
+                    wordpress_id: node.wordpress_id
                 }
             })
         }
     })
 
+    // todo: double check 'context' prop contains only necessary stuff
     allWordpressCategory.edges.forEach(({ node }) => {
         if (node.slug === 'portfolio') return
         createPage({

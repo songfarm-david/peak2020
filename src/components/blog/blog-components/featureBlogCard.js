@@ -22,7 +22,7 @@ const FeatureBlogCard = ({ postData }) => {
     const joinCats = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
 
     return (
-        <div className={( sticky ) ? cardStyles.sticky : cardStyles.featuredCard}>
+        <div className={( sticky ) ? `${cardStyles.featuredCard} ${cardStyles.sticky}` : cardStyles.featuredCard}>
            
             <div className={cardStyles.categoriesContainer}>
                 {(categories) && <span className={cardStyles.categories}>

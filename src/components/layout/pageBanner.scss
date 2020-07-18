@@ -10,7 +10,7 @@
     position: absolute;
     top: 50%;
     z-index: 111;
-    width: 90%;
+    width: calc(100% - 1.5rem);
     height: 100%;
     left: 50%;
     transform: translate(-50%);

@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
+import Comments from "../components/comments"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
@@ -16,13 +17,12 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 * Mar 2020
 */
 export default ({ data, location, pageContext }) => {
-    // console.log('blogTemplate data, location, pageContext', data, location, pageContext);
 
-    /* create proptypes and stream a var declaration format that is clearer 
-        the difference between page templates and blog templates is that blog posts must inlude a 'featured_media' property to be passed into the PageBanner component
-    */
+    console.log(data, location, pageContext);
 
     const { 
+        wordpress_id,
+        path,
         title, 
         type, 
         featured_media, 
@@ -30,6 +30,8 @@ export default ({ data, location, pageContext }) => {
         content, 
         ...metaProps 
     } = data.wordpressPost
+
+    const postComments = data.allWordpressWpComments
     
     return (
         <Layout path={location.pathname} layoutClass={"blog-post " + title}> 
@@ -43,6 +45,8 @@ export default ({ data, location, pageContext }) => {
             
             <PageContent type={type} content={content} />
 
+            <Comments postComments={ postComments } />
+            
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} isAddFields={false} />
 
@@ -52,7 +56,7 @@ export default ({ data, location, pageContext }) => {
 }
 
 export const query = graphql`
-    query($id: String!) {
+    query($id: String!, $wordpress_id: Int!) {
         wordpressPost(id: {eq: $id}) {
             wordpress_id
             path
@@ -87,6 +91,23 @@ export const query = graphql`
                 media_details {
                     height
                     width
+                }
+            }
+        }
+        allWordpressWpComments(filter: {post: {eq: $wordpress_id}}) {
+            totalCount
+            edges {
+                node {
+                    wordpress_id
+                    wordpress_parent
+                    type
+                    status
+                    post
+                    path
+                    author_name
+                    author_url
+                    date(formatString: "MMM Do, YYYY")
+                    content
                 }
             }
         }
