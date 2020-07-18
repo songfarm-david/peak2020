@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     flex-basis: 100%;
     text-align: center;
-    width: calc(33% - 2.5rem);
+    // width: 100%;
     box-sizing: border-box;
     margin: 0 1.25rem 2.5rem;
     align-content: flex-start;
@@ -49,5 +49,8 @@
 @media screen and (min-width: $mobile-breakpoint) {
     .serviceLink {
         flex-basis: 30%;
+            // width: calc(30% - 2.5rem);
+
+        display: inline-block;
     }
 }

@@ -3,7 +3,7 @@
 .featuredCard {
 
     // width: $content-width;
-    width: 90%;
+    width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -90,6 +90,10 @@
         }
     }
 
+    &.sticky {
+        width: calc(100% - 1.5rem);
+    }
+
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
@@ -114,12 +118,13 @@
             }
         }
 
+        &.sticky {
+            width: 66%;
+        }
+
     }
 
-    .sticky {
-        composes: featuredCard;
-        width: 66%;
-    }
+    
 
 }
 

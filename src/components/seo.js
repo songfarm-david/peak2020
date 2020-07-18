@@ -14,7 +14,7 @@ import S from 'string'
 
 function SEO({ title, description, image, meta, lang, path }) {
     
-    console.log(description);
+    // console.log(description);
 
     const { site } = useStaticQuery(graphql`
         query {
@@ -39,7 +39,7 @@ function SEO({ title, description, image, meta, lang, path }) {
     const pUrl = path || site.siteMetadata.siteUrl
     const canonical = path || false
          
-    console.log(metaDescription);
+    // console.log(metaDescription);
 
     return ( 
         <Helmet 

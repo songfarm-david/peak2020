@@ -6,11 +6,13 @@
     width: 100%;
     background-color: $background;
     z-index: 1000;
+    height: $vertical-rhythm;
     #headerInnerContainer {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0.25rem $margin-bottom;
+        height: 100%;
     }
     #siteLogo {
         width: 100%;
@@ -22,7 +24,7 @@
     #siteHeader {
         #headerInnerContainer {
             width: $content-width;
-            margin: 0.25rem auto;
+            margin: 0 auto;
         }
     }
 }
