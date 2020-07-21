@@ -45,7 +45,7 @@ export default ({ data, location, pageContext }) => {
             
             <PageContent type={type} content={content} />
 
-            <Comments postComments={ postComments } />
+            {/* <Comments postComments={ postComments } /> */}
             
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} isAddFields={false} />
