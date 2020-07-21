@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import ReactHtmlParser from 'react-html-parser';
 
-import FeatureBlogCard from "./featureBlogCard"
+import MetaCard from "./metaCard"
 import FeaturedImage from "./featuredImage"
 import BlogMeta from "./blogMeta"
 
@@ -23,9 +23,8 @@ const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
                 ( isFeaturedPost ) ? (
                     <div className={blogPostStyles.featuredImageContainer}>
                         <FeaturedImage isFeature={true} featuredImage={featured_media} />
-                        <FeatureBlogCard postData={postData} />
-                    </div>
-                ) 
+                        <MetaCard postData={postData} />
+                    </div> ) 
                 : 
                 ( <>
                     <FeaturedImage featuredImage={featured_media} />

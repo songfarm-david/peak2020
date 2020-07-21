@@ -102,6 +102,9 @@ main {
             padding-left: $margin-bottom;
             padding-right: $margin-bottom;
         }
+        .metaCard.sticky {
+            width: calc(100% - 1.5rem);
+        }
     }
 }
 
@@ -141,6 +144,12 @@ main {
             background-position: center;
             div {
                 width: $hero-width;
+            }
+        }
+
+        &.blog {
+            .metaCard.sticky {
+                width: 66%;
             }
         }
         

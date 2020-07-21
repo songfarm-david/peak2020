@@ -1,8 +1,6 @@
-@import "../../../styles/globals.scss";
+@import "../globals.scss";
 
-.featuredCard {
-
-    // width: $content-width;
+.metaCard {
     width: 100%;
     position: absolute;
     left: 50%;
@@ -15,72 +13,50 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    text-align: center;
-
+    text-align: center; 
+    // &.sticky {
+    //     width: calc(100% - 1.5rem);
+    // } 
     .categoriesContainer {
-        // margin-bottom: 1.5rem;
         display: flex;
         flex-basis: 100%;
         justify-content: center;
         position: relative;
-        z-index: 111;
-        // &:hover { background: red; }
+        z-index: 111;   
         .categories {
             @extend .normal-text;
         }
         .category {
             text-transform: uppercase;
-            text-decoration: none;
             position: relative;
             width: 100%;
             margin-left: .15rem;
             font-weight: normal;
             @extend .normal-text;
+            > a {
+                text-decoration: underline;
+            }
             &:hover {
                 cursor: pointer;
+                > a {
+                    text-decoration: none;
+                }
                 &:after {
                     background-color: transparent;
                 }
             }
-            &:after {
-                content: "";
-                position: absolute;
-                // top: 100%;
-                height: 2px;
-                width: 97%;
-                border-radius: 1px;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                background-color: $strong-blue;
-            }
-        }
+        } 
     }
-
-    .heading {
-        text-align: center;
-        margin: 0;
-    }
-
-    .postMetaData {
+    
+    .postMeta {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
         @extend .normal-text;
-        position: relative;
-        // margin-top: 1rem;
-        text-align: center;
-    
-        .postMeta {
-            flex-basis: 100%;
-            text-align: center;
-            display: inline;
-            line-height: 1.5;
-            padding: $content-padding;
+        .postDate,
+        .postAuthor {
+            display: inline-block;
         }
-
-        .author {
-            consumes: postMeta;
+        .postAuthor {
             padding-left: 0;
             &:before {
                 content: '\2014';
@@ -88,43 +64,25 @@
                 margin: 0 8px;
             }
         }
-    }
-
-    &.sticky {
-        width: calc(100% - 1.5rem);
-    }
-
+    }  
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
-        
-    .featuredCard {
-
+    .metaCard {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
         margin: 0 auto;
-
-        .heading { flex-basis: 100%; }
-
-        .postMetaData {
-            flex-wrap: nowrap;
-            width: 100%;
-            justify-content: center;
-            .post-meta {
-                flex-basis: auto;
-            }
-        }
-
         &.sticky {
             width: 66%;
         }
-
+        .postMeta {
+            flex-wrap: nowrap;
+            width: 100%;
+            justify-content: center;
+        }
     }
-
     
-
 }
-
