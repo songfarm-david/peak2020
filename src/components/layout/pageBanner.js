@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 import "./pageBanner.scss"
 
-import FeatureBlogCard from "../blog/blog-components/featureBlogCard"
+import MetaCard from "../blog/blog-components/metaCard"
 import FeaturedImage from "../blog/blog-components/featuredImage"
 
 /**
@@ -30,7 +30,7 @@ const PageBanner = ({ bannerType = "page", title, slug, bannerImg, bannerData = 
                 <>
                     <FeaturedImage featuredImage={bannerImg} isFeature={true} />
                     <div className={"blogHeaderContainer"}>
-                        <FeatureBlogCard postData={(bannerData) ? bannerData : null} />
+                        <MetaCard postData={(bannerData) ? bannerData : null} />
                     </div>
                 </>}
         </header>
