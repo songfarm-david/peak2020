@@ -18,8 +18,6 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 */
 export default ({ data, location, pageContext }) => {
 
-    console.log(data, location, pageContext);
-
     const { 
         wordpress_id,
         path,
