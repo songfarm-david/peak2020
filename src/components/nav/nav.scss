@@ -131,7 +131,6 @@
     }
     
     @media screen and (min-width: $mobile-breakpoint) {
-
         position: relative;
         left: 0; 
         right: 0;
@@ -142,6 +141,7 @@
         opacity: 1;
         z-index: 1;
         transition: none;
+        margin-right: -1.25rem;
         &.menu-active { 
             transition: none;
             top: 0;

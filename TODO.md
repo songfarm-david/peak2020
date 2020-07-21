@@ -45,9 +45,10 @@
 
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - make sure images in blog posts on mobile aren't screwed up
-- add newsletter, contact form to 404 page, style it
-- add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
+- increase general line height, address main nav styles on desktop
 - set up better pagination for blog posts, 'load more' would be a cool experiment
+- add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
+- add newsletter, contact form to 404 page, style it
 - add rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
 - Add/test a good modern CSS reset 
 - add a confirmation popup when contact form
