@@ -1,18 +1,18 @@
-@import "../../styles/globals.scss";
+// @import "../../styles/globals.scss";
 
-#blogFeature {
+// #blogFeature {
     
-    background-color: $light-green;
-    padding: $content-padding;
+//     background-color: $light-green;
+//     padding: $content-padding;
 
-    .to-blog-link { display: flex;}
-    .button { margin-left: 1rem; }
+//     .to-blog-link { display: flex;}
+//     .button { margin-left: 1rem; }
 
-    @media screen and (max-width: $mobile-breakpoint) {
-        .button { 
-            margin-left: 0;
-            margin-top: $top-margin;
-        }
-    }
+//     @media screen and (max-width: $mobile-breakpoint) {
+//         .button { 
+//             margin-left: 0;
+//             margin-top: $top-margin;
+//         }
+//     }
 
-}
+// }

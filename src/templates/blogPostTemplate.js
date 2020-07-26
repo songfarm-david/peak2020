@@ -17,7 +17,7 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 * Mar 2020
 */
 export default ({ data, location, pageContext }) => {
-
+    console.log(data, location, pageContext);
     const { 
         wordpress_id,
         path,
@@ -29,6 +29,7 @@ export default ({ data, location, pageContext }) => {
         ...metaProps 
     } = data.wordpressPost
 
+    const { wordpressPost } = data
     const postComments = data.allWordpressWpComments
     
     return (
@@ -39,11 +40,11 @@ export default ({ data, location, pageContext }) => {
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
-            <PageBanner bannerType={type} title={title} bannerImg={featured_media} bannerData={(type === 'post') ? {metaProps, title} : null} />
+            <PageBanner bannerType={"post"} bannerData={wordpressPost} />
             
             <PageContent type={type} content={content} />
 
-            {/* <Comments postComments={ postComments } /> */}
+            {/* <Comments postData={data} /> */}
             
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} isAddFields={false} />

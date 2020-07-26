@@ -1,12 +1,12 @@
 @import "../globals.scss";
 
 .metaCard {
-    width: 100%;
+    // width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    // z-index: 100;
     background: $white;
     padding: $top-margin;
     display: flex;
@@ -66,6 +66,15 @@
             }
         }
     }  
+}
+
+.blog-post {
+    .metaCard {
+        position: relative;
+        left: 0%;
+        top: 0%;
+        transform: none;
+    }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {

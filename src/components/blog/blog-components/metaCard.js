@@ -6,8 +6,8 @@ import { getDate, getAuthor } from "../../../functions/helperFunctions"
 import "../../../styles/blog/metaCard.scss"
 
 /**
- * 
- * @param {*} param0 
+ * Blog post meta card for displaying post information
+ * i.e: post categories, title, date, and share icons 
  */
 const MetaCard = ({ postData }) => {
 
@@ -19,6 +19,8 @@ const MetaCard = ({ postData }) => {
      * @param {*} idx 
      */
     const joinCats = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
+
+    console.log('metaCard postData', postData);
 
     return (
         <div className={( sticky ) ? "metaCard sticky" : "metaCard"}>
@@ -41,6 +43,7 @@ const MetaCard = ({ postData }) => {
                 </div>
                 <span className={"postAuthor"}>{getAuthor(categories, author.name)}</span>
             </div>
+
 
         </div>
     )
