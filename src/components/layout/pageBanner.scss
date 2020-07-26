@@ -5,13 +5,17 @@
 }
 
 .blogHeaderContainer {
-    // background-color: transparent;
+    background-color: $white;
     color: $strong-blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: $content-padding;
     position: absolute;
     top: 50%;
     z-index: 111;
     width: calc(100% - 1.5rem);
-    height: 100%;
+    height: auto;
     left: 50%;
     transform: translate(-50%);
 }
@@ -32,18 +36,6 @@
 
     .pageHeader {
         font: inherit;
-    }
-
-    .blogPost {
-        width: 100%;
-        height: $blogBannerHeight;
-        position: relative;
-        z-index: 10;
-        background-image: none;
-        .blogBanner {
-            height: 100%;
-            width: 100%;
-        }
     }
     
     &.about {
@@ -68,24 +60,12 @@
 
 }
 
-.blogPost {
-    width: 100%;
-    height: $blogBannerHeight;
-    position: relative;
-    z-index: 10;
-    background-image: none;
-    .blogBanner {
-        height: 100%;
-        width: 100%;    
-    }
-}
-
 @media screen and (min-width: $mobile-breakpoint) {
     .pageBanner {
         font: $heading-1;
     }
     .blogHeaderContainer {
         width: $content-width;
-        
+        margin: 0 auto;
     }
 }

@@ -5,6 +5,8 @@ import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
 
 import blogStyles from "../../styles/posts.module.scss"
+import "../../styles/blog/posts.scss"
+
 
 /**
  * Blog section on home page: features 3 latest blogs
@@ -50,22 +52,39 @@ const BlogCallout = () => {
     )
     const featuredPosts = query.allWordpressPost
 
-    return (
-        <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogCallout}`}>
-            <div className={blogStyles.calloutContainer}>
-                <BlogHeading headingText="Latest Blog Articles" className="callout"/>
-                <div className={blogStyles.blogInner}>
+    // return (
+    //     <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogCallout}`}>
+    //         <div className={blogStyles.calloutContainer}>
+    //             <BlogHeading headingText="Latest Blog Articles" className="callout"/>
+    //             <div className={blogStyles.blogInner}>
                 
-                    {featuredPosts.edges.map(({ node }, idx) => (
-                    <BlogPost key={idx} postData={node} type="callout"/> ))}  
+    //                 {featuredPosts.edges.map(({ node }, idx) => (
+    //                 <BlogPost key={idx} postData={node} type="callout"/> ))}  
     
-                    <div className={blogStyles.calloutBtn}>
-                        <Link to="/blog/" className="button primary-button">Go to blog</Link>
-                    </div>
+    //                 <div className={blogStyles.calloutBtn}>
+    //                     <Link to="/blog/" className="button primary-button">Go to blog</Link>
+    //                 </div>
                     
+    //             </div>
+    //         </div>
+            
+    //     </section>
+    // )
+
+    return (
+        <section id="blogCallout" className={"blogSectionContainer blogCallout"}>
+            <div className={"calloutContainer"}>
+                <BlogHeading headingText="Latest Blog Articles" className="callout"/>
+                <div className={"blogInner"}>
+                    {featuredPosts.edges.map(({ node }, idx) => (
+                        <BlogPost key={idx} postData={node} type="callout"/> ))}  
+    
+                        <div className={"calloutBtn"}>
+                            <Link to="/blog/" className="button primary-button">Go to blog</Link>
+                        </div>
                 </div>
             </div>
-            
+
         </section>
     )
 

@@ -6,8 +6,9 @@ import MetaCard from "./metaCard"
 import FeaturedImage from "./featuredImage"
 import BlogMeta from "./blogMeta"
 
-import blogPostStyles from "./blogPost.module.scss"
-import "./../../../styles/posts.scss"
+// import blogPostStyles from "./blogPost.module.scss"
+import "../../../styles/blog/posts.scss"
+import "../../../styles/blog/blogPost.scss"
 
 const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
     // console.log('BlogPost type, postData, isFeaturedPost', type, postData, isFeaturedPost);
@@ -15,22 +16,21 @@ const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
     const { path, title, excerpt, featured_media, ...metaProps } = postData
 
     return (
-        <div className={
-            (isFeaturedPost) ? `${blogPostStyles.blogPost} ${blogPostStyles.featuredPost}` : blogPostStyles.blogPost}>
+        <div className={(isFeaturedPost) ? "blogPost featuredPost" : "blogPost" }>
 
             <Link to={path}>
             {
                 ( isFeaturedPost ) ? (
-                    <div className={blogPostStyles.featuredImageContainer}>
+                    <div className={"featuredImageContainer"}>
                         <FeaturedImage isFeature={true} featuredImage={featured_media} />
                         <MetaCard postData={postData} />
                     </div> ) 
                 : 
                 ( <>
                     <FeaturedImage featuredImage={featured_media} />
-                    <div className={(type && type === 'callout') ? blogPostStyles.callout : null}>
-                        <h4 className={blogPostStyles.heading}>{ReactHtmlParser(title)}</h4>
-                        <div className={blogPostStyles.excerpt}>{ReactHtmlParser(excerpt)}</div>
+                    <div className={(type && type === 'callout') ? "callout" : null}>
+                        <h4 className={"heading"}>{ReactHtmlParser(title)}</h4>
+                        <div className={"excerpt"}>{ReactHtmlParser(excerpt)}</div>
                     </div>
                     <BlogMeta type={type} metaData={metaProps}/>
                 </> )}

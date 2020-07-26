@@ -7,6 +7,7 @@ import "./pageBanner.scss"
 
 import MetaCard from "../blog/blog-components/metaCard"
 import FeaturedImage from "../blog/blog-components/featuredImage"
+import Social from "../social"
 
 /**
  * Page Banner 
@@ -15,8 +16,13 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
  * @param {String} bannerType either a 'page' or a 'blog' banner type
  * @param {String} title the title for the page banner
  */
-const PageBanner = ({ bannerType = "page", title, slug, bannerImg, bannerData = {} }) => {
-    // console.log('pageBanner bannerType, title, slug, bannerImg, bannerData', bannerType, title, slug, bannerImg, bannerData );
+const PageBanner = ({ 
+    bannerType = "page", 
+    title = "", 
+    slug = "", 
+    bannerData = {} 
+}) => {
+    console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
     
     return ( 
         <header className={( bannerType === 'page' ) ? `pageBanner ${slug}` : `blogPost ${slug}`} data-title={slug}>
@@ -28,9 +34,11 @@ const PageBanner = ({ bannerType = "page", title, slug, bannerImg, bannerData = 
 
              {( bannerType === 'post' ) && 
                 <>
-                    <FeaturedImage featuredImage={bannerImg} isFeature={true} />
+                    <FeaturedImage featuredImage={
+                        (bannerData.featured_media) ? bannerData.featured_media : null} isFeature={true} />
                     <div className={"blogHeaderContainer"}>
                         <MetaCard postData={(bannerData) ? bannerData : null} />
+                        <Social post={bannerData} isHeader={true} />
                     </div>
                 </>}
         </header>
@@ -43,7 +51,7 @@ export default PageBanner
 
 PageBanner.propTypes = {
     bannerType: PropTypes.string,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     bannerImg: PropTypes.object,
     bannerData: PropTypes.object
 }

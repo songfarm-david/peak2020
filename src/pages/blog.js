@@ -31,7 +31,7 @@ export default ({ data, location }) => {
     const haveStickyPost = ( featuredPost ) => (typeof featuredPost !== undefined) ? true : false
     
     return (
-        <Layout path={path} layoutClass={title}>
+        <Layout path={path} layoutClass={"blog-index"}>
 
             <SEO 
                 title={title} 

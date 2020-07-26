@@ -44,6 +44,7 @@
 
 
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
+- add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?
 - make sure images in blog posts on mobile aren't screwed up
 - increase general line height, address main nav styles on desktop
 - set up better pagination for blog posts, 'load more' would be a cool experiment
