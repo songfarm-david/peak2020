@@ -3,12 +3,12 @@ import React from "react"
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
 
-import blogStyles from "../../styles/posts.module.scss"
+import "../../styles/blog/posts.scss"
 
-const FeaturedPost = ({ postData }) => ( 
-    <article className={`${blogStyles.blogSectionContainer} ${blogStyles.featuredPost}`}>
+const FeaturedPost = ({ postData }) => (
+    <article id="featuredPost" className={"blogSectionContainer"}>
         <BlogHeading headingText="Featured Blog Articles" />
-        <div className={blogStyles.blogInner}>
+        <div className={"blogInner"}>
             <BlogPost isFeaturedPost={true} postData={postData} />
         </div>
     </article>

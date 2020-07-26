@@ -70,7 +70,6 @@ const Social = ({ post, isHeader = false, visible = true }) => {
             <FacebookShareButton
                 style={iconStyles} 
                 url={rootUrl + post.path}
-                quote={(post.excerpt) ? cleanString(post.excerpt) : ""}
                 hashtag={site.siteMetadata.title}>
                 <FacebookIcon size={32} round={true} bgStyle={{fill: "#DEC1FF"}} />
                 <FacebookShareCount url={rootUrl + post.path}>

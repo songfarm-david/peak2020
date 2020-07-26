@@ -1,57 +1,36 @@
-@import "./globals.scss";
+// @import "./globals.scss";
 
-/**
- * Don't delete these
- */
-.blogSectionContainer {
-    width: 100%;
-    box-sizing: border-box;
-    .blogInner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    &.blogCallout {
-        /* blogCallout.js */
-        background-color: $light-green;
-        padding: $content-padding;
-        padding-bottom: $vertical-rhythm;
-        .calloutContainer {
-            width: 100%;
-        }
-    }
-    &.featuredPost {
-        /* FeaturedPost.js */
-        // border: 2px solid orange;
-    }
-    &.blogIndex {
-        /* allPosts.js */
-        // border: 2px solid grey;
-    }
-    //.calloutBtn { /* button class */ }
-}
-
-@media screen and (min-width: $mobile-breakpoint) {
-    .blogSectionContainer {
-        &.blogCallout {
-            .calloutContainer {
-                width: $content-width;
-                margin: 0 auto;
-            }
-        }
-        
-    }
-}
-
-// .blog-inner-container {
-//     display: flex;
-//     flex-wrap: wrap;
+// /**
+//  * Don't delete these
+//  */
+// .blogSectionContainer {
+//     width: 100%;
+//     box-sizing: border-box;
+//     .blogInner {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+//         padding: 0 $margin-bottom;
+//     }
+//     &.blogCallout {
+//         /* blogCallout.js */
+//         background-color: $light-green;
+//         padding: $content-padding;
+//         padding-bottom: $vertical-rhythm;
+//         .calloutContainer {
+//             width: 100%;
+//         }
+//     }
 // }
 
-// .blog-content-container {
-//     box-sizing: border-box;
-//     padding: 0 0 $top-margin;
-//     + .blog-content-container {
-//         padding-top: 0;
+// @media screen and (min-width: $mobile-breakpoint) {
+//     .blogSectionContainer {
+//         &.blogCallout {
+//             .calloutContainer {
+//                 width: $content-width;
+//                 margin: 0 auto;
+//             }
+//         }
+        
 //     }
 // }
