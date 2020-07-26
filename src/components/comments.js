@@ -5,9 +5,9 @@ import Social from "./social"
 
 const Comments = ({ postData }) => {
 
-    // console.log(postComments, postTitle);
+    const { wordpressPost, allWordpressWpComments } = postData
 
-    const { wordpressPost } = postData
+    console.log('comments component', wordpressPost, allWordpressWpComments);
     // make sure type === comment and status === approved
 
     // make sure to decodeHTMLEntities and strip tags, escape anything
