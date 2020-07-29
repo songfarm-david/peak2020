@@ -22,7 +22,7 @@ const PageBanner = ({
     slug = "", 
     bannerData = {} 
 }) => {
-    console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
+    // console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
     
     return ( 
         <header className={( bannerType === 'page' ) ? `pageBanner ${slug}` : `blogPost ${slug}`} data-title={slug}>
