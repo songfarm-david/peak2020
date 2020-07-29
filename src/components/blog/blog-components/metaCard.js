@@ -20,7 +20,7 @@ const MetaCard = ({ postData }) => {
      */
     const joinCats = ( categories, idx ) => (categories.length - 1 === idx) ? "" : ", "
 
-    console.log('metaCard postData', postData);
+    // console.log('metaCard postData', postData);
 
     return (
         <div className={( sticky ) ? "metaCard sticky" : "metaCard"}>

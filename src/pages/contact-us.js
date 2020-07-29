@@ -13,7 +13,7 @@ import Helmet from "react-helmet"
 import S from 'string'
 
 export default ({ data, location }) => {
-    console.log('contact us location', location);
+    // console.log('contact us location', location);
     
     const { path, title, type, excerpt, slug } = data.wordpressPage
 

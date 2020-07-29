@@ -7,7 +7,7 @@ const Comments = ({ postData }) => {
 
     const { wordpressPost, allWordpressWpComments } = postData
 
-    console.log('comments component', wordpressPost, allWordpressWpComments);
+    // console.log('comments component', wordpressPost, allWordpressWpComments);
     // make sure type === comment and status === approved
 
     // make sure to decodeHTMLEntities and strip tags, escape anything
