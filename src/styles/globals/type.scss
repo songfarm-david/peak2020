@@ -31,6 +31,10 @@ h5,
     font: bold 1rem/1.25rem Montserrat, sans-serif; 
 }
 
+.byline-text {
+    @extend .heading-3;
+}
+
 /**
  * Body text 
  */

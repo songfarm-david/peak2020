@@ -140,7 +140,6 @@ main {
         }
 
         &.page-404 {
-
             background-position: center;
             div {
                 width: $hero-width;
@@ -155,11 +154,7 @@ main {
         &.blog-post {
             .metaCard.sticky {
                 width: 100%;
-                // height: 100%;
             }
-            // .metaCard {
-            //     height: 85%;
-            // }
         }
         
     }
