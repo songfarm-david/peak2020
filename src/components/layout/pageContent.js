@@ -20,15 +20,15 @@ const PageContent = ({ path = "", type, content, children, featuredMedia = false
     return (
     <div id="pageContent" className={
         (type === 'post') ?  `${pageContentStyles.blogContent} ${pageContentStyles.pageContent}` 
-        : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path}` 
+        : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path} section_container` 
             : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}` : (path === 'category') ? `${pageContentStyles.category} ${pageContentStyles.pageContent}`
-                : `${pageContentStyles.pageContent} ${path}`}>
+                : `${pageContentStyles.pageContent} ${path} section_container`}>
 
             {( children ) ? children 
 
                 : <div className={
                     (featuredMedia) ? `${pageContentStyles.hasFeaturedImage} ${pageContentStyles.pageContentInner}` 
-                    : pageContentStyles.pageContentInner}>
+                    : `${pageContentStyles.pageContentInner}`}>
 
             {(featuredMedia) ? <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
             : false}

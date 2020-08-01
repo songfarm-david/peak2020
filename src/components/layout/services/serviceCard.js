@@ -5,12 +5,14 @@ import ReactHtmlParser from 'react-html-parser';
 
 import servicesStyles from "./serviceCard.module.scss"
 
+// TODO: move this module/component into 'hero' directory
+
 const ServiceCard = ({ service }) => {
     
     const { title, featured_media, excerpt, path } = service
     
     return (
-        <Link to={path} title={title} className={servicesStyles.serviceLink}>
+        <Link to={path} title={title} className={`${servicesStyles.serviceLink} service_link`}>
             <article className={servicesStyles.serviceCard}>
                 <Img className={servicesStyles.serviceImage} alt={title} fluid={featured_media.localFile.childImageSharp.fluid} imgStyle={{objectFit: 'contain'}} />
                 <h3 className={servicesStyles.serviceHeading}>{ReactHtmlParser(title)}</h3>

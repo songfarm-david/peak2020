@@ -8,13 +8,17 @@ main {
         height: 100%;
     }
 
-    .heroText {
+    .heroText,
+    .hero_text {
         @extend .heading-2;
         flex: 0 0 100%;
         order: -1;
         width: 100%;
         margin: 0;
         background-color: transparent;
+    }
+    .hero_byline {
+        @extend .heading-3;
     }
 
     .heroBody {
@@ -115,7 +119,11 @@ main {
             width: $hero-width;
             padding-right: 33%;
         }
-
+        .hero_text--full_width {
+            width: auto;
+            padding-right: 0;
+        }
+    
         .home, .about {
             position: relative;
             // width: auto;

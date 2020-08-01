@@ -1,0 +1,27 @@
+@import "../../styles/globals.scss";
+
+.cta_block {
+    padding: 0 !important;
+    .cta_block__inner {
+        .cta_block__heading {}
+        .cta_block__byline {}
+        .cta_block__button {
+            margin-bottom: $margin-bottom;
+        }
+    }
+        
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .cta_block {
+        .cta_block__inner {
+            .cta_block__heading {}
+            .cta_block__byline {}
+            .cta_block__button {
+                margin-bottom: $margin-bottom;
+               + .cta_block__button { margin-left: $margin-bottom; }
+            }
+        }
+
+    }
+}

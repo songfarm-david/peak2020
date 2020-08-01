@@ -1,0 +1,32 @@
+/**
+ Features block for displaying sets of tiles (3 across on desktop)
+ */ 
+
+ @import "../../styles/globals.scss";
+
+.features_container {
+    .features_container__header {}
+    .feature {
+        @extend .cardStyles;
+        .feature__title {}
+        .feature__description {}
+        .feature__icon {}
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .features_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .features_container__header {
+            flex-basis: 100%;
+        }
+        .feature {
+            flex-basis: 30%;
+            .feature__title {}
+            .feature__description {}
+            .feature__icon {}
+        }
+    }
+}

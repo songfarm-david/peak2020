@@ -77,7 +77,7 @@ const Testimonials = () => {
                             tabIndex={(idx === allTestimonials.activeSlide) ? "0" : "-1"} 
                             aria-hidden={(idx === allTestimonials.activeSlide) ? false : true}>
                             <blockquote>
-                                <span className="heading heading-3">{testimonial.headline}</span>
+                                <span className="heading heading-4">{testimonial.headline}</span>
                                 <span className="body">{testimonial.body}</span>
                                 <footer>
                                     <cite className="cite">{testimonial.author}</cite>
@@ -116,9 +116,7 @@ const Testimonials = () => {
     }
     
     return ( 
-        <section id="testimonials" 
-            role="region" 
-            aria-label="Testimonials">
+        <section id="testimonials" role="region" aria-label="Testimonials">
             <div className={"slideContainer slider-" + viewportClass} >
                 <h2>Testimonials</h2>
                 <ul id="testimonials-slider" aria-live="off" aria-live="polite">
