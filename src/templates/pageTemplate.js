@@ -14,14 +14,19 @@ import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
+import FeaturesBlock from "../components/hero/featuresBlock"
+import CtaBlock from "../components/hero/CtaBlock"
+import DemoVideos from "../components/hero/sales/demoVideos"
+
 import "../styles/pages.scss"
+import "../styles/theme-styles/layout.scss"
 
 /**
  * Page template
  * Mar 2020
  */
 export default ({ data, location }) => {
-    // console.log('what is a page template', data, location );
+    console.log('what is a page template data, location', data, location );
     
     const { 
         title, 
@@ -38,31 +43,30 @@ export default ({ data, location }) => {
     
 
     return (
-        <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug + title : title}>
+        <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug+title : title}>
 
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                image={featured_media}
-                path={path}
-            />
-
+            <SEO title={title} description={excerpt} image={featured_media} path={path} />
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
-            {(location.pathname === '/' && <HeroSection />) 
-                || <PageBanner bannerType={type} title={title} slug={slug} />}
+            { (location.pathname === '/' && <HeroSection />) || 
+            <PageBanner bannerType={type} title={title} slug={slug} />}
 
-            <PageContent 
-                path={slug} 
-                type={(parent_element) ? parent_element.slug : type} 
-                content={content} 
-                featuredMedia={featured_media} />
+            <PageContent path={slug} type={(parent_element) ? parent_element.slug : type} content={content} featuredMedia={featured_media} />
 
             {(location.pathname === '/' && <Testimonials />)}
 
-            <BlogCallout />
-            <Newsletter path={location.pathname} />
-            <ContactFormCallout path={location.pathname} isAddFields={false} />
+            {slug !== 'online-ordering-system-restaurants' && <>
+                <BlogCallout />
+                <Newsletter path={location.pathname} />
+                <ContactFormCallout path={location.pathname} isAddFields={false} />
+            </>}
+
+            {slug === 'online-ordering-system-restaurants' && <>
+                <CtaBlock />
+                <FeaturesBlock />
+                <DemoVideos />
+                <CtaBlock title={"Get started today"} byline={"Getting started is easier and more affordable than you might think!"} />
+            </>}
                 
         </Layout>
     )

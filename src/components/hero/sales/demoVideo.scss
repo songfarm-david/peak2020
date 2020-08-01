@@ -1,0 +1,42 @@
+@import "../../../styles/globals.scss";
+
+#demoSection {}
+
+.demo_video_container {
+    padding: $top-margin 0 $vertical-rhythm;
+    .demo_video {
+        .demo_video__inner {
+            .demo_video__list {
+                min-width: rem;
+                li {}
+            }
+            .demo_video__video {
+                padding: $margin-bottom;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .demo_video_container {
+        .demo_video {
+            .demo_video__inner {
+                display: flex;
+                justify-content: space-between;
+                .demo_video__list {
+                    flex: 1 0 33%;
+                    margin-right: $margin-bottom;
+                    li {}
+                }
+                .demo_video__video {
+                    // flex: 1 1 40%;
+                    // border: $border;
+                    &.demo_video__video--vertical {
+                        max-width: 27rem;
+                    }
+                }
+            }
+        }
+    }
+        
+}

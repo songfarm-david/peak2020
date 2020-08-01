@@ -51,7 +51,7 @@ export default PageBanner
 
 PageBanner.propTypes = {
     bannerType: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     bannerImg: PropTypes.object,
     bannerData: PropTypes.object
 }

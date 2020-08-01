@@ -44,7 +44,7 @@
             border-radius: $border-radius;
             box-shadow: $box-shadow;
             // border: 2px solid greenyellow;
-            max-width: 22rem;
+            max-width: 20rem;
             text-align: center;
             padding: $top-margin;
             margin: $top-margin 1rem;
@@ -60,7 +60,7 @@
         .heading { margin-top: 1rem;}
     
         .body {
-            @extend .normal-text-italic;
+            @extend .small-text;
         }
     
         .cite {
@@ -108,7 +108,7 @@
         .slideContainer {
             width: $content-width;
             margin: 0 auto;
-            padding: 0 $top-margin; 
+            // padding: 0 $top-margin; 
             ul {
                 align-items: flex-start;
             }
@@ -128,6 +128,12 @@
             bottom: 0;
             margin-top: -10rem;
             z-index: -111;
+        }
+
+        .buttons {
+            &.buttonLeft { margin-left: -$top-margin; }
+            &.buttonRight { margin-right: -$top-margin; }
+
         }
 
     }
