@@ -4,7 +4,8 @@ import { formatTitle } from "../../functions/helperFunctions"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ layoutClass, children, path }) => {
+/**NOTE: should use propTypes checking on these data */
+const Layout = ({ layoutClass = "", children, path }) => {
     
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {

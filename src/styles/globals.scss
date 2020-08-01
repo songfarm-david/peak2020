@@ -1,5 +1,5 @@
-@import "./globals/colors.scss";
-@import "./globals/type.scss";
+@import "./colors.scss";
+@import "./type.scss";
 
 $mobile-breakpoint: 769px;
 $blogBannerHeight: 26rem;
@@ -35,7 +35,7 @@ $header-width: $hero-width;
 
 html {
 
-    font: normal 85% Montserrat, sans-serif;
+    font: normal 100%/1.4 Montserrat, sans-serif;
     background-color: $bluish-white;
     color: $strong-blue;
 
@@ -109,6 +109,10 @@ html {
     word-wrap: normal !important;
 }
 .hidden {display:none;}
+
+.align-center {
+    text-align: center;
+}
 
 /**
  * Helper & Misc styles

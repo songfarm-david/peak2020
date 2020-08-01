@@ -20,10 +20,7 @@ export default ({ data, location }) => {
     return (
         <Layout path={path} layoutClass={title}>
 
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                path={location.href} />
+            <SEO title={title} description={excerpt} path={location.href} />
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
