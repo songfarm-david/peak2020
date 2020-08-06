@@ -15,7 +15,7 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
 const PageContent = ({ path = "", type, content, children, featuredMedia = false }) => {
-    // console.log('PageContent path, type, children, featuredMedia', path, type, children, featuredMedia);
+    console.log('PageContent children, featuredMedia', children, featuredMedia);
     
     return (
     <div id="pageContent" className={
@@ -24,16 +24,20 @@ const PageContent = ({ path = "", type, content, children, featuredMedia = false
             : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}` : (path === 'category') ? `${pageContentStyles.category} ${pageContentStyles.pageContent}`
                 : `${pageContentStyles.pageContent} ${path} section_container`}>
 
-            {( children ) ? children 
+            {( children ) ? 
+                <div className={`section_container__inner ${path}`}>
+                    {children}
+                </div> : 
+                <div className={(featuredMedia) ? 
+                `${pageContentStyles.hasFeaturedImage} section_container__inner ${type} ${path}` 
+                    : `${pageContentStyles.pageContentInner} section_container__inner ${type} ${path}`}>
 
-                : <div className={
-                    (featuredMedia) ? `${pageContentStyles.hasFeaturedImage} ${pageContentStyles.pageContentInner}` 
-                    : `${pageContentStyles.pageContentInner}`}>
+            {( featuredMedia ) ? <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> : false}
 
-            {(featuredMedia) ? <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
-            : false}
-
-            {( children ) ? children : ReactHtmlParser(content)}
+            {( children ) ? children : 
+                <div className={"section_content"}>
+                    {ReactHtmlParser(content)}
+                </div>}
 
         </div>}
     </div>

@@ -7,19 +7,17 @@
 .section_container {
     padding-bottom: $vertical-rhythm;
     padding-top: $vertical-rhythm;
-    &:first-of-type {
-        padding-top: $vertical-rhythm;
-    }
-    + .section_container {
-        padding-bottom: $vertical-rhythm;
-    }
+    &:first-of-type { padding-top: $vertical-rhythm; }
+    + .section_container { padding-bottom: $vertical-rhythm; }
     &.section_container--grey { background-color: #f2f2f2 } 
     &.section_container--white { background-color: #fff; }
+    
     .section_container__inner {
         width: auto;
         margin-left: auto;
         margin-right: auto;
         padding: 0 $margin-bottom 0;
+        display: block;
     }
 
     &.services {
@@ -39,6 +37,17 @@
     .section_container {
         .section_container__inner {
             width: $content-width;
+
+            &.page {
+                &.about,
+                &.home {
+                    .section_content {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    
+                }
+            }
         }
     }
 }

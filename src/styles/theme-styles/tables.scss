@@ -1,0 +1,31 @@
+
+.theme_table {
+    text-align: center;
+    padding: $margin-bottom;
+
+    table { 
+        width: 100%; 
+        border-collapse: collapse;
+    }
+    th {
+        background-color: $light-green;
+        color: $white;
+    }
+    table, td, th {
+        padding: 1rem;
+        border: 2px solid $box-border;
+    }
+    tr:hover {
+        background-color: $box-border;
+    }
+    figcaption {
+        @extend .theme_ficaptions;
+    }
+
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .theme_table.max_width_table {
+        max-width: $hero-width;
+    }
+}

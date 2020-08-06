@@ -32,6 +32,7 @@
         margin: .75rem 0 0 0;
         @extend .small-text;
         font-weight: bold;
+        padding: 0 $top-margin;
     }
 
     &.footerNewsletter {

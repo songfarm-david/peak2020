@@ -10,12 +10,12 @@
     transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
     margin-bottom: $vertical-rhythm;
     .pageContentInner {
-        display: block;
-        padding: $content-padding;
-        display: flex;
-        justify-content: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
+        // display: block;
+        // padding: $content-padding;
+        // display: flex;
+        // justify-content: flex-start;
+        // justify-content: center;
+        // flex-wrap: wrap;
         &.hasFeaturedImage {
             p {
                 flex-basis: 100%;
@@ -33,14 +33,14 @@
         }
     }
 
-    &.servicePage {
-        .pageContentInner {
-            justify-content: center;
-        }
-        .pageContentInner.hasFeaturedImage {
-            justify-content: flex-start;
-        }
-    }
+    // &.servicePage {
+    //     .pageContentInner {
+    //         justify-content: center;
+    //     }
+    //     .pageContentInner.hasFeaturedImage {
+    //         justify-content: flex-start;
+    //     }
+    // }
 
     &.category {
         @extend .normal-text-italic;
@@ -55,12 +55,12 @@
 @media screen and (min-width: $mobile-breakpoint) {
 
     .pageContent {
-        width: $content-width;
+        // width: $content-width;
         .pageContentInner {
-            width: 100%;
-            margin: 0 auto;
-            justify-content: flex-start;
-            flex-wrap: wrap;
+            // width: 100%;
+            // margin: 0 auto;
+            // justify-content: flex-start;
+            // flex-wrap: wrap;
             &.hasFeaturedImage {
                 display: block;
             }
