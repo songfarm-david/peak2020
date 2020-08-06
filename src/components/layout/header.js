@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "gatsby"
-import Hamburger from "./hamburger"
+import Hamburger from "../nav/hamburger"
 
 import headerStyles from "./header.module.scss"
 import Nav from "../nav/nav"

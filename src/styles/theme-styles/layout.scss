@@ -38,10 +38,15 @@
         .section_container__inner {
             width: $content-width;
 
-            &.services {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+            &.page {
+                &.about,
+                &.home {
+                    .section_content {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    
+                }
             }
         }
     }

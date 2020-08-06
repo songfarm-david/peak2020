@@ -1,12 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
-
-import blogStyles from "../../styles/posts.module.scss"
 import "../../styles/blog/posts.scss"
-
 
 /**
  * Blog section on home page: features 3 latest blogs
