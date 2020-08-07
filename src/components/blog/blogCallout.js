@@ -1,8 +1,11 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
-import "../../styles/blog/posts.scss"
+// import PageContent from "../components/layout/pageContent"
+
+import "./blogCallout.scss"
 
 /**
  * Blog section on home page: features 3 latest blogs
@@ -48,39 +51,17 @@ const BlogCallout = () => {
     )
     const featuredPosts = query.allWordpressPost
 
-    // return (
-    //     <section className={`${blogStyles.blogSectionContainer} ${blogStyles.blogCallout}`}>
-    //         <div className={blogStyles.calloutContainer}>
-    //             <BlogHeading headingText="Latest Blog Articles" className="callout"/>
-    //             <div className={blogStyles.blogInner}>
-                
-    //                 {featuredPosts.edges.map(({ node }, idx) => (
-    //                 <BlogPost key={idx} postData={node} type="callout"/> ))}  
-    
-    //                 <div className={blogStyles.calloutBtn}>
-    //                     <Link to="/blog/" className="button primary-button">Go to blog</Link>
-    //                 </div>
-                    
-    //             </div>
-    //         </div>
-            
-    //     </section>
-    // )
-
     return (
-        <section id="blogCallout" className={"blogSectionContainer blogCallout"}>
-            <div className={"calloutContainer"}>
+        <section id="blogCallout" className={"callout_section"}>
+            <div className={"callout_section__container"}>
                 <BlogHeading headingText="Latest Blog Articles" className="callout"/>
-                <div className={"blogInner"}>
+                <div className={"callout_section__container--inner"}>
                     {featuredPosts.edges.map(({ node }, idx) => (
-                        <BlogPost key={idx} postData={node} type="callout"/> ))}  
-    
-                        <div className={"calloutBtn"}>
-                            <Link to="/blog/" className="button primary-button">Go to blog</Link>
-                        </div>
+                        <BlogPost key={idx} postData={node} type="callout"/> 
+                    ))}  
                 </div>
+                <Link to="/blog/" className="button primary-button">Go to blog</Link>
             </div>
-
         </section>
     )
 

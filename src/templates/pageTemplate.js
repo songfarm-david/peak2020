@@ -19,7 +19,7 @@ import CtaBlock from "../components/hero/CtaBlock"
 import DemoVideos from "../components/hero/sales/demoVideos"
 
 import "../styles/pages.scss"
-import "../styles/theme-styles/layout.scss"
+import "../styles/layout.scss"
 
 /**
  * Page template

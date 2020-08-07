@@ -1,47 +1,15 @@
-@import "../globals.scss";
+@import "./globals.scss";
 
-/**
- * Global styles pertaining to the blog and 'posts'
- */
-.blogSectionContainer {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 $margin-bottom;
-    .blogInner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-}
-
-#featuredPost {
-    width: 100%;
-    position: relative;
-    z-index: 10;
-    height: 100%;   
-}
-
-#blogCallout {
-    background-color: $light-green;
-    padding: $content-padding;
-    padding-bottom: $vertical-rhythm;
-    .calloutContainer {
-        width: 100%;
-    }
-}
-
-#featuredPost {
-    padding: $content-padding;
-}
 
 
 /**
  * these styles pertain to blog content i.e: main class="blog-post"
  */
-main.blog-post {
+.blog_post {
 
-    .blog-byline {
-        @extend .heading-3; 
+    .blog_byline {
+        font: $heading-4;
+        font-style: italic;
     }
 
     p > a,
@@ -97,17 +65,6 @@ main.blog-post {
 
 }
 
-@media screen and (min-width: $mobile-breakpoint) {
-    #blogCallout {
-        .calloutContainer {
-            width: $content-width;
-            margin: 0 auto;
-            .blogPost {
-                width: calc(33% - 1rem);
-            }
-        }
-    }
-}
 
 @media screen and (max-width: $mobile-breakpoint) {
     figure.wp-block-embed { 
@@ -115,3 +72,46 @@ main.blog-post {
     }
 }
     
+.blog_section {
+    padding: $content-padding;
+    .blog_section__inner {}
+    .blog_post {
+        padding-bottom: $top-margin;
+        &.blog_post__callout {
+            .blog_post__callout--blog_post {
+                color: $white;
+                .blog_post__callout--heading {
+                    color: white;
+                }
+            }
+        }
+        .blog_post__featured_image_container {
+            position: relative;
+            height: 22rem;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .blog_section {
+        .blog_post {
+            .blog_post__featured_image_container {
+                height: $blogBannerHeight;
+            }
+        }
+    }
+    
+    #featuredPost.blog_section {}
+    #blogIndex.blog_section {
+        .blog_section__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .blog_post {
+            width: calc(33% - 1rem);
+        }
+    }
+}

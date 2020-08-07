@@ -6,22 +6,17 @@ import tinyClockBlue from "../../../images/illustrations/svg/clock_icon_blue.svg
 import blogMeta from "./blogMeta.module.scss"
 
 const BlogMeta = (props) => {
-    // console.log('blogMeta props', props);
 
     const { type } = props
-    const {
-        author,
-        date,
-        modified,
-        categories } = props.metaData || props
+    const { author, date, modified, categories } = props.metaData || props
 
-    const whichClock = (postType) => (postType === 'callout') ? tinyClockWhite : tinyClockBlue
+    const whichClock = (pT) => (pT === 'callout') ? tinyClockWhite : tinyClockBlue
 
     return (
         <div className={(props.type === 'callout') ? `${blogMeta.callout} ${blogMeta.postMetaData}` : blogMeta.postMetaData}>
             <p className={blogMeta.author}>{getAuthor(categories, author.name)}</p>
             <p className={blogMeta.dateContainer}>
-                <img className={blogMeta.clockIcon} src={whichClock(type)} alt="last updated date"/>
+                <img className={"clock_icon"} src={whichClock(type)} alt="last updated date"/>
                 <span className={blogMeta.date}>{getDate(modified, date)}</span>
             </p>
         </div>

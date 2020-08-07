@@ -17,28 +17,27 @@ import Social from "../social"
  * @param {String} title the title for the page banner
  */
 const PageBanner = ({ 
-    bannerType = "page", 
-    title = "", 
-    slug = "", 
-    bannerData = {} 
-}) => {
+    bannerType = "page", title = "", slug = "", bannerData = {} 
+    }) => {
     // console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
     
     return ( 
-        <header className={( bannerType === 'page' ) ? `pageBanner ${slug}` : `blogPost ${slug}`} data-title={slug}>
+        <header data-title={slug || title} 
+            className={( bannerType === 'page' ) ? 
+            `page_banner page_banner__page ${slug}` 
+            : `page_banner page_banner__post ${slug}`}>
 
             {( bannerType === 'page' ) && 
                 <div className={"headerContainer"}>
-                    <h1 className={"pageHeader"}>{ReactHtmlParser(title)}</h1>
+                    <h1 className={"page_banner--header pageHeader"}>{ReactHtmlParser(title)}</h1>
                 </div>}
 
              {( bannerType === 'post' ) && 
                 <>
-                    <FeaturedImage featuredImage={
-                        (bannerData.featured_media) ? bannerData.featured_media : null} isFeature={true} />
-                    <div className={"blogHeaderContainer"}>
+                    <FeaturedImage featuredImage={(bannerData.featured_media) ? bannerData.featured_media : null} isFeature={true} />
+                    <div className={"page_banner--post"}>
                         <MetaCard postData={(bannerData) ? bannerData : null} />
-                        <Social post={bannerData} isHeader={true} />
+                        {/* <Social post={bannerData} isHeader={true} /> */}
                     </div>
                 </>}
         </header>
