@@ -34,7 +34,7 @@
     }
 
     .section_content {
-        // padding: 0 $margin-bottom;
+        padding: 0 $margin-bottom;
     }
 
     &.about,
@@ -79,6 +79,9 @@
 
 @media screen and (min-width: $mobile-breakpoint) {
     .section_container {
+        .section_content {
+            padding: 0;
+        }
         .section_container__inner {
             width: $content-width;
         }
@@ -94,6 +97,7 @@
                 flex-wrap: wrap;
             }
         }
+        /* services index page */
         &.services {
             .section_container__inner {
                 display: flex;
