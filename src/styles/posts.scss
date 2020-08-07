@@ -5,10 +5,11 @@
 /**
  * these styles pertain to blog content i.e: main class="blog-post"
  */
-main.blog_post {
+.blog_post {
 
-    .blog-byline {
-        @extend .heading-3; 
+    .blog_byline {
+        font: $heading-4;
+        font-style: italic;
     }
 
     p > a,

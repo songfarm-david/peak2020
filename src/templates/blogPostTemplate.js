@@ -12,6 +12,9 @@ import Comments from "../components/comments"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
+import "../styles/posts.scss"
+
+
 /**
 * Blog template
 * Mar 2020
@@ -33,7 +36,7 @@ export default ({ data, location, pageContext }) => {
     const postComments = data.allWordpressWpComments
     
     return (
-        <Layout path={location.pathname} layoutClass={"blog-post " + title}> 
+        <Layout path={location.pathname} layoutClass={"blog_post " + title}> 
             
             <SEO title={title} description={excerpt} image={featured_media} path={location.href}
             />

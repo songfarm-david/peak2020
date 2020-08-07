@@ -7,16 +7,26 @@
 .section_container {
     padding-bottom: $vertical-rhythm;
     padding-top: $vertical-rhythm;
-    &:first-of-type { padding-top: 0; }
+    overflow: hidden;
+    position: relative;
+    // &:first-of-type { padding-top: 0; }
     + .section_container { padding-bottom: $vertical-rhythm; }
     &.section_container--grey { background-color: #f2f2f2 } 
     &.section_container--white { background-color: #fff; }
     
+    &.section_container__services {
+        display: flex;
+        flex-wrap: wrap;
+        .section_container__featured_image {
+            width: 100%;
+        }
+    }
+
     .section_container__inner {
         width: auto;
         margin-left: auto;
         margin-right: auto;
-        padding: 0 $margin-bottom 0;
+        // padding: 0 $margin-bottom 0;
         display: block;
         &.blog {
             padding: 0 0;
@@ -24,11 +34,38 @@
     }
 
     .section_content {
-        padding: 0 $margin-bottom;
+        // padding: 0 $margin-bottom;
+    }
+
+    &.about,
+    &.home {
+        position: relative;
+    }
+
+    &.about {
+        margin-bottom: $vertical-rhythm;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 100%;
+            z-index: -11;
+            background-image: url('../images/logo/Logo_white.svg');
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+        } 
     }
 
     &.services {
-        justify-content: space-around;
+        .section_container__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
     }
     &.online-ordering-system-restaurants {
         padding-bottom: 0;
@@ -44,16 +81,24 @@
     .section_container {
         .section_container__inner {
             width: $content-width;
-
-            &.page {
-                &.about,
-                &.home {
-                    .section_content {
-                        display: flex;
-                        flex-wrap: wrap;
-                    }
-                    
-                }
+        }
+        &.section_container__services {
+            .section_container__featured_image {
+                width: $content-width;
+            }
+        }
+        &.about,
+        &.home {
+            .section_content {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        &.services {
+            .section_container__inner {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
             }
         }
     }

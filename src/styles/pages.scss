@@ -10,21 +10,20 @@ main {
 
     .heroText,
     .hero_text {
-        @extend .heading-2;
+        font: $heading-2;
         flex: 0 0 100%;
         order: -1;
         width: 100%;
         margin: 0;
         background-color: transparent;
     }
-    .hero_byline {
-        @extend .heading-3;
-    }
+    .hero_byline { font: $heading-3; }
 
-    .heroBody {
+    .heroBody, 
+    .hero_body {
         flex-basis: 100%;
         margin: 0 auto;
-        .heroBody { padding: 0; }
+        .heroBody, .hero_body { padding: 0; }
     }
 
     .home, .about {
@@ -35,29 +34,6 @@ main {
         .heroButton {
             > a { color: inherit}
         }   
-    }
-
-    #pageContent.home {
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    #pageContent.about {
-        position: relative;
-        &::before {
-            content: '';
-            display: block;
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 100%;
-            width: 100%;
-            z-index: -11;
-            background-image: url('../images/logo/Logo_white.svg');
-            background-repeat: no-repeat;
-            background-size: auto;
-            background-position: center;
-        } 
     }
 
     &.service-page {
@@ -129,7 +105,7 @@ main {
             // width: auto;
             .heroText { flex-basis: 100%; }
             .heroImage { order: initial; }
-            .heroBody { flex: 2; }               
+            .heroBody, .hero_body { flex: 2; }               
         }
 
         #pageContent.home {

@@ -24,8 +24,8 @@ const PageBanner = ({
     return ( 
         <header data-title={slug || title} 
             className={( bannerType === 'page' ) ? 
-            `page_banner page_banner__page pageBanner ${slug}` 
-            : `page_banner page_banner__post blogPost ${slug}`}>
+            `page_banner page_banner__page ${slug}` 
+            : `page_banner page_banner__post ${slug}`}>
 
             {( bannerType === 'page' ) && 
                 <div className={"headerContainer"}>
@@ -34,11 +34,10 @@ const PageBanner = ({
 
              {( bannerType === 'post' ) && 
                 <>
-                    <FeaturedImage featuredImage={
-                        (bannerData.featured_media) ? bannerData.featured_media : null} isFeature={true} />
-                    <div className={"page_banner--post blogHeaderContainer"}>
+                    <FeaturedImage featuredImage={(bannerData.featured_media) ? bannerData.featured_media : null} isFeature={true} />
+                    <div className={"page_banner--post"}>
                         <MetaCard postData={(bannerData) ? bannerData : null} />
-                        <Social post={bannerData} isHeader={true} />
+                        {/* <Social post={bannerData} isHeader={true} /> */}
                     </div>
                 </>}
         </header>

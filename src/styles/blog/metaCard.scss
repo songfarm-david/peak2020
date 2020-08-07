@@ -1,5 +1,12 @@
 @import "../globals.scss";
 
+.blog-index {
+    .meta_card {
+        &.meta_card__sticky {
+            width: $hero-width;
+        }
+    }
+}
 .meta_card {
     position: absolute;
     left: 50%;
@@ -10,80 +17,90 @@
     text-align: center;
     width: 95%;
 
-    .meta_card__categories_container {
-        display: flex;
-        flex-basis: 100%;
-        justify-content: center;
-        position: relative;
-        z-index: 111;   
-        .meta_card__categories_container__categories {
-            @extend .small-text;
-        }
-        .meta_card__category {
-            text-transform: uppercase;
+    &.meta_card__sticky {
+        padding: $content-padding;
+    }
+
+    .meta_card__inner {
+        width: 100%;
+        .meta_card__categories_container {
+            display: flex;
+            flex-basis: 100%;
+            justify-content: center;
             position: relative;
-            width: 100%;
-            margin-left: .15rem;
-            font-weight: normal;
-            > a { text-decoration: underline; }
-            &:hover {
-                cursor: pointer;
-                > a { text-decoration: none; }
-                &:after { background-color: transparent; }
+            z-index: 111;   
+            .meta_card__categories_container__categories {
+                @extend .small-text;
+            }
+            .meta_card__category {
+                text-transform: uppercase;
+                position: relative;
+                width: 100%;
+                margin-left: .15rem;
+                font-weight: normal;
+                > a { text-decoration: underline; }
+                &:hover {
+                    cursor: pointer;
+                    > a { text-decoration: none; }
+                    &:after { background-color: transparent; }
+                }
+            } 
+        }
+        .meta_card__post_title { font: $heading-3; }
+        .meta_card__post_meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @extend .small-text;
+            .meta_card__post_date,
+            .meta_card__post_author {
+                display: inline-block;
+            }
+            .meta_card__post_author {
+                padding-left: 0;
+                &:before {
+                    content: '\2014';
+                    display: inline-block;
+                    margin: 0 8px;
+                }
+            }
+            .meta_card__post_date {
+                display: flex;
+                align-items: center;
             }
         } 
+
     }
-    .meta_card__post_title {
-        @extend .heading-3;
-    }
-    .meta_card__post_meta {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @extend .small-text;
-        .meta_card__post_date,
-        .meta_card__post_author {
-            display: inline-block;
-        }
-        .meta_card__post_author {
-            padding-left: 0;
-            &:before {
-                content: '\2014';
-                display: inline-block;
-                margin: 0 8px;
-            }
-        }
-        .meta_card__post_date {
-            display: flex;
-            align-items: center;
-        }
-    }  
+
+     
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
     .meta_card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
         width: 100%;
         margin: 0 auto;
-        &.meta_card__sticky {
-            width: 66%;
-        }
-        .meta_card__post_title {
-            font: bold 3.125rem/3.75rem Montserrat, sans-serif; 
-        }
-        .meta_card__categories_container {
-            .meta_card__categories_container__categories {
-                font: normal 1.25rem/1.75rem Montserrat, sans-serif;
+
+        .meta_card__inner {
+            
+            .meta_card__post_title {
+                font: $heading-2; 
                 padding: 0 $top-margin;
             }
+            .meta_card__categories_container {
+                width: $hero-width;
+                margin: 0 auto;
+                .meta_card__categories_container__categories {
+                    font: normal 1.25rem/1.75rem Montserrat, sans-serif;
+                    padding: 0 $top-margin;
+                }
+            }
+            .meta_card__post_meta {
+                flex-wrap: nowrap;
+                width: 100%;
+                justify-content: center;
+            }
         }
-        .meta_card__post_meta {
-            flex-wrap: nowrap;
-            width: 100%;
-            justify-content: center;
-        }
+        
+        
     } 
 }

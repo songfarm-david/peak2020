@@ -18,19 +18,21 @@ const PageContent = ({ path = "", type, content, children, featuredMedia = false
     console.log('PageContent path, type', path, type);
     
     return (
-    <div id="pageContent" className={`section_container ${path}`}>
+    <div id="pageContent" className={(type === 'services') ? `section_container section_container__services` : `section_container ${path}`}>
 
             {( children ) ? 
-                <div className={`section_container__inner ${path}`}>
+                <div className={(path !== 'contact-us') ? `section_container__inner ${path}` : `${path}`}>
                     {children}
                 </div> :
-                <div className={"section_content"}>
+                <div className={"section_content section_container__inner"}>
                     {ReactHtmlParser(content)}
                 </div>}
 
-            {( featuredMedia ) ?
-                <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
-                : false }
+            <div className={"section_content section_container__inner section_container__featured_image"}>
+                {( featuredMedia ) ?
+                    <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
+                    : false }
+            </div>
 
     </div>
 )}

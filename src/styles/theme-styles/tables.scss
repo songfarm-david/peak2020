@@ -2,7 +2,7 @@
 .theme_table {
     text-align: center;
     padding: $margin-bottom;
-
+    overflow: scroll;
     table { 
         width: 100%; 
         border-collapse: collapse;
@@ -16,9 +16,7 @@
         padding: 1rem;
         border: 2px solid $box-border;
     }
-    tr:hover {
-        background-color: $box-border;
-    }
+    tr:hover { background-color: $box-border; }
     figcaption {
         @extend .theme_ficaptions;
     }
@@ -26,7 +24,10 @@
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
-    .theme_table.max_width_table {
-        max-width: $hero-width;
+    .theme_table {
+        overflow: auto;
+        &.max_width_table {
+            max-width: $hero-width;
+        }
     }
 }
