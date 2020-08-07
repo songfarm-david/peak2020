@@ -7,7 +7,7 @@ import receiveOrderVid from "../../../data/videos/receive-order-demo.mp4"
 const DemoVideos = () => (
     <>
         <div className={"section_container section_container--grey demo_video_container"}>
-            <section className={"section_container__inner"}>
+            <section className={"section_content section_container__inner"}>
                 <p className={"heading-2"}>Your Restaurant's Front-of-house &mdash; only online</p>  
                 <div className={"demo_video"}>
                     <h4>How customers order:</h4>
@@ -28,7 +28,7 @@ const DemoVideos = () => (
         </div>
     
         <div className={"section_container section_container--white demo_video_container"}>
-            <section className={"section_container__inner"}>
+            <section className={"section_content section_container__inner"}>
                 <div className={"demo_video"}>
                     <h4>How orders can be received:</h4>
                     <div className={"demo_video__inner"}>

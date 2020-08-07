@@ -5,11 +5,11 @@
 @import "./globals.scss";
 
 .section_container {
-    padding-bottom: $vertical-rhythm;
-    padding-top: $vertical-rhythm;
+
+    padding: $vertical-rhythm 0;
     overflow: hidden;
     position: relative;
-    // &:first-of-type { padding-top: 0; }
+
     + .section_container { padding-bottom: $vertical-rhythm; }
     &.section_container--grey { background-color: #f2f2f2 } 
     &.section_container--white { background-color: #fff; }
@@ -19,6 +19,7 @@
         flex-wrap: wrap;
         .section_container__featured_image {
             width: 100%;
+            height: 100%;
         }
     }
 
@@ -75,6 +76,14 @@
         padding-top: 0;
     }
 
+}
+
+.blog-index {
+    .meta_card {
+        &.meta_card__sticky {
+            width: $content-width;
+        }
+    }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {

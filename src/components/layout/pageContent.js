@@ -21,7 +21,7 @@ const PageContent = ({ path = "", type, content, children, featuredMedia = false
     <div id="pageContent" className={(type === 'services') ? `section_container section_container__services` : `section_container ${path}`}>
 
             {( children ) ? 
-                <div className={(path !== 'contact-us') ? `section_container__inner ${path}` : `${path}`}>
+                <div className={(path !== 'contact-us') ? `section_content section_container__inner ${path}` : `${path}`}>
                     {children}
                 </div> :
                 <div className={"section_content section_container__inner"}>

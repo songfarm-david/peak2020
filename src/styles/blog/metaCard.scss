@@ -1,12 +1,5 @@
 @import "../globals.scss";
 
-.blog-index {
-    .meta_card {
-        &.meta_card__sticky {
-            width: $hero-width;
-        }
-    }
-}
 .meta_card {
     position: absolute;
     left: 50%;

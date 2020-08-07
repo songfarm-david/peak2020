@@ -44,7 +44,7 @@ const features = [
 
 const FeaturesBlock = () => (
     <div className={"section_container"}>
-        <section className={"section_container__inner features_container"} id="featuresSection">
+        <section className={"section_content section_container__inner features_container"} id="featuresSection">
             <h2 className={"features_container__header"}>Features</h2>
             {/* {features} */}
             {features.map((feature, idx) => (
