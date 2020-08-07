@@ -1,43 +1,17 @@
 @import "../globals.scss";
 
 /**
- * Blog Index page
- */
-.blog-index {
-    .blogPost {
-        &.featuredPost {
-            width: 100%;
-            position: relative;
-            z-index: 10;
-            height: 100%;
-        }
-    }
-}
-
-/**
- * Individual blog post
- */
-.blog-post {
-    .blogPost {
-        .blog-post {
-            width: 100%;
-        }
-
-    }
-}
-
-/**
  * macro blog post styles
  */
 .blogPost {
-    padding-bottom: $top-margin;
-    position: relative;
+    // padding-bottom: $top-margin;
+    // position: relative;
     .featuredImageContainer { 
         position: relative; 
         width: 100%;
     }
     .excerpt { font: $small-text; }
-    .callout { color: $white; }
+    // .callout { color: $white; }
 }
 
 

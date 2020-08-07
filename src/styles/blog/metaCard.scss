@@ -3,21 +3,19 @@
 .metaCard {
     // width: 100%;
     position: absolute;
-    left: 50%;
+    // left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    // z-index: 100;
+    transform: translateY(-50%);
+    height: auto;
     background: $white;
     padding: $top-margin;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    text-align: center; 
-    // height: 100%;
-    // &.sticky {
-    //     width: calc(100% - 1.5rem);
-    // } 
+    text-align: center;
+    left: 1rem; right: 1rem;
+    top: 1rem; bottom: 1rem;
     .categoriesContainer {
         display: flex;
         flex-basis: 100%;

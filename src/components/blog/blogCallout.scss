@@ -1,18 +1,21 @@
-// @import "../../styles/globals.scss";
+@import "../../styles/globals.scss";
 
-// #blogFeature {
-    
-//     background-color: $light-green;
-//     padding: $content-padding;
+#blogCallout {
+    background-color: $light-green;
+    padding-bottom: $vertical-rhythm;
+    .calloutContainer {
+        width: 100%;
+    }
+}
 
-//     .to-blog-link { display: flex;}
-//     .button { margin-left: 1rem; }
-
-//     @media screen and (max-width: $mobile-breakpoint) {
-//         .button { 
-//             margin-left: 0;
-//             margin-top: $top-margin;
-//         }
-//     }
-
-// }
+@media screen and (min-width: $mobile-breakpoint) {
+    #blogCallout {
+        .calloutContainer {
+            width: $content-width;
+            margin: 0 auto;
+            .blogPost {
+                width: calc(33% - 1rem);
+            }
+        }
+    }
+}

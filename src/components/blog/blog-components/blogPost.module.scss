@@ -1,6 +1,6 @@
 @import "../../../styles/globals.scss"; 
 
-.blogPost {
+.blog_post {
     padding-bottom: $top-margin;
     
     // a[href] {
@@ -22,7 +22,7 @@
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
-    .blogPost {
+    .blog_post {
         width: calc(33% - .75rem);
     }
 }

@@ -7,7 +7,7 @@
 .section_container {
     padding-bottom: $vertical-rhythm;
     padding-top: $vertical-rhythm;
-    &:first-of-type { padding-top: $vertical-rhythm; }
+    &:first-of-type { padding-top: 0; }
     + .section_container { padding-bottom: $vertical-rhythm; }
     &.section_container--grey { background-color: #f2f2f2 } 
     &.section_container--white { background-color: #fff; }
@@ -18,6 +18,13 @@
         margin-right: auto;
         padding: 0 $margin-bottom 0;
         display: block;
+        &.blog {
+            padding: 0 0;
+        }
+    }
+
+    .section_content {
+        padding: 0 $margin-bottom;
     }
 
     &.services {

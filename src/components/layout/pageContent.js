@@ -15,31 +15,23 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
 const PageContent = ({ path = "", type, content, children, featuredMedia = false }) => {
-    console.log('PageContent children, featuredMedia', children, featuredMedia);
+    console.log('PageContent path, type', path, type);
     
     return (
-    <div id="pageContent" className={
-        (type === 'post') ?  `${pageContentStyles.blogContent} ${pageContentStyles.pageContent}` 
-        : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path} section_container` 
-            : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}` : (path === 'category') ? `${pageContentStyles.category} ${pageContentStyles.pageContent}`
-                : `${pageContentStyles.pageContent} ${path} section_container`}>
+    <div id="pageContent" className={`section_container ${path}`}>
 
             {( children ) ? 
                 <div className={`section_container__inner ${path}`}>
                     {children}
-                </div> : 
-                <div className={(featuredMedia) ? 
-                `${pageContentStyles.hasFeaturedImage} section_container__inner ${type} ${path}` 
-                    : `${pageContentStyles.pageContentInner} section_container__inner ${type} ${path}`}>
-
-            {( featuredMedia ) ? <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> : false}
-
-            {( children ) ? children : 
+                </div> :
                 <div className={"section_content"}>
                     {ReactHtmlParser(content)}
                 </div>}
 
-        </div>}
+            {( featuredMedia ) ?
+                <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
+                : false }
+
     </div>
 )}
 

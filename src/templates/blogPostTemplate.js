@@ -40,7 +40,7 @@ export default ({ data, location, pageContext }) => {
 
             <Helmet title={S(title).decodeHTMLEntities().s} />
 
-            <PageBanner bannerType={"post"} bannerData={wordpressPost} />
+            <PageBanner bannerType={"post"} bannerData={wordpressPost} title={title} />
             
             <PageContent type={type} content={content} />
 
