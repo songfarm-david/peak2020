@@ -9,13 +9,18 @@ import "../../styles/posts.scss"
  * 
  * @param {Obj} param0 Object containing (limit of 6) blog posts
  */
-const AllPosts =({allPosts}) => (
+const AllPosts =({ allPosts }) => {
+    console.log('what is allPosts', allPosts);
+    return (
     <section id="blogIndex" className={"blog_section"}>
         <BlogHeading headingText="Latest Blog Articles" />
-        {allPosts.edges.map(({ node }, idx) => (
-            <BlogPost postData={node} key={idx} />
-        ))}  
+        <div className={"blog_section__inner"}>
+            {allPosts.edges.map(({ node }, idx) => (
+                (idx > 5 || node.sticky !== false) ? null :
+                <BlogPost postData={node} key={idx} />
+            ))} 
+        </div> 
     </section>
-)
+)}
 
 export default AllPosts

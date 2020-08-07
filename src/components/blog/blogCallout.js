@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import BlogHeading from "./blog-components/blogHeading"
 import BlogPost from "./blog-components/blogPost"
+// import PageContent from "../components/layout/pageContent"
 
 import "./blogCallout.scss"
 
@@ -51,12 +52,16 @@ const BlogCallout = () => {
     const featuredPosts = query.allWordpressPost
 
     return (
-        <section id="blogCallout" className={"blog_section"}>
-            <BlogHeading headingText="Latest Blog Articles" className="callout"/>
-            {featuredPosts.edges.map(({ node }, idx) => (
-                <BlogPost key={idx} postData={node} type="callout"/> 
-            ))}  
-            <Link to="/blog/" className="button primary-button">Go to blog</Link>
+        <section id="blogCallout" className={"callout_section"}>
+            <div className={"callout_section__container"}>
+                <BlogHeading headingText="Latest Blog Articles" className="callout"/>
+                <div className={"callout_section__container--inner"}>
+                    {featuredPosts.edges.map(({ node }, idx) => (
+                        <BlogPost key={idx} postData={node} type="callout"/> 
+                    ))}  
+                </div>
+                <Link to="/blog/" className="button primary-button">Go to blog</Link>
+            </div>
         </section>
     )
 

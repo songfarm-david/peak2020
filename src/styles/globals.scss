@@ -2,18 +2,14 @@
 @import "./type.scss";
 
 $mobile-breakpoint: 769px;
-$blogBannerHeight: 26rem;
-
+$blogBannerHeight: 27.5rem;
 $margin-bottom: 1rem;
 $top-margin: 2.25rem;
 $vertical-rhythm: 4.5rem;
-
 $section-padding: $top-margin 0 $vertical-rhythm;
 $content-padding: $top-margin $margin-bottom;
-
 $border-radius: 4px;
 $box-shadow: 3px 3px 30px #E5E7E8;
-
 $content-width: 72%;
 $hero-width: 66%; 
 $header-width: $hero-width;
@@ -25,7 +21,6 @@ $header-width: $hero-width;
         padding: $top-margin;
         margin-top: $top-margin;
     }
-    
 }
 
 .theme_ficaptions {
@@ -36,6 +31,12 @@ $header-width: $hero-width;
     > a {
         font: inherit;
     }
+}
+
+.clock_icon {
+    max-height: 0.85rem;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
 .content-width {
@@ -55,12 +56,6 @@ html {
     a {
         text-decoration: none;
         color: $strong-blue;
-    }
-
-    main.blog-post {
-        a[href] {
-            // text-decoration: underline;
-        }
     }
 
     img[src*=".svg"] {
@@ -128,7 +123,6 @@ html {
  */
 /* debug border */
 $border: 1px solid red;
-
 
 
 @import "./theme-styles/buttons.scss";
