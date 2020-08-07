@@ -20,9 +20,9 @@ const Layout = ({ layoutClass = "", children, path }) => {
     `)
   
     const replaceClass = (cls) => {        
-        if (cls.includes('blog-post')) {
-            cls = cls.replace('blog-post', "")
-            return 'blog-post ' + formatTitle(cls)
+        if (cls.includes('blog_post')) {
+            cls = cls.replace('blog_post', "")
+            return 'blog_post ' + formatTitle(cls)
         }
         if (cls.includes('services')) {
             cls = cls.replace('services', "")

@@ -1,21 +1,16 @@
 @import "../../styles/globals.scss";
 
 .pageContent {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: .75rem 0 $vertical-rhythm;
+    // overflow: hidden;
+    // position: relative;
+    // width: 100%;
+    // margin: 0 auto;
+    // padding: .75rem 0 $vertical-rhythm;
     // @extend .normal-text;  
     transform: translateX(0); /* this style is a hack for psuedo elements // TODO: find source! */
-    margin-bottom: $vertical-rhythm;
+    // margin-bottom: $vertical-rhythm;
     .pageContentInner {
-        // display: block;
-        // padding: $content-padding;
-        // display: flex;
-        // justify-content: flex-start;
-        // justify-content: center;
-        // flex-wrap: wrap;
+
         &.hasFeaturedImage {
             p {
                 flex-basis: 100%;
@@ -25,22 +20,6 @@
             }
         }
     }
-
-    &.blogContent {
-        margin-top: 22.5rem;
-        .pageContentInner {
-            display: block;
-        }
-    }
-
-    // &.servicePage {
-    //     .pageContentInner {
-    //         justify-content: center;
-    //     }
-    //     .pageContentInner.hasFeaturedImage {
-    //         justify-content: flex-start;
-    //     }
-    // }
 
     &.category {
         @extend .normal-text-italic;
@@ -55,23 +34,9 @@
 @media screen and (min-width: $mobile-breakpoint) {
 
     .pageContent {
-        // width: $content-width;
         .pageContentInner {
-            // width: 100%;
-            // margin: 0 auto;
-            // justify-content: flex-start;
-            // flex-wrap: wrap;
             &.hasFeaturedImage {
                 display: block;
-            }
-        }
-
-        /* for blog posts on desktop */
-        &.blogContent {
-            width: $content-width;
-            margin-top: 10.5rem;
-            .pageContentInner {
-                width: 100%;
             }
         }
 
@@ -79,12 +44,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            // .pageContentInner {
-            //     justify-content: center;
-            // }
-            // .pageContentInner.hasFeaturedImage {
-            //     justify-content: flex-start;
-            // }
+
         }
 
         &.contactUs {

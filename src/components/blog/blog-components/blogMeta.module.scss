@@ -13,16 +13,10 @@
             color: inherit;
         }
     }
-
     .dateContainer {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         flex-basis: 50%;
-        .clockIcon {
-            max-height: 0.85rem;
-            display: inline-block;
-            margin-right: 0.5rem;
-        }
     }
 }

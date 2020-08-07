@@ -15,31 +15,25 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
 const PageContent = ({ path = "", type, content, children, featuredMedia = false }) => {
-    console.log('PageContent children, featuredMedia', children, featuredMedia);
+    console.log('PageContent path, type', path, type);
     
     return (
-    <div id="pageContent" className={
-        (type === 'post') ?  `${pageContentStyles.blogContent} ${pageContentStyles.pageContent}` 
-        : (type === 'services') ? `${pageContentStyles.servicePage} ${pageContentStyles.pageContent} ${path} section_container` 
-            : (path === 'contact-us') ? `${pageContentStyles.contactUs} ${pageContentStyles.pageContent} ${path}` : (path === 'category') ? `${pageContentStyles.category} ${pageContentStyles.pageContent}`
-                : `${pageContentStyles.pageContent} ${path} section_container`}>
+    <div id="pageContent" className={(type === 'services') ? `section_container section_container__services` : `section_container ${path}`}>
 
             {( children ) ? 
-                <div className={`section_container__inner ${path}`}>
+                <div className={(path !== 'contact-us') ? `section_container__inner ${path}` : `${path}`}>
                     {children}
-                </div> : 
-                <div className={(featuredMedia) ? 
-                `${pageContentStyles.hasFeaturedImage} section_container__inner ${type} ${path}` 
-                    : `${pageContentStyles.pageContentInner} section_container__inner ${type} ${path}`}>
-
-            {( featuredMedia ) ? <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> : false}
-
-            {( children ) ? children : 
-                <div className={"section_content"}>
+                </div> :
+                <div className={"section_content section_container__inner"}>
                     {ReactHtmlParser(content)}
                 </div>}
 
-        </div>}
+            <div className={"section_content section_container__inner section_container__featured_image"}>
+                {( featuredMedia ) ?
+                    <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
+                    : false }
+            </div>
+
     </div>
 )}
 

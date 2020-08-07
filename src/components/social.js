@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import S from 'string'
 
+import "../styles/blog/social.scss"
+
 import {
     EmailShareButton,
     FacebookShareButton,
@@ -53,13 +55,13 @@ const Social = ({ post, isHeader = false, visible = true }) => {
 
     const cleanString = (uncleanStr) => (S(uncleanStr).decodeHTMLEntities().stripTags().s)
 
-    const containerStyles = {
-        padding: '1.5rem 0 0'
-    }
+    // const containerStyles = {
+    //     padding: '1.5rem 0 0'
+    // }
     const iconStyles = { padding: "0 .25rem"}
 
     return (
-        <article className="shareComponentContainer" style={containerStyles} >
+        <article className="shareComponentContainer"  >
             {(isHeader) ? "" : <h3 className="heading-4">Share this post:</h3>}
             <EmailShareButton
                 style={iconStyles} 

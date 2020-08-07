@@ -18,7 +18,7 @@ import S from 'string'
  * Blog Index page
  */
 export default ({ data, location }) => {
-    // console.log('blog.js data', data);
+    console.log('blog.js data', data);
     
     const { wordpressPage, allWordpressPost, featuredPost } = data
     const { title, type, path, slug, excerpt } = wordpressPage
@@ -33,22 +33,18 @@ export default ({ data, location }) => {
     return (
         <Layout path={path} layoutClass={"blog-index"}>
 
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                path={location.href} />
-
+            <SEO title={title} description={excerpt} path={location.href} />
             <Helmet title={S(title).decodeHTMLEntities().s} />
-
             <PageBanner bannerType={type} title={title} slug={slug} />
 
-            <PageContent path={slug} type={type}>{
-                ( haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
+            <PageContent path={slug} type={type}>
+                {(haveStickyPost(featuredPost) && <FeaturedPost postData={featuredPost} /> )}      
                 <AllPosts allPosts={allWordpressPost} />   
             </PageContent>
 
             <Newsletter path={path} />
             <ContactFormCallout path={path} />
+
         </Layout>
     )
 
@@ -91,7 +87,7 @@ export const queryAllPosts = graphql`
             date(formatString: "MMM Do, YYYY")
             modified(formatString: "MMM Do, YYYY")
         }
-        allWordpressPost(limit: 6, sort: {fields: date, order: DESC}, 
+        allWordpressPost(sort: {fields: date, order: DESC}, 
             filter: {categories: {elemMatch: {name: {ne: "Portfolio"}}}, sticky: {eq: false}}) {
             totalCount
             edges {
@@ -104,6 +100,7 @@ export const queryAllPosts = graphql`
                     modified(formatString: "MMM Do, YYYY")
                     path
                     type
+                    sticky
                     excerpt
                     content
                     categories {
