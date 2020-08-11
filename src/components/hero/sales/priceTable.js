@@ -38,6 +38,7 @@ const PriceTable = () => (
                         </tr>
                     </tbody>
                 </table>
+                <figcaption>All prices in Canadian (CAD)</figcaption>
             </figure>
         </section>
     </div>
