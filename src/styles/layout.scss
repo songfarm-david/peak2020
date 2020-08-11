@@ -4,6 +4,14 @@
 
 @import "./globals.scss";
 
+.blog-index {
+    .meta_card {
+        &.meta_card__sticky {
+            width: $content-width;
+        }
+    }
+}
+
 .section_container {
 
     padding: $vertical-rhythm 0;
@@ -78,14 +86,6 @@
 
 }
 
-.blog-index {
-    .meta_card {
-        &.meta_card__sticky {
-            width: $content-width;
-        }
-    }
-}
-
 @media screen and (min-width: $mobile-breakpoint) {
     .section_container {
         .section_content {
@@ -97,6 +97,7 @@
         &.section_container__services {
             .section_container__featured_image {
                 width: $content-width;
+                padding: $margin-bottom 0 0;
             }
         }
         &.about,
