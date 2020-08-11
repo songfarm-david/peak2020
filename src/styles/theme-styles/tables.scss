@@ -20,7 +20,9 @@
     figcaption {
         @extend .theme_ficaptions;
     }
-
+    td.emptyCell {
+        background-color: $box-border;
+    }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
