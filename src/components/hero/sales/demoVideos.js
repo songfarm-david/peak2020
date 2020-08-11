@@ -19,7 +19,8 @@ const DemoVideos = () => (
                             <li>Customer enters payment details</li>
                             <li>Order is sent to the restaurant</li>
                         </ol>
-                        <video src={custOrderVid} height="auto" width="100%" autoplay="true" preload="auto" loop="true" playsinline defaultmuted muted="true" className={"demo_video__video"}>
+                        <video height="auto" width="100%" autoPlay preload="auto" loop playsInline muted className={"demo_video__video"}>
+                            <source src={custOrderVid} type="video/mp4" />
                             Sorry but your browser does not support playing video.
                         </video>
                     </div>
@@ -39,7 +40,8 @@ const DemoVideos = () => (
                             <li>Receive a text</li>
                             <li>Automatically print to a printer</li>
                         </ol>
-                        <video src={receiveOrderVid} height="auto" width="100%" autoplay="true" preload="auto" loop="true" playsinline defaultmuted muted="true" className={"demo_video__video demo_video__video--vertical"}>
+                        <video height="auto" width="100%" autoPlay preload="auto" loop playsInline muted className={"demo_video__video demo_video__video--vertical"}>
+                            <source src={receiveOrderVid} type="video/mp4" />
                             Sorry but your browser does not support playing video.
                         </video>
                     </div>

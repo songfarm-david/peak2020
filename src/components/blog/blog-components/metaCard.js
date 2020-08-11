@@ -44,7 +44,7 @@ const MetaCard = ({ postData }) => {
                 <div className={"meta_card__post_meta"}>
                     <div className={"meta_card__post_date"}>
                         <img className={"meta_card__post_icon clock_icon"} src={tinyClockBlue} />
-                        <span>{getDate(modified, date)}</span>
+                        <span className={"meta_card__post_date--date"}>{getDate(modified, date)}</span>
                     </div>
                     <span className={"meta_card__post_author"}>{getAuthor(categories, author.name)}</span>
                 </div>
