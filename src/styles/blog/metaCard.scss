@@ -41,9 +41,10 @@
         }
         .meta_card__post_title { font: $heading-3; }
         .meta_card__post_meta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            display: block;
             @extend .small-text;
             .meta_card__post_date,
             .meta_card__post_author {
@@ -58,8 +59,17 @@
                 }
             }
             .meta_card__post_date {
-                display: flex;
-                align-items: center;
+                // display: flex;
+                // align-items: center;
+                display: inline-block;
+                .meta_card__post_icon {
+                    width: 25px;
+                    max-width: $top-margin;
+                    vertical-align: initial;
+                }
+                .meta_card__post_date--date {
+                    display: inline-block;
+                }
             }
         } 
 
@@ -88,9 +98,9 @@
                 }
             }
             .meta_card__post_meta {
-                flex-wrap: nowrap;
-                width: 100%;
-                justify-content: center;
+                // flex-wrap: nowrap;
+                // width: 100%;
+                // justify-content: center;
             }
         }
         
