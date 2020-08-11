@@ -1,5 +1,9 @@
 # TODO
 
+- fix meta card date issue wrapping onto two lines
+- troubleshoot videos nto playig on iOS on service->online-ordering-system
+- add online ordering service to main contact form checkboxes
+
 ## testing
 - test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
 

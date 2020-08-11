@@ -17,6 +17,7 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 import FeaturesBlock from "../components/hero/featuresBlock"
 import CtaBlock from "../components/hero/CtaBlock"
 import DemoVideos from "../components/hero/sales/demoVideos"
+import PriceTable from "../components/hero/sales/priceTable"
 
 import "../styles/pages.scss"
 import "../styles/layout.scss"
@@ -65,6 +66,7 @@ export default ({ data, location }) => {
                 <CtaBlock />
                 <FeaturesBlock />
                 <DemoVideos />
+                <PriceTable />
                 <CtaBlock title={"Get started today"} byline={"Getting started is easier and more affordable than you might think!"} />
             </>}
                 
