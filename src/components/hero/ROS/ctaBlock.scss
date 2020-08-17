@@ -1,15 +1,18 @@
-@import "../../styles/globals.scss";
+@import "../../../styles/globals.scss";
 
 .cta_block {
-    padding: 0 !important;
+    // padding: 0 !important;
     // margin: $section-padding;
     .cta_block__inner {
         .cta_block__heading {}
         .cta_block__byline {}
         .cta_block__button {
-            margin-bottom: $margin-bottom;
+            margin: 1rem;
+            // margin-bottom: $margin-bottom;
             margin-right: $margin-bottom;
-            .cta_block__button:last-of-type { margin-right: 0; }
+            margin-left: 0;
+            // &:only-child { margin-top: 1rem; }
+            &:last-of-type { margin-right: 0 }
         }
     }
         

@@ -1,0 +1,31 @@
+@import "../../../styles/globals.scss";
+
+#benefits {
+    .section_aside {
+        border: 3px ridge $light-blue;
+        background-color: $lighter-blue;
+        float: right; 
+        width: auto;
+        padding: 1rem $top-margin;
+        margin-bottom: $vertical-rhythm;
+        box-shadow: $box-shadow;
+        .section_aside__header {
+            // margin-top: 0;
+            text-align: center;
+        }
+        .section_aside__list {
+            // padding: $top-margin;
+            @extend .normal-text-italic
+        }
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #benefits {
+        .section_aside {
+            margin-left: $vertical-rhythm;
+            width: 50%;
+            margin-bottom: $top-margin;
+        }
+    }
+}
