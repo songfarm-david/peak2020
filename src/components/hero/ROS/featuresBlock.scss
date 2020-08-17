@@ -2,7 +2,7 @@
  Features block for displaying sets of tiles (3 across on desktop)
  */ 
 
- @import "../../styles/globals.scss";
+ @import "../../../styles/globals.scss";
 
 .features_container {
     .features_container__header {}
@@ -19,6 +19,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin-bottom: $top-margin;
         .features_container__header {
             flex-basis: 100%;
         }

@@ -1,0 +1,28 @@
+@import "../../../styles/globals.scss";
+
+#facts {
+    // border-left: 2px solid $light-green;
+    // margin-left: $top-margin;
+    // margin: $vertical-rhythm auto $vertical-rhythm;
+    .fact_container {
+        margin-left: $top-margin;
+        .fact_heading {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        .fact_heading,
+        .fact_body {
+        }
+        .fact_body {}
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    #facts {
+        .fact_container {
+            // margin-left: $vertical-rhythm;
+            .fact_heading {}
+            .fact_body {}
+        }
+    }
+}

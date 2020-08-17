@@ -14,10 +14,12 @@ import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
-import FeaturesBlock from "../components/hero/featuresBlock"
-import CtaBlock from "../components/hero/CtaBlock"
-import DemoVideos from "../components/hero/sales/demoVideos"
-import PriceTable from "../components/hero/sales/priceTable"
+import CtaBlock from "../components/hero/ROS/ctaBlock"
+import FeaturesBlock from "../components/hero/ROS/featuresBlock"
+import Facts from "../components/hero/ROS/keyFacts"
+import BenefitsBlock from "../components/hero/ROS/keyBenefits"
+import DemoVideos from "../components/hero/ROS/demoVideos"
+import PriceTable from "../components/hero/ROS/priceTable"
 
 import "../styles/pages.scss"
 import "../styles/layout.scss"
@@ -64,10 +66,12 @@ export default ({ data, location }) => {
 
             {slug === 'online-ordering-system-restaurants' && <>
                 <CtaBlock />
+                <Facts />
                 <FeaturesBlock />
                 <DemoVideos />
+                <BenefitsBlock />
                 <PriceTable />
-                <CtaBlock title={"Get started today"} byline={"Getting started is easier and more affordable than you might think!"} />
+                <CtaBlock title={"Get started today"} byline={"Getting started is easier and more affordable than you might think. There are no contracts and you can cancel at anytime!"} />
             </>}
                 
         </Layout>

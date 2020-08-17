@@ -18,7 +18,7 @@ const PageContent = ({ path = "", type, content, children, featuredMedia = false
     console.log('PageContent path, type', path, type);
     
     return (
-    <div id="pageContent" className={(type === 'services') ? `section_container section_container__services` : `section_container ${path}`}>
+    <div id="pageContent" className={(type === 'services') ? `section_container section_container__services ${path}` : `section_container ${path}`}>
 
             {( children ) ? 
                 <div className={(path !== 'contact-us') ? `section_content section_container__inner ${path}` : `${path}`}>

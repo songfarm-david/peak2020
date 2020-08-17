@@ -21,7 +21,7 @@ const features = [
         icon: ""
     }, {
         title: "Customer Loyalty Tools",
-        description: "Drive customer loyalty with Coupon management, Customer Loyalty points, and Email Newsletters to promote specials, deals, and promotions.",
+        description: "Coupon builders, Reward programs, combos and promotional display, and Email Newsletters to drive customer loyalty.",
         icon: ""
     }, {
         title: "Dedicated Support",
