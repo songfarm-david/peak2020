@@ -75,7 +75,7 @@ const Social = ({ post, isHeader = false, visible = true }) => {
                 hashtag={site.siteMetadata.title}>
                 <FacebookIcon size={32} round={true} bgStyle={{fill: "#DEC1FF"}} />
                 <FacebookShareCount url={rootUrl + post.path}>
-                    {shareCount => <span className="myShareCountWrapper">{shareCount}</span>}
+                    {shareCount => <div className="myShareCountWrapper">{shareCount}</div>}
                 </FacebookShareCount>
             </FacebookShareButton>
             <LinkedinShareButton

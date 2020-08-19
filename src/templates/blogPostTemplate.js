@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import Comments from "../components/comments"
+import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
@@ -48,7 +49,8 @@ export default ({ data, location, pageContext }) => {
             <PageContent type={type} content={content} />
 
             {/* <Comments postData={data} /> */}
-            
+            <BlogCallout />
+
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} isAddFields={false} />
 

@@ -1,11 +1,13 @@
 # TODO
 
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
+- add function that removes current post from "blog callout" on 'posts'
 - add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?
 - add online ordering service to main contact form checkboxes
 - test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
 - fix js error on home page when manual switching between mobile and desktop viewports, re: 'testimonials' component
 - make sure images in blog posts on mobile aren't screwed up
+- fix broken blog category links in search console
 - increase general line height, address main nav styles on desktop
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
