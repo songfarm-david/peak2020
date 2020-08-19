@@ -29,7 +29,7 @@ import "../styles/layout.scss"
  * Mar 2020
  */
 export default ({ data, location }) => {
-    console.log('what is a page template data, location', data, location );
+    // console.log('what is a page template data, location', data, location );
     
     const { 
         title, 
@@ -68,8 +68,8 @@ export default ({ data, location }) => {
                 <CtaBlock />
                 <Facts />
                 <FeaturesBlock />
-                <DemoVideos />
                 <BenefitsBlock />
+                <DemoVideos />
                 <PriceTable />
                 <CtaBlock title={"Get started today"} byline={"Getting started is easier and more affordable than you might think. There are no contracts and you can cancel at anytime!"} />
             </>}

@@ -1,7 +1,7 @@
 import React from "react"
 
 const PriceTable = () => (
-    <div className={"section_container section_container--grey demo_video_container"}>
+    <div className={"section_container section_container--white"}>
         <section className={"section_content section_container__inner"}>
             <p className={"heading-2"}>Plans and pricing</p>  
             <figure className={"theme_table"}>
