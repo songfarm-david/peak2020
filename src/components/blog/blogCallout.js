@@ -11,12 +11,12 @@ import "./blogCallout.scss"
  * Blog section on home page: features 3 latest blogs
  * 
  */
-const BlogCallout = () => {
+const BlogCallout = ({postId = ""}) => {
     
     const query = useStaticQuery(
         graphql`
             query {
-                allWordpressPost(limit: 3, sort: {fields: date, order: DESC}, 
+                allWordpressPost(limit: 6, sort: {fields: date, order: DESC}, 
                     filter: {categories: {elemMatch: {name: {ne: "Portfolio"}}}}) {
                     totalCount
                     edges {
@@ -51,12 +51,18 @@ const BlogCallout = () => {
     )
     const featuredPosts = query.allWordpressPost
 
+    let excludeCurrPost = ( post ) => {
+        return post.node.wordpress_id !== postId
+    }
+
+    const filterPosts = featuredPosts.edges.filter(excludeCurrPost).slice(0,3)
+    console.log(filterPosts);
     return (
         <section id="blogCallout" className={"callout_section"}>
             <div className={"callout_section__container"}>
                 <BlogHeading headingText="Latest Blog Articles" className="callout"/>
                 <div className={"callout_section__container--inner"}>
-                    {featuredPosts.edges.map(({ node }, idx) => (
+                    {filterPosts.map(({ node }, idx) => (
                         <BlogPost key={idx} postData={node} type="callout"/> 
                     ))}  
                 </div>

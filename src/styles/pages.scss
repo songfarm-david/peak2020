@@ -32,6 +32,7 @@ main {
         .heroText { margin: 0; }
         .heroImage { order: 1; }
         .heroButton {
+            margin-top: 1rem;
             > a { color: inherit}
         }   
     }

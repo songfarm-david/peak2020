@@ -1,7 +1,5 @@
 import React from "react"
 
-import "./keyBenefits.scss";
-
 const demoLink = 'https://app1.restolabs.com/onlineorder/demorestaurant2#/onlineorder'
 
 const BenefitsBlock = () => (
@@ -16,9 +14,11 @@ const BenefitsBlock = () => (
                 </ul>
             </aside>
             
-            <h2>Try the App:</h2>
-            <p>Give the Online Ordering App a try on desktop or mobile!</p>
-            <a href={demoLink} target="_blank" className={"cta_block__button button primary-button"} style={{marginTop: '1rem'}}>Try Demo Restaurant</a>
+            <div className={""}>
+                <h2>Try the App:</h2>
+                <p>Give the Online Ordering App a try on desktop or mobile!</p>
+                <a href={demoLink} target="_blank" className={"cta_block__button button primary-button"} style={{marginTop: '1rem'}}>Try Demo Restaurant</a>
+            </div>
             
         </section>
         

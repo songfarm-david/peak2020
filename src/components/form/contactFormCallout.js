@@ -9,17 +9,19 @@ const ContactForm = ({
     isAddFields = false, 
     path = "/" 
 }) => (
-    <div id={mainContactFormStyles.contactFormContainer}>
-        <article>
-            <h2 className="screen-reader-text">Contact Us</h2>
-            <div className={mainContactFormStyles.contactFormContainer}>
-                <div className={mainContactFormStyles.introContainer}>
-                    <p className={mainContactFormStyles.heading}>{heading}</p>
-                    <p className={mainContactFormStyles.subHeading}>{ paragraph }</p>
+    <div className={"section_container"}>
+        <div id={mainContactFormStyles.contactFormContainer}>
+            <article>
+                <h2 className="screen-reader-text">Contact Us</h2>
+                <div className={mainContactFormStyles.contactFormContainer}>
+                    <div className={mainContactFormStyles.introContainer}>
+                        <p className={mainContactFormStyles.heading}>{heading}</p>
+                        <p className={mainContactFormStyles.subHeading}>{ paragraph }</p>
+                    </div>
+                    <MainContactForm path={path} isAddFields={isAddFields} />
                 </div>
-                <MainContactForm path={path} isAddFields={isAddFields} />
-            </div>
-        </article>
+            </article>
+        </div>
     </div>
 )
 

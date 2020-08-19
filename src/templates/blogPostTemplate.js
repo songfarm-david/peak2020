@@ -49,7 +49,7 @@ export default ({ data, location, pageContext }) => {
             <PageContent type={type} content={content} />
 
             {/* <Comments postData={data} /> */}
-            <BlogCallout />
+            <BlogCallout postId={wordpress_id} />
 
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} isAddFields={false} />

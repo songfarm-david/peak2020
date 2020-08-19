@@ -17,6 +17,11 @@ const AddFields = () => (
                     <legend>Services interested in:</legend>
                     <div className="checkbox-container">
                         <div className="checkbox-input-container">
+                            <label htmlFor="ros">Online Ordering Software
+                                <input type="checkbox" id="ros" name="ros" aria-label="online-ordering-system" value="ros" /><span></span>
+                            </label>
+                        </div>
+                        <div className="checkbox-input-container">
                             <label htmlFor="consulting">Consulting
                                 <input type="checkbox" id="consulting" name="consulting" aria-label="consulting" value="web-consulting" /><span></span>
                             </label>

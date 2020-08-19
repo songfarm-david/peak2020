@@ -43,7 +43,6 @@
         .slide {
             border-radius: $border-radius;
             box-shadow: $box-shadow;
-            // border: 2px solid greenyellow;
             max-width: 20rem;
             text-align: center;
             padding: $top-margin;
@@ -87,12 +86,13 @@
                 height: 100%;
             }
             &.buttonLeft {
-                left: 0;
+                left: -5%;
             }
             &.buttonRight {
-                right: 0;
+                right: -5%;
             }
         }
+         
     }
 }
 
@@ -108,9 +108,11 @@
         .slideContainer {
             width: $content-width;
             margin: 0 auto;
-            // padding: 0 $top-margin; 
             ul {
                 align-items: flex-start;
+                > li {
+                    flex-basis: 29%;
+                }
             }
         }
 
@@ -133,7 +135,6 @@
         .buttons {
             &.buttonLeft { margin-left: -$top-margin; }
             &.buttonRight { margin-right: -$top-margin; }
-
         }
 
     }
