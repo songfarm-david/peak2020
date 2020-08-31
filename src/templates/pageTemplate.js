@@ -68,8 +68,8 @@ export default ({ data, location }) => {
                 <CtaBlock />
                 <Facts />
                 <FeaturesBlock />
-                <BenefitsBlock />
                 <DemoVideos />
+                <BenefitsBlock />
                 <PriceTable />
                 <CtaBlock title={"Get started today"} byline={"Getting started is easier and more affordable than you might think. There are no contracts and you can cancel at anytime!"} />
             </>}

@@ -1,17 +1,21 @@
 # TODO
 
+- create an alias for david@peakwebsites - sayhello@peakwebsites.ca
+
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
-- add function that removes current post from "blog callout" on 'posts'
+# add function that removes current post from "blog callout" on 'posts'
 - add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?
-- add online ordering service to main contact form checkboxes
-- test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
+- add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
+
+# add online ordering service to main contact form checkboxes
+# test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
 - fix js error on home page when manual switching between mobile and desktop viewports, re: 'testimonials' component
-- make sure images in blog posts on mobile aren't screwed up
+# make sure images in blog posts on mobile aren't screwed up
 - fix broken blog category links in search console
-- increase general line height, address main nav styles on desktop
+# increase general line height, address main nav styles on desktop
 - set up better pagination for blog posts, 'load more' would be a cool experiment
-- add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
-- add newsletter, contact form to 404 page, style it
+# add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
+- 404 page: add newsletter, contact form to 404 page, better style on mobile
 - add rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
 - Add/test a good modern CSS reset 
 - add a confirmation popup when contact form
@@ -24,12 +28,11 @@
 - add search functionality: https://www.gatsbyjs.org/docs/adding-search/
 - figure out why my links in google docs don't have a fun card attached to them# unpublish unnecessary CMS pages, landing-page
 # delete all ridiculous tags on my site
-- add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
+
 # add build hook for wp updates in Netlify
 # fix wierd nav transition/transform bug when switching viewport sizes
 - write a post for the Dev https://dev.to/new
 # add some simple css animations like rise up fade in 
-- create an alias for david@peakwebsites - sayhello@peakwebsites.ca
 # Verify manifest.json / PWA + image
 - review and update Google my Business efforts
 - create a blogging schedule

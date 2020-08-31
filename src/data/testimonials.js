@@ -28,14 +28,14 @@ export let testimonials = [
         visible: true,
         business: "Cadence Creative Studio"
     }, 
-    // {
-    //     headline: "I appreciate your informative articles.",
-    //     body: "",
-    //     author: "Suzanne E",
-    //     cite: "https://www.google.ca/search?q=peak+websites+reviews&oq=peak+websites+reviews&aqs=chrome..69i57j69i60l3.2437j0j7&sourceid=chrome&ie=UTF-8#lrd=0x548f0d5fc97ca0cf:0xe2e36cceda92621c,1,,,",
-    //     visible: false,
-    //     business: "Google Reviews"
-    // }, 
+    {
+        headline: "I appreciate your informative articles.",
+        body: "",
+        author: "Suzanne E",
+        cite: "https://www.google.ca/search?q=peak+websites+reviews&oq=peak+websites+reviews&aqs=chrome..69i57j69i60l3.2437j0j7&sourceid=chrome&ie=UTF-8#lrd=0x548f0d5fc97ca0cf:0xe2e36cceda92621c,1,,,",
+        visible: false,
+        business: "Google Reviews"
+    }, 
     {
         headline: "Awesome service 👌",
         body: "Speaks in layman's terms! Extensive knowledge and experience!",
@@ -50,5 +50,12 @@ export let testimonials = [
         cite: "https://www.lighthousewealthvictoria.com/",
         visible: true,
         business: "Lighthouse Wealth Management"
+    }, {
+        headline: "Easy to work with",
+        body: "We started working with David and Peak Websites mid-way though the rebranding of our website. They helped finish the design and got our website to a functional level. David and team are easy to work with and they are always ready to help even when it is a quick reset of an email password.",
+        author: "Cindy Kent",
+        cite: "https://gordonheadbaseball.ca/",
+        visible: true,
+        business: "Gordon Head Baseball"
     }
 ]
