@@ -4,7 +4,7 @@ import "./ctaBlock.scss"
 
 const scheduleDemoLink = 'https://calendly.com/restolabs/restolabs-demonstration?utm_source=peak_websites'
 
-const trialSignUpLink = 'http://davidgaskin.restolabs.com/trial-signup'
+const trialSignUpLink = 'https://davidgaskin.restolabs.com/trial-signup'
 
 const CtaBlock = ({ title = null, byline = null }) => (
     <div className={"section_container cta_block"}>
