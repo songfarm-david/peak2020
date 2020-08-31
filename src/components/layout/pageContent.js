@@ -15,7 +15,7 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
 const PageContent = ({ path = "", type, content, children, featuredMedia = false }) => {
-    console.log('PageContent path, type', path, type);
+    // console.log('PageContent path, type', path, type);
     
     return (
     <div id="pageContent" className={(type === 'services') ? `section_container section_container__services ${path}` : `section_container ${path}`}>
