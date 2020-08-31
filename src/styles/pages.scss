@@ -43,6 +43,11 @@ main {
                 text-decoration: underline;
             }
         }
+        &.online-ordering-system {
+            .section_container__featured_image {
+                display: none;
+            }
+        }
     }
 
     &.page-404 {

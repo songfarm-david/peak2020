@@ -26,7 +26,7 @@
     .wp-block-pullquote {
         border-left: 2px solid $light-green;
         padding-left: $top-margin;
-        margin: $vertical-rhythm 0 $vertical-rhythm $top-margin;
+        margin: $vertical-rhythm 0 $vertical-rhythm 1rem;
         p { @extend .big-body-text }
         cite {
             &::before {

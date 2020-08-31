@@ -16,7 +16,7 @@ const facts = [
 ]
 
 const Facts = () => (
-    <div className={"section_container"}>
+    <div className={"section_container section_container--white"}>
         <section className={"section_content section_content--blockquote section_container__inner "} id="facts">
             <h2 className={"features_container__header screen-reader-text"}>Key Facts</h2>
             <blockquote className={"theme_blockquote"}>

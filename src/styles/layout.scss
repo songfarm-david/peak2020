@@ -24,18 +24,16 @@
 }
 
 .section_container {
-    padding: $top-margin 0;
+    padding: $vertical-rhythm 0;
     overflow: hidden;
     position: relative;
+    z-index: 1;
     .section_container { padding-top: 0; }
 
     &.section_container--grey { background-color: #f2f2f2 } 
     &.section_container--white { background-color: #fff; }
     
-    .section_content {
-        padding: 0 $margin-bottom $top-margin;
-        &.section_content--blockquote {}
-    }
+    &.cta_block { padding-top: 0; }
 
     .section_container__inner {
         width: auto;
@@ -48,7 +46,7 @@
             padding: 0 0;
         }
         &.section_container__inner--aside {
-            .section_aside {
+            aside.section_aside {
                 border: 3px ridge $light-blue;
                 background-color: $lighter-blue;
                 float: right; 
@@ -63,10 +61,33 @@
                     @extend .normal-text-italic
                 }
             }
-            div > p {
-                @extend .normal-text-italic;
-
+            .section_content--main_content {
+                position: relative;
+                overflow: hidden;
+                padding-bottom: 25%;
+                p { @extend .normal-text-italic; }
+                &::after {
+                    content: '';
+                    display: block;
+                    background-image: url('../images/logo/Logo_white.svg');
+                    background-repeat: no-repeat;
+                    background-size: auto;
+                    // background-position: center;
+                    height: 33rem; width: 100%;
+                    z-index: -1;
+                    position: absolute;
+                    // left: -25%;
+                    top: 0;
+                    margin-bottom: $vertical-rhythm;
+                }
             }
+        }
+    }
+
+    .section_content {
+        padding: 0 $margin-bottom $top-margin;
+        &.section_content--blockquote {
+            margin-bottom: 0;
         }
     }
 
@@ -127,21 +148,27 @@
 
 @media screen and (min-width: $mobile-breakpoint) {
     .section_container {
-        padding-top: $vertical-rhythm;
+        padding: $vertical-rhythm 0;
+        &.cta_block {
+            padding-top: $top-margin;
+            padding-bottom: $vertical-rhythm;
+        }
         .section_container { padding-top: 0; }
         .section_content {
             padding: 0;
             &.section_content--blockquote {
                 padding-left: $vertical-rhythm;
+                margin-bottom: $vertical-rhythm;
             }
+            
         }
         .section_container__inner {
             width: $content-width;
             &.section_container__inner--aside {
                 margin-bottom: $top-margin;
-                .section_aside {
+                aside.section_aside {
                     margin-left: $vertical-rhythm;
-                    width: 50%;
+                    width: 33%;
                     margin-bottom: $top-margin;
                 }
             }
