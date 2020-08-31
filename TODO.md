@@ -1,6 +1,6 @@
 # TODO
 
-- create an alias for david@peakwebsites - sayhello@peakwebsites.ca
+# create an alias for david@peakwebsites - sayhello@peakwebsites.ca
 
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 # add function that removes current post from "blog callout" on 'posts'
