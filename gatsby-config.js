@@ -60,6 +60,11 @@ module.exports = {
                 trackingId: process.env.GA_TRACKING_CODE,
                 head: false,
             },
+        }, {
+            resolve: `gatsby-plugin-facebook-pixel`,
+            options: {
+                pixelId: '186154185273672',
+            },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
