@@ -14,12 +14,7 @@
 
 #pageContent {
     &.section_container {
-        // &:first-of-type,
-        // &:only-of-type {
-            // border: $border;
-            padding-top: $vertical-rhythm;
-        // }
-        // border: $border;
+        padding-top: $vertical-rhythm;
     }
 }
 
@@ -108,6 +103,7 @@
     &.about,
     &.home {
         position: relative;
+        z-index: 11;
     }
 
     &.about {
@@ -160,7 +156,6 @@
                 padding-left: $vertical-rhythm;
                 margin-bottom: $vertical-rhythm;
             }
-            
         }
         .section_container__inner {
             width: $content-width;

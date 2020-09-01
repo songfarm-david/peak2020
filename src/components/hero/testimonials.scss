@@ -1,121 +1,224 @@
 @import "../../styles/globals.scss";
 
-#testimonials {
-    box-sizing: border-box;
-    padding: 2.25rem 0.75rem;
-    position: relative;
-    fieldset { 
-        border: none;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
- 
-    }
+// #testimonials {
+//     box-sizing: border-box;
+//     padding: 2.25rem 0.75rem;
+//     position: relative;
+//     fieldset { 
+//         border: none;
+//         position: absolute;
+//         top: 0;
+//         bottom: 0;
+//         right: 0;
+//         left: 0;
+//     }
     
-    .slideContainer {
+//     .slideContainer {
 
-        width: 100%;
-        position: relative;
-        margin: $top-margin 0 $vertical-rhythm;
+//         width: 100%;
+//         position: relative;
+//         margin: $top-margin 0 $vertical-rhythm;
     
-        ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            // max-height: 45rem;
-            min-height: 40rem;
-            position: relative;
-            z-index: 1;
-            > li {
-                list-style: none;
-                flex-basis: 80%;
-                blockquote {
-                    margin: 0;
+//         ul {
+//             margin: 0;
+//             padding: 0;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             flex-wrap: wrap;
+//             // max-height: 45rem;
+//             min-height: 40rem;
+//             position: relative;
+//             z-index: 1;
+//             > li {
+//                 list-style: none;
+//                 flex-basis: 80%;
+//                 blockquote {
+//                     margin: 0;
+//                 }
+//             }
+//         }
+    
+//         .slide {
+//             border-radius: $border-radius;
+//             box-shadow: $box-shadow;
+//             max-width: 20rem;
+//             text-align: center;
+//             padding: $top-margin;
+//             margin: $top-margin 1rem;
+//             min-height: 23rem;
+//             background-color: $white;
+//         }
+    
+//         .heading, .body, .cite + a {
+//             display: block;
+//             margin-bottom: 1rem;
+//         }
+
+//         .heading { margin-top: 1rem;}
+    
+//         .body {
+//             @extend .small-text;
+//         }
+    
+//         .cite {
+//             font-weight: bold;
+//             @extend .normal-text;
+//             + a {
+//                 text-decoration: underline;
+//             }
+//         }
+    
+//         .buttons {
+//             border: none;
+//             background-color: transparent;
+//             position: absolute;
+//             z-index: 101;
+//             top: 50%;
+//             padding: 1rem;
+//             &:hover,
+//             &:focus {
+//                 cursor: pointer;
+//             }
+//             > img {
+//                 width: $top-margin;
+//                 height: 100%;
+//             }
+//             &.buttonLeft {
+//                 left: -5%;
+//             }
+//             &.buttonRight {
+//                 right: -5%;
+//             }
+//         }
+         
+//     }
+// }
+
+
+// @media screen and (min-width: $mobile-breakpoint) {
+//     #testimonials {
+
+//         fieldset {
+//             margin-left: -1.5rem;
+//             margin-right: -1.5rem;
+//         }
+
+//         .slideContainer {
+//             width: $content-width;
+//             margin: 0 auto;
+//             ul {
+//                 align-items: flex-start;
+//                 > li {
+//                     flex-basis: 29%;
+//                 }
+//             }
+//         }
+
+//         &::after {
+//             content: '';
+//             display: block;
+//             background: url('../../images/illustrations/svg/compass.svg') no-repeat;
+//             background-position: 100% 0;
+//             background-size: 25rem;
+//             padding-bottom: 9rem;
+//             height: 100%;
+//             width: 100%;
+//             position: absolute;
+//             right: -5%;
+//             bottom: 0;
+//             margin-top: -10rem;
+//             z-index: -111;
+//         }
+
+//         .buttons {
+//             &.buttonLeft { margin-left: -$top-margin; }
+//             &.buttonRight { margin-right: -$top-margin; }
+//         }
+
+//     }
+// }
+
+#testimonials {}
+.slideContainer {
+    width: 100%;
+    position: relative;
+    margin: $top-margin 0 $vertical-rhythm;
+    
+    /* overwrites react-carousel styles: https://github.com/leandrowd/react-responsive-carousel */
+    .carousel {
+        .slide {
+            background-color: $white;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+        }
+        .control-dots .dot {
+            background-color: $strong-blue;
+        }
+        .carousel-status {
+            display: none;
+        }
+        &.carousel-slider {
+            .control-arrow {
+                opacity: 1;
+                border-radius: $border-radius;
+                &:hover { background: $strong-blue-alpha; }
+                &.control-prev,
+                &.control-next {
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 1rem;
+                        height: 100%;
+                        border: none;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                &.control-prev::before {
+                    background-image: url("../../images/illustrations/svg/Arrows/arrow_left.svg");
+                }
+                &.control-next::before {
+                    background-image: url("../../images/illustrations/svg/Arrows/arrow_right.svg");
                 }
             }
         }
-    
-        .slide {
-            border-radius: $border-radius;
-            box-shadow: $box-shadow;
-            max-width: 20rem;
-            text-align: center;
-            padding: $top-margin;
-            margin: $top-margin 1rem;
-            min-height: 23rem;
-            background-color: $white;
-        }
-    
-        .heading, .body, .cite + a {
+    }
+
+    .slide {
+        text-align: center;
+        padding: $top-margin;
+        .heading, 
+        .body, 
+        .cite + a {
             display: block;
             margin-bottom: 1rem;
         }
-
-        .heading { margin-top: 1rem;}
-    
-        .body {
-            @extend .small-text;
+        .heading { 
+            margin-top: 1rem; 
+            text-transform: capitalize;
         }
-    
+        .body { @extend .small-text; }
         .cite {
             font-weight: bold;
             @extend .normal-text;
-            + a {
-                text-decoration: underline;
-            }
+            + a {  text-decoration: underline; }
         }
-    
-        .buttons {
-            border: none;
-            background-color: transparent;
-            position: absolute;
-            z-index: 101;
-            top: 50%;
-            padding: 1rem;
-            &:hover,
-            &:focus {
-                cursor: pointer;
-            }
-            > img {
-                width: $top-margin;
-                height: 100%;
-            }
-            &.buttonLeft {
-                left: -5%;
-            }
-            &.buttonRight {
-                right: -5%;
-            }
-        }
-         
     }
 }
 
 
+
 @media screen and (min-width: $mobile-breakpoint) {
+    .slideContainer {
+        width: 36rem;
+        margin: 0 auto;
+    }
     #testimonials {
-
-        fieldset {
-            margin-left: -1.5rem;
-            margin-right: -1.5rem;
-        }
-
-        .slideContainer {
-            width: $content-width;
-            margin: 0 auto;
-            ul {
-                align-items: flex-start;
-                > li {
-                    flex-basis: 29%;
-                }
-            }
-        }
-
+        box-sizing: border-box;
+        padding: 2.25rem .75rem;
+        position: relative;
+        overflow: visible;
         &::after {
             content: '';
             display: block;
@@ -131,11 +234,5 @@
             margin-top: -10rem;
             z-index: -111;
         }
-
-        .buttons {
-            &.buttonLeft { margin-left: -$top-margin; }
-            &.buttonRight { margin-right: -$top-margin; }
-        }
-
     }
 }
