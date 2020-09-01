@@ -56,7 +56,7 @@ const BlogCallout = ({postId = ""}) => {
     }
 
     const filterPosts = featuredPosts.edges.filter(excludeCurrPost).slice(0,3)
-    console.log(filterPosts);
+    // console.log(filterPosts);
     return (
         <section id="blogCallout" className={"callout_section"}>
             <div className={"callout_section__container"}>

@@ -63,7 +63,7 @@ module.exports = {
         }, {
             resolve: `gatsby-plugin-facebook-pixel`,
             options: {
-                pixelId: '186154185273672',
+                pixelId: process.env.FB_PIXEL,
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
