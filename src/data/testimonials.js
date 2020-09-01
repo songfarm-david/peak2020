@@ -1,16 +1,16 @@
 export let testimonials = [
     {
-        headline: "Excellent Job",
-        body: "David did an excellent job ~ he was able, quick, dedicated and paid attention to detail. I now have a beautiful professional website that I am very proud of.",
-        author: "Nancy Crites",
-        cite: "https://nancycrites.com/",
-        visible: true,
-        business: null
-    }, {
         headline: "David is an amazing client to work with!",
         body: "The project we worked on together evolved a lot from what was asked for in the original job posting and I really enjoyed the whole process. David is very helpful and always available to answer any questions. He gave clear instructions and provided great and concise feedback. It really was a pleasure working with him and I am looking forward to further projects in the future!",
         author: "Karla Pichler",
         cite: "http://karlapichler.com/",
+        visible: true,
+        business: null
+    }, {
+        headline: "Excellent Job",
+        body: "David did an excellent job ~ he was able, quick, dedicated and paid attention to detail. I now have a beautiful professional website that I am very proud of.",
+        author: "Nancy Crites",
+        cite: "https://nancycrites.com/",
         visible: true,
         business: null
     }, {
@@ -41,14 +41,14 @@ export let testimonials = [
         body: "Speaks in layman's terms! Extensive knowledge and experience!",
         author: "Anne-Marie C",
         cite: "https://www.google.ca/search?q=peak+websites+reviews&oq=peak+websites+reviews&aqs=chrome..69i57j69i60l3.2437j0j7&sourceid=chrome&ie=UTF-8#lrd=0x548f0d5fc97ca0cf:0xe2e36cceda92621c,1,,,",
-        visible: true,
+        visible: false,
         business: "Google Reviews"
     }, {
         headline: "Dave has been great to work with!",
         body: "He is detail oriented and worked quickly to complete our website, adding many creative ideas that made our site look more visually appealing for potential visitors. I would definitely (and have already) recommended Dave to others and have heard positive feedback from the referrals.",
         author: "Steve Gaskin",
         cite: "https://www.lighthousewealthvictoria.com/",
-        visible: true,
+        visible: false,
         business: "Lighthouse Wealth Management"
     }, {
         headline: "Easy to work with",
