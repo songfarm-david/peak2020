@@ -10,7 +10,7 @@ import "../../styles/posts.scss"
  * @param {Obj} param0 Object containing (limit of 6) blog posts
  */
 const AllPosts =({ allPosts }) => {
-    console.log('what is allPosts', allPosts);
+    // console.log('what is allPosts', allPosts);
     return (
     <section id="blogIndex" className={"blog_section"}>
         <BlogHeading headingText="Latest Blog Articles" />
