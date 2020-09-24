@@ -6,13 +6,6 @@
 .hero-banner {
     
     height: calc(100vh + 4.5rem);
-    // background-image: url('../../images/fog_overlay.png');
-    // , url('../../images/homepage_mobile.png');
-    // background-image: url('../../images/homepage_mobile.png');
-    // background-position: bottom center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-origin: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +23,8 @@
         margin: 0 auto 5rem;
         max-width: $content-width;
         text-align: center; 
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.767);
+        // text-transform: capitalize;
         @extend .heading-2;
 
         > p {
