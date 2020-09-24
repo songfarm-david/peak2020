@@ -84,7 +84,7 @@ const HeroBanner = () => {
         <div className="hero-banner">
             <Img id="heroBannerImage" className={(getActiveClass() === 'mobile') ? "hero-image hero-image-mobile" : "hero-image hero-image-desktop"} fluid={(getActiveClass() === 'mobile') ? data.heroImageMobile.childImageSharp.fluid : data.heroImageDesktop.childImageSharp.fluid} />
             <div className="hero-text-container heading-1">
-                <p>Fair, honest, conscientious website <br/>
+                <p>Fair, honest, conscien&shy;tious website <br/>
                     <span id="rotatingWord">
                         {words.map(({ word, color }, idx) => (
                             <span key={`word-${idx}`} className="word" style={{ color }}>
