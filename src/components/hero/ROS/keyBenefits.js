@@ -14,7 +14,7 @@ const BenefitsBlock = () => (
                 </ul>
             </aside>
             
-            <div className={"section_content section_content--main_content section_container--grey"}>
+            <div id="#tryDemo" className={"section_content section_content--main_content section_container--grey"}>
                 <h2>Try the App:</h2>
                 <p>Give the Online Ordering App a try on desktop or mobile!</p>
                 <a href={demoLink} target="_blank" className={"cta_block__button button primary-button"} style={{marginTop: '1rem'}}>Try Demo Restaurant</a>

@@ -131,6 +131,21 @@ html {
 /* debug border */
 $border: 1px solid red;
 
+/**
+ * NOTE: this is a global style but should be filed along with more relevant styles eventually, like hero, or pages
+ */
+.pk_featured_image {
+
+    img {
+        width: 100%;
+        max-width: 400px;
+    }
+    @media (min-width: $mobile-breakpoint) {
+        float: right;
+        margin-left: 1rem;
+    }
+}
+
 
 @import "./theme-styles/buttons.scss";
 @import "./theme-styles/tables.scss";

@@ -24,6 +24,9 @@
         max-width: $content-width;
         text-align: center; 
         text-shadow: 1px 1px rgba(0, 0, 0, 0.767);
+        word-break: break-word;
+        hyphens: auto;
+        text-overflow: wrap;
         // text-transform: capitalize;
         @extend .heading-2;
 
