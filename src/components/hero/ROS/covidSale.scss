@@ -1,0 +1,10 @@
+@import "../../../styles/globals.scss";
+
+
+.highlight_block {
+    border: 2px solid #49C5DE;
+    background-color: $white;
+    padding: 0 1rem 1rem;
+    margin-bottom: 1rem;
+    @extend .normal-text-italic;
+}
