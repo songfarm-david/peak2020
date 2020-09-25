@@ -25,7 +25,7 @@
         text-align: center; 
         text-shadow: 1px 1px rgba(0, 0, 0, 0.767);
         word-break: break-word;
-        hyphens: auto;
+        hyphens: manual;
         text-overflow: wrap;
         // text-transform: capitalize;
         @extend .heading-2;
@@ -58,6 +58,8 @@
         .hero-text-container {
             // font: initial;
             font: $heading-1;
+            word-break: normal;
+            hyphens: none;
         }
 
     }
