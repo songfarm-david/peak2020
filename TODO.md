@@ -9,7 +9,9 @@
 
 # add online ordering service to main contact form checkboxes
 # test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
-- fix js error on home page when manual switching between mobile and desktop viewports, re: 'testimonials' component
+
+- fix js error on home page when manual switching between mobile and desktop viewports, re: 'testimonials' component https://www.gatsbyjs.com/docs/layout-components/#how-to-prevent-layout-components-from-unmounting
+
 # make sure images in blog posts on mobile aren't screwed up
 - fix broken blog category links in search console
 # increase general line height, address main nav styles on desktop
@@ -19,7 +21,7 @@
 - add rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
 - Add/test a good modern CSS reset 
 - add a confirmation popup when contact form
-- add swipe to testimonials
+# add swipe to testimonials
 - address portfolio situation
 - add fog effect to 404, home page!
 - add a little section in the blog 'see an error? get in touch'?
