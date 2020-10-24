@@ -28,7 +28,6 @@ main {
 
     .home, .about {
         position: relative;
-        // width: 100%;
         .heroText { margin: 0; }
         .heroImage { order: 1; }
         .heroButton {
@@ -41,6 +40,10 @@ main {
         #pageContent {
             a[href] {
                 text-decoration: underline;
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
             }
         }
         &.online-ordering-system {
@@ -98,7 +101,6 @@ main {
     main {
 
         .heroText { 
-            // width: $hero-width;
             padding-right: 33%;
         }
         .hero_text--full_width {
@@ -108,7 +110,6 @@ main {
     
         .home, .about {
             position: relative;
-            // width: auto;
             .heroText { flex-basis: 100%; }
             .heroImage { order: initial; }
             .heroBody, .hero_body { flex: 2; }               
