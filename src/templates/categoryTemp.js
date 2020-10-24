@@ -12,14 +12,12 @@ import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/form/contactFormCallout"
 
 export default ({ data, pageContext }) => {
-    // console.log(data, pageContext);
+
     const { allWordpressPost } = data 
 
     const filteredPosts = allWordpressPost.edges.filter(({node}) => {
         return node.categories.some(({ slug }) => slug === pageContext.slug)
     })
-
-    // console.log(filteredPosts);
 
     return (
         <Layout path={pageContext.url} layoutClass={"category"}>
@@ -43,21 +41,6 @@ export default ({ data, pageContext }) => {
     )
 
 }
-
-// export const categoryQuery = graphql`
-//     query($slug: String!) {
-//         allWordpressPost(filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
-//             edges {
-//                 node {
-//                     id
-//                     title
-//                     path
-//                 }
-//             }
-//             totalCount
-//           }
-//     }
-// `
 
 export const categoryQuery = graphql`
     query {
