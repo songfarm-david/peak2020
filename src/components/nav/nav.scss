@@ -40,6 +40,10 @@
         a {
             display: block;
             padding: 1.25rem;
+            &:hover,
+            &:focus {
+                color: $bright-orange;
+            }
         }
         img, button {
             padding: 1.25rem;
@@ -70,6 +74,7 @@
             &.down {
                 // margin-right: 1.25rem;  
             }
+            
         }
 
     }

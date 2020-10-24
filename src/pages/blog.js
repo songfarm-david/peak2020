@@ -18,7 +18,6 @@ import S from 'string'
  * Blog Index page
  */
 export default ({ data, location }) => {
-    console.log('blog.js data', data);
     
     const { wordpressPage, allWordpressPost, featuredPost } = data
     const { title, type, path, slug, excerpt } = wordpressPage

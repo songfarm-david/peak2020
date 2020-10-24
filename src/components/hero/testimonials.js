@@ -14,7 +14,7 @@ const TestimonialsCarousel = () => {
     return ( 
         <section id="testimonials" role="region" aria-label="Testimonials" className={"section_container"}>
             <div className={"slideContainer section_content"} >
-                <Carousel autoPlay infiniteLoop interval={7000}>
+                <Carousel autoPlay infiniteLoop interval={7000} showThumbs={false}>
                     {importData.testimonials
                     .filter((t) => t.visible) // test if testimonial is set to visible
                     .map((testimonial, i) => (
