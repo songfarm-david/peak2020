@@ -4,8 +4,6 @@ import ReactHtmlParser from 'react-html-parser';
 
 import FeaturedImage from "../blog/blog-components/featuredImage"
 
-import pageContentStyles from "./pageContent.module.scss"
-
 /**
  * Parses props to determine what kind of content is being passed in
  * Options include:
@@ -15,10 +13,9 @@ import pageContentStyles from "./pageContent.module.scss"
  * @param {Str} props.type (optional) a modifier to trigger a specific condition
  */
 const PageContent = ({ path = "", type, content, children, featuredMedia = false }) => {
-    // console.log('PageContent path, type', path, type);
     
     return (
-    <div id="pageContent" className={(type === 'services') ? `section_container section_container__services ${path}` : `section_container ${path}`}>
+        <div id="pageContent" className={(type === 'services') ? `section_container section_container__services ${path}` : `section_container ${path}`}>
 
             {( children ) ? 
                 <div className={(path !== 'contact-us') ? `section_content section_container__inner ${path}` : `${path}`}>
@@ -34,8 +31,10 @@ const PageContent = ({ path = "", type, content, children, featuredMedia = false
                     : false }
             </div>
 
-    </div>
-)}
+        </div>
+    )
+
+}
 
 export default PageContent
 

@@ -191,4 +191,14 @@
             }
         }
     }
+
+    /* this rule affects width of copy for child service pages */
+    .service-page,
+    .blog_post {
+        #pageContent.section_container {
+            width: $hero-width;
+            margin: 0 auto;
+        }
+    }
+    
 }
