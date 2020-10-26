@@ -1,8 +1,6 @@
 @import "../../styles/globals.scss";
 
-// .headerContainer {
-//     max-width: 66%;
-// }
+
 
 .page_banner {
 
@@ -56,6 +54,9 @@
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
+    .headerContainer {
+        max-width: $content-width;
+    }
     .page_banner {
         font: $heading-1;
         &.page_banner__post {

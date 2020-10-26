@@ -30,7 +30,6 @@ import "../styles/layout.scss"
  * Mar 2020
  */
 export default ({ data, location }) => {
-    // console.log('what is a page template data, location', data, location );
     
     const { 
         title, 
@@ -42,9 +41,6 @@ export default ({ data, location }) => {
         featured_media, 
         parent_element 
     } = data.wordpressPage
-
-    // console.log('in page template, what is location.pathname', location.pathn);
-    
 
     return (
         <Layout path={location.pathname} layoutClass={(parent_element) ? parent_element.slug+title : title}>
@@ -99,6 +95,7 @@ export const pageQuery = graphql`
                 slug
             }
             featured_media {
+                title
                 alt_text
                 localFile {
                     url
