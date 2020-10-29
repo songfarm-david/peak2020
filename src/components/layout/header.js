@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => {
         <header id={headerStyles.siteHeader}>
             <div id={headerStyles.headerInnerContainer}>
                 <Link to="/">
-                    <img id={headerStyles.siteLogo} src={siteLogo} alt={""} />
+                    <img id={headerStyles.siteLogo} src={siteLogo} alt={"Peak Websites Home"} />
                     <h1 className="screen-reader-text">{siteTitle}</h1>
                 </Link>
                 <div onClick={() => toggleMenu( !isMenuOpen )}>
