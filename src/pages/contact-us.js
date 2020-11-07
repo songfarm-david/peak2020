@@ -32,7 +32,7 @@ export default ({ data, location }) => {
             <PageContent path={slug} type={type}>
 
                 <ContactForm 
-                    heading="Begin the Journey" 
+                    heading="Free Consultation" 
                     paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
                     formPath={path} isAddFields={true} />
 
