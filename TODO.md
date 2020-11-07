@@ -1,27 +1,12 @@
 # TODO
 
-# create an alias for david@peakwebsites - sayhello@peakwebsites.ca
-
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
-# add function that removes current post from "blog callout" on 'posts'
-- add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?
-- add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
-
-# add online ordering service to main contact form checkboxes
-# test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
-
-- fix js error on home page when manual switching between mobile and desktop viewports, re: 'testimonials' component https://www.gatsbyjs.com/docs/layout-components/#how-to-prevent-layout-components-from-unmounting
-
-# make sure images in blog posts on mobile aren't screwed up
-- fix broken blog category links in search console
-# increase general line height, address main nav styles on desktop
 - set up better pagination for blog posts, 'load more' would be a cool experiment
-# add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
-- 404 page: add newsletter, contact form to 404 page, better style on mobile
-- add rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
-- Add/test a good modern CSS reset 
-- add a confirmation popup when contact form
-# add swipe to testimonials
+- add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?
+- test category pages, exclude category pages from being indexed 
+- review images and blog posts, how should these be indexed? Why does gatsby-img use both domains when referencing the image? Why does peakwebsites 404 but cms.peakwebsites NOT?
+- fix broken blog category links in search console
+- add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status
 - address portfolio situation
 - add fog effect to 404, home page!
 - add a little section in the blog 'see an error? get in touch'?
@@ -29,18 +14,30 @@
 - finish page about ocntent and creating content as a service
 - add search functionality: https://www.gatsbyjs.org/docs/adding-search/
 - figure out why my links in google docs don't have a fun card attached to them# unpublish unnecessary CMS pages, landing-page
-# delete all ridiculous tags on my site
-
-# add build hook for wp updates in Netlify
-# fix wierd nav transition/transform bug when switching viewport sizes
-- write a post for the Dev https://dev.to/new
-# add some simple css animations like rise up fade in 
-# Verify manifest.json / PWA + image
+- fix js error on home page when manual switching between mobile and desktop viewports, re: 'testimonials' component https://www.gatsbyjs.com/docs/layout-components/#how-to-prevent-layout-components-from-unmounting
+- 404 page: add newsletter, contact form to 404 page, better style on mobile
+- add rich data. Good data on this page: https://www.gatsbyjs.org/docs/seo/, https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ USE THEM FROM OLD SITE
+- Add/test a good modern CSS reset 
+- add a confirmation popup when contact form
 - review and update Google my Business efforts
 - create a blogging schedule
 - and page scrolling line for blog posts like [this one](https://www.ppchero.com/how-should-you-formulate-your-ppc-strategy/)
 - look into phone systems
+- write a post for the Dev https://dev.to/new
 
+# add function that removes current post from "blog callout" on 'posts'
+# create an alias for david@peakwebsites - sayhello@peakwebsites.ca
+# add online ordering service to main contact form checkboxes
+# test routes: all routes that were redirected to homepage - that have something to do with service - should be redirected to the /services/ page, I think 
+# make sure images in blog posts on mobile aren't screwed up
+# increase general line height, address main nav styles on desktop
+# add blog menu after blog posts, put condition to exclude current blog in menu, include see more button, boom.
+# add swipe to testimonials
+# delete all ridiculous tags on my site
+# add build hook for wp updates in Netlify
+# fix wierd nav transition/transform bug when switching viewport sizes
+# add some simple css animations like rise up fade in 
+# Verify manifest.json / PWA + image
 # wire up the quote carousel
 # Review mailing list stuff
 # Wire up forms, newsletter
