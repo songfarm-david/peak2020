@@ -24,11 +24,11 @@ $header-width: $hero-width;
     }
 }
 
-.theme_ficaptions {
+.theme_figcaptions {
     text-align: center;
     @extend .footer-text;
     font-style: italic;
-    padding-top: $margin-bottom; 
+    padding-top: .5rem; 
     > a {
         font: inherit;
     }
@@ -64,12 +64,17 @@ html {
         max-width: 1rem;
     }
 
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+
     figure { 
       margin: 0 auto; 
-      img {
-          height: auto;
-          max-width: 100%;
-      }
+    //   img {
+    //       height: auto;
+    //       max-width: 100%;
+    //   }
     }
 
     input, textarea {
