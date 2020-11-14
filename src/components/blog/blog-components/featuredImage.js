@@ -5,7 +5,7 @@ import peakLogoWhite from "../../../images/logo/Logo_white.svg"
 import featuredImageStyles from "./featuredImage.module.scss"
 
 const FeaturedImage = ({ featuredImage, isFeature = false, isPageFeature = false, alt, title }) => {
-    console.log('featuredImage', featuredImage);
+
     return ( (featuredImage) ? 
             <Img fluid={featuredImage.localFile.childImageSharp.fluid}
                 className={(isFeature) ? `${featuredImageStyles.featuredImage} ${featuredImageStyles.featuredFull}` 

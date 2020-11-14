@@ -21,7 +21,7 @@ import "../styles/posts.scss"
 * Mar 2020
 */
 export default ({ data, location, pageContext }) => {
-    console.log(data, location, pageContext);
+    
     const { 
         wordpress_id,
         path,
@@ -33,16 +33,89 @@ export default ({ data, location, pageContext }) => {
         ...metaProps 
     } = data.wordpressPost
 
-    const { wordpressPost } = data
+    const { wordpressPost, site } = data
     const postComments = data.allWordpressWpComments
+
+    const description = S(excerpt).stripTags().decodeHTMLEntities().s
+    const blogTitle = S(title).stripTags().decodeHTMLEntities().s
+    
+    // article schema here
+    // Initial breadcrumb list
+    const itemListElement = [
+        {
+            '@type': 'ListItem',
+            item: {
+                '@id': site.siteMetadata.siteUrl,
+                name: 'Homepage',
+            },
+            position: 1,
+        },
+    ]
+
+    const schemaArticle = {
+        '@context': 'http://schema.org',
+        '@type': 'Article',
+        author: {
+            '@type': 'Person',
+            name: metaProps.author.name,
+        },
+        copyrightHolder: {
+            '@type': 'Person',
+            name: metaProps.author.name,
+        },
+        creator: {
+            '@type': 'Person',
+            name: metaProps.author.name,
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: site.siteMetadata.title,
+            logo: {
+                '@type': 'ImageObject',
+                url: site.siteMetadata.image,
+            },
+        },
+        datePublished: metaProps.date,
+        dateModified: metaProps.modified,
+        description: description,
+        headline: blogTitle,
+        inLanguage: "English",
+        url: `${site.siteMetadata.siteUrl}${path}`,
+        name: blogTitle,
+        image: {
+            '@type': 'ImageObject',
+            url: wordpressPost.featured_media.localFile.url,
+        },
+        mainEntityOfPage: `${site.siteMetadata.siteUrl}${path}`,
+    }
+
+    // Push current blogpost into breadcrumb list
+    itemListElement.push({
+        '@type': 'ListItem',
+        item: {
+            '@id': `${site.siteMetadata.siteUrl}${path}`,
+            name: blogTitle,
+        },
+        position: 2,
+    })
+
+    const breadcrumb = {
+        '@context': 'http://schema.org',
+        '@type': 'BreadcrumbList',
+        description: 'Breadcrumbs list',
+        name: 'Breadcrumbs',
+        itemListElement,
+    }
     
     return (
         <Layout path={location.pathname} layoutClass={"blog_post " + title}> 
             
-            <SEO title={title} description={excerpt} image={featured_media} path={location.href}
-            />
+            <SEO title={title} description={excerpt} image={featured_media} path={location.href} />
 
-            <Helmet title={S(title).decodeHTMLEntities().s} />
+            <Helmet title={S(title).decodeHTMLEntities().s}>
+                <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
+                <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+            </Helmet>
 
             <PageBanner bannerType={"post"} bannerData={wordpressPost} title={title} />
             
@@ -113,6 +186,13 @@ export const query = graphql`
                     date(formatString: "MMM Do, YYYY")
                     content
                 }
+            }
+        }
+        site {
+            siteMetadata {
+                siteUrl
+                title
+                image
             }
         }
     }    
