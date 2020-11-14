@@ -10,11 +10,8 @@ import "../../../styles/layout.scss"
 import "../../../styles/posts.scss"
 
 const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
-    // console.log('BlogPost type, postData, isFeaturedPost', type, postData, isFeaturedPost);
 
     const { path, title, excerpt, featured_media, ...metaProps } = postData
-
-    console.log('blogPost', featured_media, title);
 
     return (
         <div className={

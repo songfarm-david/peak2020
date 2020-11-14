@@ -13,9 +13,47 @@ import Helmet from "react-helmet"
 import S from 'string'
 
 export default ({ data, location }) => {
-    // console.log('contact us location', location);
+    console.log('contact us location', location);
+
+    console.log('data', data);
     
+    console.log('data.site.siteMetadata', data.site.siteMetadata);
     const { path, title, type, excerpt, slug } = data.wordpressPage
+    const { siteUrl, keywords } = data.site.siteMetadata
+
+    // console.log(siteUrl, path);
+
+    const schemaContact = {
+		"@context": "http://schema.org",
+		"@type": "ContactPage",
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement":
+			[
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Contact",
+					"url": `${siteUrl}${path}`
+				},
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"url": `${siteUrl}`
+				}
+			]
+		},
+		"mainContentOfPage": {
+			"@type": "WebPageElement",
+			"cssSelector": "#pageContent"
+		},
+		"speakable": ["#pageContent"],
+		"about": "Contact Peak Websites",
+		"keywords": keywords,
+		"name": data.site.siteMetadata.title,
+		"url": `${siteUrl}${path}`
+	}
 
     return (
         <Layout path={path} layoutClass={title}>
@@ -25,7 +63,9 @@ export default ({ data, location }) => {
                 description={excerpt} 
                 path={location.href} />
 
-            <Helmet title={S(title).decodeHTMLEntities().s} />
+            <Helmet title={S(title).decodeHTMLEntities().s}>
+                <script type="application/ld+json">{JSON.stringify(schemaContact)}</script>
+            </Helmet>
 
             <PageBanner bannerType="page" title={title} slug={slug} />
 
@@ -54,6 +94,13 @@ export const queryPage = graphql`
             path
             slug
             excerpt
+        }
+        site {
+            siteMetadata {
+                title
+                siteUrl
+                keywords
+            }
         }
     }
 `

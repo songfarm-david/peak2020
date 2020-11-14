@@ -43,8 +43,8 @@ const Social = ({ post, isHeader = false, visible = true }) => {
                     description
                     author
                     image
-                    facebookUrl
-                    twitterLink
+                    facebookURL
+                    twitterURL
                     twitterUsername
                 }
             }
