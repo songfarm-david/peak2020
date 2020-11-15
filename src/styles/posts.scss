@@ -1,7 +1,5 @@
 @import "./globals.scss";
 
-
-
 /**
  * these styles pertain to blog content i.e: main class="blog-post"
  */
@@ -55,12 +53,32 @@
 
     .wp-block-image {
         &.size-large { text-align: center; }
-        figcaption { @extend .theme_ficaptions; }
+        figcaption { @extend .theme_figcaptions; }
     }
 
     figure.wp-block-embed { 
         text-align: center; 
         iframe { max-width: 640px }
+    }
+
+    figure {
+        width: 100% !important;
+        // border: 2px solid $strong-blue-alpha;
+        margin-bottom: 0.25rem;
+        padding: 0.25rem;
+        text-align: center;
+        figcaption {
+            font: $footer-text;
+            font-style: italic;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    pre {
+        background-color: $strong-blue-alpha;
+        padding: 1rem;
     }
 
 }

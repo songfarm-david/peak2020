@@ -11,11 +11,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 /* helper package for transforming strangs! https://www.npmjs.com/package/string */
 import S from 'string'
+import { siteMetadata } from "../../gatsby-config"
 
 function SEO({ title, description, image, meta, lang, path }) {
     
-    // console.log(description);
-
     const { site } = useStaticQuery(graphql`
         query {
             site {
@@ -25,9 +24,13 @@ function SEO({ title, description, image, meta, lang, path }) {
                     description
                     author
                     image
-                    facebookUrl
-                    twitterLink
+                    facebookURL
+                    twitterURL
                     twitterUsername
+                    siteUrl
+                    telephone
+                    keywords
+                    contactEmail
                 }
             }
         }
@@ -36,10 +39,128 @@ function SEO({ title, description, image, meta, lang, path }) {
     const pageTitle = S(title).decodeHTMLEntities().s || site.siteMetadata.title
     const metaDescription = S(description).stripTags().decodeHTMLEntities().s || site.siteMetadata.description
     const metaImage = image || site.siteMetadata.image
-    const pUrl = path || site.siteMetadata.siteUrl
+    const siteUrl = path || site.siteMetadata.siteUrl
     const canonical = path || false
+
+    const { facebookURL, twitterURL, telephone, author } = site.siteMetadata
          
-    // console.log(metaDescription);
+    // generic schema here
+    const schemaWebsite = {
+		"@context": "http://schema.org",
+		"@type": "WebSite",
+		"about": siteMetadata.description,
+		"alternativeHeadline": "Pursuing Peak performance for your business",
+		"author": {
+			"@type": "Organization",
+			"name": siteMetadata.title
+		},
+		"creator": {
+			"@type": "Organization",
+			"name": siteMetadata.title
+		},
+		"headline": siteMetadata.description,
+		"inLanguage": "English",
+		"keywords": siteMetadata.keywords,
+		"sourceOrganization": {
+			"@type": "Organization",
+			"name": siteMetadata.title
+		},
+		"thumbnailUrl": siteMetadata.image,
+		"alternateName": "Peak Website Services",
+		"description": siteMetadata.description,
+		"image": siteMetadata.image,
+		"name": siteMetadata.title,
+		"sameAs": [facebookURL, twitterURL],
+		"url": siteMetadata.siteUrl
+    }
+    
+    const schemaLocalBusiness = {
+		"@context": "http://schema.org",
+		"@type": "localBusiness",
+		"currenciesAccepted": "CAD",
+		"openingHours": "Mo-Su",
+		"paymentAccepted": "Cash, Credit Card, eTransfer",
+		"address": {
+			"@type": "PostalAddress",
+			"addressCountry": "Canada",
+			"addressLocality": "Victoria",
+			"addressRegion": "BC",
+			"postalCode": "V8V 5A1",
+			"streetAddress": "1061 Fort St, Unit 204"
+		},
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"itemReviewed": siteMetadata.title,
+			"reviewCount": "22",
+			"ratingValue": "4.7"
+		},
+		"contactPoint" : {
+			"@type" : "ContactPoint",
+			"availableLanguage": "English, Spanish",
+			"contactType" : "Info",
+			"email": "sayhello@peakwebsites.ca",
+			"hoursAvailable": "10:00-18:00",
+			"telephone" : telephone
+		},
+		"email": "david@peakwebsites.ca",
+		"founder": {
+			"@type": "Person",
+			"name": author,
+			"email": "david@peakwebsites.ca",
+			"knowsLanguage": "English, Spanish",
+			"nationality": "Canada",
+			"telephone" : telephone,
+			"worksFor": siteMetadata.title
+		},
+		"foundingDate": "2016-10-21",
+		"foundingLocation": "Victoria, British Columbia",
+		"knowsAbout": "SEO, Local SEO, Web Development, Web Design, Search Engine Optimization, Internet Marketing, Websites, Website Maintenance, Web Services, SEO Company, SEO Agency",
+		"knowsLanguage": "Gatsby, React, HTML5, CSS3, JavaScript ES6, PHP, XML, JSON",
+		"legalName": "Peak Website Services",
+		"location": {
+			"@type": "Place",
+			"name": "Victoria, British Columbia"
+		},
+		"logo": siteMetadata.image,
+		"telephone": telephone,
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "48.423379",
+			"longitude": "-123.35534",
+			"PostalCode": "V8V 5A1"
+		},
+		"description": siteMetadata.description,
+		"image": siteMetadata.image,
+		"url": siteMetadata.siteUrl,
+		"name": siteMetadata.title,
+		"hasMap": {
+			"@type": "Map",
+			"url": "https://www.google.ca/maps/place/Peak+Websites/@48.423379,-123.3575287,17z/data=!3m1!4b1!4m5!3m4!1s0x548f0d5fc97ca0cf:0xe2e36cceda92621c!8m2!3d48.423379!4d-123.35534"
+		},
+        "sameAs": [twitterURL, facebookURL],
+        "review": {
+			"@type": "Review",
+			"itemReviewed": {
+				"@type": "LocalBusiness",
+				"name": site.siteMetadata.title,
+				"logo": image,
+				"telephone": telephone,
+				"email": site.siteMetadata.contactEmail,
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"itemReviewed": "Peak Websites",
+					"reviewCount": "22",
+					"ratingValue": "4.7"
+				}
+			},
+			"reviewBody": "David at Peak websites not only gave me a beautiful website but was also tremendously patient with me as I tried to learn how to use the site and make changes to it.  Thanks so much! You're great!",
+			"author": {
+				"@type": "Person",
+				"name": "Samira Noorali",
+				"url": "https://www.samiranoorali.com/"
+			}
+		}
+	}
 
     return ( 
         <Helmet 
@@ -77,7 +198,7 @@ function SEO({ title, description, image, meta, lang, path }) {
                 },
                 {
                     property: "og:url",
-                    content: pUrl
+                    content: siteUrl
                 },
                 {
                     name: `twitter:card`,
@@ -134,8 +255,11 @@ function SEO({ title, description, image, meta, lang, path }) {
                     }
                 ]
             )}
-            defer={false}>
-                <base href={site.siteMetadata.siteUrl} />
+            defer={false} >
+            <base href={site.siteMetadata.siteUrl} />
+            <script type="application/ld+json">{JSON.stringify(schemaWebsite)}</script>
+            <script type="application/ld+json">{JSON.stringify(schemaLocalBusiness)}</script>
+
         </Helmet>
     )
 }
