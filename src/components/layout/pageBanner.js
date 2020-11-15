@@ -17,30 +17,13 @@ import Social from "../social"
  * @param {String} title the title for the page banner
  */
 const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {} }) => {
-    
-    // console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
-
-    /* format dates */
-    // const dateTimeFormat = new Intl.DateTimeFormat('en', {
-    //     year: 'numeric',
-    //     month: 'long',
-    //     day: 'numeric',
-    // });
 
     const { date, modified } = bannerData
     let d = new Date(date).toDateString()
     let m = new Date(modified).toDateString()
 
-    // console.log(date, modified);
-    // console.log(d, m);
-
-    // bannerData.date = dateTimeFormat.format(d)
-    // bannerData.modified = dateTimeFormat.format(m)
-
     bannerData.date = d
     bannerData.modified = m
-
-    console.log('bannerData', bannerData);
 
     return ( 
         <header data-title={slug || title} 
