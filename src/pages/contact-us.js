@@ -13,15 +13,9 @@ import Helmet from "react-helmet"
 import S from 'string'
 
 export default ({ data, location }) => {
-    console.log('contact us location', location);
 
-    console.log('data', data);
-    
-    console.log('data.site.siteMetadata', data.site.siteMetadata);
     const { path, title, type, excerpt, slug } = data.wordpressPage
     const { siteUrl, keywords } = data.site.siteMetadata
-
-    // console.log(siteUrl, path);
 
     const schemaContact = {
 		"@context": "http://schema.org",
@@ -57,27 +51,18 @@ export default ({ data, location }) => {
 
     return (
         <Layout path={path} layoutClass={title}>
-
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                path={location.href} />
-
+            <SEO title={title} description={excerpt} path={location.href} />
             <Helmet title={S(title).decodeHTMLEntities().s}>
                 <script type="application/ld+json">{JSON.stringify(schemaContact)}</script>
             </Helmet>
 
             <PageBanner bannerType="page" title={title} slug={slug} />
-
             <PageContent path={slug} type={type}>
-
                 <ContactForm 
                     heading="Free Consultation" 
                     paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
                     formPath={path} isAddFields={true} />
-
             </PageContent>
-
         </Layout>
     )
 

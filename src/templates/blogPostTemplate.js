@@ -15,7 +15,6 @@ import ContactFormCallout from "../components/form/contactFormCallout"
 
 import "../styles/posts.scss"
 
-
 /**
 * Blog template
 * Mar 2020
@@ -38,6 +37,7 @@ export default ({ data, location, pageContext }) => {
 
     const description = S(excerpt).stripTags().decodeHTMLEntities().s
     const blogTitle = S(title).stripTags().decodeHTMLEntities().s
+    const blogImage = (wordpressPost.featured_media) ? wordpressPost.featured_media.localFile.url : null
     
     // article schema here
     // Initial breadcrumb list
@@ -84,7 +84,7 @@ export default ({ data, location, pageContext }) => {
         name: blogTitle,
         image: {
             '@type': 'ImageObject',
-            url: wordpressPost.featured_media.localFile.url,
+            url: blogImage,
         },
         mainEntityOfPage: `${site.siteMetadata.siteUrl}${path}`,
     }
@@ -109,7 +109,6 @@ export default ({ data, location, pageContext }) => {
     
     return (
         <Layout path={location.pathname} layoutClass={"blog_post " + title}> 
-            
             <SEO title={title} description={excerpt} image={featured_media} path={location.href} />
 
             <Helmet title={S(title).decodeHTMLEntities().s}>
