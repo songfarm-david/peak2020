@@ -28,13 +28,13 @@ export default ({ data, location }) => {
 					"@type": "ListItem",
 					"position": 2,
 					"name": "Contact",
-					"url": `${siteUrl}${path}`
+					"item": `${siteUrl}${path}`
 				},
 				{
 					"@type": "ListItem",
 					"position": 1,
 					"name": "Home",
-					"url": `${siteUrl}`
+					"item": `${siteUrl}`
 				}
 			]
 		},
