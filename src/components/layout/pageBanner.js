@@ -19,8 +19,25 @@ import Social from "../social"
 const PageBanner = ({ 
     bannerType = "page", title = "", slug = "", bannerData = {} 
     }) => {
-    // console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
-    
+    console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
+
+    /* format dates */
+    const { date, modified } = bannerData
+    // console.log(date, modified);
+
+    const dateTimeFormat = new Intl.DateTimeFormat('en', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+
+    // const dateFormatted = dateTimeFormat.format(new Date(date))
+
+    bannerData.date = dateTimeFormat.format(new Date(date))
+    bannerData.modified = dateTimeFormat.format(new Date(modified))
+
+    console.log('bannerData', bannerData);
+
     return ( 
         <header data-title={slug || title} 
             className={( bannerType === 'page' ) ? 

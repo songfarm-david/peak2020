@@ -143,7 +143,7 @@ function SEO({ title, description, image, meta, lang, path }) {
 			"itemReviewed": {
 				"@type": "LocalBusiness",
 				"name": site.siteMetadata.title,
-				"logo": image,
+                "image": image,
 				"telephone": telephone,
 				"email": site.siteMetadata.contactEmail,
 				"aggregateRating": {

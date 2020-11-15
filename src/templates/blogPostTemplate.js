@@ -33,12 +33,16 @@ export default ({ data, location, pageContext }) => {
     } = data.wordpressPost
 
     const { wordpressPost, site } = data
-    const postComments = data.allWordpressWpComments
 
     const description = S(excerpt).stripTags().decodeHTMLEntities().s
     const blogTitle = S(title).stripTags().decodeHTMLEntities().s
     const blogImage = (wordpressPost.featured_media) ? wordpressPost.featured_media.localFile.url : null
+
+    console.log(data.wordpressPost.date, data.wordpressPost.modified);
     
+    /* comments section here */
+    const postComments = data.allWordpressWpComments
+
     // article schema here
     // Initial breadcrumb list
     const itemListElement = [
@@ -131,6 +135,8 @@ export default ({ data, location, pageContext }) => {
     
 }
 
+// (formatString: "MMM Do, YYYY")
+
 export const query = graphql`
     query($id: String!, $wordpress_id: Int!) {
         wordpressPost(id: {eq: $id}) {
@@ -141,8 +147,8 @@ export const query = graphql`
             sticky
             title
             excerpt
-            date(formatString: "MMM Do, YYYY")
-            modified(formatString: "MMM Do, YYYY")
+            date
+            modified
             content
             author {
                 name
