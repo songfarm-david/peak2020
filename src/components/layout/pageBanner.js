@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from 'prop-types';
-
 import ReactHtmlParser from 'react-html-parser';
 
 import "./pageBanner.scss"
-
 import MetaCard from "../blog/blog-components/metaCard"
 import FeaturedImage from "../blog/blog-components/featuredImage"
 import Social from "../social"
@@ -16,27 +14,22 @@ import Social from "../social"
  * @param {String} bannerType either a 'page' or a 'blog' banner type
  * @param {String} title the title for the page banner
  */
-const PageBanner = ({ 
-    bannerType = "page", title = "", slug = "", bannerData = {} 
-    }) => {
+const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {} }) => {
     console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
 
     /* format dates */
-    const { date, modified } = bannerData
-    // console.log(date, modified);
+    // const dateTimeFormat = new Intl.DateTimeFormat('en', {
+    //     year: 'numeric',
+    //     month: 'long',
+    //     day: 'numeric',
+    // });
 
-    const dateTimeFormat = new Intl.DateTimeFormat('en', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
+    // const { date, modified } = bannerData
 
-    // const dateFormatted = dateTimeFormat.format(new Date(date))
+    // bannerData.date = (date !== '') ? dateTimeFormat.format(new Date(date)) : ""
+    // bannerData.modified = (modified !== '') ? dateTimeFormat.format(new Date(modified)) : ""
 
-    bannerData.date = dateTimeFormat.format(new Date(date))
-    bannerData.modified = dateTimeFormat.format(new Date(modified))
-
-    console.log('bannerData', bannerData);
+    // console.log('bannerData', bannerData);
 
     return ( 
         <header data-title={slug || title} 

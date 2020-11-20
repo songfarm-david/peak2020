@@ -1,3 +1,9 @@
+# SEO
+- update title, meta of homepage, other service pages
+- deindex cms pages
+- deindex portfolio pages?
+
+
 # TODO
 
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)

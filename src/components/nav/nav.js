@@ -32,20 +32,30 @@ const Nav = ({ menuToggleClass }) => {
             }
         `)
     const navItems = mainNavQuery.wordpressMenusMenusItems  
-    
+    console.log(navItems);
     return (
+        
         <nav role="navigation" id="mainNav" className={menuToggleClass} onClick={(e) => e.stopPropagation()}>
+            
             <h2 className="screen-reader-text">Main Navigation</h2>
-            <ul>{navItems.items.map((item, i) => (
-                <li key={i} aria-haspopup={( item.child_items ) !== null ? true : false} className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}>
+            
+            <ul>
+                {navItems.items.map((item, i) => (
                 
-                    <Link to={(item.slug !== null) ? `/${item.slug}` : `/${item.url}`}>
-                        {ReactHtmlParser(item.title)}
-                    </Link>
+                    <li key={i} 
+                        aria-haspopup={( item.child_items ) !== null ? true : false} 
+                        className={( item.child_items ) !== null ? 'nav-item has-child-items' : 'nav-item'}>
+                
+                        <Link to={(item.slug !== null) ? `/${item.slug}` : `/${item.url}`}>
+                            {ReactHtmlParser(item.title)}
+                        </Link>
                     
-                    {(item.child_items !== null ) ? <SubNav childItems={item} /> : null }
+                        {(item.child_items !== null ) ? 
+                            <SubNav childItems={item} /> : null }
                     
-                </li>))}
+                    </li>))
+
+                }
             </ul>
         </nav>
     )

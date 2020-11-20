@@ -53,12 +53,11 @@ module.exports = {
         },
         `gatsby-plugin-sass`,
         {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [{
-                    family: `Montserrat`,
-                    variants: [`300`,`300i`,`400`,`400i`,`700`]
-                }],
+                fonts: [
+                    `Montserrat\:300,300i,400,400i,700`
+                ],
             },
         }, {
             resolve: `gatsby-plugin-google-analytics`,

@@ -34,6 +34,7 @@ export default ({ data, location }) => {
 
             <SEO title={title} description={excerpt} path={location.href} />
             <Helmet title={S(title).decodeHTMLEntities().s} />
+            
             <PageBanner bannerType={type} title={title} slug={slug} />
 
             <PageContent path={slug} type={type}>
