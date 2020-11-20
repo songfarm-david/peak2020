@@ -21,7 +21,7 @@ const Facts = () => (
             <h2 className={"features_container__header screen-reader-text"}>Key Facts</h2>
             <blockquote className={"theme_blockquote"}>
                 {facts.map(({ factHeading, factBody }, idx) => (
-                    <div className={"fact_container"}>
+                    <div key={idx} className={"fact_container"}>
                         <p className={"fact_heading heading-2"}>{factHeading}</p>
                         <p className={"fact_body big-body-text"}>{factBody}</p>
                     </div>
