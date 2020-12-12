@@ -150,11 +150,7 @@ export const query = graphql`
             date
             modified
             content
-            author {
-                name
-                wordpress_id
-                path
-            }
+            author 
             categories {
                 name
                 wordpress_id
