@@ -81,9 +81,7 @@ export const queryAllPosts = graphql`
                 name
                 path
             }
-            author {
-                name
-            }
+            author 
             date(formatString: "MMM Do, YYYY")
             modified(formatString: "MMM Do, YYYY")
         }
@@ -111,9 +109,7 @@ export const queryAllPosts = graphql`
                         ...squareImage
                         }
                     }
-                    author {
-                        name
-                    }
+                    author 
                  }
             }
         }

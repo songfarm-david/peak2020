@@ -37,7 +37,7 @@ main {
     }
 
     &.service-page {
-        #pageContent {
+        // #pageContent {
             a[href] {
                 text-decoration: underline;
                 &:hover,
@@ -45,7 +45,7 @@ main {
                     text-decoration: none;
                 }
             }
-        }
+        // }
         &.online-ordering-system {
             .section_container__featured_image {
                 display: none;

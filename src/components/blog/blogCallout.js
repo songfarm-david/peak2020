@@ -40,9 +40,7 @@ const BlogCallout = ({postId = ""}) => {
                                 ...squareImage
                                 }
                             }
-                            author {
-                                name
-                            }
+                            author 
                         }
                     }
                 }

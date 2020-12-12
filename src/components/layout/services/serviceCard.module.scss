@@ -6,11 +6,10 @@
     flex-wrap: wrap;
     flex-basis: 100%;
     text-align: center;
-    // width: 100%;
     box-sizing: border-box;
-    // margin: 0 1.25rem 2.5rem;
     align-content: flex-start;
     transition: transform .25s ease-out;
+    text-decoration: none !important;
     &:hover {
         transform: scale(1.05);
     }
@@ -35,7 +34,9 @@
         max-height: 100%;
     }
 
-    .serviceHeading { margin-bottom: 0; }
+    .serviceHeading { 
+        margin-bottom: 0;
+     }
     
     .falseLink {
         text-decoration: underline;
