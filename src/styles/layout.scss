@@ -202,3 +202,14 @@
     }
     
 }
+
+.wp-block-image {
+    .alignleft {
+        float: left;
+        margin: .5em 1em .5em 0;
+    }
+    .alignright {
+        float: right;
+        margin: .5em 0 .5em 1em;
+    }
+}

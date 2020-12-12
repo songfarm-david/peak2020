@@ -18,13 +18,19 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
     console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
 
     /* format dates */
-    // const dateTimeFormat = new Intl.DateTimeFormat('en', {
-    //     year: 'numeric',
-    //     month: 'long',
-    //     day: 'numeric',
-    // });
+    const dateTimeFormat = new Intl.DateTimeFormat('en', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
 
-    // const { date, modified } = bannerData
+    // let date, modified
+    if (Object.keys(bannerData).length !== 0 && bannerData.constructor === Object) {
+        console.log('bannerData inner', bannerData);
+        const { date, modified } = bannerData
+        bannerData.date = dateTimeFormat.format(new Date(date))
+        bannerData.modified = dateTimeFormat.format(new Date(modified))
+    }
 
     // bannerData.date = (date !== '') ? dateTimeFormat.format(new Date(date)) : ""
     // bannerData.modified = (modified !== '') ? dateTimeFormat.format(new Date(modified)) : ""

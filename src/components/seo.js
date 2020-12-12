@@ -139,13 +139,18 @@ function SEO({ title, description, image, meta, lang, path }) {
 		},
         "sameAs": [twitterURL, facebookURL],
         "review": {
-			"@type": "Review",
+            "@type": "Review",
+            "author": {
+				"@type": "Person",
+				"name": "Samira Noorali",
+				"url": "https://www.samiranoorali.com/"
+			},
 			"itemReviewed": {
 				"@type": "LocalBusiness",
-				"name": site.siteMetadata.title,
-                "image": image,
+				"name": siteMetadata.title,
+                "image": siteMetadata.image,
 				"telephone": telephone,
-				"email": site.siteMetadata.contactEmail,
+				"email": siteMetadata.contactEmail,
 				"aggregateRating": {
 					"@type": "AggregateRating",
 					"itemReviewed": "Peak Websites",
@@ -154,11 +159,7 @@ function SEO({ title, description, image, meta, lang, path }) {
 				}
 			},
 			"reviewBody": "David at Peak websites not only gave me a beautiful website but was also tremendously patient with me as I tried to learn how to use the site and make changes to it.  Thanks so much! You're great!",
-			"author": {
-				"@type": "Person",
-				"name": "Samira Noorali",
-				"url": "https://www.samiranoorali.com/"
-			}
+			
 		}
 	}
 

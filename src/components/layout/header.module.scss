@@ -11,8 +11,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0.25rem $margin-bottom;
+        padding: 0.25rem $margin-bottom;
         height: 100%;
+        background-color: inherit;
     }
     #siteLogo {
         width: 100%;
