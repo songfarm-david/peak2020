@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import { Link } from "gatsby"
 import Hamburger from "../nav/hamburger"
 
-import headerStyles from "./header.module.scss"
+import headerStyles from "./header.scss"
 import Nav from "../nav/nav"
 import siteLogo from "../../images/logo/Logo.svg";
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, styleClass }) => {
     const [isMenuOpen, toggleMenu] = useState(false)
     return (
-        <header id={headerStyles.siteHeader}>
-            <div id={headerStyles.headerInnerContainer}>
+        <header id={'siteHeader'} class={styleClass}>
+            <div id={'headerInnerContainer'}>
                 <Link to="/">
-                    <img id={headerStyles.siteLogo} src={siteLogo} alt={"Peak Websites Home"} />
+                    <img id={'siteLogo'} src={siteLogo} alt={"Peak Websites Home"} />
                     <h1 className="screen-reader-text">{siteTitle}</h1>
                 </Link>
                 <div onClick={() => toggleMenu( !isMenuOpen )}>

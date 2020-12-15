@@ -1,0 +1,27 @@
+@import "../../styles/globals.scss";
+
+#topBar {
+    text-align: center;
+    background-color: $bright-orange;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 11111;
+    width: 100%;
+    > div {
+        
+        font-weight: bold;
+        color: $white;
+        > a {
+            display: block;
+            color: inherit;
+            &:hover,
+            &:focus {
+                color: $strong-blue;
+            }
+        }
+    }
+}
