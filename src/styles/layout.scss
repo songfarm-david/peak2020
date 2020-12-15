@@ -12,7 +12,7 @@
     }
 }
 
-#pageContent {
+.section_container {
     a { text-decoration: underline; }
     &.section_container {
         padding-top: $vertical-rhythm;
@@ -160,7 +160,8 @@
         }
         .section_container__inner {
             // width: $content-width;
-            &.category {
+            &.category,
+            &.blog {
                 width: $content-width;
             }
             &.section_container__inner--aside {
