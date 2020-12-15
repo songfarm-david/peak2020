@@ -19,6 +19,9 @@
         width: 100%;
         height: auto;
     }
+    &.hasTopbar {
+        top: 40px;
+    }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
