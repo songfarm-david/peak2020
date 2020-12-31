@@ -1,4 +1,6 @@
-
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
     siteMetadata: {
         title: "Peak Websites",
@@ -6,7 +8,7 @@ module.exports = {
         author: "David Gaskin",
         image: "src/images/logo/Logo_squared.png",
         titleTemplate: "%s · Peak Websites",
-        siteUrl: "https://peakwebsites.ca",
+        siteUrl: process.env.SITE_URL,
         twitterUsername: "@peakwebsite",
         twitterURL: "https://twitter.com/peakwebsite",
         facebookURL: "https://www.facebook.com/peakwebsiteservices/",
