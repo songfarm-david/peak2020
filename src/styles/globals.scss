@@ -125,8 +125,12 @@ html {
 }
 .hidden {display:none;}
 
-.align-center {
+/**
+ * Align content class
+ */
+.align_center {
     text-align: center;
+    display: block;
 }
 
 /**

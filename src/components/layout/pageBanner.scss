@@ -1,9 +1,6 @@
 @import "../../styles/globals.scss";
 
-
-
 .page_banner {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,11 +12,13 @@
     height: 20rem;
     /* default bg image */
     background: url('../../images/about_header-min.jpg') center/cover no-repeat;
-
+    &.hasTopbar {
+        position: relative;
+        top: 40px;
+    }
     .page_banner--header {
         font: inherit;
     }
-
     &.page_banner__post {
         background-color: $white;
         color: $strong-blue;

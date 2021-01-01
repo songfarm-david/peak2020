@@ -40,8 +40,8 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
     return ( 
         <header data-title={slug || title} 
             className={( bannerType === 'page' ) ? 
-            `page_banner page_banner__page ${slug}` 
-            : `page_banner page_banner__post ${slug}`}>
+            `page_banner page_banner__page ${slug} hasTopbar` 
+            : `page_banner page_banner__post ${slug} hasTopbar`}>
 
             {( bannerType === 'page' ) && 
                 <div className={"headerContainer"}>
