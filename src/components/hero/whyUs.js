@@ -30,7 +30,7 @@ const WhyUs = () => {
                     <h3>Why Us?</h3>
                     <div className={"flex_container"}>
                         {points.map(({title, description}, idx) => (
-                            <div className={"flex_child"} index={idx}>
+                            <div className={"flex_child"} key={idx}>
                                 <i className="align_center">Icon</i>
                                 <p className="heading-4">{title}</p>
                                 <p>{description}</p>

@@ -7,7 +7,7 @@ import TopBar from "../hero/topBar"
 
 /**NOTE: should use propTypes checking on these data */
 const Layout = ({ layoutClass = "", children, path }) => {
-    console.log(path)
+    // console.log(path)
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {

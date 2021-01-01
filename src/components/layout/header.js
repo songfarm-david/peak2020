@@ -9,7 +9,7 @@ import siteLogo from "../../images/logo/Logo.svg";
 const Header = ({ siteTitle, styleClass }) => {
     const [isMenuOpen, toggleMenu] = useState(false)
     return (
-        <header id={'siteHeader'} class={styleClass}>
+        <header id={'siteHeader'} className={styleClass}>
             <div id={'headerInnerContainer'}>
                 <Link to="/">
                     <img id={'siteLogo'} src={siteLogo} alt={"Peak Websites Home"} />
