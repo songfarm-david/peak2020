@@ -1,6 +1,9 @@
 @import "../../styles/globals.scss";
 
 /* list point styles */
+.list {
+    margin-bottom: $vertical-rhythm;
+}
 .list_point_container {
     background-color: white;
     @extend .cardStyles;

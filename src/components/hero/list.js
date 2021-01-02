@@ -14,15 +14,15 @@ const List = ({title, content, bgImg = true}) => {
         <section className={"section_container " + (bgImg ? 'hasBgImg' : '')}>
             {bgImg && <div className={"bg_img bg_img__trail"}></div>}
             <div className={"section_content"}>
-                <h2>{title}</h2>
-                <div className={"list"}>
-                    {content.map(({title, description}, idx) => (
-                        <div className={"list_point_container"}>
-                            <h3 className={"list_title"}>{title}</h3>
-                            <p dangerouslySetInnerHTML={{__html: description}} />
-                        </div>
-                    ))}
-                </div>
+                    <h2>{title}</h2>
+                    <div className={"list"}>
+                        {content.map(({title, description}, idx) => (
+                            <div className={"list_point_container"}>
+                                <h3 className={"list_title"}>{title}</h3>
+                                <p dangerouslySetInnerHTML={{__html: description}} />
+                            </div>
+                        ))}
+                    </div>
             </div>
         </section>
     )
