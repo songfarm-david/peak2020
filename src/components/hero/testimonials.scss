@@ -74,9 +74,9 @@
     }
     #testimonials {
         box-sizing: border-box;
-        padding: 2.25rem .75rem;
         position: relative;
         overflow: visible;
+        margin-bottom: $margin-bottom;
         &::after {
             content: '';
             display: block;

@@ -10,10 +10,10 @@ const WhyUs = () => {
     const points = [
         {
             title: "More Focus on our Clients",
-            description: "Because Peak Websites is a smaller agency, we work with only a small handful of clients. That means we can provide a more focused and responsive service to our clients. Our quick service and fast response times is something clients appreciate.",
+            description: "Peak Websites is a small team of SEOs, Digital Narketers, and Web Designers. Because of that, we can only work with so many clients at one time which means we provide exceptional service and attention to the clients that we do serve. With Peak, you'll have our full attention.. That means we can provide a more focused and responsive service to our clients. Our quick service and fast response times is something clients appreciate.",
         },
         {
-            title: "Pay Less, No Agency Pricing",
+            title: "Fairer Pricing",
             description: "Because Peak Websites is a smaller agency, we work with only a small handful of clients. That means we can provide a more focused and responsive service to our clients. Our quick service and fast response times is something clients appreciate.",
         },
         {
@@ -27,7 +27,7 @@ const WhyUs = () => {
             
             <div className={"section_content"}>
                 <article>
-                    <h3>Why Us?</h3>
+                    <h3>What makes Peak Websites different?</h3>
                     <div className={"flex_container"}>
                         {points.map(({title, description}, idx) => (
                             <div className={"flex_child"} key={idx}>

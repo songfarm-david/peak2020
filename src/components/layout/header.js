@@ -13,7 +13,7 @@ const Header = ({ siteTitle, styleClass }) => {
             <div id={'headerInnerContainer'}>
                 <Link to="/">
                     <img id={'siteLogo'} src={siteLogo} alt={"Peak Websites Home"} />
-                    <h1 className="screen-reader-text">{siteTitle}</h1>
+                    <h1 className="screen_reader_text">{siteTitle}</h1>
                 </Link>
                 <div onClick={() => toggleMenu( !isMenuOpen )}>
                     <Nav menuToggleClass={( isMenuOpen ) ? 'menu-active' : null} />

@@ -29,7 +29,7 @@ const Comments = ({ postData }) => {
             
             {/* comment count */}
             <header>
-                {/* <h3 className="screen-reader-text">Article comment count</h3> */}
+                {/* <h3 className="screen_reader_text">Article comment count</h3> */}
                 {/* <b><p className="heading-4">{(postComments.totalCount === 1) ? 
                     postComments.totalCount + " Comment" : 
                     postComments.totalCount + " Comments"}</p></b> */}

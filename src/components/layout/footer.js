@@ -55,6 +55,7 @@ const Footer = ({ path }) => {
         
                 {/* secondary nav */}
                 <nav className={footerStyles.footerItem}>
+                    <h3 className="screen_reader_text">Footer Navigation</h3>
                     <ul>
                         {footerLinks.items.map((link, idx) => (
                             <li key={idx}>

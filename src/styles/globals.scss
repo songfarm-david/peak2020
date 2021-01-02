@@ -110,7 +110,7 @@ html {
  * Helper Classes 
 */
 /* accessibility */
-.screen-reader-text {
+.screen_reader_text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
@@ -157,3 +157,4 @@ $border: 1px solid red;
 
 @import "./theme-styles/buttons.scss";
 @import "./theme-styles/tables.scss";
+

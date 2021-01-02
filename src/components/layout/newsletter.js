@@ -5,7 +5,7 @@ import NewsletterForm from "../form/newsletterForm"
 
 const Newsletter = ({ path }) => (
     <section id={newsletter.newsletter}>
-        <h2 className="screen-reader-text">Newsletter</h2>
+        <h2 className="screen_reader_text">Newsletter</h2>
         <div>
             <div className={newsletter.heading}>
                 <p className="heading-2">Want to know what's happening online?</p>
