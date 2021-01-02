@@ -5,6 +5,8 @@
 import React from "react"
 import "./whyUs.scss"
 
+import checkMark from "../../images/check-mark-box-gold.svg"
+
 const WhyUs = () => {
 
     const points = [
@@ -27,14 +29,14 @@ const WhyUs = () => {
             
             <div className={"section_content"}>
                 <article>
-                    <h3>What makes Peak Websites different?</h3>
+                    <h2 className="align_center">Why work with Peak Websites?</h2>
                     <div className={"flex_container"}>
                         {points.map(({title, description}, idx) => (
                             <div className={"flex_child"} key={idx}>
-                                <i className="align_center">Icon</i>
-                                <p className="heading-4">{title}</p>
+                                <i className="align_center"><img src={checkMark} /></i>
+                                <p className="heading-4 heading">{title}</p>
                                 <p>{description}</p>
-                        </div>
+                            </div>
                         ))}
                     </div>
                 </article>

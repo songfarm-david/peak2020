@@ -243,10 +243,16 @@
     }
 }
 
+/*
+ * Flex styles
+ */
 .flex_container {
     .flex_container__header {}
     .flex_child {
-        @extend .cardStyles;
+        &.flex_child__card {
+            // add card styles to flex child
+            @extend .cardStyles;
+        }
         .feature__title {}
         .feature__description {}
         .feature__icon {}

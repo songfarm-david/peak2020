@@ -13,8 +13,11 @@ export const SEOProcess = [
     },
     {
         title: `Website Optimization`,
-        description: `<p>After an initial audit, we then know what needs to be addressed and, more often than not, most of this work revolves around your website. We need to ensure that your website is performing at a high level and providing a great user experience for visitors and potential customers.</p>
-        <p>We will use what we learned about you and your customers in the ‘getting to know you’ phase to optimize your website conversions.</p>`
+        description: `<p>After an initial audit, we then know what needs to be addressed and, more often than not, most of this work revolves around your website. We need to ensure that your website is performing at a high level and providing a great user experience for visitors and potential customers as well as being optimized for maximum search visibility.</p>`
+    },
+    {
+        title: `Off-Page SEO and Backlink Building`,
+        description: `<p>Once the website and its content are optimized for an optimal user experience and more search traffic, we then look to build your website's reputation <em>off-page</em> by developing a robust backlink profile for your business around the web and using social to drive more engagement and social signals back to your website.</p>`
     },
     {
         title: `Track Results`,
