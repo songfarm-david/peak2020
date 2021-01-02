@@ -1,15 +1,15 @@
 # SEO
 - update title, meta of homepage, other service pages
-- deindex cms pages
+# deindex cms pages
 - deindex portfolio pages?
 
 
 # TODO
-
+- Add third-tier sub-nav for menus, left-align menu items on desktop
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?
-- test category pages, exclude category pages from being indexed 
+- test category pages
 - review images and blog posts, how should these be indexed? Why does gatsby-img use both domains when referencing the image? Why does peakwebsites 404 but cms.peakwebsites NOT?
 - fix broken blog category links in search console
 - add a step that first checks if the email is already subscribed in MC: https://mailchimp.com/developer/guides/manage-subscribers-with-the-mailchimp-api/#Check_a_contact%27s_subscription_status

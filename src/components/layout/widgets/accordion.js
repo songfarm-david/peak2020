@@ -25,14 +25,14 @@ import {
  * @param {string} title a string for the heading tag
  * @param {array} content array of objects @see data/seo-faq.js 
  */
-export default function AccordionWidget(props) {
-    console.log(props);
+export default function AccordionWidget({title, content}) {
+    console.log(title, content);
     return (
         <article className="section_container">
             <div className="section_content section_content__accordion">
-                <h3>{props.title}</h3>
+                <h3>{title}</h3>
                 <Accordion allowZeroExpanded preExpanded={['a']}>
-                    {props.content.map(({q, a, id}, idx) => (
+                    {content.map(({q, a, id}, idx) => (
                         <AccordionItem key={idx} uuid={id}>
                             <AccordionItemHeading>
                                 <AccordionItemButton>
