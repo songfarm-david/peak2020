@@ -12,7 +12,9 @@ $heading-4: bold 1.25rem/1.5rem Montserrat, sans-serif;
 $small-text: normal 1rem/1.25rem Montserrat, sans-serif;
 $footer-text: normal 0.85rem/1rem Montserrat, sans-serif;
 
-
+/**
+ * Helper classes for headings/text 
+ */
 h1,
 .heading-1 {
     font: bold 5rem/6.0625rem Montserrat, sans-serif; 
@@ -65,4 +67,12 @@ h5,
 }
 .quotes-text {
     font: italic 300 3.125rem/3.75rem Montserrat, sans-serif;
+}
+
+/**
+ * Text styles 
+ */
+$text_shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+.text_shadow {
+    text-shadow: $text_shadow;
 }

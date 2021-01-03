@@ -17,13 +17,13 @@
         top: 0; right: 0; bottom: 0; left: 0;
     }
 
-    .hero-text-container {
+    .hero_text_container {
 
         position: relative;
         margin: 0 auto 5rem;
         max-width: $content-width;
         text-align: center; 
-        text-shadow: 1px 1px rgba(0, 0, 0, 0.767);
+        text-shadow: $text_shadow;
         word-break: break-word;
         hyphens: manual;
         text-overflow: wrap;
@@ -55,7 +55,7 @@
         // , url('../../images/homepage.jpeg');
         // background-position-x: right;
 
-        .hero-text-container {
+        .hero_text_container {
             // font: initial;
             font: $heading-1;
             word-break: normal;

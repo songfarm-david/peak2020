@@ -4,7 +4,6 @@
 $mobile-breakpoint: 769px;
 $blogBannerHeight: 28.5rem;
 $margin-bottom: 1rem;
-$top-margin: 2.25rem;
 $top-margin: 2.1875rem;
 $vertical-rhythm: 4.5rem;
 $section-padding: $top-margin 0 $vertical-rhythm;
@@ -23,6 +22,8 @@ $header-width: $hero-width;
         margin-top: $top-margin;
     }
 }
+
+@import "./forms.scss";
 
 .theme_figcaptions {
     text-align: center;
@@ -123,6 +124,9 @@ html {
     width: 1px;
     word-wrap: normal !important;
 }
+
+.required_field { color: $bright_orange}
+
 .hidden {display:none;}
 
 /**

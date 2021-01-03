@@ -5,7 +5,9 @@
 
 
 # TODO
-- Add third-tier sub-nav for menus, left-align menu items on desktop
+- Add third-tier sub-nav for menus
+- left-align menu items on desktop
+- Set up portfolio websites
 - add comments to blog posts and set up netlify hook (see stumbling repo functions.php)
 - set up better pagination for blog posts, 'load more' would be a cool experiment
 - add tabbing behavior to main contact form (checkboxes), make sure form submission works on mobile?

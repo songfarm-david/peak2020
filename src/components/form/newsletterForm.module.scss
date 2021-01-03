@@ -24,7 +24,7 @@
         }
         &:focus,
         &:hover {
-            outline-color: $bright-orange;
+            outline-color: $bright_orange;
         }
     }
 
@@ -48,7 +48,7 @@
             border: 1px solid $white;
             color: $white;
             &:focus {
-                outline-color: $bright-orange;
+                outline-color: $bright_orange;
             }
         }
         button {
@@ -58,7 +58,7 @@
             margin-right: 0;
             margin-top: 0;
             &:focus {
-                outline-color: $bright-orange;
+                outline-color: $bright_orange;
             }
         }
     }

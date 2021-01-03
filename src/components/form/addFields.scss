@@ -2,9 +2,9 @@
 
 #addFields {
 
-    .input-container {
+    .input_container {
         display: flex;
-        .form-label {
+        .form_label {
             flex-basis: 50%;
             &:first-child {
                 margin-right: 1rem;
@@ -36,7 +36,7 @@
         .checkbox-container {
             display: flex;
             flex-wrap: wrap;
-            .checkbox-input-container {
+            .checkbox_input_container {
                 display: flex;
                 align-items: center;
                 flex-basis: 50%;

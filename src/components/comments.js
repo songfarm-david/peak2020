@@ -46,16 +46,16 @@ const Comments = ({ postData }) => {
                     // action={path +"?comment_submitted"} 
                     method="post">
                     {/* <input type="hidden" name="post_id" value={postId} /> */}
-                    <label className="form-label" htmlFor="comment">Comment
+                    <label className="form_label" htmlFor="comment">Comment
                         <textarea rows="14" name="comment" aria-label="comment" required></textarea>
                     </label>
-                    <label className="form-label" htmlFor="name">Name
+                    <label className="form_label" htmlFor="name">Name
                         <input type="input" name="name" aria-label="name" />
                     </label>
-                    <label className="form-label" htmlFor="email">Email
+                    <label className="form_label" htmlFor="email">Email
                         <input type="email" name="email" aria-label="email" required />
                     </label>
-                    <label className="form-label" htmlFor="website">Website
+                    <label className="form_label" htmlFor="website">Website
                         <input type="url" name="website" aria-label="website" />
                     </label>
                     <div style={{border: "1px solid blue"}}>

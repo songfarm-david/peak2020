@@ -24,12 +24,25 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
-    .section_container { padding-top: 0; }
 
+    &.cta_block { padding-top: 0; }
     &.section_container--grey { background-color: #f2f2f2 } 
     &.section_container--white { background-color: #fff; }
     
-    &.cta_block { padding-top: 0; }
+    &.section_container--background {
+        position: relative;
+        padding: 0;
+        div.bg_img_container {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            .section_content {
+                position: relative;
+            }
+        }
+    }
+    // @see leadGenFormSEO for structure 
+
+    .section_container { padding-top: 0; }
 
     .section_container__inner {
         width: auto;
@@ -84,6 +97,10 @@
         padding: 0 $margin-bottom $top-margin;
         &.section_content--blockquote {
             margin-bottom: 0;
+        }
+        &.section_content--full {
+            width: 100%;
+            padding: 0 $margin-bottom;
         }
     }
 
@@ -170,6 +187,9 @@
             &.section_content--blockquote {
                 padding-left: $vertical-rhythm;
                 margin-bottom: $vertical-rhythm;
+            }
+            &.section_content--full {
+                padding: 0 $vertical-rhythm;
             }
         }
         &.cta_block {

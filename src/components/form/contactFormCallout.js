@@ -7,8 +7,7 @@ const ContactForm = ({
     heading = "Elevate Your Business", 
     paragraph = "Let us help lead your business to new heights online.", 
     isAddFields = false, 
-    path = "/" 
-}) => (
+    path = "/" }) => (
     <div className={"section_container"}>
         <div id={mainContactFormStyles.contactFormContainer}>
             <article>

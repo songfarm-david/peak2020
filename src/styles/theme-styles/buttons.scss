@@ -39,9 +39,9 @@ p.button {
 
 .primary-button {
     @extend .button;
-    background-color: $bright-orange;
+    background-color: $bright_orange;
     color: $white;
-    border-color: $bright-orange;
+    border-color: $bright_orange;
     text-decoration: none !important;
     > a {
         color: inherit;
@@ -57,12 +57,12 @@ p.button {
 
 .primary-button-inverted {
     background-color: $white;
-    color: $bright-orange;
+    color: $bright_orange;
     &:hover,
     &:focus {
-        background-color: $bright-orange;
+        background-color: $bright_orange;
         color: $white;
-        border-color: $bright-orange;
+        border-color: $bright_orange;
         cursor: pointer;
     }
 }
@@ -71,18 +71,18 @@ p.button {
     color: $white;
     background-color: transparent;
     &:hover {
-        border-color: $bright-orange;
-        color: $bright-orange;
+        border-color: $bright_orange;
+        color: $bright_orange;
         cursor: pointer;
     }
 }
 
 .small-button {
     background-color: $white;
-    color: $bright-orange;
+    color: $bright_orange;
     border: 1px solid white;
     &:hover {
-        background-color: $bright-orange;
+        background-color: $bright_orange;
         color: $white;
     }
 }

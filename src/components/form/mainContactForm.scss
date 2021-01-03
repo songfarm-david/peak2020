@@ -3,7 +3,6 @@
 .mainContact {
 
     padding: $top-margin;
-    // font-size: 1rem;
     max-width: 50rem;
     margin: 0 auto;
     border-radius: $border-radius;
@@ -21,14 +20,13 @@
         border: 2px solid $light-blue;
         background: $lighter-blue;
         padding: 1rem;
-        // font-size: inherit;
         width: 100%;
         margin-bottom: 1rem; 
     }
 
     input:focus,
     textarea:focus {
-        outline-color: $bright-orange;
+        outline-color: $bright_orange;
         outline-width: 2px;
         border-color: transparent;
     }
@@ -41,7 +39,7 @@
         font-weight: bold;
     }
 
-    .form-label {
+    .form_label {
         display: block;
         text-align: left;
         font-weight: bold;
@@ -49,9 +47,9 @@
     }
 
     &.plusAddFields {
-        .input-container {
+        .input_container {
             display: flex;
-            .form-label {
+            .form_label {
                 flex-basis: 50%;
                 &:first-child {
                     margin-right: 1rem;

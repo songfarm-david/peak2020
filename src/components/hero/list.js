@@ -11,7 +11,7 @@ import "./list.scss"
 const List = ({title, content, bgImg = true}) => {
 
     return (
-        <section className={"section_container " + (bgImg ? 'hasBgImg' : '')}>
+        <section className={`section_container ${(bgImg) ? 'hasBgImg' : ''}`}>
             {bgImg && <div className={"bg_img bg_img__trail"}></div>}
             <div className={"section_content"}>
                     <h2>{title}</h2>
