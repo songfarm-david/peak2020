@@ -49,6 +49,7 @@
 
     &.lead_gen_form {
         color: $white;
+        position: relative;
         button {
             margin-left: 0;
             margin-top: $top-margin;
@@ -83,6 +84,8 @@
             &.lead_gen_form__sidebar {
                 width: 40%;
                 float: right;
+                margin-left: $margin-bottom;
+                margin-top: $margin-bottom;
             }
         
         }    

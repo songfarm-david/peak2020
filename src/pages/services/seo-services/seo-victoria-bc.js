@@ -1,4 +1,6 @@
 import React from "react"
+import { graphql } from "gatsby"
+
 /**
  * SEO Victoria BC service page
  */
@@ -16,14 +18,23 @@ import Partners from "../../../components/hero/partners"
 import Accordion from "../../../components/layout/widgets/accordion"
 import WhyUs from "../../../components/hero/whyUs"
 
-export default function SEOVictoriaBC() {
-    console.log(SEOFaq);
+export default function SEOVictoriaBC({ data }) {
+    console.log(data);
+
+    const { title, type, content, excerpt, path, slug } = data.wordpressPage
+    const { siteUrl, keywords, telephone, contactEmail, image } = data.site.siteMetadata
+
     return (
         <Layout>
             <PageBanner bannerType={'page'} title={'SEO Victoria BC'} slug={''} />
-            <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
-            <PageContent />
-            <Partners />
+            <div className={"section_container"}>
+                <div className={"section_content"}>
+                    <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
+                    <div className={"hero_content"} dangerouslySetInnerHTML={{ __html: content }} />  
+                </div>
+            </div>
+            {/* <PageContent path={path} content={content} /> */}
+            {/* <Partners /> */}
             <List title={'Our SEO Process'} content={SEOProcess} bgImg={true} />
             <WhyUs />
             <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} />
@@ -36,7 +47,7 @@ export default function SEOVictoriaBC() {
  * Query about page
  */
 export const queryPage = graphql`
-    query aboutPage {
+    query SEOVictoria {
         wordpressPage(wordpress_id: {eq: 3850}) {
             title
             content

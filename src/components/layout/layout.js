@@ -34,8 +34,10 @@ const Layout = ({ layoutClass = "", children, path }) => {
 
     return ( 
         <>
-            {path !== '/services/seo-services/local-seo-packages/' && <TopBar />}
-            <Header siteTitle={data.site.siteMetadata.title} styleClass={path !== '/services/seo-services/local-seo-packages/' ? 'hasTopbar' : ''}/>
+            {/* {path !== '/services/seo-services/local-seo-packages/' && <TopBar />} */}
+            <Header siteTitle={data.site.siteMetadata.title} 
+            // styleClass={path !== '/services/seo-services/local-seo-packages/' ? 'hasTopbar' : ''}
+            />
             <main role="main" className={replaceClass(layoutClass)}>
                 {children}
             </main>

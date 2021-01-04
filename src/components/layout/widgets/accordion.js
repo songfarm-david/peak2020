@@ -26,7 +26,7 @@ import {
  * @param {array} content array of objects @see data/seo-faq.js 
  */
 export default function AccordionWidget({title, content}) {
-    console.log(title, content);
+    // console.log(title, content);
     return (
         <article className="section_container">
             <div className="section_content section_content__accordion">
