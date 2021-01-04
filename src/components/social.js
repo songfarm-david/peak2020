@@ -61,8 +61,9 @@ const Social = ({ post, isHeader = false, visible = true }) => {
     const iconStyles = { padding: "0 .25rem"}
 
     return (
-        <article className="shareComponentContainer"  >
-            {(isHeader) ? "" : <h3 className="heading-4">Share this post:</h3>}
+        <article className="shareComponentContainer">
+            {(isHeader) ? <h4 className={"hidden"}>Share this post:</h4> : <h3 className="heading-4">Share this post:</h3>}
+            {/* <h3 className={`heading-4 ${(isHeader) ? 'hidden' : ''}`}>Share this post:</h3> */}
             <EmailShareButton
                 style={iconStyles} 
                 url={rootUrl + post.path} 

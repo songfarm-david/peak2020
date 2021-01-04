@@ -173,13 +173,7 @@
                 margin-bottom: $top-margin;
             }
         }
-        // .section_container__inner {
-        //     width: auto;
-        //     // &.category {
-        //     //     width: $content-width;
-        //     // }
-        //     &
-        // }
+
         .section_content {
             padding: 0;
             width: $hero-width;
@@ -202,6 +196,7 @@
                     width: 33%;
                     margin-bottom: $top-margin;
                 }
+            }
             &.section_content--full {
                 padding: 0 $vertical-rhythm;
             }
@@ -241,6 +236,7 @@
             }
         }
     }
+}
 
     /* this rule affects width of copy for child service pages */
     // .service-page,
@@ -251,7 +247,6 @@
     //     }
     // }
     
-}
 
 .wp-block-image {
     // .alignleft {

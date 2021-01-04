@@ -14,10 +14,9 @@ const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
     const { path, title, excerpt, featured_media, ...metaProps } = postData
 
     return (
-        <div className={
-            (isFeaturedPost) ? "blog_post blog_post__featured_post" 
-                : (type === "callout") ? "blog_post blog_post__callout" 
-                    : "blog_post" }>
+        <div className={(isFeaturedPost) ? "blog_post blog_post__featured_post" 
+            : (type === "callout") ? "blog_post blog_post__callout" 
+            : "blog_post" }>
 
             <Link to={path}>
                 {(isFeaturedPost) ? ( 
@@ -26,14 +25,14 @@ const BlogPost = ({ type, postData, isFeaturedPost = false }) => {
                         <MetaCard postData={postData} />
                     </div>
                     ) : ( 
-                    <>
+                    <article>
                         <FeaturedImage featuredImage={featured_media} alt={title} title={title} />
-                        <div className={(type === 'callout') ? "blog_post__callout--blog_post" : null}>
-                            <h4 className={"blog_post__callout--heading"}>{ReactHtmlParser(title)}</h4>
-                            <div className={"blog_post__callout--excerpt"}>{ReactHtmlParser(excerpt)}</div>
+                        <div className={(type === 'callout') ? "blog_post__callout--blog_post" : 'blog_post__excerpt'}>
+                            <h4 className={"blog_post--heading"}>{ReactHtmlParser(title)}</h4>
+                            <div className={"blog_post--excerpt"}>{ReactHtmlParser(excerpt)}</div>
                         </div>
                         <BlogMeta type={type} metaData={metaProps}/>
-                    </> 
+                    </article> 
                 )}
             </Link>
 

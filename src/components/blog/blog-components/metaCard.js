@@ -39,7 +39,7 @@ const MetaCard = ({ postData }) => {
                     </span>}
                 </div>
                 
-                <h2 className={"meta_card__post_title"}>{ReactHtmlParser(postData.title)}</h2>
+                <h3 className={"heading-2 meta_card__post_title"}>{ReactHtmlParser(postData.title)}</h3>
     
                 <div className={"meta_card__post_meta"}>
                     <div className={"meta_card__post_date"}>
