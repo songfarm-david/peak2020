@@ -38,9 +38,10 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
     // console.log('bannerData', bannerData);
 
     return ( 
-        <header data-title={slug || title} 
-            className={( bannerType === 'page' ) ? 
-            `page_banner page_banner__page ${slug}` 
+        <header 
+            data-title={slug || title} 
+            className={( bannerType === 'page' ) 
+            ? `page_banner page_banner__page ${slug}` 
             : `page_banner page_banner__post ${slug}`}>
 
             {( bannerType === 'page' ) && 

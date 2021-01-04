@@ -187,7 +187,7 @@ function SEO({ title, description, image, meta, lang, path }) {
                 },
                 {
                     property: "og:title",
-                    content: pageTitle + " · Peak Websites",
+                    content: pageTitle + " | Peak Websites",
                 },
                 {
                     property: "og:description",
@@ -211,7 +211,7 @@ function SEO({ title, description, image, meta, lang, path }) {
                 },
                 {
                     name: "twitter:title",
-                    content: pageTitle + " · Peak Websites",
+                    content: pageTitle + " | Peak Websites",
                 },
                 {
                     name: "twitter:description",

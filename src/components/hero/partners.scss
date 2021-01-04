@@ -1,0 +1,10 @@
+@import "../../styles/globals.scss";
+
+.flex_parent__partners {
+    display: flex;
+    .flex_child__partners {
+        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+    }
+}

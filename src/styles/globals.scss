@@ -4,7 +4,6 @@
 $mobile-breakpoint: 769px;
 $blogBannerHeight: 28.5rem;
 $margin-bottom: 1rem;
-$top-margin: 2.25rem;
 $top-margin: 2.1875rem;
 $vertical-rhythm: 4.5rem;
 $section-padding: $top-margin 0 $vertical-rhythm;
@@ -23,6 +22,8 @@ $header-width: $hero-width;
         margin-top: $top-margin;
     }
 }
+
+@import "./forms.scss";
 
 .theme_figcaptions {
     text-align: center;
@@ -110,7 +111,7 @@ html {
  * Helper Classes 
 */
 /* accessibility */
-.screen-reader-text {
+.screen_reader_text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
@@ -123,10 +124,17 @@ html {
     width: 1px;
     word-wrap: normal !important;
 }
+
+.required_field { color: $bright_orange}
+
 .hidden {display:none;}
 
-.align-center {
+/**
+ * Align content class
+ */
+.align_center {
     text-align: center;
+    display: block;
 }
 
 /**
@@ -153,3 +161,5 @@ $border: 1px solid red;
 
 @import "./theme-styles/buttons.scss";
 @import "./theme-styles/tables.scss";
+@import "./theme-styles//sectionThemes.scss";
+

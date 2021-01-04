@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import Newsletter from "../components/layout/newsletter"
-import ContactFormCallout from "../components/form/contactFormCallout"
+import ContactFormCallout from "../components/forms/contactFormCallout"
 
 export default ({ data, pageContext }) => {
 

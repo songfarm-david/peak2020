@@ -115,6 +115,11 @@
 }
 
 
+#blogIndex {
+    a {
+        text-decoration: none;
+    }
+}
 
 @media screen and (min-width: $mobile-breakpoint) {
     .blog_section {

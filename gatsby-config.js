@@ -7,7 +7,7 @@ module.exports = {
         description: "Providing reliable, custom solutions in SEO and Local SEO, web development, web security and more.",
         author: "David Gaskin",
         image: "src/images/logo/Logo_squared.png",
-        titleTemplate: "%s · Peak Websites",
+        titleTemplate: "%s | Peak Websites",
         siteUrl: process.env.SITE_URL,
         twitterUsername: "@peakwebsite",
         twitterURL: "https://twitter.com/peakwebsite",

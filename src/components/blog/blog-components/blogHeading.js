@@ -11,7 +11,7 @@ const BlogHeading = ({ headingText, className }) => {
         <div className={( callOutClass ) ? 
             `${blogHeadingStyles.callOutClass} ${blogHeadingStyles.blogHeading}` : 
             `${blogHeadingStyles.blogHeading}`}>
-            <h5>{headingText}</h5>
+            <h2 className={`${blogHeadingStyles.heading} heading-5`}>{headingText}</h2>
             <span className={blogHeadingStyles.barline}></span>
         </div>
     )

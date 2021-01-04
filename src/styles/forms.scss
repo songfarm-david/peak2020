@@ -1,0 +1,94 @@
+/**
+ * Styles for site-wide forms 
+ *
+ * Updated Jan 3rd, 2021
+ */
+.contact_form {
+    input, textarea, button { 
+        margin: 1rem 0;
+        font: inherit;
+        font-weight: normal; 
+    }
+    input, textarea {
+        border: 2px solid $light-blue;
+        background: $lighter-blue;
+        padding: 1rem;
+        width: 100%;
+        margin-bottom: 1rem; 
+    }
+    input:focus,
+    textarea:focus {
+        outline-color: $bright_orange;
+        outline-width: 2px;
+        border-color: transparent;
+    }
+    button {
+        margin: $vertical-rhythm auto $top-margin;
+        padding-left: $vertical-rhythm;
+        padding-right: $vertical-rhythm;
+        display: block;
+        font-weight: bold;
+    }
+    .form_label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: .5rem;
+    }
+    &.plusAddFields {
+        .input_container {
+            display: flex;
+            .form_label {
+                flex-basis: 50%;
+                &:first-child {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+    &.lead_gen_form {
+        color: $white;
+        position: relative;
+        button {
+            margin-left: 0;
+            margin-top: $top-margin;
+        }
+        input {
+            border: none;
+        }
+        &.lead_gen_form__sidebar {
+            box-shadow: 0px 0px 1px 3px $lighter-blue;
+            padding: $top-margin;
+            background-color: $light-green;
+            width: 100%;       
+        }
+        
+    }
+
+}
+
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .contact_form {
+        &.lead_gen_form {
+            padding: $top-margin;
+            form.full_width .input_container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                label {
+                    flex-basis: 48%;
+                }
+            }
+            &.lead_gen_form__sidebar {
+                width: 40%;
+                float: right;
+                margin-left: $margin-bottom;
+                margin-top: $margin-bottom;
+            }
+        
+        }    
+    }
+
+}

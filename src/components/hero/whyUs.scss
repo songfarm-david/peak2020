@@ -1,0 +1,12 @@
+@import "../../styles/globals.scss";
+
+#whyUs {
+    @extend .theme_style_green;
+    text-align: center;
+    i {
+        width: 4.5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

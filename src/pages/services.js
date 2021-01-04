@@ -8,7 +8,7 @@ import ServiceCard from "../components/layout/services/serviceCard"
 
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
-import ContactFormCallout from "../components/form/contactFormCallout"
+import ContactFormCallout from "../components/forms/contactFormCallout"
 
 import "../styles/pages.scss"
 

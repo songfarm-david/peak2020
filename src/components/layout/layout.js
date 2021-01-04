@@ -7,7 +7,7 @@ import TopBar from "../hero/topBar"
 
 /**NOTE: should use propTypes checking on these data */
 const Layout = ({ layoutClass = "", children, path }) => {
-    console.log(path)
+    // console.log(path)
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -34,8 +34,10 @@ const Layout = ({ layoutClass = "", children, path }) => {
 
     return ( 
         <>
-            {path !== '/services/seo-services/local-seo-packages/' && <TopBar />}
-            <Header siteTitle={data.site.siteMetadata.title} styleClass={path !== '/services/seo-services/local-seo-packages/' ? 'hasTopbar' : ''}/>
+            {/* {path !== '/services/seo-services/local-seo-packages/' && <TopBar />} */}
+            <Header siteTitle={data.site.siteMetadata.title} 
+            // styleClass={path !== '/services/seo-services/local-seo-packages/' ? 'hasTopbar' : ''}
+            />
             <main role="main" className={replaceClass(layoutClass)}>
                 {children}
             </main>

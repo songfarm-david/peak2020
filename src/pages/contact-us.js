@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
-import ContactForm from "../components/form/contactFormCallout"
+import ContactForm from "../components/forms/contactFormCallout"
 
 import "../styles/pages.scss"
 

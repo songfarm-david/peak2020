@@ -44,15 +44,17 @@ const features = [
 
 const FeaturesBlock = () => (
     <div className={"section_container"}>
-        <section className={"section_content section_container__inner features_container"} id="featuresSection">
-            <h2 className={"features_container__header"}>Features</h2>
-            {/* {features} */}
-            {features.map((feature, idx) => (
-                <div key={idx} className={"feature"}>
-                    <p className={"feature__title heading-4"}>{feature.title}</p>
-                    <p className={"feature__description"}>{feature.description}</p>
-                </div>
-            ))}
+        <section className={"section_content"} id="featuresSection">
+            <div className={"flex_container"}>
+                <h2 className={"flex_container__header"}>Features</h2>
+                {/* {features} */}
+                {features.map((feature, idx) => (
+                    <div key={idx} className={"flex_child flex_child__card"}>
+                        <p className={"feature__title heading-4"}>{feature.title}</p>
+                        <p className={"feature__description"}>{feature.description}</p>
+                    </div>
+                ))}
+            </div>
         </section>
     </div>
 )

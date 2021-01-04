@@ -1,0 +1,11 @@
+/*
+ * background/text color theme configurations
+ * meant to be extended in other stylesheets
+ *
+ * Jan 02, 2021
+ */
+
+.theme_style_green {
+    background-color: $light-green;
+    color: $white;
+}
