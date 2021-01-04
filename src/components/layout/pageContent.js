@@ -14,7 +14,7 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
  */
 const PageContent = ({ path = "", type = 'page', content, children, featuredMedia = false }) => {
     
-    console.log('pageContent', path, type, content);
+    // console.log('pageContent', path, type, content);
 
     return (
         <div id="pageContent" className={(type === 'services') ? `section_container section_container__services ${path}` : `section_container ${path}`}>

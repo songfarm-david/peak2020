@@ -15,7 +15,7 @@ import Social from "../social"
  * @param {String} title the title for the page banner
  */
 const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {} }) => {
-    console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
+    // console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
 
     /* format dates */
     const dateTimeFormat = new Intl.DateTimeFormat('en', {
@@ -26,7 +26,7 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
 
     // let date, modified
     if (Object.keys(bannerData).length !== 0 && bannerData.constructor === Object) {
-        console.log('bannerData inner', bannerData);
+        // console.log('bannerData inner', bannerData);
         const { date, modified } = bannerData
         bannerData.date = dateTimeFormat.format(new Date(date))
         bannerData.modified = dateTimeFormat.format(new Date(modified))

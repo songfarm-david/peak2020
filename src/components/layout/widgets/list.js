@@ -19,7 +19,7 @@ const List = ({title, content, bgImg = true}) => {
                         {content.map(({title, description}, idx) => (
                             <div className={"list_point_container"} key={idx}>
                                 <h3 className={"list_title"}>{title}</h3>
-                                <p dangerouslySetInnerHTML={{__html: description}} />
+                                <div dangerouslySetInnerHTML={{__html: description}} />
                             </div>
                         ))}
                     </div>
