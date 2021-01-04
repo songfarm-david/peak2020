@@ -1,7 +1,7 @@
 import React from "react"
 
 import newsletter from "./newsletter.module.scss"
-import NewsletterForm from "../form/newsletterForm"
+import NewsletterForm from "../forms/newsletterForm"
 
 const Newsletter = ({ path }) => (
     <section id={newsletter.newsletter}>

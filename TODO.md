@@ -3,8 +3,11 @@
 # deindex cms pages
 - deindex portfolio pages?
 
-
 # TODO
+- Connect forms (SEO page)
+- Figure out what to do with local SEO packages (use location or generic)
+- Write digital marketing page
+- Write gatsby/react websites page
 - Add third-tier sub-nav for menus
 - left-align menu items on desktop
 - Set up portfolio websites

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import QuotesCarousel from "../hero/quotesCarousel"
-import NewsletterForm from "../form/newsletterForm"
+import NewsletterForm from "../forms/newsletterForm"
 
 import secondaryLogo from "../../images/logo/Logo_white.svg";
 import facebook from "../../images/illustrations/png/Social Media Icons/fb.png"

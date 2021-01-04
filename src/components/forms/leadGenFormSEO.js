@@ -37,8 +37,8 @@ const LeadGenSEO = ({title = '', byline = '', sidebar = false}) => {
                     <div className={`contact_form lead_gen_form ${(sidebar) ? 'lead_gen_form__sidebar' : ''}`}>
                         <h2 className={`${sidebar ? 'heading-3' : 'text_shadow'}`}>{title}</h2>
                         <p className={`${sidebar ? '' : 'hidden'}`}>{byline}</p>
-                        <form name={"lead_gen_SEO"} method={"post"} data-netlify={true} data-netlify-honeypot={"bot-field"} className={(!sidebar) ? 'full_width' : ''}>
-                            <input type="hidden" name="form-name" value={"lead_gen_SEO"} aria-label="hidden" />
+                        <form name={(sidebar) ? "lead_gen_SEO-1" : "lead_gen_SEO-2"} method={"post"} data-netlify={true} data-netlify-honeypot={"bot-field"} className={(!sidebar) ? 'full_width' : ''}>
+                            <input type="hidden" name="form-name" value={(sidebar) ? "lead_gen_SEO-1" : "lead_gen_SEO-2"} aria-label="hidden" />
                             <div className={"input_container"}>
                                 <label className={"form_label"} htmlFor={"name"} aria-label={"name"}>Name <span className={"required_field"}>*</span>
                                     <input type="input" name="name" aria-label="name" required />

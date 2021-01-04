@@ -12,7 +12,7 @@ import HeroSection from "../components/hero/heroSection"
 import TestimonialsCarousel from "../components/hero/testimonials"
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
-import ContactFormCallout from "../components/form/contactFormCallout"
+import ContactFormCallout from "../components/forms/contactFormCallout"
 
 import CtaBlock from "../components/hero/ROS/ctaBlock"
 import FeaturesBlock from "../components/hero/ROS/featuresBlock"

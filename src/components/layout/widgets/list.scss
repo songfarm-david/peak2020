@@ -1,4 +1,4 @@
-@import "../../styles/globals.scss";
+@import "../../../styles/globals.scss";
 
 /* list point styles */
 .list {
@@ -18,7 +18,7 @@
         position: absolute;
         top: 6rem; right: 0; bottom: 0; left: 0;
         &.bg_img__trail {
-            background: url('../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
+            background: url('../../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
             background-size: contain;
         }
     }
@@ -29,7 +29,7 @@
         .bg_img {
             top: 0; right: 0; bottom: 0; left: 0;
             &.bg_img__trail {
-                background: url('../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
+                background: url('../../../images/illustrations/svg/trail_contact_mobile.svg') no-repeat;
                 &.bg_img__trail--reverse {
                     transform: scaleX(-1);
                 }

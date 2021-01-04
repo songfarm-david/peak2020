@@ -4,11 +4,13 @@
 /perfect                                   https://cms.peakwebsites.ca/wp-admin 200
 
 # pages
-/service-search-engine-optimization/       /services/seo-services/ 301
-/services/search-engine-optimization/      /services/seo-services/ 301
-/services/wordpress-website-development/   /services/website-development-design-services/wordpress-website-development 301
-/landing-page/                             / 301
+/service-search-engine-optimization/                    /services/seo-services/ 301
+/services/search-engine-optimization/                   /services/seo-services/ 301
+/services/wordpress-website-development/                /services/website-development-design-services/wordpress-website-development 301
+/landing-page/                                          / 301
 /services/monthly-website-maintenance-packages-service/ /services 301
+/services/seo-services/seo-faq/                         /services/seo-services/ 301
+/services/seo-services/seo-packages-services/           /services/seo-services/ 301
 
 # temporary redirects (302)
 # /portfolio/                              /about 302

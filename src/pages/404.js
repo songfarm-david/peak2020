@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Newsletter from "../components/layout/newsletter"
-import ContactFormCallout from "../components/form/contactFormCallout"
+import ContactFormCallout from "../components/forms/contactFormCallout"
 
 import "../styles/pages.scss"
 
