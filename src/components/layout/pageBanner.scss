@@ -25,7 +25,7 @@
         display: block;
         margin-bottom: $vertical-rhythm * 2;
         position: relative;
-        .page_banner--post {
+        .page_banner__post--post {
             position: relative;
         }
     }
@@ -60,7 +60,7 @@
         font: $heading-1;
         &.page_banner__post {
             margin-bottom: 13.5rem;
-            .page_banner--post {
+            .page_banner__post--post {
                 width: $content-width;
                 margin: 0 auto;
             }

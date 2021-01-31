@@ -30,15 +30,17 @@
     &.section_container--white { background-color: #fff; }
     
     &.section_container--background {
-        position: relative;
-        padding: 0;
-        div.bg_img_container {
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            .section_content {
-                position: relative;
-            }
-        }
+        background: url('../images/webp/newsletter.webp') center center/cover no-repeat;
+
+        // position: relative;
+        // padding: 0;
+        // div.bg_img_container {
+        //     position: absolute;
+        //     top: 0; right: 0; bottom: 0; left: 0;
+        //     .section_content {
+        //         position: relative;
+        //     }
+        // }
     }
     // @see leadGenFormSEO for structure 
 
@@ -190,6 +192,18 @@
             }
             &.section_content--full {
                 padding: 0 $vertical-rhythm;
+            }
+            .section_content--inner {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                .pk_hero_text {
+                    padding: 0;
+                }
+                > div:first-child {
+                    flex: 2 0 66%;
+                    padding-right: $top-margin;
+                }
             }
         }
         &.cta_block {

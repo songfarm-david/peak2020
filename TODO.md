@@ -3,9 +3,14 @@
 # deindex cms pages
 - deindex portfolio pages?
 
+- test out mailing list sign up forms in footer, what's the proper flow there? Right now, it's 'undefined?thank_you'. A special(fixed) thank you page?
+
 # TODO
-- Connect forms (SEO page)
+# Connect forms (SEO page)
+- include testimonials on service pages
+- Set up modals on form submissions (top drop down)
 - Figure out what to do with local SEO packages (use location or generic)
+- Update about page to be more marketable
 - Write digital marketing page
 - Write gatsby/react websites page
 - Add third-tier sub-nav for menus

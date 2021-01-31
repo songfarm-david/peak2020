@@ -26,26 +26,19 @@ export default ({ data, location }) => {
     
     return (
         <Layout path={path} layoutClass={title}>
-
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                path={location.href} />
-
+            <SEO title={title} description={excerpt} path={location.href} />
             <Helmet title={S(title).decodeHTMLEntities().s} />
-
             <PageBanner bannerType={type} title={title} slug={slug} />
-            
             <PageContent path={slug} type={slug}>
-                {allServices.edges.map((service, idx) => (
-                    <ServiceCard key={idx} service={service.node} />
-                ))}
+                <div className={`flex_container`}>
+                    {allServices.edges.map((service, idx) => (
+                        <ServiceCard key={idx} service={service.node} />
+                    ))}
+                </div>
             </PageContent>
-
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />  
-
         </Layout>
     )
 }
