@@ -47,7 +47,9 @@ export default ({ data, location }) => {
 		"keywords": keywords,
 		"name": data.site.siteMetadata.title,
 		"url": `${siteUrl}${path}`
-	}
+    }
+    
+    const contactFormCopy = "Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!"
 
     return (
         <Layout path={path} layoutClass={title}>
@@ -57,12 +59,8 @@ export default ({ data, location }) => {
             </Helmet>
 
             <PageBanner bannerType="page" title={title} slug={slug} />
-            <PageContent path={slug} type={type}>
-                <ContactForm 
-                    heading="Free Consultation" 
-                    paragraph="Take the first step today and let us know what problem you’re trying to solve. We’d love to hear from you and would be happy to help!" 
-                    formPath={path} isAddFields={true} />
-            </PageContent>
+            <ContactForm heading="Free Consultation" paragraph={contactFormCopy} formPath={path} isAddFields={true} />
+            
         </Layout>
     )
 

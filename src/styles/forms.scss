@@ -58,10 +58,11 @@
             border: none;
         }
         &.lead_gen_form__sidebar {
-            box-shadow: 0px 0px 1px 3px $lighter-blue;
+            box-shadow: -1px 1px 5px 3px $box-border;
             padding: $top-margin;
             background-color: $light-green;
-            width: 100%;       
+            width: 100%;    
+            margin-top: $vertical-rhythm;   
         }
         
     }
@@ -70,6 +71,9 @@
 
 
 @media screen and (min-width: $mobile-breakpoint) {
+    .lead_form--aside {
+        // width: 33%;
+    }
     .contact_form {
         &.lead_gen_form {
             padding: $top-margin;
@@ -82,10 +86,11 @@
                 }
             }
             &.lead_gen_form__sidebar {
-                width: 40%;
-                float: right;
-                margin-left: $margin-bottom;
-                margin-top: $margin-bottom;
+                // width: 40%;
+                // float: right;
+                // margin-left: $margin-bottom;
+                // margin-top: $margin-bottom;
+                margin-top: 0;
             }
         
         }    

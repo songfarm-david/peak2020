@@ -11,8 +11,10 @@ import twitter from "../../images/illustrations/png/Social Media Icons/twitter.p
 
 import footerStyles from "./footer.module.scss"
 
-const Footer = ({ path }) => {
-  
+const Footer = ( location ) => {
+
+    console.log('footer location', location);
+
   /* get footer links from CMS */
   const footerQuery = useStaticQuery(
     graphql`
@@ -88,7 +90,7 @@ const Footer = ({ path }) => {
                 <div className={footerStyles.footerItem}>
                     <p>Subscribe to the newsletter</p>
                     <div>
-                        <NewsletterForm path={path} className="footerNewsletter" text="OK" />
+                        <NewsletterForm path={location.pathname} className="footerNewsletter" text="OK" />
                     </div>
                 </div>
         

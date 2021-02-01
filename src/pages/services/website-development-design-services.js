@@ -6,18 +6,13 @@ import { graphql } from "gatsby"
  */
 
  /* import page data */
-import {SEOFaq} from "../../../data/seo-faq"
-import {SEOProcess} from "../../../data/seo-process" 
 
-import Layout from "../../../components/layout/layout"
-import SEO from "../../../components/seo"
-import PageBanner from "../../../components/layout/pageBanner"
-import PageContent from "../../../components/layout/pageContent"
-import LeadGenSEO from "../../../components/forms/leadGenFormSEO"
-import List from "../../../components/layout/widgets/list"
-import Partners from "../../../components/hero/partners"
-import Accordion from "../../../components/layout/widgets/accordion"
-import WhyUs from "../../../components/hero/whyUs"
+import Layout from "../../components/layout/layout"
+import SEO from "../../components/seo"
+import PageBanner from "../../components/layout/pageBanner"
+import PageContent from "../../components/layout/pageContent"
+import LeadGenSEO from "../../components/forms/leadGenFormSEO"
+import WhyUs from "../../components/hero/whyUs"
 
 export default function SEOVictoriaBC({ data }) {
     console.log(data);
@@ -27,23 +22,26 @@ export default function SEOVictoriaBC({ data }) {
 
     return (
         <Layout>
-            
             <SEO title={title} description={excerpt} path={siteUrl+path} />
-            <PageBanner bannerType={'page'} title={'SEO Victoria BC'} slug={slug} />
-           
+            <PageBanner bannerType={'page'} title={'Web Design Victoria BC'} slug={slug} />
+
+            {/* <div className={"section_container"}>
+                <div className={"section_content"}>
+                    <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
+                    <div className={"hero_content"} dangerouslySetInnerHTML={{ __html: content }} />  
+                </div>
+            </div> */}
+
             <PageContent>
                 <div className={`section_content--inner`}>
                     <div dangerouslySetInnerHTML={{ __html: content }} />  
-                    <LeadGenSEO title={"Get a Free Consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
+                    <LeadGenSEO title={"Get a Free Website & SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
                 </div>
             </PageContent>
 
-            {/* <Partners /> */}
-            <List title={'Our SEO Process'} content={SEOProcess} bgImg={true} />
+            {/* <PageContent path={path} content={content} /> */}
             <WhyUs />
             <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} />
-            <Accordion title={'SEO FAQ'} content={SEOFaq} />
-
         </Layout>
     )
 }
@@ -52,8 +50,8 @@ export default function SEOVictoriaBC({ data }) {
  * Query about page
  */
 export const queryPage = graphql`
-    query SEOVictoria {
-        wordpressPage(wordpress_id: {eq: 3850}) {
+    query WebDesignDev {
+        wordpressPage(wordpress_id: {eq: 1741}) {
             title
             content
             type

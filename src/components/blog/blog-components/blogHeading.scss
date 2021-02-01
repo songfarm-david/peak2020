@@ -5,6 +5,7 @@
     align-items: center;
     .heading {
         white-space: nowrap;
+        color: $strong-blue;
     }
     .barline {
         display: block;
@@ -13,8 +14,8 @@
         width: 45%;
         margin-left: 1rem;
     }
-    &.callOutClass {
-        .heading { color: $white; }
+    &.callout {
+        > .heading { color: $white; }
         .barline { border-color: $white; }
     }
 }

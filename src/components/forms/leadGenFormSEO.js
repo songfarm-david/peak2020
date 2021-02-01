@@ -28,10 +28,10 @@ const LeadGenSEO = ({title = '', byline = '', sidebar = false}) => {
     `)
 
     return (
-        <article className={(!sidebar) ? 'section_container section_container--background' : ''}>
-            {!sidebar && <div className={"bg_img_container"}>
+        <div className={(!sidebar) ? 'section_container section_container--background' : 'lead_form--aside'}>
+            {/* {!sidebar && <div className={"bg_img_container"}>
                 <Img fluid={bgImg.file.childImageSharp.fluid} />
-            </div>}
+            </div>} */}
             <div className={(!sidebar) ? 'section_content' : ''}>
                 <article>
                     <div className={`contact_form lead_gen_form ${(sidebar) ? 'lead_gen_form__sidebar' : ''}`}>
@@ -58,7 +58,7 @@ const LeadGenSEO = ({title = '', byline = '', sidebar = false}) => {
                     </div>
                 </article>
             </div>
-        </article>
+        </div>
     )
 }
 

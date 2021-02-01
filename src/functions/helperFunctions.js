@@ -70,3 +70,16 @@ export const getActiveClass = () => {
 //     let s = str.toString()
 //     return s.includes(textStr) ? true : false
 // }
+
+
+const replaceClass = (cls) => {        
+    if (cls.includes('blog_post')) {
+        cls = cls.replace('blog_post', "")
+        return 'blog_post ' + formatTitle(cls)
+    }
+    if (cls.includes('services')) {
+        cls = cls.replace('services', "")
+        return 'service-page ' + formatTitle(cls)
+    }
+    return formatTitle(cls)
+}

@@ -16,7 +16,7 @@ const QuotesCarousel = () => {
         <div id={quotesStyles.quoteCarousel}>
             <div className={quotesStyles.innerContainer}>
                 {/* <div className="quote-container"> */}
-                    <p className={quotesStyles.quote}>"{selectedQuote.quote}"</p>
+                    <p className={`${quotesStyles.quote} text_shadow`}>"{selectedQuote.quote}"</p>
                     <p className={quotesStyles.author}>{selectedQuote.author}</p>
                 {/* </div> */}
             </div>
