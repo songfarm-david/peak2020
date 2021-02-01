@@ -38,10 +38,10 @@ export default ({ data, location }) => {
             <Helmet title={S(title).decodeHTMLEntities().s} />
             <PageBanner bannerType={type} title={title} slug={slug} />
             <PageContent path={path}>
-                <div className={`section_content--inner template__page`}>
+                {/* <div className={`section_content--inner template__page`}> */}
                     <div dangerouslySetInnerHTML={{ __html: content }} />  
-                    <LeadGenSEO title={"Get a Free Website & SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
-                </div>
+                    {/* <LeadGenSEO title={"Get a Free Website & SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} /> */}
+                {/* </div> */}
             </PageContent>
             <BlogCallout />
             <Newsletter path={location.pathname} />
