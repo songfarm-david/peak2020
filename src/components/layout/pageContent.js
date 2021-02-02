@@ -12,27 +12,30 @@ import FeaturedImage from "../blog/blog-components/featuredImage"
  * @param {Str} path a page title used to add as classname to the component 
  * @param {Str} type (optional) a modifier to trigger a specific condition
  */
-const PageContent = ({ path = "", type = 'page', content, children, featuredMedia = false }) => {
+const PageContent = ({ 
+    path = "", 
+    type = 'page', 
+    content, 
+    children, 
+    featuredMedia = false }) => {
     
-    console.log('pageContent', path, type, content);
+    console.log('pageContent path:', path, '\ntype:', type, '\ncontent:', content, '\nchildren:', children, '\nfeaturedMedia', featuredMedia);
 
     return (
-        <div id="pageContent" className={(type === 'services') ? `section_container section_container__services ${path}` : `section_container ${path}`}>
+        <div id="pageContent" className={`section_container ${path}`}>
 
-            {( children ) ? 
-                <div className={(path !== 'contact-us') ? `section_content section_container__inner ${path}` : `${path}`}>
+            {(type === 'page') &&
+                <div className={`section_content`}>
                     {children}
-                </div> :
-                <div className={"section_content section_container__inner"}>
-                    {ReactHtmlParser(content)}
-                </div>}
+                </div>
+            }
 
-            {/* <div className={"section_content section_container__inner section_container__featured_image"}>
-                {( featuredMedia ) ?
-                    <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 
-                    : false }
-            </div> */}
+            {/* Because a content property is passed to this component from BlogPostTemplate page, we use dangerouslySetInnerHTML */}
+            {(type === 'post') &&
+                <div className={`section_content section_container__inner`} dangerouslySetInnerHTML={{ __html: content }} />
+            }
 
+            {/* TODO: I forget what this is about */}
             {featuredMedia && 
             <div className={"section_content section_container__inner section_container__featured_image"}>
                 <FeaturedImage featuredImage={featuredMedia} isPageFeature={true} /> 

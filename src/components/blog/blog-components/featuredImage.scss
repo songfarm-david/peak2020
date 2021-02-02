@@ -3,6 +3,7 @@
 .featuredImage {
     height: 13.75rem;
     width: 100%;
+    margin-bottom: $margin-bottom;
     &.pageFeature {
         order: 1;
         height: 100%;

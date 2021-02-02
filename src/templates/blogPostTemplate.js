@@ -114,22 +114,16 @@ export default ({ data, location, pageContext }) => {
     return (
         <Layout path={location.pathname} layoutClass={"blog_post " + title}> 
             <SEO title={title} description={excerpt} image={featured_media} path={location.href} />
-
             <Helmet title={S(title).decodeHTMLEntities().s}>
                 <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
                 <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
             </Helmet>
-
             <PageBanner bannerType={"post"} bannerData={wordpressPost} title={title} />
-            
             <PageContent type={type} content={content} />
-
             {/* <Comments postData={data} /> */}
             <BlogCallout postId={wordpress_id} />
-
             <Newsletter path={location.pathname} />
             <ContactFormCallout path={location.pathname} isAddFields={false} />
-
         </Layout>
     )
     

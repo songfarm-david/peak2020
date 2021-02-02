@@ -15,7 +15,7 @@ import Social from "../social"
  * @param {String} title the title for the page banner
  */
 const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {} }) => {
-    console.log('bannerType, title, slug, bannerData', bannerType, title, slug, bannerData );
+    console.log('bannerType:', bannerType, '\ntitle:', title, '\nslug:', slug, '\nbannerData:', bannerData );
 
     /* format dates */
     const dateTimeFormat = new Intl.DateTimeFormat('en', {
@@ -26,7 +26,7 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
 
     // let date, modified
     if (Object.keys(bannerData).length !== 0 && bannerData.constructor === Object) {
-        console.log('bannerData inner', bannerData);
+        // console.log('bannerData inner', bannerData);
         const { date, modified } = bannerData
         bannerData.date = dateTimeFormat.format(new Date(date))
         bannerData.modified = dateTimeFormat.format(new Date(modified))
@@ -38,11 +38,7 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
     // console.log('bannerData', bannerData);
 
     return ( 
-        <header 
-            data-title={slug || title} 
-            className={( bannerType === 'page' ) 
-            ? `page_banner page_banner__page ${slug}` 
-            : `page_banner page_banner__post ${slug}`}>
+        <header className={`page_banner ${bannerType === 'post' ? 'page_banner__post' : ''} ${slug}`}>
 
             {( bannerType === 'page' ) && 
                 <div className={"headerContainer"}>
@@ -52,7 +48,7 @@ const PageBanner = ({ bannerType = "page", title = "", slug = "", bannerData = {
              {( bannerType === 'post' ) && 
                 <>
                     <FeaturedImage featuredImage={(bannerData.featured_media) ? bannerData.featured_media : null} isFeature={true} />
-                    <div className={"page_banner--post"}>
+                    <div className={"page_banner__post--post"}>
                         <MetaCard postData={(bannerData) ? bannerData : null} />
                         {/* <Social post={bannerData} isHeader={true} /> */}
                     </div>

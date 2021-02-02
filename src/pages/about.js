@@ -92,8 +92,10 @@ export default ({ data, location }) => {
             </Helmet>
 
             <PageBanner bannerType={type} title={title} slug={slug} />
-            <PageContent path={slug} type={type} content={content} />
-            
+            {/* <PageContent path={slug} type={type} content={content} /> */}
+            <PageContent>
+                <div className={`flex_container`} dangerouslySetInnerHTML={{ __html: content }} />
+            </PageContent>
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />

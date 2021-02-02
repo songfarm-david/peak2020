@@ -2,19 +2,17 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
+import SEO from "../components/seo"
+import Helmet from "react-helmet"
+import S from 'string'
 import PageBanner from "../components/layout/pageBanner"
 import PageContent from "../components/layout/pageContent"
 import ServiceCard from "../components/layout/services/serviceCard"
-
 import BlogCallout from "../components/blog/blogCallout"
 import Newsletter from "../components/layout/newsletter"
 import ContactFormCallout from "../components/forms/contactFormCallout"
 
 import "../styles/pages.scss"
-
-import SEO from "../components/seo"
-import Helmet from "react-helmet"
-import S from 'string'
 
 /**
  * Services Page
@@ -26,26 +24,19 @@ export default ({ data, location }) => {
     
     return (
         <Layout path={path} layoutClass={title}>
-
-            <SEO 
-                title={title} 
-                description={excerpt} 
-                path={location.href} />
-
+            <SEO title={title} description={excerpt} path={location.href} />
             <Helmet title={S(title).decodeHTMLEntities().s} />
-
             <PageBanner bannerType={type} title={title} slug={slug} />
-            
-            <PageContent path={slug} type={slug}>
-                {allServices.edges.map((service, idx) => (
-                    <ServiceCard key={idx} service={service.node} />
-                ))}
+            <PageContent>
+                <div className={`flex_container`}>
+                    {allServices.edges.map((service, idx) => (
+                        <ServiceCard key={idx} service={service.node} />
+                    ))}
+                </div>
             </PageContent>
-
             <BlogCallout />
             <Newsletter path={path} />
             <ContactFormCallout path={path} />  
-
         </Layout>
     )
 }

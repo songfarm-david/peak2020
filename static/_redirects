@@ -11,6 +11,7 @@
 /services/monthly-website-maintenance-packages-service/ /services 301
 /services/seo-services/seo-faq/                         /services/seo-services/ 301
 /services/seo-services/seo-packages-services/           /services/seo-services/ 301
+/services/website-development-design-services/          /services/web-design-development-services/
 
 # temporary redirects (302)
 # /portfolio/                              /about 302

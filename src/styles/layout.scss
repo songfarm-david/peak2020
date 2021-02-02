@@ -12,7 +12,7 @@
     }
 }
 
-#pageContent {
+.section_container {
     a { text-decoration: underline; }
     &.section_container {
         padding-top: $vertical-rhythm;
@@ -30,15 +30,7 @@
     &.section_container--white { background-color: #fff; }
     
     &.section_container--background {
-        position: relative;
-        padding: 0;
-        div.bg_img_container {
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            .section_content {
-                position: relative;
-            }
-        }
+        background: url('../images/webp/newsletter.webp') center center/cover no-repeat;
     }
     // @see leadGenFormSEO for structure 
 
@@ -143,13 +135,13 @@
         } 
     }
 
-    &.services {
-        .section_container__inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-    }
+    // &.services {
+    //     .section_container__inner {
+    //         display: flex;
+    //         flex-wrap: wrap;
+    //         justify-content: space-around;
+    //     }
+    // }
     &.online-ordering-system-restaurants {
         padding-bottom: 0;
         margin-bottom: 0;
@@ -173,13 +165,7 @@
                 margin-bottom: $top-margin;
             }
         }
-        // .section_container__inner {
-        //     width: auto;
-        //     // &.category {
-        //     //     width: $content-width;
-        //     // }
-        //     &
-        // }
+
         .section_content {
             padding: 0;
             width: $hero-width;
@@ -188,8 +174,36 @@
                 padding-left: $vertical-rhythm;
                 margin-bottom: $vertical-rhythm;
             }
+        }
+        .section_container__inner {
+            // width: $content-width;
+            &.category,
+            &.blog {
+                width: $content-width;
+            }
+            &.section_container__inner--aside {
+                margin-bottom: $top-margin;
+                aside.section_aside {
+                    margin-left: $vertical-rhythm;
+                    width: 33%;
+                    margin-bottom: $top-margin;
+                }
+            }
             &.section_content--full {
                 padding: 0 $vertical-rhythm;
+            }
+            
+        }
+        .section_content--inner {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            .pk_hero_text {
+                padding: 0;
+            }
+            > div:first-child {
+                flex: 2 0 66%;
+                padding-right: $top-margin;
             }
         }
         &.cta_block {
@@ -197,58 +211,10 @@
             padding-bottom: $vertical-rhythm;
         }
         
-        &.section_container__services {
-            // .section_container__inner {
-            //     width: $content-width;
-            //     width: auto;
-            // }
-            // .section_container__featured_image {
-            //     width: $content-width;
-            //     padding: $margin-bottom 0 0;
-            //     display: block;
-            // }
-        }
-        &.about,
-        &.home {
-            .section_container__inner {
-                width: $content-width;
-            }
-            .section_content {
-                display: flex;
-                flex-wrap: wrap;
-            }
-        }
-        /* services index page */
-        &.services {
-            .section_container__inner {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-        }
+       
     }
-
-    /* this rule affects width of copy for child service pages */
-    // .service-page,
-    // .blog_post {
-    //     #pageContent.section_container {
-            // width: $hero-width;
-            // margin: 0 auto;
-    //     }
-    // }
-    
 }
 
-.wp-block-image {
-    // .alignleft {
-    //     float: left;
-    //     margin: .5em 1em .5em 0;
-    // }
-    // .alignright {
-    //     float: right;
-    //     margin: .5em 0 .5em 1em;
-    // }
-}
 
 @media screen and (min-width: $mobile-breakpoint) {
     .wp-block-image {

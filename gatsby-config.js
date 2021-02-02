@@ -4,10 +4,10 @@ require("dotenv").config({
 module.exports = {
     siteMetadata: {
         title: "Peak Websites",
-        description: "Providing reliable, custom solutions in SEO and Local SEO, web development, web security and more.",
+        description: "Victoria, BC based digital marketing agency specializing in SEO and Web Design for local business.",
         author: "David Gaskin",
         image: "src/images/logo/Logo_squared.png",
-        titleTemplate: "%s | Peak Websites",
+        titleTemplate: "%s | Peak Websites | Victoria BC",
         siteUrl: process.env.SITE_URL,
         twitterUsername: "@peakwebsite",
         twitterURL: "https://twitter.com/peakwebsite",

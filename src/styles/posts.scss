@@ -81,6 +81,10 @@
         padding: 1rem;
     }
 
+    a {
+        text-decoration: none;
+    }
+
 }
 
 
@@ -92,13 +96,19 @@
     
 .blog_section {
     padding: $content-padding;
-    .blog_section__inner {}
+    .blog_section__inner {
+        .blog_post {
+            .blog_post__excerpt {
+                // padding-top: $margin-bottom;
+            }
+        }
+    }
     .blog_post {
         padding-bottom: $top-margin;
         &.blog_post__callout {
             .blog_post__callout--blog_post {
                 color: $white;
-                .blog_post__callout--heading {
+                .blog_post--heading {
                     color: white;
                 }
             }
