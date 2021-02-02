@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 /**
- * SEO Victoria BC service page
+ * Local SEO Victoria BC service page
  */
 
  /* import page data */
@@ -45,6 +45,8 @@ export default function SEOVictoriaBC({ data }) {
             <WhyUs />
             <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} />
             <Accordion title={'SEO FAQ'} content={SEOFaq} />
+
+
         </Layout>
     )
 }
@@ -53,8 +55,8 @@ export default function SEOVictoriaBC({ data }) {
  * Query about page
  */
 export const queryPage = graphql`
-    query SEOVictoria {
-        wordpressPage(wordpress_id: {eq: 3850}) {
+    query LocalSEOVictoria {
+        wordpressPage(wordpress_id: {eq: 3419}) {
             title
             content
             type

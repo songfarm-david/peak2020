@@ -62,17 +62,28 @@
             padding: $top-margin;
             background-color: $light-green;
             width: 100%;    
-            margin-top: $vertical-rhythm;   
+            margin-top: $vertical-rhythm; 
+            order: 1;  
         }
         
     }
 
 }
-
+.lead_form--aside {
+    // width: 33%;
+    min-width: 21rem;
+    // margin-left: $margin-bottom;
+    // float: right;
+    order: 1;
+}
 
 @media screen and (min-width: $mobile-breakpoint) {
     .lead_form--aside {
-        // width: 33%;
+        width: 33%;
+        min-width: 21rem;
+        margin-left: $margin-bottom;
+        margin-bottom: $margin-bottom;
+        float: right;
     }
     .contact_form {
         &.lead_gen_form {

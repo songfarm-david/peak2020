@@ -16,7 +16,7 @@ const WhyUs = () => {
             
             <div className={"section_content"}>
                 <article>
-                    <h2 className="align_center">Why work with Peak Websites?</h2>
+                    <h2 className="align_center">Why work with us?</h2>
                     <div className={"flex_container"}>
                         {whyUs.map(({title, description}, idx) => (
                             <div className={"flex_child"} key={idx}>

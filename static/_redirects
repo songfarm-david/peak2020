@@ -12,6 +12,8 @@
 /services/seo-services/seo-faq/                         /services/seo-services/ 301
 /services/seo-services/seo-packages-services/           /services/seo-services/ 301
 /services/website-development-design-services/          /services/web-design-development-services/
+/services/seo-services/local-seo/                       /services/seo-services/local-seo-victoria-bc/ 
+
 
 # temporary redirects (302)
 # /portfolio/                              /about 302

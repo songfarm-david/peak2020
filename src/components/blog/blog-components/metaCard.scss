@@ -1,4 +1,4 @@
-@import "../globals.scss";
+@import "../../../styles/globals.scss";
 
 .meta_card {
     position: absolute;
@@ -12,6 +12,7 @@
 
     &.meta_card__sticky {
         padding: $content-padding;
+        width: 90%;
     }
 
     .meta_card__inner {
