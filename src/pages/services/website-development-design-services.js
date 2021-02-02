@@ -13,6 +13,7 @@ import PageBanner from "../../components/layout/pageBanner"
 import PageContent from "../../components/layout/pageContent"
 import LeadGenSEO from "../../components/forms/leadGenFormSEO"
 import WhyUs from "../../components/hero/whyUs"
+import TestimonialsCarousel from "../../components/hero/testimonials"
 
 export default function SEOVictoriaBC({ data }) {
     console.log(data);
@@ -34,12 +35,13 @@ export default function SEOVictoriaBC({ data }) {
 
             <PageContent>
                 <div className={`section_content--inner`}>
-                    <div dangerouslySetInnerHTML={{ __html: content }} />  
                     <LeadGenSEO title={"Get a Free Website & SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} sidebar={true} />
+                    <div dangerouslySetInnerHTML={{ __html: content }} />  
                 </div>
             </PageContent>
 
             {/* <PageContent path={path} content={content} /> */}
+            <TestimonialsCarousel />
             <WhyUs />
             <LeadGenSEO title={"Get a free consultation and SEO Audit"} byline={"Just enter your details and we'll reach out to you within a few days with your report."} />
         </Layout>

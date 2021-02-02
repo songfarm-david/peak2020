@@ -6,7 +6,7 @@ import { getDate, getAuthor } from "../../../functions/helperFunctions"
 import Social from "../../social"
 
 import tinyClockBlue from "../../../images/illustrations/svg/clock_icon_blue.svg"
-import "../../../styles/blog/metaCard.scss"
+import "./metaCard.scss"
 
 /**
  * Blog post meta card for displaying post information
