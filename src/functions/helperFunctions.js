@@ -45,7 +45,7 @@ export function getDate(modDate, pubDate) {
 export function getAuthor(categories, author) {
     return (categories.some(category => 
         category.name === 'Guest Post')) 
-    ? 'Guest Post' :  author
+    ? 'Guest Post' : (author != undefined) ? author : 'David Gaskin'
 }
 
 /**
